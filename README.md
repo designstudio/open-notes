@@ -34,9 +34,22 @@ A escrita acontece em um editor com formatação, as notas são salvas automatic
 
 ## Destaques
 
-| Escreva | Organize | Continue depois |
-| --- | --- | --- |
-| Editor com formatação, listas, tabelas e imagens. | Coleções, pastas, favoritos e arquivo para encontrar seu próprio jeito de organizar. | Salvamento automático por nota e sincronização opcional com o Google Drive. |
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>Escreva</h3>
+      <p>Editor com formatação, listas, tabelas e imagens.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>Organize</h3>
+      <p>Coleções, pastas, favoritos e arquivo para encontrar seu próprio jeito de organizar.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>Continue depois</h3>
+      <p>Salvamento automático por nota e sincronização opcional com o Google Drive.</p>
+    </td>
+  </tr>
+</table>
 
 ## Escreva
 
