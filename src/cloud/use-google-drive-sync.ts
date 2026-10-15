@@ -113,6 +113,7 @@ export function useGoogleDriveSync(data: AppData, setData: Dispatch<SetStateActi
   const upload = useCallback(async () => {
     if (!accessToken.current || !ready.current) return;
     if (syncing.current) return syncing.current;
+    let completed = false;
     const operation = (async () => {
       setStatus('syncing');
       setError(null);
@@ -134,6 +135,9 @@ export function useGoogleDriveSync(data: AppData, setData: Dispatch<SetStateActi
       const result = existingId
         ? await updateDriveSnapshot(accessToken.current!, existingId, snapshot)
         : await createDriveSnapshot(accessToken.current!, snapshot);
+      // A request already in flight may finish after the user disconnects.
+      // Its completion must not restore the disconnected session's status.
+      if (!accessToken.current || !ready.current) return;
       fileId.current = result.id;
       baseRemote.current = dataFingerprint(snapshot.data);
       localUpdatedAt.current = updatedAt;
@@ -141,7 +145,19 @@ export function useGoogleDriveSync(data: AppData, setData: Dispatch<SetStateActi
       const completedAt = Date.now();
       rememberSync(completedAt);
       setStatus('synced');
-    })().catch(handleFailure).finally(() => { syncing.current = null; });
+      completed = true;
+    })().catch(handleFailure).finally(() => {
+      syncing.current = null;
+      // An edit's debounce can fire while this operation is in flight. That
+      // callback shares the current promise, so explicitly schedule the dirty
+      // state after success instead of leaving it local indefinitely.
+      if (completed && accessToken.current && ready.current &&
+          dataFingerprint(dataRef.current) !== baseRemote.current) {
+        setStatus('syncing');
+        window.clearTimeout(syncTimer.current);
+        syncTimer.current = window.setTimeout(() => { void upload(); }, 1200);
+      }
+    });
     syncing.current = operation;
     return operation;
   }, [handleFailure, rememberSync, pauseForConflict]);

@@ -1,23 +1,58 @@
 import { build } from 'esbuild';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join, resolve } from 'node:path';
+import { basename, join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
-const folder = await mkdtemp(join(tmpdir(), 'open-notes-sync-tests-'));
+const unitEntries = [
+  'granular-storage.test.ts', 'app-modules.test.tsx', 'drive-sync.test.tsx',
+  'find-replace.test.ts', 'local-data.test.ts', 'toasts.test.tsx',
+  'sidebar-resize.test.tsx', 'sidebar-state.test.ts', 'collection-order.test.ts', 'themes.test.ts',
+];
+const integrationEntries = ['app-flows.test.tsx', 'sync-integration.test.tsx'];
+const reactRuntime = {
+  name: 'external-react',
+  setup(builder) {
+    builder.onResolve({ filter: /^(react|react-test-renderer)(\/.*)?$/ }, args => ({
+      path: pathToFileURL(resolve('node_modules', args.path === 'react/jsx-runtime'
+        ? 'react/jsx-runtime.js' : `${args.path}/index.js`)).href,
+      external: true,
+    }));
+  },
+};
+const uiBoundaries = {
+  name: 'integration-ui-boundaries',
+  setup(builder) {
+    const names = [
+      'app/AppSidebar', 'app/NotesLibrary', 'app/NoteEditor', 'app/NoteToolbar',
+      'app/AppDialogs', 'Feedback', 'AnimatedDialog', 'IconButton',
+    ];
+    const paths = new Set(names.map(name => resolve('src', name)));
+    builder.onResolve({ filter: /^\./ }, args => paths.has(resolve(args.resolveDir, args.path).replace(/\.tsx?$/, ''))
+      ? { path: resolve('tests/helpers/app-ui.tsx') } : undefined);
+  },
+};
+
+const folder = await mkdtemp(join(tmpdir(), 'open-notes-tests-'));
 try {
-  const outputs = ['drive-sync.test', 'find-replace.test', 'local-data.test', 'toasts.test', 'sidebar-resize.test', 'sidebar-state.test', 'collection-order.test', 'themes.test'].map(name => join(folder, `${name}.mjs`));
-  await build({
-    entryPoints: ['tests/drive-sync.test.tsx', 'tests/find-replace.test.ts', 'tests/local-data.test.ts', 'tests/toasts.test.tsx', 'tests/sidebar-resize.test.tsx', 'tests/sidebar-state.test.ts', 'tests/collection-order.test.ts', 'tests/themes.test.ts'], outdir: folder, outExtension: { '.js': '.mjs' },
-    bundle: true, platform: 'node', format: 'esm', jsx: 'automatic',
+  const options = {
+    outdir: folder, outExtension: { '.js': '.mjs' }, bundle: true,
+    platform: 'node', format: 'esm', jsx: 'automatic',
     define: { 'import.meta.env.VITE_GOOGLE_CLIENT_ID': JSON.stringify('test-client') },
-    plugins: [{ name: 'external-react', setup(builder) {
-      builder.onResolve({ filter: /^(react|react-test-renderer)(\/.*)?$/ }, args => ({
-        path: pathToFileURL(resolve('node_modules', args.path === 'react/jsx-runtime' ? 'react/jsx-runtime.js' : `${args.path}/index.js`)).href, external: true,
-      }));
-    } }],
+  };
+  await build({ ...options, entryPoints: unitEntries.map(name => `tests/${name}`), plugins: [reactRuntime] });
+  // Keep UI substitutions scoped to the integration bundles, so the existing
+  // component tests continue to exercise their real implementations.
+  await build({
+    ...options, entryPoints: integrationEntries.map(name => `tests/${name}`),
+    loader: { '.css': 'empty', '.scss': 'empty' },
+    define: { ...options.define, 'import.meta.hot': 'undefined' },
+    plugins: [uiBoundaries, reactRuntime],
   });
-  const result = spawnSync(process.execPath, ['--test', ...outputs], { stdio: 'inherit' });
+  const outputs = [...unitEntries, ...integrationEntries].map(name =>
+    join(folder, `${basename(name).replace(/\.tsx?$/, '')}.mjs`));
+  const result = spawnSync(process.execPath, ['--test', '--test-timeout=15000', ...outputs], { stdio: 'inherit' });
+  if (result.error) throw result.error;
   process.exitCode = result.status ?? 1;
 } finally { await rm(folder, { recursive: true, force: true }); }

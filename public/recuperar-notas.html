@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Procurar cópias — Open Notes</title>
+<style>
+  :root { font: 16px/1.6 system-ui, sans-serif; color: #242820; background: #f8f9f5; }
+  body { max-width: 850px; margin: 40px auto; padding: 0 24px; }
+  h1 { font-size: 26px; } h2 { font-size: 19px; }
+  article { padding: 20px 0; border-top: 1px solid #d7dbd0; }
+  button { font: inherit; padding: 8px 16px; cursor: pointer; }
+  small { color: #505748; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  summary { cursor: pointer; padding: 8px 0; } #status { font-weight: 600; }
+</style>
+<h1>Procurar cópias das suas notas</h1>
+<p>Esta página apenas lê o armazenamento deste endereço e navegador. Ela não salva notas, não restaura cópias e não conecta ao Google Drive.</p>
+<p>Abra no mesmo navegador e endereço que você usava para escrever. <strong>localhost e 127.0.0.1 têm armazenamentos separados.</strong></p>
+<p id="status" role="status">Lendo cópias existentes…</p>
+<button id="download" hidden>Baixar cópia completa para análise</button>
+<section id="copies" aria-label="Cópias encontradas"></section>
+<script type="module">
+  const status = document.querySelector('#status');
+  const list = document.querySelector('#copies');
+  const download = document.querySelector('#download');
+  const archive = { exportedAt: new Date().toISOString(), origin: location.origin, indexedDB: [], localStorage: {}, errors: [] };
+  const versions = [];
+  function addVersion(label, data, savedAt) {
+    if (!data || !Array.isArray(data.notes)) return;
+    versions.push({ label, data, savedAt });
+  }
+  function inspect(label, value) {
+    addVersion(label, value, undefined);
+    addVersion(`${label} — cópia local`, value?.local, value?.savedAt);
+    addVersion(`${label} — cópia do Drive`, value?.remote, value?.savedAt);
+  }
+  async function readDatabase() {
+    if (indexedDB.databases) {
+      const databases = await indexedDB.databases();
+      if (!databases.some(database => database.name === 'open-notes')) return;
+    }
+    const database = await new Promise((resolve, reject) => {
+      const request = indexedDB.open('open-notes');
+      // Never create a database in a browser/origin with no existing notes.
+      request.onupgradeneeded = () => request.transaction.abort();
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+      request.onblocked = () => reject(new Error('A leitura está bloqueada por outra aba.'));
+    });
+    try {
+      const stores = ['workspace', 'notes', 'metadata'].filter(name => database.objectStoreNames.contains(name));
+      if (!stores.length) return;
+      const records = await new Promise((resolve, reject) => {
+        const transaction = database.transaction(stores, 'readonly');
+        const requests = stores.map(name => {
+          const store = transaction.objectStore(name);
+          return { name, keys: store.getAllKeys(), values: store.getAll() };
+        });
+        transaction.oncomplete = () => resolve(requests.flatMap(({ name, keys, values }) =>
+          keys.result.map((key, index) => ({ store: name, key, value: values.result[index] }))));
+        transaction.onabort = () => reject(transaction.error);
+        transaction.onerror = () => reject(transaction.error);
+      });
+      archive.indexedDB = records;
+      const metadata = new Map(records.filter(record => record.store === 'metadata').map(record => [record.key, record.value]));
+      if (metadata.get('schema') === 2) {
+        const byId = new Map(records.filter(record => record.store === 'notes').map(record => [record.key, record.value]));
+        const notes = [];
+        for (const id of metadata.get('noteOrder') || []) {
+          if (byId.has(id)) { notes.push(byId.get(id)); byId.delete(id); }
+        }
+        notes.push(...byId.values());
+        addVersion('IndexedDB / notas atuais (registros individuais)', {
+          notes,
+          collections: metadata.get('collections') || [],
+          folders: metadata.get('folders') || [],
+          ...(metadata.get('profile') ? { profile: metadata.get('profile') } : {}),
+        });
+      }
+      records.filter(record => record.store === 'workspace').forEach(record => {
+        const label = record.key === 'current' && metadata.get('schema') === 2
+          ? 'IndexedDB / cópia anterior à migração'
+          : `IndexedDB / ${record.key}`;
+        inspect(label, record.value);
+      });
+    } finally { database.close(); }
+  }
+  try { await readDatabase(); } catch (error) { archive.errors.push(`IndexedDB: ${error.message}`); }
+  try {
+    for (const key of Object.keys(localStorage)) {
+      if (key !== 'open-notes-v1' && !key.startsWith('open-notes-drive-recovery-') && key !== 'open-notes-drive-last-upload-recovery') continue;
+      const raw = localStorage.getItem(key);
+      archive.localStorage[key] = raw;
+      try { inspect(`localStorage / ${key}`, JSON.parse(raw)); }
+      catch { archive.errors.push(`Não foi possível interpretar ${key}. A cópia original foi incluída na exportação.`); }
+    }
+  } catch (error) { archive.errors.push(`localStorage: ${error.message}`); }
+  status.textContent = `${versions.length} versões encontradas em ${location.origin}.`;
+  for (const version of versions) {
+    const article = document.createElement('article');
+    const heading = document.createElement('h2');
+    heading.textContent = version.label;
+    article.append(heading);
+    const info = document.createElement('p');
+    info.textContent = `${version.data.notes.length} notas${version.savedAt ? ` · cópia de ${new Date(version.savedAt).toLocaleString('pt-BR')}` : ''}`;
+    article.append(info);
+    for (const note of version.data.notes) {
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = `${note.title || 'Sem título'}${note.deleted ? ' (lixeira)' : ''} — ${new Date(note.updated).toLocaleString('pt-BR')}`;
+      const body = document.createElement('pre');
+      body.textContent = note.body || '(Sem conteúdo de texto)';
+      details.append(summary, body);
+      article.append(details);
+    }
+    list.append(article);
+  }
+  if (!versions.length) {
+    const text = document.createElement('p');
+    text.textContent = 'Nenhuma cópia de notas foi encontrada aqui. Confira o navegador, o perfil e o endereço usados para escrever.';
+    list.append(text);
+  }
+  for (const error of archive.errors) {
+    const text = document.createElement('p');
+    text.textContent = error;
+    list.append(text);
+  }
+  download.hidden = false;
+  download.addEventListener('click', () => {
+    const url = URL.createObjectURL(new Blob([JSON.stringify(archive, null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `open-notes-recuperacao-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+</script>
+</html>
