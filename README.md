@@ -1,6 +1,14 @@
 <h1 align="center">Open Notes</h1>
 
 <p align="center">
+  <a href="#como-é-construído"><img src="https://img.shields.io/badge/escrito_em-TypeScript-3178C6" alt="Escrito em TypeScript"></a>
+  <a href="#como-é-construído"><img src="https://img.shields.io/badge/interface-React-087EA4" alt="Interface em React"></a>
+  <a href="#como-começar"><img src="https://img.shields.io/badge/roda_no-navegador-0D9488" alt="Roda no navegador"></a>
+  <a href="#seus-dados"><img src="https://img.shields.io/badge/dados-IndexedDB-0D9488" alt="Dados no IndexedDB"></a>
+  <a href="#construído-com-chatgpt-e-codex"><img src="https://img.shields.io/badge/feito_com-ChatGPT_%2B_Codex-0D9488" alt="Feito com ChatGPT e Codex"></a>
+</p>
+
+<p align="center">
   Um espaço para escrever, organizar e voltar às suas ideias.
 </p>
 
