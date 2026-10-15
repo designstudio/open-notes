@@ -1,0 +1,119 @@
+/* Compact outlined actions in the trash notice, matching its existing layout. */
+.app-shell .note-banner.note-banner-trash button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--space-6);
+  min-height:28px;
+  padding:var(--space-4) var(--space-8);
+  border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);
+  border-radius:var(--button-radius);
+  background:transparent;
+  font-size:var(--font-size-13);
+  line-height:18px;
+  text-decoration:none;
+}
+.app-shell .note-banner-trash button:hover { background:var(--hover); }
+.destructive-button {
+  background:var(--button-destructive-bg);
+  color:var(--button-destructive-text);
+  font-weight:var(--font-weight-600);
+}
+.destructive-button:hover:not(:disabled) { background:var(--button-destructive-bg-hover); }
+.destructive-button:active:not(:disabled) { background:var(--button-destructive-bg-active); }
+.app-shell .note-banner-trash button.danger {
+  color:var(--button-destructive-outline-text);
+  border-color:var(--button-destructive-outline-border);
+}
+.app-shell .note-banner-trash button.danger:hover:not(:disabled) { background:var(--button-destructive-outline-bg-hover); }
+.app-shell .note-banner-trash button.danger:active:not(:disabled) { background:var(--button-destructive-outline-bg-active); }
+
+/* Portal menus share the destructive palette without inheriting button geometry. */
+.note-action.danger:not([data-disabled]),
+.collection-delete-item:not([data-disabled]) { color:var(--menu-destructive-text); }
+.note-action.danger[data-highlighted]:not([data-disabled]),
+.collection-delete-item[data-highlighted]:not([data-disabled]) { background:var(--menu-destructive-bg-hover); }
+.note-action.danger:active:not([data-disabled]),
+.collection-delete-item:active:not([data-disabled]) { background:var(--menu-destructive-bg-active); }
+.restore-note-icon { transform:scaleX(-1); }
+
+.selection-menu { border-radius:var(--button-radius); border:none; }
+/* Expanded forms need room for their fields below the toolbar. */
+.selection-menu:has(.selection-link, .selection-blocks) { border-radius:var(--radius-24); padding:var(--space-8); }
+.selection-menu:has(.selection-link, .selection-blocks) input { border-radius:var(--radius-16); }
+
+/* One shape for action buttons: circles for icons, pills for wider standalone labels. */
+.app-shell button:not(.sidebar-scrim),
+.icon-button,
+.primary-button,
+.secondary-button,
+.selection-menu button,
+.selection-tools .block-picker,
+.view-switch.t-tabs,
+.view-switch .t-tab,
+.view-switch .t-tabs-pill {
+  border-radius:var(--button-radius);
+  background-clip:padding-box;
+  -webkit-background-clip:padding-box;
+}
+
+/* Keep compact icon controls square so their hover background is circular. */
+.app-shell .search-dialog .search-results > button {
+  border-radius:var(--radius-12);
+}
+
+.selection-tools > button { min-width:30px; }
+.view-switch .t-tab { width:24px; height:24px; padding:var(--space-4); }
+
+/* Concentric rules for system dropdowns: outer = inner + padding (24px = 16px + 8px) */
+.collection-menu,
+.note-actions-menu {
+  border-radius:var(--menu-radius);
+  padding:var(--menu-padding);
+}
+.collection-menu [role="menuitem"],
+.note-actions-menu [role="menuitem"],
+.note-action,
+.collection-delete-item {
+  border-radius:var(--radius-16);
+}
+
+/* Compact editor dropdowns use a softer 10px item radius inside the 16px shell. */
+.tiptap-dropdown-menu-content,
+.tiptap-dropdown-menu-sub-content {
+  border-radius:var(--radius-16);
+  padding:var(--space-8);
+}
+.selection-menu .tiptap-dropdown-menu-content [role="menuitem"],
+.selection-menu .tiptap-dropdown-menu-sub-content [role="menuitem"] {
+  border-radius:var(--radius-10);
+}
+
+/* Concentric rules for folder cards: outer = inner + padding (24px = 16px + 8px) */
+.folder-card-box {
+  border-radius:var(--card-radius);
+}
+.folder-card-actions {
+  top:8px;
+  right:8px;
+}
+.folder-card-actions .folder-more {
+  border-radius:var(--radius-16);
+}
+
+/* Sidebar navigation uses a softer rectangle with 12px border-radius instead of pill */
+.sidebar .new-note,
+.sidebar .nav-item,
+.sidebar .recent-note,
+.sidebar .collection-note,
+.sidebar .collection-row,
+.sidebar .profile,
+.sidebar-brand .icon-button,
+.sidebar-rail button,
+.mobile-menu {
+  border-radius:var(--radius-12) !important;
+}
+.sidebar .collection-row .collection-more,
+.sidebar .collection-row .count {
+  border-radius:var(--radius-9) !important;
+}

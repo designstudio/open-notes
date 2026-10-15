@@ -1,0 +1,32 @@
+/* Keep the focus ring on the complete field, including search controls. */
+.app-shell dialog form > input,
+.app-shell .collection-settings-form > textarea,
+.note-picker-input,
+.app-shell .selection-link input {
+  background:var(--input-bg);
+  border:1px solid var(--input-border);
+  color:var(--ink);
+  border-radius:var(--input-radius);
+}
+.app-shell dialog form > input::placeholder,
+.app-shell .collection-settings-form > textarea::placeholder,
+.note-picker-input::placeholder,
+.app-shell .selection-link input::placeholder {
+  color:var(--muted);
+}
+.app-shell dialog form > input:focus,
+.app-shell .collection-settings-form > textarea:focus,
+.note-picker-input:focus,
+.app-shell .selection-link input:focus,
+.accent-hex-form:focus-within,
+.app-shell .profile-name-input:focus,
+.app-shell .inline-search:focus-within,
+.app-shell .note-find:focus-within {
+  outline:none;
+  border-color:var(--input-focus-border);
+  box-shadow:var(--input-focus-ring);
+}
+.app-shell .note-find:focus-within {
+  box-shadow:var(--input-focus-ring), var(--shadow-find);
+}
+.app-shell .inline-search input:focus-visible { outline:none; }

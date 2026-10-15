@@ -1,0 +1,4321 @@
+Scanning <workspace>\src for token violations...
+
+⚠️  Found 857 potential token violations:
+
+📁 <workspace>\src\App.tsx
+   Line 245: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: matchMedia('(max-width:700px)').matches ? '.mobile-menu' : nextCollapsed ? '.sid
+
+📁 <workspace>\src\buttons.css
+   Line 1: Hardcoded pixel value
+   Found: :9999px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: :root { --button-radius:9999px; }
+
+   Line 9: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: min-height:28px;
+
+   Line 14: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size:12px;
+
+   Line 15: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: line-height:18px;
+
+   Line 25: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-menu:has(.selection-link, .selection-colors, .selection-blocks) { bor
+
+   Line 26: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-menu:has(.selection-link, .selection-colors, .selection-blocks) input
+
+   Line 44: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-tools > button { min-width:30px; }
+
+   Line 45: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .view-switch .t-tab { width:24px; height:24px; padding:4px; }
+
+   Line 45: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .view-switch .t-tab { width:24px; height:24px; padding:4px; }
+
+   Line 50: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:24px;
+
+   Line 57: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:16px;
+
+   Line 63: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:16px;
+
+   Line 68: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:10px;
+
+   Line 73: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:24px;
+
+   Line 80: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:16px;
+
+   Line 93: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:12px !important;
+
+📁 <workspace>\src\cloud-storage.css
+   Line 9: Hardcoded pixel value
+   Found: :220px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-layout { display:grid; grid-template-columns:220px minmax(0,1fr); f
+
+   Line 10: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-sidebar { padding:24px 12px; background:var(--sidebar); }
+
+   Line 11: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-sidebar h2 { margin:0 12px 24px; font-size:14px; font-weight:500; }
+
+   Line 12: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .preferences-nav-item { display:flex; align-items:center; gap:10px; w
+
+   Line 12: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .preferences-nav-item { display:flex; align-items:center; gap:10px; w
+
+   Line 14: Hardcoded pixel value
+   Found: :56px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-panel { position:relative; display:flex; flex-direction:column; min
+
+   Line 15: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-close { position:absolute; top:14px; right:14px; }
+
+   Line 15: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-close { position:absolute; top:14px; right:14px; }
+
+   Line 17: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-section-title { font-size:15px; font-weight:600; margin:0 0 16px; }
+
+   Line 19: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .settings-dialog .privacy-note { border-top:1px solid var(--line); padding-top:2
+
+   Line 20: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-settings { padding-top:24px; }
+
+   Line 21: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-list-heading { display:flex; align-items:center; gap:12px; margin-bottom:
+
+   Line 21: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-list-heading { display:flex; align-items:center; gap:12px; margin-bottom:
+
+   Line 22: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-list-heading h3 { font-size:16px; font-weight:600; }
+
+   Line 23: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-list-heading > span { color:var(--muted); font-size:12px; }
+
+   Line 24: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .cloud-settings .cloud-connectors { display:flex; align-items:center;
+
+   Line 24: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .cloud-settings .cloud-connectors { display:flex; align-items:center;
+
+   Line 24: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .cloud-settings .cloud-connectors { display:flex; align-items:center;
+
+   Line 24: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .cloud-settings .cloud-connectors { display:flex; align-items:center;
+
+   Line 26: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-provider-link { display:flex; align-items:center; gap:12px; text-align:le
+
+   Line 27: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-connection-label { display:inline-flex; align-items:center; justify-conte
+
+   Line 30: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-provider-icon { display:grid; place-items:center; width:28px; height:28px
+
+   Line 30: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-provider-icon { display:grid; place-items:center; width:28px; height:28px
+
+   Line 31: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-provider-icon img { width:18px; height:18px; }
+
+   Line 31: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-provider-icon img { width:18px; height:18px; }
+
+   Line 32: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-list-note { margin-top:12px; font-size:12px; color:var(--muted); }
+
+   Line 32: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-list-note { margin-top:12px; font-size:12px; color:var(--muted); }
+
+   Line 35: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-back { display:inline-flex; align-items:center; gap:6px; font-size:12px; 
+
+   Line 35: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-back { display:inline-flex; align-items:center; gap:6px; font-size:12px; 
+
+   Line 37: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-header { position:sticky; top:0; z-index:2; background:var(--paper
+
+   Line 45: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height:24px;
+
+   Line 53: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-heading { display:flex; gap:12px; align-items:center; margin-botto
+
+   Line 53: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-heading { display:flex; gap:12px; align-items:center; margin-botto
+
+   Line 54: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-heading h3 { font-size:16px; font-weight:600; }
+
+   Line 55: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-benefits { padding-left:20px; margin:12px 0 24px; color:var(--secondary);
+
+   Line 55: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-benefits { padding-left:20px; margin:12px 0 24px; color:var(--secondary);
+
+   Line 55: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-benefits { padding-left:20px; margin:12px 0 24px; color:var(--secondary);
+
+   Line 58: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-cards { display:grid; gap:10px; border-top:1px solid var(--line); 
+
+   Line 58: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-cards { display:grid; gap:10px; border-top:1px solid var(--line); 
+
+   Line 59: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-conflict { border:1px solid var(--line); border-radius:12px; padding:16px
+
+   Line 59: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-conflict { border:1px solid var(--line); border-radius:12px; padding:16px
+
+   Line 59: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-conflict { border:1px solid var(--line); border-radius:12px; padding:16px
+
+   Line 60: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-conflict h4 { margin:0 0 8px; font-size:13px; }
+
+   Line 61: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-conflict-actions { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; 
+
+   Line 62: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-card { display:flex; align-items:flex-start; gap:12px; border:1px 
+
+   Line 62: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-card { display:flex; align-items:flex-start; gap:12px; border:1px 
+
+   Line 62: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-card { display:flex; align-items:flex-start; gap:12px; border:1px 
+
+   Line 69: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-card-copy h4 { font-size:13px; font-weight:500; margin:0; line-height:20p
+
+   Line 69: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-card-copy h4 { font-size:13px; font-weight:500; margin:0; line-height:20p
+
+   Line 70: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-card-copy p { margin-top:4px; font-size:12px; line-height:1.5; ove
+
+   Line 71: Hardcoded pixel value
+   Found: :19px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-state-icon { width:19px; height:19px; border:1px dashed var(--line); bord
+
+   Line 71: Hardcoded pixel value
+   Found: :19px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-state-icon { width:19px; height:19px; border:1px dashed var(--line); bord
+
+   Line 74: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-badge { display:inline-block; padding:2px 6px; background:var(--hover); b
+
+   Line 75: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-error { color:var(--danger); margin-top:12px; font-size:12px; }
+
+   Line 75: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-error { color:var(--danger); margin-top:12px; font-size:12px; }
+
+   Line 76: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-footnote { margin-top:12px; font-size:11px; color:var(--muted); }
+
+   Line 76: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: dialog .cloud-footnote { margin-top:12px; font-size:11px; color:var(--muted); }
+
+   Line 77: Hardcoded pixel value
+   Found: :520px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:520px) {
+
+   Line 78: Hardcoded pixel value
+   Found: :136px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-layout { grid-template-columns:136px minmax(0,1fr); }
+
+   Line 79: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-sidebar { padding:20px 8px; }
+
+   Line 80: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-sidebar h2 { margin-inline:8px; font-size:13px; }
+
+   Line 84: Hardcoded pixel value
+   Found: :31px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .cloud-detail-card > .secondary-button { margin-left:31px; }
+
+   Line 86: Hardcoded pixel value
+   Found: :420px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:420px) {
+
+   Line 88: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-sidebar { display:flex; align-items:center; gap:16px; padding:16px 
+
+   Line 88: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-sidebar { display:flex; align-items:center; gap:16px; padding:16px 
+
+   Line 92: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .preferences-panel { position:static; padding-top:20px; }
+
+📁 <workspace>\src\components\tiptap-ui-primitive\badge\badge-group.scss
+   Line 5: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.25rem;
+
+📁 <workspace>\src\components\tiptap-ui-primitive\badge\badge.scss
+   Line 2: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.625rem;
+
+   Line 8: Hardcoded rem value
+   Found: : 1.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1.25rem;
+
+   Line 9: Hardcoded rem value
+   Found: : 1.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 1.25rem;
+
+   Line 10: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.25rem;
+
+   Line 22: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.75rem;
+
+   Line 23: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1.5rem;
+
+   Line 24: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 1.5rem;
+
+   Line 25: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.375rem;
+
+   Line 31: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1rem;
+
+   Line 32: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 1rem;
+
+   Line 33: Hardcoded rem value
+   Found: : 0.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.125rem;
+
+   Line 55: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.625rem;
+
+   Line 56: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.625rem;
+
+   Line 60: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.75rem;
+
+   Line 61: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.75rem;
+
+📁 <workspace>\src\components\tiptap-ui-primitive\button\button.scss
+   Line 2: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.875rem;
+
+   Line 8: Hardcoded rem value
+   Found: : 2rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 2rem;
+
+   Line 9: Hardcoded rem value
+   Found: : 2rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 2rem;
+
+   Line 11: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.5rem;
+
+   Line 12: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.25rem;
+
+   Line 34: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1.5rem;
+
+   Line 35: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 1.5rem;
+
+   Line 42: Hardcoded rem value
+   Found: : 0.9375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.9375rem;
+
+   Line 43: Hardcoded rem value
+   Found: : 2.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 2.375rem;
+
+   Line 44: Hardcoded rem value
+   Found: : 2.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 2.375rem;
+
+   Line 45: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.625rem;
+
+   Line 50: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.75rem;
+
+   Line 52: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1.5rem;
+
+   Line 53: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 1.5rem;
+
+   Line 54: Hardcoded rem value
+   Found: : 0.3125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.3125rem;
+
+   Line 63: Hardcoded rem value
+   Found: : 1.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: line-height: 1.5rem;
+
+   Line 83: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1rem;
+
+   Line 84: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1rem;
+
+   Line 88: Hardcoded rem value
+   Found: : 1.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1.125rem;
+
+   Line 89: Hardcoded rem value
+   Found: : 1.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1.125rem;
+
+   Line 93: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.875rem;
+
+   Line 94: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.875rem;
+
+   Line 99: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1rem;
+
+   Line 100: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1rem;
+
+   Line 104: Hardcoded rem value
+   Found: : 1.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1.125rem;
+
+   Line 105: Hardcoded rem value
+   Found: : 1.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1.125rem;
+
+   Line 109: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.875rem;
+
+   Line 110: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.875rem;
+
+   Line 115: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.75rem;
+
+   Line 116: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.75rem;
+
+   Line 120: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.875rem;
+
+   Line 121: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.875rem;
+
+   Line 125: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.625rem;
+
+   Line 126: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.625rem;
+
+   Line 131: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.625rem;
+
+   Line 132: Hardcoded rem value
+   Found: : 0.625rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.625rem;
+
+   Line 136: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.75rem;
+
+   Line 137: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.75rem;
+
+   Line 141: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.5rem;
+
+   Line 142: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.5rem;
+
+   Line 147: Hardcoded rem value
+   Found: : 0.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.125rem;
+
+   Line 151: Hardcoded rem value
+   Found: : 0.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.125rem;
+
+   Line 160: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding-right: 0.25rem;
+
+   Line 163: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding-right: 0.375rem;
+
+   Line 167: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding-right: 0.25rem;
+
+   Line 173: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1rem;
+
+   Line 179: Hardcoded rem value
+   Found: : 1.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1.125rem;
+
+   Line 183: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.875rem;
+
+   Line 200: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 1rem;
+
+   Line 201: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 1rem;
+
+   Line 204: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: border-radius: 0.25rem;
+
+   Line 212: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.875rem;
+
+   Line 213: Hardcoded rem value
+   Found: : 0.875rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.875rem;
+
+   Line 239: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: width: 0.5rem;
+
+   Line 240: Hardcoded rem value
+   Found: : 0.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: height: 0.125rem;
+
+   Line 241: Hardcoded pixel value
+   Found: : 999px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 999px;
+
+📁 <workspace>\src\components\tiptap-ui-primitive\card\card.scss
+   Line 14: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --padding: 0.375rem;
+
+   Line 33: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.375rem;
+
+   Line 43: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.375rem;
+
+   Line 60: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.25rem;
+
+   Line 67: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.75rem 0.5rem 0.25rem;
+
+   Line 69: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.75rem;
+
+📁 <workspace>\src\components\tiptap-ui-primitive\dropdown-menu\dropdown-menu.scss
+   Line 23: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --padding: 0.375rem;
+
+   Line 27: Hardcoded rem value
+   Found: : 8rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 8rem;
+
+   Line 32: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.375rem;
+
+   Line 43: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --slide-y: 0.5rem;
+
+   Line 46: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --slide-x: 0.5rem;
+
+   Line 64: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --padding: 0.375rem;
+
+   Line 67: Hardcoded rem value
+   Found: : 6rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: min-width: 6rem;
+
+   Line 70: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.25rem;
+
+   Line 81: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --slide-y: 0.5rem;
+
+   Line 84: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --slide-x: 0.5rem;
+
+   Line 99: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding: 0.75rem 0.5rem 0.25rem;
+
+   Line 100: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.75rem;
+
+   Line 108: Hardcoded rem value
+   Found: : 1.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: padding-left: 1.75rem;
+
+   Line 121: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.25rem;
+
+📁 <workspace>\src\components\tiptap-ui-primitive\tooltip\tooltip.scss
+   Line 3: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-tooltip-padding: 0.375rem 0.625rem;
+
+   Line 21: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: font-size: 0.75rem;
+
+   Line 22: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: line-height: 1rem;
+
+   Line 50: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: gap: 0.5rem;
+
+📁 <workspace>\src\create-menu.css
+   Line 24: Hardcoded pixel value
+   Found: : 244px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width: 244px; height: 244px;
+
+   Line 24: Hardcoded pixel value
+   Found: : 244px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width: 244px; height: 244px;
+
+   Line 31: Hardcoded pixel value
+   Found: : 120px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --pill-w: 120px;
+
+   Line 32: Hardcoded pixel value
+   Found: : 38px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --pill-h: 38px;
+
+   Line 33: Hardcoded pixel value
+   Found: : 212px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --panel-w: 212px;
+
+   Line 34: Hardcoded pixel value
+   Found: : 166px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --panel-h: 166px;    /* four rows and the padding; no header any more */
+
+   Line 145: Hardcoded hex color
+   Found: #212429
+   Suggestion: Use var(--color-*) token
+   Context: #212429 with light type in dark — which is what dark
+
+   Line 207: Hardcoded pixel value
+   Found: : 11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: padding: 11px 10px;
+
+   Line 233: Hardcoded pixel value
+   Found: : 10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: display: flex; align-items: center; gap: 10px;
+
+   Line 234: Hardcoded pixel value
+   Found: : 34px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height: 34px; padding: 0 14px;
+
+   Line 247: Hardcoded pixel value
+   Found: : 13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 13px;
+
+   Line 294: Hardcoded pixel value
+   Found: :38px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height:38px;
+
+   Line 298: Hardcoded pixel value
+   Found: :160px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --panel-w:160px;
+
+   Line 317: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px) {
+
+📁 <workspace>\src\delete-note-dialog.css
+   Line 17: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: gap:16px;
+
+   Line 18: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: padding:24px;
+
+   Line 23: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog h2 { font-size:18px;font-weight:600;line-height:1.4; }
+
+   Line 24: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog p { margin-top:10px;font-size:13px;line-height:1.6;color:var
+
+   Line 24: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog p { margin-top:10px;font-size:13px;line-height:1.6;color:var
+
+   Line 25: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog-actions { display:flex;justify-content:flex-end;gap:8px;flex
+
+   Line 26: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog-actions button { padding:9px 14px;font-size:13px;line-height
+
+   Line 26: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog-actions button { padding:9px 14px;font-size:13px;line-height
+
+   Line 27: Hardcoded pixel value
+   Found: :399px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width:399px) {
+
+   Line 29: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-delete-dialog-actions button { width:100%;min-height:44px; }
+
+📁 <workspace>\src\favorite-button.css
+   Line 2: Hardcoded hex color
+   Found: #f40051
+   Suggestion: Use var(--color-*) token
+   Context: --like-color: #f40051;
+
+   Line 7: Hardcoded pixel value
+   Found: : 20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --like-particle-dist: 20px;
+
+   Line 52: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .favorite-button .t-like-icon { display:grid; width:18px; height:18px; }
+
+   Line 52: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .favorite-button .t-like-icon { display:grid; width:18px; height:18px; }
+
+📁 <workspace>\src\feedback.css
+   Line 38: Hardcoded pixel value
+   Found: :999px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-position:focus-visible{outline:2px solid var(--secondary);outline-offset:
+
+   Line 40: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-content{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 1
+
+   Line 40: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-content{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 1
+
+   Line 40: Hardcoded pixel value
+   Found: :999px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-content{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 1
+
+   Line 40: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-content{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 1
+
+   Line 40: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-content{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 1
+
+   Line 43: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-dismiss{display:inline-flex;align-items:center;justify-content:center;fle
+
+   Line 43: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .toast-dismiss{display:inline-flex;align-items:center;justify-content:center;fle
+
+   Line 49: Hardcoded pixel value
+   Found: :701px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(min-width:701px){.app-shell .toast-position{left:calc(50% + var(--sidebar
+
+   Line 57: Hardcoded pixel value
+   Found: : 60px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --stack-rise: 60px;
+
+   Line 60: Hardcoded pixel value
+   Found: : 12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --stack-peek: 12px;
+
+📁 <workspace>\src\folders.css
+   Line 7: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:36px;
+
+   Line 8: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height:44px;
+
+   Line 10: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: margin:10px 0 14px;
+
+   Line 39: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:16px;
+
+   Line 54: Hardcoded pixel value
+   Found: : 36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: margin-bottom: 36px;
+
+   Line 75: Hardcoded pixel value
+   Found: :999px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:999px;
+
+   Line 77: Hardcoded pixel value
+   Found: : 13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 13px;
+
+   Line 78: Hardcoded pixel value
+   Found: : 20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: line-height: 20px;
+
+   Line 94: Hardcoded pixel value
+   Found: :38px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height:38px;
+
+   Line 96: Hardcoded pixel value
+   Found: :999px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:999px;
+
+   Line 107: Hardcoded pixel value
+   Found: : 36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: margin-bottom: 36px;
+
+   Line 118: Hardcoded pixel value
+   Found: : 16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: margin-bottom: 16px;
+
+   Line 122: Hardcoded pixel value
+   Found: : 13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 13px;
+
+   Line 133: Hardcoded pixel value
+   Found: : 16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: gap: 16px;
+
+   Line 153: Hardcoded pixel value
+   Found: : 15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 15px;
+
+   Line 207: Hardcoded pixel value
+   Found: : 28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width: 28px;
+
+   Line 208: Hardcoded pixel value
+   Found: : 28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height: 28px;
+
+   Line 209: Hardcoded pixel value
+   Found: : 28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: min-width: 28px;
+
+   Line 210: Hardcoded pixel value
+   Found: : 28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: min-height: 28px;
+
+   Line 212: Hardcoded pixel value
+   Found: : 16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 16px;
+
+   Line 224: Hardcoded pixel value
+   Found: : 10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: padding: 10px 1px 0;
+
+   Line 228: Hardcoded pixel value
+   Found: : 14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 14px;
+
+   Line 238: Hardcoded pixel value
+   Found: : 12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 12px;
+
+   Line 248: Hardcoded pixel value
+   Found: : 22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 22px;
+
+   Line 283: Hardcoded pixel value
+   Found: : 11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 11px;
+
+   Line 288: Hardcoded pixel value
+   Found: : 700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width: 700px) {
+
+   Line 290: Hardcoded pixel value
+   Found: : 22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: margin-bottom: 22px;
+
+   Line 294: Hardcoded pixel value
+   Found: : 12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: gap: 12px;
+
+   Line 297: Hardcoded pixel value
+   Found: : 14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 14px;
+
+   Line 300: Hardcoded pixel value
+   Found: : 32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width: 32px;
+
+   Line 301: Hardcoded pixel value
+   Found: : 32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height: 32px;
+
+   Line 307: Hardcoded pixel value
+   Found: : 11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size: 11px;
+
+📁 <workspace>\src\motion.css
+   Line 89: Hardcoded pixel value
+   Found: : 100px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --panel-translate-y: 100px;
+
+   Line 95: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width:700px) {
+
+   Line 129: Hardcoded hex color
+   Found: #0f0f0f
+   Suggestion: Use var(--color-*) token
+   Context: --tabs-text-active: #0f0f0f;
+
+   Line 130: Hardcoded hex color
+   Found: #f1f1f1
+   Suggestion: Use var(--color-*) token
+   Context: --tabs-bar-bg: #f1f1f1;
+
+   Line 144: Hardcoded pixel value
+   Found: : 48px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 48px;
+
+   Line 152: Hardcoded pixel value
+   Found: : 30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height: 30px;
+
+   Line 156: Hardcoded pixel value
+   Found: : 48px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 48px;
+
+   Line 172: Hardcoded pixel value
+   Found: : 30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height: 30px;
+
+   Line 175: Hardcoded pixel value
+   Found: : 48px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius: 48px;
+
+   Line 199: Hardcoded hex color
+   Found: #2f2f2f
+   Suggestion: Use var(--color-*) token
+   Context: --tt-fg: #2f2f2f;
+
+   Line 341: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width:700px) {
+
+📁 <workspace>\src\note-actions.css
+   Line 3: Hardcoded pixel value
+   Found: :248px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:248px;
+
+   Line 9: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:24px;
+
+   Line 17: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: gap:10px;
+
+   Line 18: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: padding:10px 12px;
+
+   Line 19: Hardcoded pixel value
+   Found: :38px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: min-height:38px;
+
+   Line 20: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:16px;
+
+   Line 21: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size:13px;
+
+   Line 40: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-actions-label { color:var(--muted); padding:8px 10px; font-size:12px; over
+
+   Line 41: Hardcoded pixel value
+   Found: :180px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-actions-menu.export-menu { width:180px; }
+
+   Line 43: Hardcoded pixel value
+   Found: :540px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width:540px) {
+
+   Line 45: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-action { gap:8px; padding:10px 8px; }
+
+📁 <workspace>\src\note-find.css
+   Line 3: Hardcoded pixel value
+   Found: :72px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: top:72px;
+
+   Line 4: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: right:28px;
+
+   Line 6: Hardcoded pixel value
+   Found: :280px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:280px;
+
+   Line 16: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find input { min-width:0;border:0;background:transparent;font-size:13px;li
+
+   Line 16: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find input { min-width:0;border:0;background:transparent;font-size:13px;li
+
+   Line 20: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find-count { flex-shrink:0;color:var(--muted);font-size:12px;font-variant-
+
+   Line 21: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find-icon { display:flex;align-items:center;justify-content:center;width:2
+
+   Line 21: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find-icon { display:flex;align-items:center;justify-content:center;width:2
+
+   Line 26: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find-actions button { border-radius:var(--button-radius, 8px);padding:6px 
+
+   Line 31: Hardcoded hex color
+   Found: #e9b949
+   Suggestion: Use var(--color-*) token
+   Context: .live-note .note-find-match { background:color-mix(in srgb, #e9b949 30%, transpa
+
+   Line 32: Hardcoded hex color
+   Found: #e9b949
+   Suggestion: Use var(--color-*) token
+   Context: .live-note .note-find-match.is-current { background:color-mix(in srgb, #e9b949 5
+
+   Line 32: Hardcoded hex color
+   Found: #b38620
+   Suggestion: Use var(--color-*) token
+   Context: .live-note .note-find-match.is-current { background:color-mix(in srgb, #e9b949 5
+
+   Line 33: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px) {
+
+   Line 34: Hardcoded pixel value
+   Found: :68px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find { top:68px;right:16px; }
+
+   Line 34: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .note-find { top:68px;right:16px; }
+
+   Line 35: Hardcoded pixel value
+   Found: :48px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .editor:has(.note-find) .editor-paper { padding-top:48px; }
+
+   Line 36: Hardcoded pixel value
+   Found: :128px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .editor:has(.note-find-replace) .editor-paper { padding-top:128px; }
+
+📁 <workspace>\src\note-outline.css
+   Line 6: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:44px;
+
+   Line 13: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --outline-item-height:14px;
+
+   Line 18: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:44px;
+
+   Line 23: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: --outline-item-height:10px;
+
+   Line 34: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: width:44px;
+
+   Line 63: Hardcoded pixel value
+   Found: :240px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: max-width:240px;
+
+   Line 66: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:12px;
+
+   Line 70: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size:13px;
+
+   Line 87: Hardcoded pixel value
+   Found: :92px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note :is(h1, h2, h3, h4, h5, h6) { scroll-margin-top:92px; }
+
+   Line 89: Hardcoded pixel value
+   Found: :1180px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width:1180px) {
+
+📁 <workspace>\src\SelectionMenu.tsx
+   Line 88: Hardcoded hex color
+   Found: #fef08a
+   Suggestion: Use var(--color-*) token
+   Context: { name: 'Amarelo', color: '#fef08a' },
+
+   Line 89: Hardcoded hex color
+   Found: #bbf7d0
+   Suggestion: Use var(--color-*) token
+   Context: { name: 'Verde', color: '#bbf7d0' },
+
+   Line 90: Hardcoded hex color
+   Found: #bfdbfe
+   Suggestion: Use var(--color-*) token
+   Context: { name: 'Azul', color: '#bfdbfe' },
+
+   Line 91: Hardcoded hex color
+   Found: #fbcfe8
+   Suggestion: Use var(--color-*) token
+   Context: { name: 'Rosa', color: '#fbcfe8' },
+
+   Line 92: Hardcoded hex color
+   Found: #ddd6fe
+   Suggestion: Use var(--color-*) token
+   Context: { name: 'Lilás', color: '#ddd6fe' },
+
+📁 <workspace>\src\sidebar.css
+   Line 15: Hardcoded pixel value
+   Found: :258px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell { --sidebar-expanded-width:258px; --sidebar-rail-width:50px; }
+
+   Line 15: Hardcoded pixel value
+   Found: :50px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell { --sidebar-expanded-width:258px; --sidebar-rail-width:50px; }
+
+   Line 29: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-expanded > .recent-notes { flex:1; min-height:80px; overflow-y:auto; sc
+
+   Line 32: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-heading .icon-button { width:24px; height:24px; flex-shrink:0; }
+
+   Line 32: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-heading .icon-button { width:24px; height:24px; flex-shrink:0; }
+
+   Line 33: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-section-toggle { display:inline-flex; align-items:center; gap:5px; padd
+
+   Line 43: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile { width:100%;min-height:44px;padding:6px;text-align:left;border-top:0;b
+
+   Line 43: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile { width:100%;min-height:44px;padding:6px;text-align:left;border-top:0;b
+
+   Line 46: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-label { flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white
+
+   Line 47: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-settings-icon { display:flex;align-items:center;justify-content:center;
+
+   Line 47: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-settings-icon { display:flex;align-items:center;justify-content:center;
+
+   Line 48: Hardcoded pixel value
+   Found: :29px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar .avatar { width:29px; height:29px; flex-shrink:0; }
+
+   Line 48: Hardcoded pixel value
+   Found: :29px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar .avatar { width:29px; height:29px; flex-shrink:0; }
+
+   Line 56: Hardcoded pixel value
+   Found: :34px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-notes .collection-note { padding-left:34px; }
+
+   Line 59: Hardcoded pixel value
+   Found: :701px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (min-width:701px) {
+
+   Line 90: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail .icon-button { width:36px; height:36px; flex-shrink:0; }
+
+   Line 90: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail .icon-button { width:36px; height:36px; flex-shrink:0; }
+
+   Line 92: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-brand-swap { width:24px; height:24px; place-items:center; }
+
+   Line 92: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-brand-swap { width:24px; height:24px; place-items:center; }
+
+   Line 93: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-brand-swap .t-icon { display:grid; place-items:center; width:24px;
+
+   Line 93: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-brand-swap .t-icon { display:grid; place-items:center; width:24px;
+
+   Line 94: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-logo img { display:block; width:24px; height:24px; border-radius:7
+
+   Line 94: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-logo img { display:block; width:24px; height:24px; border-radius:7
+
+   Line 95: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-rail-actions { display:flex; flex-direction:column; align-items:center;
+
+   Line 104: Hardcoded pixel value
+   Found: :701px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (min-width:701px) and (max-width:800px) {
+
+   Line 104: Hardcoded pixel value
+   Found: :800px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (min-width:701px) and (max-width:800px) {
+
+   Line 105: Hardcoded pixel value
+   Found: :240px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell { --sidebar-expanded-width:240px; }
+
+   Line 107: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-width:700px) {
+
+   Line 110: Hardcoded pixel value
+   Found: :258px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar-expanded { width:258px; }
+
+   Line 113: Hardcoded pixel value
+   Found: :650px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media (max-height:650px) {
+
+📁 <workspace>\src\styles\_variables.scss
+   Line 138: Hardcoded rem value
+   Found: : 0.125rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-radius-xxs: 0.125rem; /* 2px */
+
+   Line 139: Hardcoded rem value
+   Found: : 0.25rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-radius-xs: 0.25rem; /* 4px */
+
+   Line 140: Hardcoded rem value
+   Found: : 0.375rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-radius-sm: 0.375rem; /* 6px */
+
+   Line 141: Hardcoded rem value
+   Found: : 0.5rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-radius-md: 0.5rem; /* 8px */
+
+   Line 142: Hardcoded rem value
+   Found: : 0.75rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-radius-lg: 0.75rem; /* 12px */
+
+   Line 143: Hardcoded rem value
+   Found: : 1rem
+   Suggestion: Use var(--space-*) or var(--font-size-*) token
+   Context: --tt-radius-xl: 1rem; /* 16px */
+
+   Line 257: Hardcoded hex color
+   Found: #fef9c3
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-yellow: #fef9c3;
+
+   Line 258: Hardcoded hex color
+   Found: #dcfce7
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-green: #dcfce7;
+
+   Line 259: Hardcoded hex color
+   Found: #e0f2fe
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-blue: #e0f2fe;
+
+   Line 260: Hardcoded hex color
+   Found: #f3e8ff
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-purple: #f3e8ff;
+
+   Line 261: Hardcoded hex color
+   Found: #ffe4e6
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-red: #ffe4e6;
+
+   Line 262: Hardcoded RGB color
+   Found: rgb(248, 248, 247)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-gray: rgb(248, 248, 247);
+
+   Line 263: Hardcoded RGB color
+   Found: rgb(244, 238, 238)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-brown: rgb(244, 238, 238);
+
+   Line 264: Hardcoded RGB color
+   Found: rgb(251, 236, 221)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-orange: rgb(251, 236, 221);
+
+   Line 265: Hardcoded RGB color
+   Found: rgb(252, 241, 246)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-pink: rgb(252, 241, 246);
+
+   Line 267: Hardcoded hex color
+   Found: #fbe604
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-yellow-contrast: #fbe604;
+
+   Line 268: Hardcoded hex color
+   Found: #c7fad8
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-green-contrast: #c7fad8;
+
+   Line 269: Hardcoded hex color
+   Found: #ceeafd
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-blue-contrast: #ceeafd;
+
+   Line 270: Hardcoded hex color
+   Found: #e4ccff
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-purple-contrast: #e4ccff;
+
+   Line 271: Hardcoded hex color
+   Found: #ffccd0
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-red-contrast: #ffccd0;
+
+   Line 279: Hardcoded hex color
+   Found: #6b6524
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-yellow: #6b6524;
+
+   Line 280: Hardcoded hex color
+   Found: #509568
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-green: #509568;
+
+   Line 281: Hardcoded hex color
+   Found: #6e92aa
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-blue: #6e92aa;
+
+   Line 282: Hardcoded hex color
+   Found: #583e74
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-purple: #583e74;
+
+   Line 283: Hardcoded hex color
+   Found: #743e42
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-red: #743e42;
+
+   Line 284: Hardcoded RGB color
+   Found: rgb(47, 47, 47)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-gray: rgb(47, 47, 47);
+
+   Line 285: Hardcoded RGB color
+   Found: rgb(74, 50, 40)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-brown: rgb(74, 50, 40);
+
+   Line 286: Hardcoded RGB color
+   Found: rgb(92, 59, 35)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-orange: rgb(92, 59, 35);
+
+   Line 287: Hardcoded RGB color
+   Found: rgb(78, 44, 60)
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-pink: rgb(78, 44, 60);
+
+   Line 289: Hardcoded hex color
+   Found: #58531e
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-yellow-contrast: #58531e;
+
+   Line 290: Hardcoded hex color
+   Found: #47855d
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-green-contrast: #47855d;
+
+   Line 291: Hardcoded hex color
+   Found: #5e86a1
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-blue-contrast: #5e86a1;
+
+   Line 292: Hardcoded hex color
+   Found: #4c3564
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-purple-contrast: #4c3564;
+
+   Line 293: Hardcoded hex color
+   Found: #643539
+   Suggestion: Use var(--color-*) token
+   Context: --tt-color-highlight-red-contrast: #643539;
+
+📁 <workspace>\src\styles.css
+   Line 1: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded hex color
+   Found: #0d0d0d
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded hex color
+   Found: #666
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded hex color
+   Found: #777
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded hex color
+   Found: #e9e9e9
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded hex color
+   Found: #0d0d0d
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded hex color
+   Found: #b42318
+   Suggestion: Use var(--color-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 1: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: :root{font-family:"DM Sans",Arial,Helvetica,sans-serif;font-optical-sizing:auto;
+
+   Line 2: Hardcoded hex color
+   Found: #212121
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #2f2f2f
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #ececec
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #b4b4b4
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #a0a0a0
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #383838
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #303030
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #f4f4f4
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #111
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 2: Hardcoded hex color
+   Found: #ff938a
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark]{color-scheme:dark;--paper:#212121;--sidebar:#171717;--sur
+
+   Line 3: Hardcoded hex color
+   Found: #ddd
+   Suggestion: Use var(--color-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :258px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :23px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :26px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :62px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :29px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :29px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :258px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :60px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :800px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :42px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :768px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :38px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :190px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :124px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :440px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :25px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :380px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :21px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :25px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :768px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :1060px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :54px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :40px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :46px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :19px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :400px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :115px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :65px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :65px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :380px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 3: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: *{box-sizing:border-box}html,body{-webkit-font-smoothing:antialiased;-moz-osx-fo
+
+   Line 4: Hardcoded pixel value
+   Found: :1100px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 4: Hardcoded pixel value
+   Found: :40px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 4: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 4: Hardcoded pixel value
+   Found: :27px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 4: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 4: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 4: Hardcoded pixel value
+   Found: :300px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:1100px){.library{padding:40px 28px}.row-collection{display:none
+
+   Line 5: Hardcoded pixel value
+   Found: :800px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :240px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :240px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :25px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :220px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :25px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 5: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:800px){.sidebar{width:240px}main{margin-left:240px}.library{pad
+
+   Line 6: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :258px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :56px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :27px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :26px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :150px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :400px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :26px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :17px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :230px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :56px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :26px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 6: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.sidebar{width:258px;transform:translateX(-100%);visibil
+
+   Line 7: Hardcoded pixel value
+   Found: :370px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :17px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :23px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :160px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 7: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.save-status{display:none}.editor{padding-inline:17px}.e
+
+   Line 11: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .reading .markdown-body{padding-top:14px}
+
+   Line 13: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .sidebar>.recent-notes{flex:1;min-height:80px;overflow-y:auto;scrollbar-width:th
+
+   Line 16: Hardcoded pixel value
+   Found: :650px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-height:650px){.sidebar>.recent-notes{flex:none;overflow:visible}.side
+
+   Line 19: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions) .save-status:not(.error){di
+
+   Line 19: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions) .save-status:not(.error){di
+
+   Line 19: Hardcoded pixel value
+   Found: :110px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions) .save-status:not(.error){di
+
+   Line 19: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions) .save-status:not(.error){di
+
+   Line 24: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .editor-paper .live-note{padding-top:16px;border-top:none}
+
+   Line 31: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note li[data-checked]{display:flex;gap:10px;align-items:flex-start;padding
+
+   Line 32: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note li[data-checked]>label{flex:0 0 auto;display:flex;align-items:center;
+
+   Line 33: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note li[data-checked]>label input{accent-color:var(--ink);cursor:pointer;w
+
+   Line 33: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note li[data-checked]>label input{accent-color:var(--ink);cursor:pointer;w
+
+   Line 38: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .saving-indicator{width:12px;height:12px;border:1.5px solid var(--line);border-t
+
+   Line 38: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .saving-indicator{width:12px;height:12px;border:1.5px solid var(--line);border-t
+
+   Line 40: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :76px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :49px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 40: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.topbar:has(.editor-actions){height:76px;align-items:fle
+
+   Line 43: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-menu{position:relative;z-index:40;background:var(--surface);border:no
+
+   Line 45: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-menu button{display:inline-flex;align-items:center;justify-content:ce
+
+   Line 45: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-menu button{display:inline-flex;align-items:center;justify-content:ce
+
+   Line 45: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-menu button{display:inline-flex;align-items:center;justify-content:ce
+
+   Line 47: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-tools .block-picker{gap:8px;min-width:80px;justify-content:space-betw
+
+   Line 47: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-tools .block-picker{gap:8px;min-width:80px;justify-content:space-betw
+
+   Line 48: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-divider{width:1px;height:20px;background:var(--line);margin:0 3px}
+
+   Line 50: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-blocks button{justify-content:space-between;padding-inline:10px;font-
+
+   Line 50: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-blocks button{justify-content:space-between;padding-inline:10px;font-
+
+   Line 54: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-link input{width:0;min-width:0;flex:1;background:var(--paper);color:v
+
+   Line 55: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-link p{font-size:11px;color:var(--danger);margin-top:6px;max-width:28
+
+   Line 55: Hardcoded pixel value
+   Found: :280px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-link p{font-size:11px;color:var(--danger);margin-top:6px;max-width:28
+
+   Line 64: Hardcoded pixel value
+   Found: :370px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.selection-tools{gap:0}.selection-menu button{min-width:
+
+   Line 64: Hardcoded pixel value
+   Found: :27px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.selection-tools{gap:0}.selection-menu button{min-width:
+
+   Line 64: Hardcoded pixel value
+   Found: :66px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:370px){.selection-tools{gap:0}.selection-menu button{min-width:
+
+   Line 65: Hardcoded pixel value
+   Found: :540px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-tools{max-width:540px;row-gap:4px}
+
+   Line 66: Hardcoded pixel value
+   Found: :260px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-blocks{max-height:260px;overflow-y:auto}
+
+   Line 67: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-colors{padding:12px;border-top:1px solid var(--line)}
+
+   Line 69: Hardcoded hex color
+   Found: #202020
+   Suggestion: Use var(--color-*) token
+   Context: .selection-colors>div>button{width:28px;height:28px;min-width:28px;border:1px so
+
+   Line 69: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-colors>div>button{width:28px;height:28px;min-width:28px;border:1px so
+
+   Line 69: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-colors>div>button{width:28px;height:28px;min-width:28px;border:1px so
+
+   Line 69: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-colors>div>button{width:28px;height:28px;min-width:28px;border:1px so
+
+   Line 71: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-colors .clear-highlight{gap:6px;font-size:12px;margin-top:10px}
+
+   Line 71: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .selection-colors .clear-highlight{gap:6px;font-size:12px;margin-top:10px}
+
+   Line 72: Hardcoded hex color
+   Found: #202020
+   Suggestion: Use var(--color-*) token
+   Context: .live-note mark{color:#202020;border-radius:3px;padding:1px 0;box-decoration-bre
+
+   Line 73: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note h4,.live-note h5,.live-note h6{margin:16px 0 8px;font-weight:600;line
+
+   Line 74: Hardcoded pixel value
+   Found: :17px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note h4{font-size:17px}.live-note h5{font-size:16px}.live-note h6{font-siz
+
+   Line 74: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note h4{font-size:17px}.live-note h5{font-size:16px}.live-note h6{font-siz
+
+   Line 74: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .live-note h4{font-size:17px}.live-note h5{font-size:16px}.live-note h6{font-siz
+
+   Line 75: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){.selection-tools{max-width:calc(100vw - 32px)}}
+
+   Line 79: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: --surface:#171717;
+
+   Line 80: Hardcoded hex color
+   Found: #242424
+   Suggestion: Use var(--color-*) token
+   Context: --paper:#242424;
+
+   Line 81: Hardcoded hex color
+   Found: #f5f5f5
+   Suggestion: Use var(--color-*) token
+   Context: --ink:#f5f5f5;
+
+   Line 82: Hardcoded hex color
+   Found: #e5e5e5
+   Suggestion: Use var(--color-*) token
+   Context: --secondary:#e5e5e5;
+
+   Line 83: Hardcoded hex color
+   Found: #aaa
+   Suggestion: Use var(--color-*) token
+   Context: --muted:#aaa;
+
+   Line 84: Hardcoded hex color
+   Found: #383838
+   Suggestion: Use var(--color-*) token
+   Context: --line:#383838;
+
+   Line 85: Hardcoded hex color
+   Found: #383838
+   Suggestion: Use var(--color-*) token
+   Context: --hover:#383838;
+
+   Line 86: Hardcoded hex color
+   Found: #ff938a
+   Suggestion: Use var(--color-*) token
+   Context: --danger:#ff938a;
+
+   Line 92: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:24px;
+
+   Line 96: Hardcoded pixel value
+   Found: :130px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: min-width:130px;
+
+   Line 104: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height:32px;
+
+   Line 107: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size:13px;
+
+   Line 108: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:16px;
+
+   Line 127: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: --surface:#171717;
+
+   Line 128: Hardcoded hex color
+   Found: #242424
+   Suggestion: Use var(--color-*) token
+   Context: --paper:#242424;
+
+   Line 129: Hardcoded hex color
+   Found: #f5f5f5
+   Suggestion: Use var(--color-*) token
+   Context: --ink:#f5f5f5;
+
+   Line 130: Hardcoded hex color
+   Found: #e5e5e5
+   Suggestion: Use var(--color-*) token
+   Context: --secondary:#e5e5e5;
+
+   Line 131: Hardcoded hex color
+   Found: #aaa
+   Suggestion: Use var(--color-*) token
+   Context: --muted:#aaa;
+
+   Line 132: Hardcoded hex color
+   Found: #383838
+   Suggestion: Use var(--color-*) token
+   Context: --line:#383838;
+
+   Line 133: Hardcoded hex color
+   Found: #383838
+   Suggestion: Use var(--color-*) token
+   Context: --hover:#383838;
+
+   Line 134: Hardcoded hex color
+   Found: #ff938a
+   Suggestion: Use var(--color-*) token
+   Context: --danger:#ff938a;
+
+   Line 140: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: height:30px;
+
+   Line 141: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: min-width:30px;
+
+   Line 147: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: font-size:13px;
+
+   Line 173: Hardcoded pixel value
+   Found: :38px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-row .nav-item{padding-right:38px;background:transparent !important}
+
+   Line 175: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-row .count{position:absolute;right:3px;top:50%;transform:translateY(
+
+   Line 175: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-row .count{position:absolute;right:3px;top:50%;transform:translateY(
+
+   Line 176: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-more{position:absolute;right:3px;top:50%;transform:translateY(-50%);
+
+   Line 176: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-more{position:absolute;right:3px;top:50%;transform:translateY(-50%);
+
+   Line 176: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-more{position:absolute;right:3px;top:50%;transform:translateY(-50%);
+
+   Line 176: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-more{position:absolute;right:3px;top:50%;transform:translateY(-50%);
+
+   Line 180: Hardcoded pixel value
+   Found: :190px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-menu{z-index:60;padding:8px;min-width:190px;border:1px solid var(--l
+
+   Line 180: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-menu{z-index:60;padding:8px;min-width:190px;border:1px solid var(--l
+
+   Line 182: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-page-more{width:36px;height:36px;min-width:36px;min-height:36px;padd
+
+   Line 182: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-page-more{width:36px;height:36px;min-width:36px;min-height:36px;padd
+
+   Line 182: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-page-more{width:36px;height:36px;min-width:36px;min-height:36px;padd
+
+   Line 182: Hardcoded pixel value
+   Found: :36px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-page-more{width:36px;height:36px;min-width:36px;min-height:36px;padd
+
+   Line 184: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-delete-item{display:flex;align-items:center;gap:10px;padding:10px 12
+
+   Line 184: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-delete-item{display:flex;align-items:center;gap:10px;padding:10px 12
+
+   Line 184: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-delete-item{display:flex;align-items:center;gap:10px;padding:10px 12
+
+   Line 184: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-delete-item{display:flex;align-items:center;gap:10px;padding:10px 12
+
+   Line 186: Hardcoded hex color
+   Found: #e32136
+   Suggestion: Use var(--color-*) token
+   Context: :root{--confirmation-radius:24px;--confirmation-backdrop-blur:4px;--destructive-
+
+   Line 186: Hardcoded hex color
+   Found: #c9192c
+   Suggestion: Use var(--color-*) token
+   Context: :root{--confirmation-radius:24px;--confirmation-backdrop-blur:4px;--destructive-
+
+   Line 186: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: :root{--confirmation-radius:24px;--confirmation-backdrop-blur:4px;--destructive-
+
+   Line 187: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert{width:min(450px,calc(100% - 32px));padding:22px;border-radius:
+
+   Line 189: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert h2{font-size:18px;font-weight:500;line-height:1.4;overflow-wra
+
+   Line 190: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert p{margin:16px 0 22px;font-size:13px;line-height:1.6}
+
+   Line 190: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert p{margin:16px 0 22px;font-size:13px;line-height:1.6}
+
+   Line 191: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert-actions{display:flex;justify-content:flex-end;gap:10px;flex-wr
+
+   Line 192: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert-actions button{border-radius:12px;padding:10px 16px;font-size:
+
+   Line 192: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert-actions button{border-radius:12px;padding:10px 16px;font-size:
+
+   Line 192: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-alert-actions button{border-radius:12px;padding:10px 16px;font-size:
+
+   Line 195: Hardcoded pixel value
+   Found: :399px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:399px){.collection-alert-actions{flex-direction:column}.collect
+
+   Line 195: Hardcoded pixel value
+   Found: :44px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:399px){.collection-alert-actions{flex-direction:column}.collect
+
+   Line 268: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: border-radius:18px;
+
+   Line 274: Hardcoded pixel value
+   Found: :104px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-form textarea{display:block;width:100%;min-height:104px;pad
+
+   Line 274: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-form textarea{display:block;width:100%;min-height:104px;pad
+
+   Line 274: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-form textarea{display:block;width:100%;min-height:104px;pad
+
+   Line 274: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-form textarea{display:block;width:100%;min-height:104px;pad
+
+   Line 277: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-footer{display:flex;align-items:center;justify-content:spac
+
+   Line 277: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-footer{display:flex;align-items:center;justify-content:spac
+
+   Line 278: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .collection-settings-footer>span{color:var(--muted);font-size:11px;font-variant-
+
+   Line 280: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog-header{display:flex;align-items:center;gap:12px;min-height:66px;p
+
+   Line 280: Hardcoded pixel value
+   Found: :66px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog-header{display:flex;align-items:center;gap:12px;min-height:66px;p
+
+   Line 282: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog-header input{min-width:0;flex:1;border:0;outline:0;background:tra
+
+   Line 286: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog-body{height:calc(100% - 66px - var(--modal-scroll-inset));margin-
+
+   Line 287: Hardcoded pixel value
+   Found: :13px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-results-label{padding:6px 12px 8px;color:var(--muted);fon
+
+   Line 289: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-results>button{display:flex;align-items:center;gap:12px;w
+
+   Line 289: Hardcoded pixel value
+   Found: :54px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-results>button{display:flex;align-items:center;gap:12px;w
+
+   Line 289: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-results>button{display:flex;align-items:center;gap:12px;w
+
+   Line 292: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-result-icon{display:grid;place-items:center;flex:0 0 32px
+
+   Line 292: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-result-icon{display:grid;place-items:center;flex:0 0 32px
+
+   Line 294: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-result-title{display:block;overflow:hidden;color:var(--in
+
+   Line 295: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-dialog .search-results small{display:block;overflow:hidden;margin-top:4p
+
+   Line 298: Hardcoded pixel value
+   Found: :58px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-results-empty{display:grid;justify-items:center;padding:58px 24px 64px;c
+
+   Line 299: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-results-empty p{margin-top:14px;color:var(--ink);font-size:14px;font-wei
+
+   Line 299: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-results-empty p{margin-top:14px;color:var(--ink);font-size:14px;font-wei
+
+   Line 300: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .search-results-empty span{margin-top:6px;font-size:12px;line-height:1.5}
+
+   Line 301: Hardcoded pixel value
+   Found: :700px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){dialog.search-dialog{width:calc(100% - 20px);height:min(
+
+   Line 301: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){dialog.search-dialog{width:calc(100% - 20px);height:min(
+
+   Line 301: Hardcoded pixel value
+   Found: :60px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){dialog.search-dialog{width:calc(100% - 20px);height:min(
+
+   Line 301: Hardcoded pixel value
+   Found: :18px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){dialog.search-dialog{width:calc(100% - 20px);height:min(
+
+   Line 301: Hardcoded pixel value
+   Found: :10px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:700px){dialog.search-dialog{width:calc(100% - 20px);height:min(
+
+   Line 304: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell dialog.t-modal { border:0; border-radius:24px; }
+
+   Line 314: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: html,body{background:#fff!important;color:#171717!important}
+
+   Line 320: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: .print-note-title{display:block;margin:0 0 24px;color:#171717;font-size:25pt;fon
+
+   Line 322: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: .live-note{min-height:0!important;padding:0!important;color:#171717!important;fo
+
+   Line 323: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: .live-note :is(h1,h2,h3,h4,h5,h6){break-after:avoid-page;color:#171717!important
+
+   Line 325: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: .live-note a{color:#171717!important;text-decoration:underline}
+
+   Line 326: Hardcoded hex color
+   Found: #ddd
+   Suggestion: Use var(--color-*) token
+   Context: .live-note pre{border:1px solid #ddd;background:#f6f6f6!important;white-space:pr
+
+   Line 326: Hardcoded hex color
+   Found: #f6f6f6
+   Suggestion: Use var(--color-*) token
+   Context: .live-note pre{border:1px solid #ddd;background:#f6f6f6!important;white-space:pr
+
+📁 <workspace>\src\themes.css
+   Line 5: Hardcoded hex color
+   Found: #0d0d0d
+   Suggestion: Use var(--color-*) token
+   Context: @property --accent { syntax:'<color>'; inherits:true; initial-value:#0d0d0d; }
+
+   Line 6: Hardcoded hex color
+   Found: #666
+   Suggestion: Use var(--color-*) token
+   Context: @property --secondary { syntax:'<color>'; inherits:true; initial-value:#666; }
+
+   Line 7: Hardcoded hex color
+   Found: #777
+   Suggestion: Use var(--color-*) token
+   Context: @property --muted { syntax:'<color>'; inherits:true; initial-value:#777; }
+
+   Line 8: Hardcoded hex color
+   Found: #e9e9e9
+   Suggestion: Use var(--color-*) token
+   Context: @property --line { syntax:'<color>'; inherits:true; initial-value:#e9e9e9; }
+
+   Line 11: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: @property --sidebar { syntax:'<color>'; inherits:true; initial-value:#f9f9f9; }
+
+   Line 23: Hardcoded hex color
+   Found: #fcfcfc
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=neutral] { --palette-start:#fcfcfc; --palette-middle:#f9f9f9;
+
+   Line 23: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=neutral] { --palette-start:#fcfcfc; --palette-middle:#f9f9f9;
+
+   Line 23: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=neutral] { --palette-start:#fcfcfc; --palette-middle:#f9f9f9;
+
+   Line 24: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=neutral] { --palette-start:#171717; --palett
+
+   Line 24: Hardcoded hex color
+   Found: #222
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=neutral] { --palette-start:#171717; --palett
+
+   Line 24: Hardcoded hex color
+   Found: #303030
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=neutral] { --palette-start:#171717; --palett
+
+   Line 25: Hardcoded hex color
+   Found: #ecf3f8
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=blue] { --palette-start:#ecf3f8; --palette-middle:#c5eafe; --
+
+   Line 25: Hardcoded hex color
+   Found: #c5eafe
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=blue] { --palette-start:#ecf3f8; --palette-middle:#c5eafe; --
+
+   Line 25: Hardcoded hex color
+   Found: #a2d3ff
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=blue] { --palette-start:#ecf3f8; --palette-middle:#c5eafe; --
+
+   Line 25: Hardcoded hex color
+   Found: #24669a
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=blue] { --palette-start:#ecf3f8; --palette-middle:#c5eafe; --
+
+   Line 26: Hardcoded hex color
+   Found: #eaddff
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=aurora] { --palette-start:#eaddff; --palette-middle:#f4dcdf; 
+
+   Line 26: Hardcoded hex color
+   Found: #f4dcdf
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=aurora] { --palette-start:#eaddff; --palette-middle:#f4dcdf; 
+
+   Line 26: Hardcoded hex color
+   Found: #ffdbc5
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=aurora] { --palette-start:#eaddff; --palette-middle:#f4dcdf; 
+
+   Line 26: Hardcoded hex color
+   Found: #7353a6
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=aurora] { --palette-start:#eaddff; --palette-middle:#f4dcdf; 
+
+   Line 27: Hardcoded hex color
+   Found: #ecf4f1
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=mint] { --palette-start:#ecf4f1; --palette-middle:#c4f1e0; --
+
+   Line 27: Hardcoded hex color
+   Found: #c4f1e0
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=mint] { --palette-start:#ecf4f1; --palette-middle:#c4f1e0; --
+
+   Line 27: Hardcoded hex color
+   Found: #90e3c6
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=mint] { --palette-start:#ecf4f1; --palette-middle:#c4f1e0; --
+
+   Line 27: Hardcoded hex color
+   Found: #25745b
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=mint] { --palette-start:#ecf4f1; --palette-middle:#c4f1e0; --
+
+   Line 28: Hardcoded hex color
+   Found: #fcf2f3
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=rose] { --palette-start:#fcf2f3; --palette-middle:#ffd9df; --
+
+   Line 28: Hardcoded hex color
+   Found: #ffd9df
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=rose] { --palette-start:#fcf2f3; --palette-middle:#ffd9df; --
+
+   Line 28: Hardcoded hex color
+   Found: #ffb6bf
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=rose] { --palette-start:#fcf2f3; --palette-middle:#ffd9df; --
+
+   Line 28: Hardcoded hex color
+   Found: #a44760
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=rose] { --palette-start:#fcf2f3; --palette-middle:#ffd9df; --
+
+   Line 29: Hardcoded hex color
+   Found: #f8f0ec
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=peach] { --palette-start:#f8f0ec; --palette-middle:#ffdbc5; -
+
+   Line 29: Hardcoded hex color
+   Found: #ffdbc5
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=peach] { --palette-start:#f8f0ec; --palette-middle:#ffdbc5; -
+
+   Line 29: Hardcoded hex color
+   Found: #febd99
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=peach] { --palette-start:#f8f0ec; --palette-middle:#ffdbc5; -
+
+   Line 29: Hardcoded hex color
+   Found: #995631
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-palette=peach] { --palette-start:#f8f0ec; --palette-middle:#ffdbc5; -
+
+   Line 34: Hardcoded hex color
+   Found: #404040
+   Suggestion: Use var(--color-*) token
+   Context: --secondary:color-mix(in srgb,var(--accent) 35%,#404040);
+
+   Line 35: Hardcoded hex color
+   Found: #555
+   Suggestion: Use var(--color-*) token
+   Context: --muted:color-mix(in srgb,var(--accent) 30%,#555);
+
+   Line 39: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: --sidebar:color-mix(in srgb,var(--accent) 5%,#f9f9f9);
+
+   Line 44: Hardcoded hex color
+   Found: #111
+   Suggestion: Use var(--color-*) token
+   Context: --accent-text:#111;
+
+   Line 45: Hardcoded hex color
+   Found: #ccc
+   Suggestion: Use var(--color-*) token
+   Context: --secondary:color-mix(in srgb,var(--accent) 20%,#ccc);
+
+   Line 46: Hardcoded hex color
+   Found: #aaa
+   Suggestion: Use var(--color-*) token
+   Context: --muted:color-mix(in srgb,var(--accent) 20%,#aaa);
+
+   Line 49: Hardcoded hex color
+   Found: #2f2f2f
+   Suggestion: Use var(--color-*) token
+   Context: --surface:color-mix(in srgb,var(--accent) 3%,#2f2f2f);
+
+   Line 50: Hardcoded hex color
+   Found: #171717
+   Suggestion: Use var(--color-*) token
+   Context: --sidebar:color-mix(in srgb,var(--accent) 4%,#171717);
+
+   Line 52: Hardcoded hex color
+   Found: #a2d3ff
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=blue] { --accent:#a2d3ff; }
+
+   Line 53: Hardcoded hex color
+   Found: #d8bfff
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=aurora] { --accent:#d8bfff; }
+
+   Line 54: Hardcoded hex color
+   Found: #90e3c6
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=mint] { --accent:#90e3c6; }
+
+   Line 55: Hardcoded hex color
+   Found: #ffb6bf
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=rose] { --accent:#ffb6bf; }
+
+   Line 56: Hardcoded hex color
+   Found: #febd99
+   Suggestion: Use var(--color-*) token
+   Context: :root[data-theme=dark][data-palette=peach] { --accent:#febd99; }
+
+   Line 75: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .palette-picker { display:grid; grid-template-columns:auto minmax(0,1fr); align-
+
+   Line 75: Hardcoded pixel value
+   Found: :20px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .palette-picker { display:grid; grid-template-columns:auto minmax(0,1fr); align-
+
+   Line 76: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .palette-picker > span { font-size:14px; }
+
+   Line 77: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .palette-options { justify-self:end; display:grid; grid-template-columns:repeat(
+
+   Line 78: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .palette-option { display:flex; flex-direction:column; align-items:ce
+
+   Line 78: Hardcoded pixel value
+   Found: :11px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .app-shell .palette-option { display:flex; flex-direction:column; align-items:ce
+
+   Line 81: Hardcoded hex color
+   Found: #222
+   Suggestion: Use var(--color-*) token
+   Context: .palette-swatch { display:grid; place-items:center; width:32px; height:32px; bor
+
+   Line 81: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .palette-swatch { display:grid; place-items:center; width:32px; height:32px; bor
+
+   Line 81: Hardcoded pixel value
+   Found: :32px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .palette-swatch { display:grid; place-items:center; width:32px; height:32px; bor
+
+   Line 83: Hardcoded pixel value
+   Found: :600px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:600px) { .palette-picker { gap:16px; } .palette-options { grid-
+
+   Line 83: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:600px) { .palette-picker { gap:16px; } .palette-options { grid-
+
+   Line 83: Hardcoded pixel value
+   Found: :14px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(max-width:600px) { .palette-picker { gap:16px; } .palette-options { grid-
+
+📁 <workspace>\src\themes.ts
+   Line 2: Hardcoded hex color
+   Found: #fcfcfc
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'neutral', name: 'Neutro', gradient: 'linear-gradient(180deg, #fcfcfc 0%, 
+
+   Line 2: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'neutral', name: 'Neutro', gradient: 'linear-gradient(180deg, #fcfcfc 0%, 
+
+   Line 2: Hardcoded hex color
+   Found: #f9f9f9
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'neutral', name: 'Neutro', gradient: 'linear-gradient(180deg, #fcfcfc 0%, 
+
+   Line 3: Hardcoded RGB color
+   Found: rgb(236,243,248)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'blue', name: 'Azul', gradient: 'linear-gradient(180deg, rgb(236,243,248) 
+
+   Line 3: Hardcoded RGB color
+   Found: rgb(197,234,254)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'blue', name: 'Azul', gradient: 'linear-gradient(180deg, rgb(236,243,248) 
+
+   Line 3: Hardcoded RGB color
+   Found: rgb(162,211,255)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'blue', name: 'Azul', gradient: 'linear-gradient(180deg, rgb(236,243,248) 
+
+   Line 4: Hardcoded RGB color
+   Found: rgb(234,221,255)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'aurora', name: 'Aurora', gradient: 'linear-gradient(180deg, rgb(234,221,2
+
+   Line 4: Hardcoded RGB color
+   Found: rgb(255,219,197)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'aurora', name: 'Aurora', gradient: 'linear-gradient(180deg, rgb(234,221,2
+
+   Line 5: Hardcoded RGB color
+   Found: rgb(236,244,241)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'mint', name: 'Menta', gradient: 'linear-gradient(180deg, rgb(236,244,241)
+
+   Line 5: Hardcoded RGB color
+   Found: rgb(196,241,224)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'mint', name: 'Menta', gradient: 'linear-gradient(180deg, rgb(236,244,241)
+
+   Line 5: Hardcoded RGB color
+   Found: rgb(144,227,198)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'mint', name: 'Menta', gradient: 'linear-gradient(180deg, rgb(236,244,241)
+
+   Line 6: Hardcoded RGB color
+   Found: rgb(252,242,243)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'rose', name: 'Rosa', gradient: 'linear-gradient(180deg, rgb(252,242,243) 
+
+   Line 6: Hardcoded RGB color
+   Found: rgb(255,217,223)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'rose', name: 'Rosa', gradient: 'linear-gradient(180deg, rgb(252,242,243) 
+
+   Line 6: Hardcoded RGB color
+   Found: rgb(255,182,191)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'rose', name: 'Rosa', gradient: 'linear-gradient(180deg, rgb(252,242,243) 
+
+   Line 7: Hardcoded RGB color
+   Found: rgb(248,240,236)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'peach', name: 'Pêssego', gradient: 'linear-gradient(180deg, rgb(248,240,2
+
+   Line 7: Hardcoded RGB color
+   Found: rgb(255,219,197)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'peach', name: 'Pêssego', gradient: 'linear-gradient(180deg, rgb(248,240,2
+
+   Line 7: Hardcoded RGB color
+   Found: rgb(254,189,153)
+   Suggestion: Use var(--color-*) token
+   Context: { id: 'peach', name: 'Pêssego', gradient: 'linear-gradient(180deg, rgb(248,240,2
+
+📁 <workspace>\src\user-profile.css
+   Line 3: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-settings { display:flex;flex-direction:column;align-items:center;gap:12
+
+   Line 3: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-settings { display:flex;flex-direction:column;align-items:center;gap:12
+
+   Line 4: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-photo { position:relative;padding:0;border-radius:50%;width:80px;height
+
+   Line 4: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-photo { position:relative;padding:0;border-radius:50%;width:80px;height
+
+   Line 5: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-photo .avatar { width:80px;height:80px;font-size:24px;background:var(--
+
+   Line 5: Hardcoded pixel value
+   Found: :80px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-photo .avatar { width:80px;height:80px;font-size:24px;background:var(--
+
+   Line 5: Hardcoded pixel value
+   Found: :24px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-photo .avatar { width:80px;height:80px;font-size:24px;background:var(--
+
+   Line 9: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-name { position:relative;display:block;max-width:calc(100% - 48px);padd
+
+   Line 9: Hardcoded pixel value
+   Found: :22px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-name { position:relative;display:block;max-width:calc(100% - 48px);padd
+
+   Line 14: Hardcoded pixel value
+   Found: :240px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-name-input { max-width:100%;width:240px;height:30px;padding:4px 8px;bac
+
+   Line 14: Hardcoded pixel value
+   Found: :30px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-name-input { max-width:100%;width:240px;height:30px;padding:4px 8px;bac
+
+   Line 14: Hardcoded pixel value
+   Found: :15px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-name-input { max-width:100%;width:240px;height:30px;padding:4px 8px;bac
+
+   Line 15: Hardcoded pixel value
+   Found: :12px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: .profile-error,.profile-progress { font-size:12px;color:var(--muted);text-align:
+
+   Line 17: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(hover:none) { .profile-name svg { opacity:1; }.profile-photo-overlay { in
+
+   Line 17: Hardcoded pixel value
+   Found: :28px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(hover:none) { .profile-name svg { opacity:1; }.profile-photo-overlay { in
+
+   Line 17: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(hover:none) { .profile-name svg { opacity:1; }.profile-photo-overlay { in
+
+   Line 17: Hardcoded pixel value
+   Found: :16px
+   Suggestion: Use var(--space-*) or var(--radius-*) token
+   Context: @media(hover:none) { .profile-name svg { opacity:1; }.profile-photo-overlay { in
+
+
+📊 Summary:
+   Hardcoded pixel value: 607
+   Hardcoded rem value: 101
+   Hardcoded hex color: 127
+   Hardcoded RGB color: 22
+

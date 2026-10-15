@@ -1,0 +1,149 @@
+{
+  "method": "Computed browser colors on page background; alpha compositing; sRGB relative luminance. Default states of six palettes in light/dark. Disabled controls, hover, authored highlights and all contextual surfaces are not certified by this sample.",
+  "samples": [
+    {
+      "theme": "light",
+      "palette": "neutral",
+      "ratios": {
+        "secondary": 5.74,
+        "muted": 5.74,
+        "primary": 19.44,
+        "destructive": 4.63,
+        "editor": 6.86,
+        "toast": 19.44
+      }
+    },
+    {
+      "theme": "dark",
+      "palette": "neutral",
+      "ratios": {
+        "secondary": 7.77,
+        "muted": 6.16,
+        "primary": 17.17,
+        "destructive": 4.63,
+        "editor": 6.13,
+        "toast": 17.17
+      }
+    },
+    {
+      "theme": "light",
+      "palette": "blue",
+      "ratios": {
+        "secondary": 8.77,
+        "muted": 7.15,
+        "primary": 6.1,
+        "destructive": 4.63,
+        "editor": 6.86,
+        "toast": 6.1
+      }
+    },
+    {
+      "theme": "dark",
+      "palette": "blue",
+      "ratios": {
+        "secondary": 10.03,
+        "muted": 7.5,
+        "primary": 11.96,
+        "destructive": 4.63,
+        "editor": 6.13,
+        "toast": 11.96
+      }
+    },
+    {
+      "theme": "light",
+      "palette": "aurora",
+      "ratios": {
+        "secondary": 8.63,
+        "muted": 7.05,
+        "primary": 5.97,
+        "destructive": 4.63,
+        "editor": 6.86,
+        "toast": 5.97
+      }
+    },
+    {
+      "theme": "dark",
+      "palette": "aurora",
+      "ratios": {
+        "secondary": 9.97,
+        "muted": 7.44,
+        "primary": 11.52,
+        "destructive": 4.63,
+        "editor": 6.13,
+        "toast": 11.52
+      }
+    },
+    {
+      "theme": "light",
+      "palette": "mint",
+      "ratios": {
+        "secondary": 8.5,
+        "muted": 6.97,
+        "primary": 5.63,
+        "destructive": 4.63,
+        "editor": 6.86,
+        "toast": 5.63
+      }
+    },
+    {
+      "theme": "dark",
+      "palette": "mint",
+      "ratios": {
+        "secondary": 10.11,
+        "muted": 7.56,
+        "primary": 12.58,
+        "destructive": 4.63,
+        "editor": 6.13,
+        "toast": 12.58
+      }
+    },
+    {
+      "theme": "light",
+      "palette": "rose",
+      "ratios": {
+        "secondary": 8.67,
+        "muted": 7.1,
+        "primary": 5.76,
+        "destructive": 4.63,
+        "editor": 6.86,
+        "toast": 5.76
+      }
+    },
+    {
+      "theme": "dark",
+      "palette": "rose",
+      "ratios": {
+        "secondary": 9.92,
+        "muted": 7.4,
+        "primary": 11.42,
+        "destructive": 4.63,
+        "editor": 6.13,
+        "toast": 11.42
+      }
+    },
+    {
+      "theme": "light",
+      "palette": "peach",
+      "ratios": {
+        "secondary": 8.5,
+        "muted": 6.97,
+        "primary": 5.63,
+        "destructive": 4.63,
+        "editor": 6.86,
+        "toast": 5.63
+      }
+    },
+    {
+      "theme": "dark",
+      "palette": "peach",
+      "ratios": {
+        "secondary": 9.96,
+        "muted": 7.44,
+        "primary": 11.65,
+        "destructive": 4.63,
+        "editor": 6.13,
+        "toast": 11.65
+      }
+    }
+  ]
+}

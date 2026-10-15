@@ -1,0 +1,25 @@
+.page-empty-state {
+  min-height:clamp(300px,50dvh,480px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:var(--space-12);
+  padding:var(--space-48) var(--space-24);
+  text-align:center;
+}
+.page-empty-state-icon {
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  margin-bottom:var(--space-8);
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:var(--sidebar);
+  color:var(--secondary);
+}
+.page-empty-state-icon svg { width:38px;height:38px; }
+.page-empty-state h3 { color:var(--ink);font-size:var(--font-size-14);font-weight:var(--font-weight-500);line-height:1.5; }
+.page-empty-state p { max-width:320px;color:var(--secondary);font-size:var(--font-size-13);line-height:1.6; }
+.page-empty-state .primary-button { margin-top:var(--space-8); }

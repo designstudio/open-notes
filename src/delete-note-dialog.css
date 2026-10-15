@@ -1,0 +1,30 @@
+.app-shell dialog.t-modal.note-delete-dialog {
+  width:min(440px,calc(100vw - 32px));
+  padding:0;
+  border:1px solid var(--dialog-border);
+  border-radius:var(--dialog-radius);
+  background:var(--dialog-bg);
+  color:var(--dialog-text);
+}
+.note-delete-dialog::backdrop {
+  background:var(--modal-backdrop);
+  -webkit-backdrop-filter:blur(var(--confirmation-backdrop-blur));
+  backdrop-filter:blur(var(--confirmation-backdrop-blur));
+}
+.note-delete-dialog-header {
+  display:flex;
+  align-items:flex-start;
+  gap:var(--space-16);
+  padding:var(--dialog-padding);
+  border-bottom:1px solid var(--line);
+}
+.note-delete-dialog-header > div { flex:1;min-width:0; }
+.note-delete-dialog-header > .icon-button { flex-shrink:0; }
+.note-delete-dialog h2 { font-size:var(--text-size-dialog-title);font-weight:var(--font-weight-600);line-height:var(--line-height-1-4); }
+.note-delete-dialog p { margin-top:var(--space-10);font-size:var(--text-size-ui);line-height:var(--line-height-1-6);color:var(--secondary);overflow-wrap:anywhere; }
+.note-delete-dialog-actions { display:flex;justify-content:flex-end;gap:var(--space-8);flex-wrap:wrap;padding:var(--dialog-padding); }
+.note-delete-dialog-actions button { padding:var(--space-9) var(--space-14);font-size:var(--font-size-13);line-height:20px; }
+@media (max-width:399px) {
+  .note-delete-dialog-actions { flex-direction:column; }
+  .note-delete-dialog-actions button { width:100%;min-height:44px; }
+}

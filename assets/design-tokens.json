@@ -1,0 +1,6295 @@
+{
+  "$description": "Open Notes: extracted values, purpose aliases and component contracts. Existing themes and proportions preserved.",
+  "primitive": {
+    "color-a9e3e72a": {
+      "$value": "rgb(0 0 0 / 0.1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-98be43a8": {
+      "$value": "oklch(0 0 0 / .05)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-336ed780": {
+      "$value": "oklch(0 0 0 / .04)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-7c8dbe1e": {
+      "$value": "rgba(0, 0, 0, 0.045)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-5074b91d": {
+      "$value": "rgba(0, 0, 0, 0.075)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-66c631ff": {
+      "$value": "rgba(0, 0, 0, 0.08)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-1d50dbbf": {
+      "$value": "rgba(15, 15, 15, 0.8)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-042f23b9": {
+      "$value": "rgba(0, 0, 0, 0.06)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-a6447dc8": {
+      "$value": "rgba(0, 0, 0, 0.05)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-87a2c6a9": {
+      "$value": "rgb(0 0 0 / .1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-30df8f41": {
+      "$value": "rgba(255, 255, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-ad3006a9": {
+      "$value": "rgba(14, 14, 17, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-ba986759": {
+      "$value": "rgba(255, 255, 255, 0)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-7f7cabc6": {
+      "$value": "rgba(17, 24, 39, 0.04)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-e713fac9": {
+      "$value": "rgba(17, 24, 39, 0.02)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-c0fbcbd1": {
+      "$value": "rgba(157, 138, 255, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-e77c8cca": {
+      "$value": "rgba(122, 82, 255, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-8691ae8f": {
+      "$value": "rgba(0, 0, 0, 0.5)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-89a28def": {
+      "$value": "rgba(0, 0, 0, 0.24)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-f826f455": {
+      "$value": "rgba(0, 0, 0, 0.22)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-18fb18d4": {
+      "$value": "rgba(0, 0, 0, 0.12)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-9189a8d2": {
+      "$value": "hsl(0, 0%, 61%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-57178741": {
+      "$value": "hsl(18, 35%, 58%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-990bc6fe": {
+      "$value": "hsl(25, 53%, 53%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-c7d7a605": {
+      "$value": "hsl(36, 54%, 55%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-0124a8f6": {
+      "$value": "hsl(145, 32%, 47%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-d71ecadd": {
+      "$value": "hsl(202, 64%, 52%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-962ae768": {
+      "$value": "hsl(270, 55%, 62%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-b3f7a5db": {
+      "$value": "hsl(329, 57%, 58%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-bd68a07b": {
+      "$value": "hsl(1, 69%, 60%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-a3d4f401": {
+      "$value": "hsla(0, 0%, 100%, 0.09)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-3ef5ad25": {
+      "$value": "hsla(17, 45%, 50%, 0.25)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-94e5000f": {
+      "$value": "hsla(27, 82%, 53%, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-4b77efcf": {
+      "$value": "hsla(35, 49%, 47%, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-b7470a49": {
+      "$value": "hsla(151, 55%, 39%, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-7f4574b5": {
+      "$value": "hsla(202, 54%, 43%, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-bee656a2": {
+      "$value": "hsla(271, 56%, 60%, 0.18)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-1cef10c9": {
+      "$value": "hsla(331, 67%, 58%, 0.22)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-2a6ba6dc": {
+      "$value": "hsla(0, 67%, 60%, 0.25)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-1698bbfb": {
+      "$value": "rgb(47, 47, 47)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-ed27f126": {
+      "$value": "rgb(74, 50, 40)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-78da0602": {
+      "$value": "rgb(92, 59, 35)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-077a5e99": {
+      "$value": "rgb(78, 44, 60)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-2783ea99": {
+      "$value": "rgba(255, 255, 255, 0.094)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-e1fbb32e": {
+      "$value": "rgba(184, 101, 69, 0.25)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-ddc49d7c": {
+      "$value": "rgba(233, 126, 37, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-a4cb02f3": {
+      "$value": "rgba(220, 76, 145, 0.22)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-2ce6e671": {
+      "$value": "rgba(229,231,235,.5)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-fd9af3c8": {
+      "$value": "rgba(0,0,0,.5)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-7be18e16": {
+      "$value": "rgba(0,0,0,0.35)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-0bcd1015": {
+      "$value": "rgba(0,0,0,0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-aa2ba712": {
+      "$value": "rgba(0, 0, 0, 0.4)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-de697e75": {
+      "$value": "rgba(0, 0, 0, 0.25)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-733a2ff5": {
+      "$value": "rgba(0,0,0,.12)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-22ba4916": {
+      "$value": "rgba(0,0,0,.18)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-990c3b7d": {
+      "$value": "rgba(0,0,0,.08)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-b34d3e79": {
+      "$value": "rgba(255,255,255,.12)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-ed02383e": {
+      "$value": "rgba(0,0,0,.48)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-13ea0f53": {
+      "$value": "rgba(0,0,0,.28)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-556c31e7": {
+      "$value": "rgba(0,0,0,.05)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-8e71d5d6": {
+      "$value": "rgba(0,0,0,.14)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-555cf78d": {
+      "$value": "rgb(236,243,248)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-b638fb16": {
+      "$value": "rgb(197,234,254)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-e9a92d2d": {
+      "$value": "rgb(162,211,255)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-a53a6b7f": {
+      "$value": "rgb(234,221,255)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-6a9c88d9": {
+      "$value": "rgb(255,219,197)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-d144b27d": {
+      "$value": "rgb(236,244,241)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-308934a6": {
+      "$value": "rgb(196,241,224)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-a78252b9": {
+      "$value": "rgb(144,227,198)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-7b7a8624": {
+      "$value": "rgb(252,242,243)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-c54c53f1": {
+      "$value": "rgb(255,217,223)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-5f1309ee": {
+      "$value": "rgb(255,182,191)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-02d7aecd": {
+      "$value": "rgb(248,240,236)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-4e64b0f7": {
+      "$value": "rgb(254,189,153)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-shadow-elevated-md-8d463726": {
+      "$value": "0px 16px 48px 0px rgba(17, 24, 39, 0.04),\n    0px 12px 24px 0px rgba(17, 24, 39, 0.04),\n    0px 6px 8px 0px rgba(17, 24, 39, 0.02),\n    0px 2px 3px 0px rgba(17, 24, 39, 0.02)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-radius-xxs-687e0093": {
+      "$value": "0.125rem",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-radius-xs-e53fcdb0": {
+      "$value": "0.25rem",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-radius-sm-28a5f8bf": {
+      "$value": "0.375rem",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-radius-md-558b9f36": {
+      "$value": "0.5rem",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-radius-lg-a9f23226": {
+      "$value": "0.75rem",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-radius-xl-b8be0c77": {
+      "$value": "1rem",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-duration-short-cb6ba721": {
+      "$value": "0.1s",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-duration-default-ac0c0530": {
+      "$value": "0.2s",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-duration-long-a70ad53e": {
+      "$value": "0.64s",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-easing-default-429b4682": {
+      "$value": "cubic-bezier(0.46, 0.03, 0.52, 0.96)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-easing-cubic-5dbea8fd": {
+      "$value": "cubic-bezier(0.65, 0.05, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-easing-quart-ff3feef3": {
+      "$value": "cubic-bezier(0.77, 0, 0.18, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-easing-circ-9f26f1e6": {
+      "$value": "cubic-bezier(0.79, 0.14, 0.15, 0.86)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-transition-easing-back-423106f6": {
+      "$value": "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-accent-contrast-23ec5e7f": {
+      "$value": "8%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-destructive-contrast-23ec5e7f": {
+      "$value": "8%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-foreground-contrast-23ec5e7f": {
+      "$value": "8%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-button-radius-51188afc": {
+      "$value": "9999px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-fill-a29b8de7": {
+      "$value": "150ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-pop-cbe7c0b3": {
+      "$value": "350ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-pop-ease-81ca200e": {
+      "$value": "cubic-bezier(0.34, 1.96, 0.64, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-particle-dur-c2d8e9ce": {
+      "$value": "600ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-particle-dist-9bf0c8e6": {
+      "$value": "20px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-particle-size-649a1d91": {
+      "$value": "2.5px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-like-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-text-swap-dur-a29b8de7": {
+      "$value": "150ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-text-swap-translate-y-35660153": {
+      "$value": "4px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-text-swap-blur-74761400": {
+      "$value": "2px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-text-swap-ease-16c2539d": {
+      "$value": "ease-in-out",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-open-5df2141f": {
+      "$value": "450ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-hold-04c09905": {
+      "$value": "200ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-close-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-rise-229a5dcb": {
+      "$value": "60px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-blur-74761400": {
+      "$value": "2px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-scale-bee67f04": {
+      "$value": "0.97",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-peek-7769e817": {
+      "$value": "12px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-depth-scale-bb1a364b": {
+      "$value": "0.06",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-depth-fade-f3e360d8": {
+      "$value": "0.4",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-depth1-blur-93e20626": {
+      "$value": "1px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-stack-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-dropdown-open-dur-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-dropdown-close-dur-a29b8de7": {
+      "$value": "150ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-dropdown-pre-scale-bee67f04": {
+      "$value": "0.97",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-dropdown-closing-scale-b45898ec": {
+      "$value": "0.99",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-dropdown-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-modal-open-dur-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-modal-close-dur-a29b8de7": {
+      "$value": "150ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-modal-scale-bf5fac6e": {
+      "$value": "0.96",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-modal-scale-close-bf5fac6e": {
+      "$value": "0.96",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-modal-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-panel-open-dur-d8e24dc7": {
+      "$value": "400ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-panel-close-dur-cbe7c0b3": {
+      "$value": "350ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-panel-translate-y-cf197d3f": {
+      "$value": "100px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-panel-blur-74761400": {
+      "$value": "2px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-panel-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tabs-dur-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tabs-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-in-dur-a29b8de7": {
+      "$value": "150ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-out-dur-adf7aadf": {
+      "$value": "50ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-scale-b8cbc389": {
+      "$value": "0.98",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-delay-b21be29f": {
+      "$value": "80ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-in-ease-791c2d09": {
+      "$value": "ease-out",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-out-ease-791c2d09": {
+      "$value": "ease-out",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-icon-swap-dur-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-icon-swap-blur-74761400": {
+      "$value": "2px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-icon-swap-start-scale-a30a0433": {
+      "$value": "0.25",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-icon-swap-ease-16c2539d": {
+      "$value": "ease-in-out",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-acc-expand-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-acc-collapse-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-acc-chevron-355ef249": {
+      "$value": "250ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-acc-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-resize-dur-13a634fe": {
+      "$value": "300ms",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-resize-ease-73cabdab": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-radius-7769e817": {
+      "$value": "12px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-confirmation-radius-2793cbc2": {
+      "$value": "24px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-confirmation-backdrop-blur-35660153": {
+      "$value": "1px",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-palette-angle-3d32cbaf": {
+      "$value": "180deg",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-palette-strength-d9a847a1": {
+      "$value": "0%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-sidebar-palette-strength-d9a847a1": {
+      "$value": "0%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-tt-shadow-elevated-md-c90886c7": {
+      "$value": "0px 16px 48px 0px rgba(0, 0, 0, 0.5), 0px 12px 24px 0px rgba(0, 0, 0, 0.24),\n    0px 6px 8px 0px rgba(0, 0, 0, 0.22), 0px 2px 3px 0px rgba(0, 0, 0, 0.12)",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "space-1": {
+      "$value": "1px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-2": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-3": {
+      "$value": "3px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-4": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-5": {
+      "$value": "5px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-6": {
+      "$value": "6px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-7": {
+      "$value": "7px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-8": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-9": {
+      "$value": "9px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-10": {
+      "$value": "10px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-12": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-14": {
+      "$value": "14px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-18": {
+      "$value": "18px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-20": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-22": {
+      "$value": "22px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-24": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-28": {
+      "$value": "28px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-30": {
+      "$value": "30px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-32": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-36": {
+      "$value": "36px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-40": {
+      "$value": "40px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-44": {
+      "$value": "44px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-48": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-52": {
+      "$value": "52px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-56": {
+      "$value": "56px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-60": {
+      "$value": "60px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-64": {
+      "$value": "64px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "space-80": {
+      "$value": "80px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-2": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-3": {
+      "$value": "3px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-4": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-6": {
+      "$value": "6px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-7": {
+      "$value": "7px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-8": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-9": {
+      "$value": "9px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-10": {
+      "$value": "10px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-12": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-13": {
+      "$value": "13px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-14": {
+      "$value": "14px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-15": {
+      "$value": "15px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-18": {
+      "$value": "18px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-20": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-22": {
+      "$value": "22px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-24": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-28": {
+      "$value": "28px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-32": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-34": {
+      "$value": "34px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-36": {
+      "$value": "36px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-48": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "radius-full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-10": {
+      "$value": "10px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-11": {
+      "$value": "11px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-12": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-12-5": {
+      "$value": "12.5px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-13": {
+      "$value": "13px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-13-5": {
+      "$value": "13.5px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-14": {
+      "$value": "14px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-15": {
+      "$value": "15px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-17": {
+      "$value": "17px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-18": {
+      "$value": "18px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-20": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-21": {
+      "$value": "21px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-23": {
+      "$value": "23px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-24": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-25": {
+      "$value": "25px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-26": {
+      "$value": "26px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-27": {
+      "$value": "27px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-28": {
+      "$value": "28px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-size-30": {
+      "$value": "30px",
+      "$type": "dimension",
+      "$description": "Extracted existing value."
+    },
+    "font-weight-400": {
+      "$value": "400",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "font-weight-500": {
+      "$value": "500",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "font-weight-600": {
+      "$value": "600",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "font-weight-700": {
+      "$value": "700",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-15": {
+      "$value": "1.15",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-2": {
+      "$value": "1.2",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-3": {
+      "$value": "1.3",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-35": {
+      "$value": "1.35",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-4": {
+      "$value": "1.4",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-5": {
+      "$value": "1.5",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-6": {
+      "$value": "1.6",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-65": {
+      "$value": "1.65",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-7": {
+      "$value": "1.7",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "line-height-1-9": {
+      "$value": "1.9",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "font-ui": {
+      "$value": "\"DM Sans\",Arial,Helvetica,sans-serif",
+      "$type": "fontFamily",
+      "$description": "Extracted existing value."
+    },
+    "font-code": {
+      "$value": "ui-monospace,SFMono-Regular,Consolas,monospace",
+      "$type": "fontFamily",
+      "$description": "Extracted existing value."
+    },
+    "opacity-disabled": {
+      "$value": "0.35",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "shadow-menu": {
+      "$value": "0 8px 28px #0002",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-dialog": {
+      "$value": "0 16px 60px #0002",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-find": {
+      "$value": "0 4px 20px #0001",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-tooltip": {
+      "$value": "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-card": {
+      "$value": "0 3px 12px rgba(0, 0, 0, 0.045)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-card-hover": {
+      "$value": "0 6px 18px rgba(0, 0, 0, 0.075)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-a382d8d4": {
+      "$value": "0 1px 2px oklch(0 0 0 / .05),0 3px 8px oklch(0 0 0 / .04)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-b6383236": {
+      "$value": "0 4px 16px rgba(0, 0, 0, 0.08)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-16b50950": {
+      "$value": "0 0 0 1px rgba(0, 0, 0, 0.06),\r\n    0 2px 6px 0 rgba(0, 0, 0, 0.05),\r\n    0 4px 42px 0 rgba(0, 0, 0, 0.06)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-7631818b": {
+      "$value": "0 4px 6px -1px rgb(0 0 0 / .1)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-8d463726": {
+      "$value": "0px 16px 48px 0px rgba(17, 24, 39, 0.04),\n    0px 12px 24px 0px rgba(17, 24, 39, 0.04),\n    0px 6px 8px 0px rgba(17, 24, 39, 0.02),\n    0px 2px 3px 0px rgba(17, 24, 39, 0.02)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-c90886c7": {
+      "$value": "0px 16px 48px 0px rgba(0, 0, 0, 0.5), 0px 12px 24px 0px rgba(0, 0, 0, 0.24),\n    0px 6px 8px 0px rgba(0, 0, 0, 0.22), 0px 2px 3px 0px rgba(0, 0, 0, 0.12)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-110f20fd": {
+      "$value": "0 8px 30px rgba(0,0,0,0.35),0 2px 8px rgba(0,0,0,0.2)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-a27c72f3": {
+      "$value": "0 8px 24px rgba(0, 0, 0, 0.4)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-ede8be8b": {
+      "$value": "0 8px 30px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.25)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-64d41a81": {
+      "$value": "0 24px 70px rgba(0,0,0,.18),0 4px 16px rgba(0,0,0,.08)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "shadow-existing-09971116": {
+      "$value": "0 24px 70px rgba(0,0,0,.48),0 4px 16px rgba(0,0,0,.28)",
+      "$type": "shadow",
+      "$description": "Extracted existing value."
+    },
+    "opacity-hover": {
+      "$value": "0.85",
+      "$type": "number",
+      "$description": "Extracted existing value."
+    },
+    "legacy-sidebar-palette-strength-32e48995": {
+      "$value": "100%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-palette-strength-a6243ea4": {
+      "$value": "28%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-sidebar-palette-strength-28fdae8d": {
+      "$value": "50%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-palette-strength-9f753044": {
+      "$value": "7%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "legacy-sidebar-palette-strength-234d0e73": {
+      "$value": "12%",
+      "$type": "string",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f40051": {
+      "$value": "#f40051",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-0002": {
+      "$value": "#0002",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-0001": {
+      "$value": "#0001",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-0f0f0f": {
+      "$value": "#0f0f0f",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f1f1f1": {
+      "$value": "#f1f1f1",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ffffff": {
+      "$value": "#ffffff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-2f2f2f": {
+      "$value": "#2f2f2f",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-e9b949": {
+      "$value": "#e9b949",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-b38620": {
+      "$value": "#b38620",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fff": {
+      "$value": "#fff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fef08a": {
+      "$value": "#fef08a",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-bbf7d0": {
+      "$value": "#bbf7d0",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-bfdbfe": {
+      "$value": "#bfdbfe",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fbcfe8": {
+      "$value": "#fbcfe8",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ddd6fe": {
+      "$value": "#ddd6fe",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-50": {
+      "$value": "rgba(56, 56, 56, 0.04)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-100": {
+      "$value": "rgba(15, 22, 36, 0.05)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-200": {
+      "$value": "rgba(37, 39, 45, 0.1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-300": {
+      "$value": "rgba(47, 50, 55, 0.2)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-400": {
+      "$value": "rgba(40, 44, 51, 0.42)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-500": {
+      "$value": "rgba(52, 55, 60, 0.64)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-600": {
+      "$value": "rgba(36, 39, 46, 0.78)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-700": {
+      "$value": "rgba(35, 37, 42, 0.87)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-800": {
+      "$value": "rgba(30, 32, 36, 0.95)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-a-900": {
+      "$value": "rgba(29, 30, 32, 0.98)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-50": {
+      "$value": "rgba(250, 250, 250, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-100": {
+      "$value": "rgba(244, 244, 245, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-200": {
+      "$value": "rgba(234, 234, 235, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-300": {
+      "$value": "rgba(213, 214, 215, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-400": {
+      "$value": "rgba(166, 167, 171, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-500": {
+      "$value": "rgba(125, 127, 130, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-600": {
+      "$value": "rgba(83, 86, 90, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-700": {
+      "$value": "rgba(64, 65, 69, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-800": {
+      "$value": "rgba(44, 45, 48, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-light-900": {
+      "$value": "rgba(34, 35, 37, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-50": {
+      "$value": "rgba(232, 232, 253, 0.05)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-100": {
+      "$value": "rgba(231, 231, 243, 0.07)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-200": {
+      "$value": "rgba(238, 238, 246, 0.11)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-300": {
+      "$value": "rgba(239, 239, 245, 0.22)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-400": {
+      "$value": "rgba(244, 244, 255, 0.37)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-500": {
+      "$value": "rgba(236, 238, 253, 0.5)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-600": {
+      "$value": "rgba(247, 247, 253, 0.64)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-700": {
+      "$value": "rgba(251, 251, 254, 0.75)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-800": {
+      "$value": "rgba(253, 253, 253, 0.88)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-a-900": {
+      "$value": "rgba(255, 255, 255, 0.96)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-50": {
+      "$value": "rgba(25, 25, 26, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-100": {
+      "$value": "rgba(32, 32, 34, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-200": {
+      "$value": "rgba(45, 45, 47, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-300": {
+      "$value": "rgba(70, 70, 73, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-400": {
+      "$value": "rgba(99, 99, 105, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-500": {
+      "$value": "rgba(124, 124, 131, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-600": {
+      "$value": "rgba(163, 163, 168, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-700": {
+      "$value": "rgba(192, 192, 195, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-800": {
+      "$value": "rgba(224, 224, 225, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-gray-dark-900": {
+      "$value": "rgba(245, 245, 245, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-50": {
+      "$value": "rgba(239, 238, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-100": {
+      "$value": "rgba(222, 219, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-200": {
+      "$value": "rgba(195, 189, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-300": {
+      "$value": "rgba(157, 138, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-400": {
+      "$value": "rgba(122, 82, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-500": {
+      "$value": "rgba(98, 41, 255, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-600": {
+      "$value": "rgba(84, 0, 229, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-700": {
+      "$value": "rgba(75, 0, 204, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-800": {
+      "$value": "rgba(56, 0, 153, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-900": {
+      "$value": "rgba(43, 25, 102, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-brand-color-950": {
+      "$value": "hsla(257, 100%, 9%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-inc-5": {
+      "$value": "hsla(129, 100%, 97%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-inc-4": {
+      "$value": "hsla(129, 100%, 92%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-inc-3": {
+      "$value": "hsla(131, 100%, 86%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-inc-2": {
+      "$value": "hsla(133, 98%, 78%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-inc-1": {
+      "$value": "hsla(137, 99%, 70%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-base": {
+      "$value": "hsla(147, 99%, 50%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-dec-1": {
+      "$value": "hsla(147, 97%, 41%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-dec-2": {
+      "$value": "hsla(146, 98%, 32%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-dec-3": {
+      "$value": "hsla(146, 100%, 24%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-dec-4": {
+      "$value": "hsla(144, 100%, 16%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-green-dec-5": {
+      "$value": "hsla(140, 100%, 9%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-inc-5": {
+      "$value": "hsla(50, 100%, 97%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-inc-4": {
+      "$value": "hsla(50, 100%, 91%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-inc-3": {
+      "$value": "hsla(50, 100%, 84%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-inc-2": {
+      "$value": "hsla(50, 100%, 77%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-inc-1": {
+      "$value": "hsla(50, 100%, 68%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-base": {
+      "$value": "hsla(52, 100%, 50%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-dec-1": {
+      "$value": "hsla(52, 100%, 41%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-dec-2": {
+      "$value": "hsla(52, 100%, 32%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-dec-3": {
+      "$value": "hsla(52, 100%, 24%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-dec-4": {
+      "$value": "hsla(51, 100%, 16%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-yellow-dec-5": {
+      "$value": "hsla(50, 100%, 9%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-inc-5": {
+      "$value": "hsla(11, 100%, 96%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-inc-4": {
+      "$value": "hsla(11, 100%, 88%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-inc-3": {
+      "$value": "hsla(10, 100%, 80%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-inc-2": {
+      "$value": "hsla(9, 100%, 73%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-inc-1": {
+      "$value": "hsla(7, 100%, 64%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-base": {
+      "$value": "hsla(7, 100%, 54%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-dec-1": {
+      "$value": "hsla(7, 100%, 41%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-dec-2": {
+      "$value": "hsla(5, 100%, 32%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-dec-3": {
+      "$value": "hsla(4, 100%, 24%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-dec-4": {
+      "$value": "hsla(3, 100%, 16%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-red-dec-5": {
+      "$value": "hsla(1, 100%, 9%, 1)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-gray": {
+      "$value": "hsl(45, 2%, 46%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-brown": {
+      "$value": "hsl(19, 31%, 47%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-orange": {
+      "$value": "hsl(30, 89%, 45%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-yellow": {
+      "$value": "hsl(38, 62%, 49%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-green": {
+      "$value": "hsl(148, 32%, 39%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-blue": {
+      "$value": "hsl(202, 54%, 43%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-purple": {
+      "$value": "hsl(274, 32%, 54%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-pink": {
+      "$value": "hsl(328, 49%, 53%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-red": {
+      "$value": "hsl(2, 62%, 55%)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-gray-contrast": {
+      "$value": "hsla(39, 26%, 26%, 0.15)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-brown-contrast": {
+      "$value": "hsla(18, 43%, 69%, 0.35)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-orange-contrast": {
+      "$value": "hsla(24, 73%, 55%, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-yellow-contrast": {
+      "$value": "hsla(44, 82%, 59%, 0.39)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-green-contrast": {
+      "$value": "hsla(126, 29%, 60%, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-blue-contrast": {
+      "$value": "hsla(202, 54%, 59%, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-purple-contrast": {
+      "$value": "hsla(274, 37%, 64%, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-pink-contrast": {
+      "$value": "hsla(331, 60%, 71%, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-text-red-contrast": {
+      "$value": "hsla(8, 79%, 79%, 0.4)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fef9c3": {
+      "$value": "#fef9c3",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-dcfce7": {
+      "$value": "#dcfce7",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-e0f2fe": {
+      "$value": "#e0f2fe",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f3e8ff": {
+      "$value": "#f3e8ff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ffe4e6": {
+      "$value": "#ffe4e6",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-gray": {
+      "$value": "rgb(248, 248, 247)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-brown": {
+      "$value": "rgb(244, 238, 238)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-orange": {
+      "$value": "rgb(251, 236, 221)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-pink": {
+      "$value": "rgb(252, 241, 246)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fbe604": {
+      "$value": "#fbe604",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-c7fad8": {
+      "$value": "#c7fad8",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ceeafd": {
+      "$value": "#ceeafd",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-e4ccff": {
+      "$value": "#e4ccff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ffccd0": {
+      "$value": "#ffccd0",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-gray-contrast": {
+      "$value": "rgba(84, 72, 49, 0.15)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-brown-contrast": {
+      "$value": "rgba(210, 162, 141, 0.35)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-orange-contrast": {
+      "$value": "rgba(224, 124, 57, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-color-highlight-pink-contrast": {
+      "$value": "rgba(225, 136, 179, 0.27)",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-6b6524": {
+      "$value": "#6b6524",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-509568": {
+      "$value": "#509568",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-6e92aa": {
+      "$value": "#6e92aa",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-583e74": {
+      "$value": "#583e74",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-743e42": {
+      "$value": "#743e42",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-58531e": {
+      "$value": "#58531e",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-47855d": {
+      "$value": "#47855d",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-5e86a1": {
+      "$value": "#5e86a1",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-4c3564": {
+      "$value": "#4c3564",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-643539": {
+      "$value": "#643539",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f9f9f9": {
+      "$value": "#f9f9f9",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-0d0d0d": {
+      "$value": "#0d0d0d",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-666": {
+      "$value": "#666",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-777": {
+      "$value": "#777",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-e9e9e9": {
+      "$value": "#e9e9e9",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-red-error": {
+      "$value": "#b42318",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-212121": {
+      "$value": "#212121",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-171717": {
+      "$value": "#171717",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ececec": {
+      "$value": "#ececec",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-b4b4b4": {
+      "$value": "#b4b4b4",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-a0a0a0": {
+      "$value": "#a0a0a0",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-383838": {
+      "$value": "#383838",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-303030": {
+      "$value": "#303030",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f4f4f4": {
+      "$value": "#f4f4f4",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-111": {
+      "$value": "#111",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-red-error-light": {
+      "$value": "#ff938a",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ddd": {
+      "$value": "#ddd",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-0006": {
+      "$value": "#0006",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-202020": {
+      "$value": "#202020",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-242424": {
+      "$value": "#242424",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f5f5f5": {
+      "$value": "#f5f5f5",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-e5e5e5": {
+      "$value": "#e5e5e5",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-aaa": {
+      "$value": "#aaa",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-red-action": {
+      "$value": "#e32136",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-red-action-hover": {
+      "$value": "#c9192c",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f6f6f6": {
+      "$value": "#f6f6f6",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fcfcfc": {
+      "$value": "#fcfcfc",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-222": {
+      "$value": "#222",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ecf3f8": {
+      "$value": "#ecf3f8",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-c5eafe": {
+      "$value": "#c5eafe",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-a2d3ff": {
+      "$value": "#a2d3ff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-blue-accent": {
+      "$value": "#24669a",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-eaddff": {
+      "$value": "#eaddff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f4dcdf": {
+      "$value": "#f4dcdf",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ffdbc5": {
+      "$value": "#ffdbc5",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-purple-accent": {
+      "$value": "#7353a6",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ecf4f1": {
+      "$value": "#ecf4f1",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-c4f1e0": {
+      "$value": "#c4f1e0",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-90e3c6": {
+      "$value": "#90e3c6",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-green-accent": {
+      "$value": "#25745b",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-fcf2f3": {
+      "$value": "#fcf2f3",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ffd9df": {
+      "$value": "#ffd9df",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ffb6bf": {
+      "$value": "#ffb6bf",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-rose-accent": {
+      "$value": "#a44760",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-f8f0ec": {
+      "$value": "#f8f0ec",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-febd99": {
+      "$value": "#febd99",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-peach-accent": {
+      "$value": "#995631",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-404040": {
+      "$value": "#404040",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-555": {
+      "$value": "#555",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-ccc": {
+      "$value": "#ccc",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-d8bfff": {
+      "$value": "#d8bfff",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "color-hex-0007": {
+      "$value": "#0007",
+      "$type": "color",
+      "$description": "Extracted existing value."
+    },
+    "space-31px": {
+      "$value": "31px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-25rem": {
+      "$value": "0.25rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "font-size-0-625rem": {
+      "$value": "0.625rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "radius-0-375rem": {
+      "$value": "0.375rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "font-size-0-75rem": {
+      "$value": "0.75rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-375rem": {
+      "$value": "0.375rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-125rem": {
+      "$value": "0.125rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "radius-0-25rem": {
+      "$value": "0.25rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "font-size-0-875rem": {
+      "$value": "0.875rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-5rem": {
+      "$value": "0.5rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "radius-0-75rem": {
+      "$value": "0.75rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "font-size-0-9375rem": {
+      "$value": "0.9375rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-625rem": {
+      "$value": "0.625rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-3125rem": {
+      "$value": "0.3125rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "radius-0-5rem": {
+      "$value": "0.5rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "radius-999px": {
+      "$value": "999px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0-75rem": {
+      "$value": "0.75rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-1-75rem": {
+      "$value": "1.75rem",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-11px": {
+      "$value": "11px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-0px": {
+      "$value": "0px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-128px": {
+      "$value": "128px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-34px": {
+      "$value": "34px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-23px": {
+      "$value": "23px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-26px": {
+      "$value": "26px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-258px": {
+      "$value": "258px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-38px": {
+      "$value": "38px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-27px": {
+      "$value": "27px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-25px": {
+      "$value": "25px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-19px": {
+      "$value": "19px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-54px": {
+      "$value": "54px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-15px": {
+      "$value": "15px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-13px": {
+      "$value": "13px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-65px": {
+      "$value": "65px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-240px": {
+      "$value": "240px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-21px": {
+      "$value": "21px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-17px": {
+      "$value": "17px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "space-58px": {
+      "$value": "58px",
+      "$type": "dimension",
+      "$description": "Exact legacy dimension; optical and rem adjustments are preserved."
+    },
+    "font-shortcut": {
+      "$value": "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif",
+      "$type": "fontFamily",
+      "$description": "Existing tooltip keyboard font stack."
+    },
+    "motion-page-stagger": {
+      "$value": "0ms",
+      "$type": "string",
+      "$description": "Transitions.dev page slide value."
+    },
+    "motion-page-exit-enabled": {
+      "$value": "1",
+      "$type": "string",
+      "$description": "Transitions.dev page slide value."
+    },
+    "color-lima-50": {
+      "$value": "#f3fce9",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 50."
+    },
+    "color-lima-100": {
+      "$value": "#e4f8cf",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 100."
+    },
+    "color-lima-200": {
+      "$value": "#caf2a4",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 200."
+    },
+    "color-lima-300": {
+      "$value": "#a7e76f",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 300."
+    },
+    "color-lima-400": {
+      "$value": "#86d843",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 400."
+    },
+    "color-lima-500": {
+      "$value": "#67be24",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 500."
+    },
+    "color-lima-600": {
+      "$value": "#4e9719",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 600."
+    },
+    "color-lima-700": {
+      "$value": "#3c7417",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 700."
+    },
+    "color-lima-800": {
+      "$value": "#335c18",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 800."
+    },
+    "color-lima-900": {
+      "$value": "#2d4e19",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 900."
+    },
+    "color-lima-950": {
+      "$value": "#142b08",
+      "$type": "color",
+      "$description": "User-provided lima palette, shade 950."
+    },
+    "color-shiraz-50": {
+      "$value": "#fff0f1",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 50."
+    },
+    "color-shiraz-100": {
+      "$value": "#ffe1e2",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 100."
+    },
+    "color-shiraz-200": {
+      "$value": "#ffc8cd",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 200."
+    },
+    "color-shiraz-300": {
+      "$value": "#ff9ca5",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 300."
+    },
+    "color-shiraz-400": {
+      "$value": "#ff6476",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 400."
+    },
+    "color-shiraz-500": {
+      "$value": "#ff2e4b",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 500."
+    },
+    "color-shiraz-600": {
+      "$value": "#f40a36",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 600."
+    },
+    "color-shiraz-700": {
+      "$value": "#ce022e",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 700."
+    },
+    "color-shiraz-800": {
+      "$value": "#b80531",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 800."
+    },
+    "color-shiraz-900": {
+      "$value": "#93082e",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 900."
+    },
+    "color-shiraz-950": {
+      "$value": "#530015",
+      "$type": "color",
+      "$description": "User-provided shiraz palette, shade 950."
+    },
+    "color-clementine-50": {
+      "$value": "#fef8ee",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 50."
+    },
+    "color-clementine-100": {
+      "$value": "#fcefd8",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 100."
+    },
+    "color-clementine-200": {
+      "$value": "#f8dcb0",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 200."
+    },
+    "color-clementine-300": {
+      "$value": "#f3c27e",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 300."
+    },
+    "color-clementine-400": {
+      "$value": "#ed9f4a",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 400."
+    },
+    "color-clementine-500": {
+      "$value": "#e98426",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 500."
+    },
+    "color-clementine-600": {
+      "$value": "#e26f1d",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 600."
+    },
+    "color-clementine-700": {
+      "$value": "#b55219",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 700."
+    },
+    "color-clementine-800": {
+      "$value": "#90421c",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 800."
+    },
+    "color-clementine-900": {
+      "$value": "#74381a",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 900."
+    },
+    "color-clementine-950": {
+      "$value": "#3f1a0b",
+      "$type": "color",
+      "$description": "User-provided clementine palette, shade 950."
+    },
+    "motion-toggle-dur": {
+      "$value": "350ms",
+      "$type": "string",
+      "$description": "Transitions toggle motion."
+    },
+    "motion-toggle-travel": {
+      "$value": "14px",
+      "$type": "string",
+      "$description": "Transitions toggle motion."
+    },
+    "motion-toggle-ov1": {
+      "$value": "1px",
+      "$type": "string",
+      "$description": "Transitions toggle motion."
+    },
+    "motion-toggle-ov2": {
+      "$value": "0px",
+      "$type": "string",
+      "$description": "Transitions toggle motion."
+    },
+    "motion-toggle-track": {
+      "$value": "0ms",
+      "$type": "string",
+      "$description": "Transitions toggle motion."
+    },
+    "motion-toggle-ease": {
+      "$value": "cubic-bezier(0.34, 1.35, 0.64, 1)",
+      "$type": "string",
+      "$description": "Transitions toggle motion."
+    }
+  },
+  "semantic": {
+    "tt-gray-light-a-50": {
+      "$value": "{primitive.color-gray-light-a-50}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-100": {
+      "$value": "{primitive.color-gray-light-a-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-200": {
+      "$value": "{primitive.color-gray-light-a-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-300": {
+      "$value": "{primitive.color-gray-light-a-300}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-400": {
+      "$value": "{primitive.color-gray-light-a-400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-500": {
+      "$value": "{primitive.color-gray-light-a-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-600": {
+      "$value": "{primitive.color-gray-light-a-600}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-700": {
+      "$value": "{primitive.color-gray-light-a-700}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-800": {
+      "$value": "{primitive.color-gray-light-a-800}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-a-900": {
+      "$value": "{primitive.color-gray-light-a-900}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-50": {
+      "$value": "{primitive.color-gray-light-50}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-100": {
+      "$value": "{primitive.color-gray-light-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-200": {
+      "$value": "{primitive.color-gray-light-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-300": {
+      "$value": "{primitive.color-gray-light-300}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-400": {
+      "$value": "{primitive.color-gray-light-400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-500": {
+      "$value": "{primitive.color-gray-light-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-600": {
+      "$value": "{primitive.color-gray-light-600}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-700": {
+      "$value": "{primitive.color-gray-light-700}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-800": {
+      "$value": "{primitive.color-gray-light-800}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-light-900": {
+      "$value": "{primitive.color-gray-light-900}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-50": {
+      "$value": "{primitive.color-gray-dark-a-50}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-100": {
+      "$value": "{primitive.color-gray-dark-a-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-200": {
+      "$value": "{primitive.color-gray-dark-a-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-300": {
+      "$value": "{primitive.color-gray-dark-a-300}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-400": {
+      "$value": "{primitive.color-gray-dark-a-400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-500": {
+      "$value": "{primitive.color-gray-dark-a-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-600": {
+      "$value": "{primitive.color-gray-dark-a-600}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-700": {
+      "$value": "{primitive.color-gray-dark-a-700}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-800": {
+      "$value": "{primitive.color-gray-dark-a-800}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-a-900": {
+      "$value": "{primitive.color-gray-dark-a-900}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-50": {
+      "$value": "{primitive.color-gray-dark-50}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-100": {
+      "$value": "{primitive.color-gray-dark-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-200": {
+      "$value": "{primitive.color-gray-dark-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-300": {
+      "$value": "{primitive.color-gray-dark-300}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-400": {
+      "$value": "{primitive.color-gray-dark-400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-500": {
+      "$value": "{primitive.color-gray-dark-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-600": {
+      "$value": "{primitive.color-gray-dark-600}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-700": {
+      "$value": "{primitive.color-gray-dark-700}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-800": {
+      "$value": "{primitive.color-gray-dark-800}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-gray-dark-900": {
+      "$value": "{primitive.color-gray-dark-900}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-50": {
+      "$value": "{primitive.color-brand-color-50}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-100": {
+      "$value": "{primitive.color-brand-color-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-200": {
+      "$value": "{primitive.color-brand-color-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-300": {
+      "$value": "{primitive.color-brand-color-300}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-400": {
+      "$value": "{primitive.color-brand-color-400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-500": {
+      "$value": "{primitive.color-brand-color-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-600": {
+      "$value": "{primitive.color-brand-color-600}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-700": {
+      "$value": "{primitive.color-brand-color-700}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-800": {
+      "$value": "{primitive.color-brand-color-800}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-900": {
+      "$value": "{primitive.color-brand-color-900}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-brand-color-950": {
+      "$value": "{primitive.color-brand-color-950}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-inc-5": {
+      "$value": "{primitive.color-color-green-inc-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-inc-4": {
+      "$value": "{primitive.color-color-green-inc-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-inc-3": {
+      "$value": "{primitive.color-color-green-inc-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-inc-2": {
+      "$value": "{primitive.color-color-green-inc-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-inc-1": {
+      "$value": "{primitive.color-color-green-inc-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-base": {
+      "$value": "{primitive.color-color-green-base}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-dec-1": {
+      "$value": "{primitive.color-color-green-dec-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-dec-2": {
+      "$value": "{primitive.color-color-green-dec-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-dec-3": {
+      "$value": "{primitive.color-color-green-dec-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-dec-4": {
+      "$value": "{primitive.color-color-green-dec-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-green-dec-5": {
+      "$value": "{primitive.color-color-green-dec-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-inc-5": {
+      "$value": "{primitive.color-color-yellow-inc-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-inc-4": {
+      "$value": "{primitive.color-color-yellow-inc-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-inc-3": {
+      "$value": "{primitive.color-color-yellow-inc-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-inc-2": {
+      "$value": "{primitive.color-color-yellow-inc-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-inc-1": {
+      "$value": "{primitive.color-color-yellow-inc-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-base": {
+      "$value": "{primitive.color-color-yellow-base}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-dec-1": {
+      "$value": "{primitive.color-color-yellow-dec-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-dec-2": {
+      "$value": "{primitive.color-color-yellow-dec-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-dec-3": {
+      "$value": "{primitive.color-color-yellow-dec-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-dec-4": {
+      "$value": "{primitive.color-color-yellow-dec-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-yellow-dec-5": {
+      "$value": "{primitive.color-color-yellow-dec-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-inc-5": {
+      "$value": "{primitive.color-color-red-inc-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-inc-4": {
+      "$value": "{primitive.color-color-red-inc-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-inc-3": {
+      "$value": "{primitive.color-color-red-inc-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-inc-2": {
+      "$value": "{primitive.color-color-red-inc-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-inc-1": {
+      "$value": "{primitive.color-color-red-inc-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-base": {
+      "$value": "{primitive.color-color-red-base}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-dec-1": {
+      "$value": "{primitive.color-color-red-dec-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-dec-2": {
+      "$value": "{primitive.color-color-red-dec-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-dec-3": {
+      "$value": "{primitive.color-color-red-dec-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-dec-4": {
+      "$value": "{primitive.color-color-red-dec-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-red-dec-5": {
+      "$value": "{primitive.color-color-red-dec-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "white": {
+      "$value": "{primitive.color-30df8f41}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "black": {
+      "$value": "{primitive.color-ad3006a9}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "transparent": {
+      "$value": "{primitive.color-ba986759}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-shadow-elevated-md": {
+      "$value": "{primitive.legacy-tt-shadow-elevated-md-8d463726}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-radius-xxs": {
+      "$value": "{primitive.legacy-tt-radius-xxs-687e0093}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-radius-xs": {
+      "$value": "{primitive.legacy-tt-radius-xs-e53fcdb0}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-radius-sm": {
+      "$value": "{primitive.legacy-tt-radius-sm-28a5f8bf}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-radius-md": {
+      "$value": "{primitive.legacy-tt-radius-md-558b9f36}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-radius-lg": {
+      "$value": "{primitive.legacy-tt-radius-lg-a9f23226}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-radius-xl": {
+      "$value": "{primitive.legacy-tt-radius-xl-b8be0c77}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-duration-short": {
+      "$value": "{primitive.legacy-tt-transition-duration-short-cb6ba721}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-duration-default": {
+      "$value": "{primitive.legacy-tt-transition-duration-default-ac0c0530}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-duration-long": {
+      "$value": "{primitive.legacy-tt-transition-duration-long-a70ad53e}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-easing-default": {
+      "$value": "{primitive.legacy-tt-transition-easing-default-429b4682}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-easing-cubic": {
+      "$value": "{primitive.legacy-tt-transition-easing-cubic-5dbea8fd}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-easing-quart": {
+      "$value": "{primitive.legacy-tt-transition-easing-quart-ff3feef3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-easing-circ": {
+      "$value": "{primitive.legacy-tt-transition-easing-circ-9f26f1e6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-transition-easing-back": {
+      "$value": "{primitive.legacy-tt-transition-easing-back-423106f6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-accent-contrast": {
+      "$value": "{primitive.legacy-tt-accent-contrast-23ec5e7f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-destructive-contrast": {
+      "$value": "{primitive.legacy-tt-destructive-contrast-23ec5e7f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-foreground-contrast": {
+      "$value": "{primitive.legacy-tt-foreground-contrast-23ec5e7f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-bg-color": {
+      "$value": "{semantic.white}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-border-color": {
+      "$value": "{semantic.tt-gray-light-a-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-border-color-tint": {
+      "$value": "{semantic.tt-gray-light-a-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-sidebar-bg-color": {
+      "$value": "{semantic.tt-gray-light-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-scrollbar-color": {
+      "$value": "{semantic.tt-gray-light-a-200}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-cursor-color": {
+      "$value": "{semantic.tt-brand-color-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-selection-color": {
+      "$value": "{primitive.color-c0fbcbd1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-card-bg-color": {
+      "$value": "{semantic.white}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tt-card-border-color": {
+      "$value": "{semantic.tt-gray-light-a-100}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-gray": {
+      "$value": "{primitive.color-color-text-gray}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-brown": {
+      "$value": "{primitive.color-color-text-brown}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-orange": {
+      "$value": "{primitive.color-color-text-orange}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-yellow": {
+      "$value": "{primitive.color-color-text-yellow}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-green": {
+      "$value": "{primitive.color-color-text-green}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-blue": {
+      "$value": "{primitive.color-color-text-blue}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-purple": {
+      "$value": "{primitive.color-color-text-purple}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-pink": {
+      "$value": "{primitive.color-color-text-pink}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-red": {
+      "$value": "{primitive.color-color-text-red}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-gray-contrast": {
+      "$value": "{primitive.color-color-text-gray-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-brown-contrast": {
+      "$value": "{primitive.color-color-text-brown-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-orange-contrast": {
+      "$value": "{primitive.color-color-text-orange-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-yellow-contrast": {
+      "$value": "{primitive.color-color-text-yellow-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-green-contrast": {
+      "$value": "{primitive.color-color-text-green-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-blue-contrast": {
+      "$value": "{primitive.color-color-text-blue-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-purple-contrast": {
+      "$value": "{primitive.color-color-text-purple-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-pink-contrast": {
+      "$value": "{primitive.color-color-text-pink-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-text-red-contrast": {
+      "$value": "{primitive.color-color-text-red-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-yellow": {
+      "$value": "{primitive.color-hex-fef9c3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-green": {
+      "$value": "{primitive.color-hex-dcfce7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-blue": {
+      "$value": "{primitive.color-hex-e0f2fe}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-purple": {
+      "$value": "{primitive.color-hex-f3e8ff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-red": {
+      "$value": "{primitive.color-hex-ffe4e6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-gray": {
+      "$value": "{primitive.color-color-highlight-gray}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-brown": {
+      "$value": "{primitive.color-color-highlight-brown}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-orange": {
+      "$value": "{primitive.color-color-highlight-orange}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-pink": {
+      "$value": "{primitive.color-color-highlight-pink}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-yellow-contrast": {
+      "$value": "{primitive.color-hex-fbe604}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-green-contrast": {
+      "$value": "{primitive.color-hex-c7fad8}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-blue-contrast": {
+      "$value": "{primitive.color-hex-ceeafd}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-purple-contrast": {
+      "$value": "{primitive.color-hex-e4ccff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-red-contrast": {
+      "$value": "{primitive.color-hex-ffccd0}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-gray-contrast": {
+      "$value": "{primitive.color-color-highlight-gray-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-brown-contrast": {
+      "$value": "{primitive.color-color-highlight-brown-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-orange-contrast": {
+      "$value": "{primitive.color-color-highlight-orange-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-color-highlight-pink-contrast": {
+      "$value": "{primitive.color-color-highlight-pink-contrast}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-button-radius": {
+      "$value": "{primitive.legacy-button-radius-51188afc}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-color": {
+      "$value": "{primitive.color-hex-f40051}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-fill": {
+      "$value": "{primitive.legacy-like-fill-a29b8de7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-pop": {
+      "$value": "{primitive.legacy-like-pop-cbe7c0b3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-pop-ease": {
+      "$value": "{primitive.legacy-like-pop-ease-81ca200e}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-particle-dur": {
+      "$value": "{primitive.legacy-like-particle-dur-c2d8e9ce}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-particle-dist": {
+      "$value": "{primitive.legacy-like-particle-dist-9bf0c8e6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-particle-size": {
+      "$value": "{primitive.legacy-like-particle-size-649a1d91}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "like-ease": {
+      "$value": "{primitive.legacy-like-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-text-swap-dur": {
+      "$value": "{primitive.legacy-text-swap-dur-a29b8de7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-text-swap-translate-y": {
+      "$value": "{primitive.legacy-text-swap-translate-y-35660153}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-text-swap-blur": {
+      "$value": "{primitive.legacy-text-swap-blur-74761400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-text-swap-ease": {
+      "$value": "{primitive.legacy-text-swap-ease-16c2539d}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-open": {
+      "$value": "{primitive.legacy-stack-open-5df2141f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-hold": {
+      "$value": "{primitive.legacy-stack-hold-04c09905}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-close": {
+      "$value": "{primitive.legacy-panel-close-dur-cbe7c0b3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-rise": {
+      "$value": "{primitive.space-8}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-blur": {
+      "$value": "{primitive.legacy-stack-blur-74761400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-scale": {
+      "$value": "{primitive.legacy-stack-scale-bee67f04}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-peek": {
+      "$value": "{primitive.legacy-stack-peek-7769e817}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-depth-scale": {
+      "$value": "{primitive.legacy-stack-depth-scale-bb1a364b}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-depth-fade": {
+      "$value": "{primitive.legacy-stack-depth-fade-f3e360d8}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-depth1-blur": {
+      "$value": "{primitive.legacy-stack-depth1-blur-93e20626}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-stack-ease": {
+      "$value": "{primitive.legacy-stack-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-dropdown-open-dur": {
+      "$value": "{primitive.legacy-dropdown-open-dur-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-dropdown-close-dur": {
+      "$value": "{primitive.legacy-dropdown-close-dur-a29b8de7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-dropdown-pre-scale": {
+      "$value": "{primitive.legacy-dropdown-pre-scale-bee67f04}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-dropdown-closing-scale": {
+      "$value": "{primitive.legacy-dropdown-closing-scale-b45898ec}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-dropdown-ease": {
+      "$value": "{primitive.legacy-dropdown-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-modal-open-dur": {
+      "$value": "{primitive.legacy-modal-open-dur-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-modal-close-dur": {
+      "$value": "{primitive.legacy-modal-close-dur-a29b8de7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-modal-scale": {
+      "$value": "{primitive.legacy-modal-scale-bf5fac6e}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-modal-scale-close": {
+      "$value": "{primitive.legacy-modal-scale-close-bf5fac6e}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-modal-ease": {
+      "$value": "{primitive.legacy-modal-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-panel-open-dur": {
+      "$value": "{primitive.legacy-panel-open-dur-d8e24dc7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-panel-close-dur": {
+      "$value": "{primitive.legacy-panel-close-dur-cbe7c0b3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-panel-translate-y": {
+      "$value": "{primitive.legacy-panel-translate-y-cf197d3f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-panel-blur": {
+      "$value": "{primitive.legacy-panel-blur-74761400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-panel-ease": {
+      "$value": "{primitive.legacy-panel-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tabs-dur": {
+      "$value": "{primitive.legacy-tabs-dur-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tabs-ease": {
+      "$value": "{primitive.legacy-tabs-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tabs-text-muted": {
+      "$value": "{semantic.secondary}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tabs-text-active": {
+      "$value": "{semantic.ink}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tabs-bar-bg": {
+      "$value": "{semantic.hover}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-tabs-pill-bg": {
+      "$value": "{semantic.surface}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-in-dur": {
+      "$value": "{primitive.legacy-tt-in-dur-a29b8de7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-out-dur": {
+      "$value": "{primitive.legacy-tt-out-dur-adf7aadf}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-scale": {
+      "$value": "{primitive.legacy-tt-scale-b8cbc389}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-delay": {
+      "$value": "{primitive.legacy-tt-delay-b21be29f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-in-ease": {
+      "$value": "{primitive.legacy-tt-in-ease-791c2d09}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-out-ease": {
+      "$value": "{primitive.legacy-tt-out-ease-791c2d09}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-bg": {
+      "$value": "{primitive.color-hex-ffffff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "tt-fg": {
+      "$value": "{primitive.color-hex-2f2f2f}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "icon-swap-dur": {
+      "$value": "{primitive.legacy-icon-swap-dur-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "icon-swap-blur": {
+      "$value": "{primitive.legacy-icon-swap-blur-74761400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "icon-swap-start-scale": {
+      "$value": "{primitive.legacy-icon-swap-start-scale-a30a0433}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "icon-swap-ease": {
+      "$value": "{primitive.legacy-icon-swap-ease-16c2539d}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "acc-expand": {
+      "$value": "{primitive.legacy-acc-expand-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "acc-collapse": {
+      "$value": "{primitive.legacy-acc-collapse-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "acc-chevron": {
+      "$value": "{primitive.legacy-acc-chevron-355ef249}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "acc-ease": {
+      "$value": "{primitive.legacy-acc-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "resize-dur": {
+      "$value": "{primitive.legacy-resize-dur-13a634fe}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "resize-ease": {
+      "$value": "{primitive.legacy-resize-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "paper": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "sidebar": {
+      "$value": "{primitive.color-hex-f9f9f9}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "surface": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "ink": {
+      "$value": "{primitive.color-hex-0d0d0d}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "secondary": {
+      "$value": "{primitive.color-hex-666}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "muted": {
+      "$value": "{primitive.color-hex-666}",
+      "$type": "string",
+      "$description": "Muted neutral text uses the existing secondary gray to clear normal-text contrast on white."
+    },
+    "line": {
+      "$value": "{primitive.color-hex-e9e9e9}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "hover": {
+      "$value": "{primitive.color-a6447dc8}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "accent": {
+      "$value": "{primitive.color-hex-0d0d0d}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "accent-text": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "danger": {
+      "$value": "{semantic.color-error}",
+      "$type": "color",
+      "$description": "Shared error and destructive foreground."
+    },
+    "radius": {
+      "$value": "{primitive.legacy-radius-7769e817}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-modal-backdrop": {
+      "$value": "{primitive.color-2ce6e671}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-confirmation-radius": {
+      "$value": "{primitive.legacy-confirmation-radius-2793cbc2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-confirmation-backdrop-blur": {
+      "$value": "{primitive.legacy-confirmation-backdrop-blur-35660153}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "destructive-bg": {
+      "$value": "{semantic.color-shiraz-700}",
+      "$type": "color",
+      "$description": "Shiraz filled destructive action."
+    },
+    "destructive-text": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "destructive-hover-bg": {
+      "$value": "{semantic.color-shiraz-800}",
+      "$type": "color",
+      "$description": "Shiraz destructive hover."
+    },
+    "palette-start": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "palette-middle": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "palette-end": {
+      "$value": "{primitive.color-hex-fff}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "palette-angle": {
+      "$value": "{primitive.legacy-palette-angle-3d32cbaf}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "palette-strength": {
+      "$value": "{primitive.legacy-palette-strength-d9a847a1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "sidebar-palette-strength": {
+      "$value": "{primitive.legacy-sidebar-palette-strength-d9a847a1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-1": {
+      "$value": "{primitive.space-1}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-2": {
+      "$value": "{primitive.space-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-3": {
+      "$value": "{primitive.space-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-4": {
+      "$value": "{primitive.space-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-5": {
+      "$value": "{primitive.space-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-6": {
+      "$value": "{primitive.space-6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-7": {
+      "$value": "{primitive.space-7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-8": {
+      "$value": "{primitive.space-8}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-9": {
+      "$value": "{primitive.space-9}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-10": {
+      "$value": "{primitive.space-10}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-12": {
+      "$value": "{primitive.space-12}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-14": {
+      "$value": "{primitive.space-14}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-16": {
+      "$value": "{primitive.space-16}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-18": {
+      "$value": "{primitive.space-18}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-20": {
+      "$value": "{primitive.space-20}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-22": {
+      "$value": "{primitive.space-22}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-24": {
+      "$value": "{primitive.space-24}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-28": {
+      "$value": "{primitive.space-28}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-30": {
+      "$value": "{primitive.space-30}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-32": {
+      "$value": "{primitive.space-32}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-36": {
+      "$value": "{primitive.space-36}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-40": {
+      "$value": "{primitive.space-40}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-44": {
+      "$value": "{primitive.space-44}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-48": {
+      "$value": "{primitive.space-48}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-52": {
+      "$value": "{primitive.space-52}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-56": {
+      "$value": "{primitive.space-56}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-60": {
+      "$value": "{primitive.space-60}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-64": {
+      "$value": "{primitive.space-64}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "space-80": {
+      "$value": "{primitive.space-80}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-2": {
+      "$value": "{primitive.radius-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-3": {
+      "$value": "{primitive.radius-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-4": {
+      "$value": "{primitive.radius-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-6": {
+      "$value": "{primitive.radius-6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-7": {
+      "$value": "{primitive.radius-7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-8": {
+      "$value": "{primitive.radius-8}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-9": {
+      "$value": "{primitive.radius-9}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-10": {
+      "$value": "{primitive.radius-10}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-12": {
+      "$value": "{primitive.radius-12}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-13": {
+      "$value": "{primitive.radius-13}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-14": {
+      "$value": "{primitive.radius-14}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-15": {
+      "$value": "{primitive.radius-15}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-16": {
+      "$value": "{primitive.radius-16}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-18": {
+      "$value": "{primitive.radius-18}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-20": {
+      "$value": "{primitive.radius-20}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-22": {
+      "$value": "{primitive.radius-22}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-24": {
+      "$value": "{primitive.radius-24}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-28": {
+      "$value": "{primitive.radius-28}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-32": {
+      "$value": "{primitive.radius-32}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-34": {
+      "$value": "{primitive.radius-34}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-36": {
+      "$value": "{primitive.radius-36}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-48": {
+      "$value": "{primitive.radius-48}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "radius-full": {
+      "$value": "{primitive.radius-full}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-10": {
+      "$value": "{primitive.font-size-10}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-11": {
+      "$value": "{primitive.font-size-11}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-12": {
+      "$value": "{primitive.font-size-12}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-12-5": {
+      "$value": "{primitive.font-size-12-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-13": {
+      "$value": "{primitive.font-size-13}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-13-5": {
+      "$value": "{primitive.font-size-13-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-14": {
+      "$value": "{primitive.font-size-14}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-15": {
+      "$value": "{primitive.font-size-15}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-16": {
+      "$value": "{primitive.font-size-16}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-17": {
+      "$value": "{primitive.font-size-17}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-18": {
+      "$value": "{primitive.font-size-18}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-20": {
+      "$value": "{primitive.font-size-20}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-21": {
+      "$value": "{primitive.font-size-21}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-23": {
+      "$value": "{primitive.font-size-23}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-24": {
+      "$value": "{primitive.font-size-24}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-25": {
+      "$value": "{primitive.font-size-25}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-26": {
+      "$value": "{primitive.font-size-26}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-27": {
+      "$value": "{primitive.font-size-27}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-28": {
+      "$value": "{primitive.font-size-28}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-size-30": {
+      "$value": "{primitive.font-size-30}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-weight-400": {
+      "$value": "{primitive.font-weight-400}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-weight-500": {
+      "$value": "{primitive.font-weight-500}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-weight-600": {
+      "$value": "{primitive.font-weight-600}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-weight-700": {
+      "$value": "{primitive.font-weight-700}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-15": {
+      "$value": "{primitive.line-height-1-15}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-2": {
+      "$value": "{primitive.line-height-1-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-3": {
+      "$value": "{primitive.line-height-1-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-35": {
+      "$value": "{primitive.line-height-1-35}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-4": {
+      "$value": "{primitive.line-height-1-4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-5": {
+      "$value": "{primitive.line-height-1-5}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-6": {
+      "$value": "{primitive.line-height-1-6}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-65": {
+      "$value": "{primitive.line-height-1-65}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-7": {
+      "$value": "{primitive.line-height-1-7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "line-height-1-9": {
+      "$value": "{primitive.line-height-1-9}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-ui": {
+      "$value": "{primitive.font-ui}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "font-code": {
+      "$value": "{primitive.font-code}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "text-size-caption": {
+      "$value": "{semantic.font-size-12}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "text-size-label": {
+      "$value": "{semantic.font-size-13}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "text-size-ui": {
+      "$value": "{semantic.font-size-13}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "text-size-body": {
+      "$value": "{semantic.font-size-16}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "text-size-dialog-title": {
+      "$value": "{semantic.font-size-18}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "text-size-page-title": {
+      "$value": "{semantic.font-size-28}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "spacing-control-x": {
+      "$value": "{semantic.space-16}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "spacing-control-y": {
+      "$value": "{semantic.space-10}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "spacing-surface": {
+      "$value": "{semantic.space-24}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "spacing-section": {
+      "$value": "{semantic.space-32}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "color-success": {
+      "$value": "{semantic.color-lima-700}",
+      "$type": "color",
+      "$description": "lima 700 on light surfaces, selected from the supplied APCA contrast matrix."
+    },
+    "color-warning": {
+      "$value": "{semantic.color-clementine-700}",
+      "$type": "color",
+      "$description": "clementine 700 on light surfaces, selected from the supplied APCA contrast matrix."
+    },
+    "color-error": {
+      "$value": "{semantic.color-shiraz-700}",
+      "$type": "color",
+      "$description": "shiraz 700 on light surfaces, selected from the supplied APCA contrast matrix."
+    },
+    "color-info": {
+      "$value": "{primitive.color-blue-accent}",
+      "$type": "color",
+      "$description": "Information text reuses the existing blue palette accent."
+    },
+    "focus-ring-color": {
+      "$value": "{semantic.accent}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "focus-ring-width": {
+      "$value": "{semantic.space-2}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "focus-ring-offset": {
+      "$value": "{semantic.space-3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "focus-field-border": {
+      "$value": "{semantic.accent}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "focus-field-shadow": {
+      "$value": "0 0 0 {semantic.space-3} color-mix(in srgb, {semantic.accent} 16%, transparent)",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "control-opacity-disabled": {
+      "$value": "{primitive.opacity-disabled}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "control-bg-active": {
+      "$value": "color-mix(in srgb, {semantic.ink} 10%, {semantic.surface})",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "destructive-bg-active": {
+      "$value": "{semantic.color-shiraz-900}",
+      "$type": "color",
+      "$description": "Shiraz destructive pressed state."
+    },
+    "shadow-menu": {
+      "$value": "{primitive.shadow-menu}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-dialog": {
+      "$value": "{primitive.shadow-dialog}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-find": {
+      "$value": "{primitive.shadow-find}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-tooltip": {
+      "$value": "{primitive.shadow-tooltip}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-card": {
+      "$value": "{primitive.shadow-card}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-card-hover": {
+      "$value": "{primitive.shadow-card-hover}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-a382d8d4": {
+      "$value": "{primitive.shadow-existing-a382d8d4}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-b6383236": {
+      "$value": "{primitive.shadow-existing-b6383236}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-16b50950": {
+      "$value": "{primitive.shadow-existing-16b50950}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-7631818b": {
+      "$value": "{primitive.shadow-existing-7631818b}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-8d463726": {
+      "$value": "{primitive.shadow-existing-8d463726}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-c90886c7": {
+      "$value": "{primitive.shadow-existing-c90886c7}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-110f20fd": {
+      "$value": "{primitive.shadow-existing-110f20fd}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-a27c72f3": {
+      "$value": "{primitive.shadow-existing-a27c72f3}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-ede8be8b": {
+      "$value": "{primitive.shadow-existing-ede8be8b}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-64d41a81": {
+      "$value": "{primitive.shadow-existing-64d41a81}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "shadow-existing-09971116": {
+      "$value": "{primitive.shadow-existing-09971116}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "system-button-hover-opacity": {
+      "$value": "{primitive.opacity-hover}",
+      "$type": "string",
+      "$description": "Shared purpose alias."
+    },
+    "palette-neutral-preview": {
+      "$value": "linear-gradient(180deg, {primitive.color-hex-fff} 0%, {primitive.color-hex-f9f9f9} 100%)",
+      "$type": "string",
+      "$description": "Gradient preview for accent color selection."
+    },
+    "palette-blue-preview": {
+      "$value": "linear-gradient(180deg, {primitive.color-555cf78d} 0%, {primitive.color-b638fb16} 60%, {primitive.color-e9a92d2d} 100%)",
+      "$type": "string",
+      "$description": "Gradient preview for accent color selection."
+    },
+    "palette-aurora-preview": {
+      "$value": "linear-gradient(180deg, {primitive.color-a53a6b7f} 39.84%, {primitive.color-6a9c88d9} 101.72%)",
+      "$type": "string",
+      "$description": "Gradient preview for accent color selection."
+    },
+    "palette-mint-preview": {
+      "$value": "linear-gradient(180deg, {primitive.color-d144b27d} 0%, {primitive.color-308934a6} 60%, {primitive.color-a78252b9} 100%)",
+      "$type": "string",
+      "$description": "Gradient preview for accent color selection."
+    },
+    "palette-rose-preview": {
+      "$value": "linear-gradient(180deg, {primitive.color-7b7a8624} 0%, {primitive.color-c54c53f1} 60%, {primitive.color-5f1309ee} 100%)",
+      "$type": "string",
+      "$description": "Gradient preview for accent color selection."
+    },
+    "palette-peach-preview": {
+      "$value": "linear-gradient(180deg, {primitive.color-02d7aecd} 0%, {primitive.color-6a9c88d9} 60%, {primitive.color-4e64b0f7} 100%)",
+      "$type": "string",
+      "$description": "Gradient preview for accent color selection."
+    },
+    "space-31px": {
+      "$value": "{primitive.space-31px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-0-25rem": {
+      "$value": "{primitive.space-0-25rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "font-size-0-625rem": {
+      "$value": "{primitive.font-size-0-625rem}",
+      "$type": "dimension",
+      "$description": "Shared font-size scale."
+    },
+    "radius-0-375rem": {
+      "$value": "{primitive.radius-0-375rem}",
+      "$type": "dimension",
+      "$description": "Shared radius scale."
+    },
+    "font-size-0-75rem": {
+      "$value": "{primitive.font-size-0-75rem}",
+      "$type": "dimension",
+      "$description": "Shared font-size scale."
+    },
+    "space-0-375rem": {
+      "$value": "{primitive.space-0-375rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-0-125rem": {
+      "$value": "{primitive.space-0-125rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "radius-0-25rem": {
+      "$value": "{primitive.radius-0-25rem}",
+      "$type": "dimension",
+      "$description": "Shared radius scale."
+    },
+    "font-size-0-875rem": {
+      "$value": "{primitive.font-size-0-875rem}",
+      "$type": "dimension",
+      "$description": "Shared font-size scale."
+    },
+    "space-0-5rem": {
+      "$value": "{primitive.space-0-5rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "radius-0-75rem": {
+      "$value": "{primitive.radius-0-75rem}",
+      "$type": "dimension",
+      "$description": "Shared radius scale."
+    },
+    "font-size-0-9375rem": {
+      "$value": "{primitive.font-size-0-9375rem}",
+      "$type": "dimension",
+      "$description": "Shared font-size scale."
+    },
+    "space-0-625rem": {
+      "$value": "{primitive.space-0-625rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-0-3125rem": {
+      "$value": "{primitive.space-0-3125rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "radius-0-5rem": {
+      "$value": "{primitive.radius-0-5rem}",
+      "$type": "dimension",
+      "$description": "Shared radius scale."
+    },
+    "radius-999px": {
+      "$value": "{primitive.radius-999px}",
+      "$type": "dimension",
+      "$description": "Shared radius scale."
+    },
+    "space-0-75rem": {
+      "$value": "{primitive.space-0-75rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-1-75rem": {
+      "$value": "{primitive.space-1-75rem}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-11px": {
+      "$value": "{primitive.space-11px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-0px": {
+      "$value": "{primitive.space-0px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-128px": {
+      "$value": "{primitive.space-128px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-34px": {
+      "$value": "{primitive.space-34px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-23px": {
+      "$value": "{primitive.space-23px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-26px": {
+      "$value": "{primitive.space-26px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-258px": {
+      "$value": "{primitive.space-258px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-38px": {
+      "$value": "{primitive.space-38px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-27px": {
+      "$value": "{primitive.space-27px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-25px": {
+      "$value": "{primitive.space-25px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-19px": {
+      "$value": "{primitive.space-19px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-54px": {
+      "$value": "{primitive.space-54px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-15px": {
+      "$value": "{primitive.space-15px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-13px": {
+      "$value": "{primitive.space-13px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-65px": {
+      "$value": "{primitive.space-65px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-240px": {
+      "$value": "{primitive.space-240px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-21px": {
+      "$value": "{primitive.space-21px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-17px": {
+      "$value": "{primitive.space-17px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "space-58px": {
+      "$value": "{primitive.space-58px}",
+      "$type": "dimension",
+      "$description": "Shared space scale."
+    },
+    "color-editor-mark-text": {
+      "$value": "{primitive.color-hex-202020}",
+      "$type": "color",
+      "$description": "Preserved fixed-purpose color; independent of selected app theme."
+    },
+    "color-search-match": {
+      "$value": "{semantic.accent}",
+      "$type": "color",
+      "$description": "Note search highlights follow the selected app palette and theme."
+    },
+    "color-search-match-border": {
+      "$value": "{semantic.accent}",
+      "$type": "color",
+      "$description": "Active note search outline follows the selected app palette and theme."
+    },
+    "font-shortcut": {
+      "$value": "{primitive.font-shortcut}",
+      "$type": "fontFamily",
+      "$description": "Keyboard hints."
+    },
+    "color-primary-hover": {
+      "$value": "color-mix(in srgb, {semantic.accent} 92%, {semantic.ink})",
+      "$type": "color",
+      "$description": "Opaque primary hover maintains label contrast."
+    },
+    "color-primary-active": {
+      "$value": "color-mix(in srgb, {semantic.accent} 88%, {semantic.ink})",
+      "$type": "color",
+      "$description": "Pressed primary action."
+    },
+    "color-accent-control-bg": {
+      "$value": "color-mix(in srgb, {semantic.accent-text} 16%, {semantic.accent})",
+      "$type": "color",
+      "$description": "Existing toast action background."
+    },
+    "color-accent-control-bg-hover": {
+      "$value": "color-mix(in srgb, {semantic.accent-text} 24%, {semantic.accent})",
+      "$type": "color",
+      "$description": "Existing toast action hover background."
+    },
+    "destructive-foreground": {
+      "$value": "{semantic.danger}",
+      "$type": "string",
+      "$description": "Theme-aware destructive text and icons."
+    },
+    "destructive-border": {
+      "$value": "color-mix(in srgb, {semantic.destructive-foreground} 35%, transparent)",
+      "$type": "string",
+      "$description": "Destructive outline."
+    },
+    "destructive-subtle-hover": {
+      "$value": "color-mix(in srgb, {semantic.destructive-foreground} 8%, transparent)",
+      "$type": "string",
+      "$description": "Destructive outline and menu hover."
+    },
+    "destructive-subtle-active": {
+      "$value": "color-mix(in srgb, {semantic.destructive-foreground} 12%, transparent)",
+      "$type": "string",
+      "$description": "Destructive outline and menu pressed state."
+    },
+    "system-page-slide-dur": {
+      "$value": "{primitive.legacy-stack-close-355ef249}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-fade-dur": {
+      "$value": "{primitive.legacy-stack-close-355ef249}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-slide-distance": {
+      "$value": "{primitive.space-8}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-blur": {
+      "$value": "{primitive.space-3}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-stagger": {
+      "$value": "{primitive.motion-page-stagger}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-exit-enabled": {
+      "$value": "{primitive.motion-page-exit-enabled}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-slide-ease": {
+      "$value": "{primitive.legacy-like-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "system-page-fade-ease": {
+      "$value": "{primitive.legacy-like-ease-73cabdab}",
+      "$type": "string",
+      "$description": "Transitions.dev page slide motion."
+    },
+    "ease-smooth-out": {
+      "$value": "{semantic.system-page-slide-ease}",
+      "$type": "string",
+      "$description": "Smooth surface movement easing."
+    },
+    "control-bg-selected": {
+      "$value": "{semantic.hover}",
+      "$type": "string",
+      "$description": "Neutral selection background across accent palettes."
+    },
+    "color-lima-50": {
+      "$value": "{primitive.color-lima-50}",
+      "$type": "color",
+      "$description": "lima palette shade 50."
+    },
+    "color-lima-100": {
+      "$value": "{primitive.color-lima-100}",
+      "$type": "color",
+      "$description": "lima palette shade 100."
+    },
+    "color-lima-200": {
+      "$value": "{primitive.color-lima-200}",
+      "$type": "color",
+      "$description": "lima palette shade 200."
+    },
+    "color-lima-300": {
+      "$value": "{primitive.color-lima-300}",
+      "$type": "color",
+      "$description": "lima palette shade 300."
+    },
+    "color-lima-400": {
+      "$value": "{primitive.color-lima-400}",
+      "$type": "color",
+      "$description": "lima palette shade 400."
+    },
+    "color-lima-500": {
+      "$value": "{primitive.color-lima-500}",
+      "$type": "color",
+      "$description": "lima palette shade 500."
+    },
+    "color-lima-600": {
+      "$value": "{primitive.color-lima-600}",
+      "$type": "color",
+      "$description": "lima palette shade 600."
+    },
+    "color-lima-700": {
+      "$value": "{primitive.color-lima-700}",
+      "$type": "color",
+      "$description": "lima palette shade 700."
+    },
+    "color-lima-800": {
+      "$value": "{primitive.color-lima-800}",
+      "$type": "color",
+      "$description": "lima palette shade 800."
+    },
+    "color-lima-900": {
+      "$value": "{primitive.color-lima-900}",
+      "$type": "color",
+      "$description": "lima palette shade 900."
+    },
+    "color-lima-950": {
+      "$value": "{primitive.color-lima-950}",
+      "$type": "color",
+      "$description": "lima palette shade 950."
+    },
+    "color-shiraz-50": {
+      "$value": "{primitive.color-shiraz-50}",
+      "$type": "color",
+      "$description": "shiraz palette shade 50."
+    },
+    "color-shiraz-100": {
+      "$value": "{primitive.color-shiraz-100}",
+      "$type": "color",
+      "$description": "shiraz palette shade 100."
+    },
+    "color-shiraz-200": {
+      "$value": "{primitive.color-shiraz-200}",
+      "$type": "color",
+      "$description": "shiraz palette shade 200."
+    },
+    "color-shiraz-300": {
+      "$value": "{primitive.color-shiraz-300}",
+      "$type": "color",
+      "$description": "shiraz palette shade 300."
+    },
+    "color-shiraz-400": {
+      "$value": "{primitive.color-shiraz-400}",
+      "$type": "color",
+      "$description": "shiraz palette shade 400."
+    },
+    "color-shiraz-500": {
+      "$value": "{primitive.color-shiraz-500}",
+      "$type": "color",
+      "$description": "shiraz palette shade 500."
+    },
+    "color-shiraz-600": {
+      "$value": "{primitive.color-shiraz-600}",
+      "$type": "color",
+      "$description": "shiraz palette shade 600."
+    },
+    "color-shiraz-700": {
+      "$value": "{primitive.color-shiraz-700}",
+      "$type": "color",
+      "$description": "shiraz palette shade 700."
+    },
+    "color-shiraz-800": {
+      "$value": "{primitive.color-shiraz-800}",
+      "$type": "color",
+      "$description": "shiraz palette shade 800."
+    },
+    "color-shiraz-900": {
+      "$value": "{primitive.color-shiraz-900}",
+      "$type": "color",
+      "$description": "shiraz palette shade 900."
+    },
+    "color-shiraz-950": {
+      "$value": "{primitive.color-shiraz-950}",
+      "$type": "color",
+      "$description": "shiraz palette shade 950."
+    },
+    "color-clementine-50": {
+      "$value": "{primitive.color-clementine-50}",
+      "$type": "color",
+      "$description": "clementine palette shade 50."
+    },
+    "color-clementine-100": {
+      "$value": "{primitive.color-clementine-100}",
+      "$type": "color",
+      "$description": "clementine palette shade 100."
+    },
+    "color-clementine-200": {
+      "$value": "{primitive.color-clementine-200}",
+      "$type": "color",
+      "$description": "clementine palette shade 200."
+    },
+    "color-clementine-300": {
+      "$value": "{primitive.color-clementine-300}",
+      "$type": "color",
+      "$description": "clementine palette shade 300."
+    },
+    "color-clementine-400": {
+      "$value": "{primitive.color-clementine-400}",
+      "$type": "color",
+      "$description": "clementine palette shade 400."
+    },
+    "color-clementine-500": {
+      "$value": "{primitive.color-clementine-500}",
+      "$type": "color",
+      "$description": "clementine palette shade 500."
+    },
+    "color-clementine-600": {
+      "$value": "{primitive.color-clementine-600}",
+      "$type": "color",
+      "$description": "clementine palette shade 600."
+    },
+    "color-clementine-700": {
+      "$value": "{primitive.color-clementine-700}",
+      "$type": "color",
+      "$description": "clementine palette shade 700."
+    },
+    "color-clementine-800": {
+      "$value": "{primitive.color-clementine-800}",
+      "$type": "color",
+      "$description": "clementine palette shade 800."
+    },
+    "color-clementine-900": {
+      "$value": "{primitive.color-clementine-900}",
+      "$type": "color",
+      "$description": "clementine palette shade 900."
+    },
+    "color-clementine-950": {
+      "$value": "{primitive.color-clementine-950}",
+      "$type": "color",
+      "$description": "clementine palette shade 950."
+    },
+    "color-success-contrast": {
+      "$value": "{semantic.color-lima-50}",
+      "$type": "color",
+      "$description": "Lima 50 check on Lima 700 fill: supplied APCA matrix Lc -79."
+    },
+    "system-toggle-dur": {
+      "$value": "{primitive.motion-toggle-dur}",
+      "$type": "string"
+    },
+    "system-toggle-travel": {
+      "$value": "{primitive.motion-toggle-travel}",
+      "$type": "string"
+    },
+    "system-toggle-ov1": {
+      "$value": "{primitive.motion-toggle-ov1}",
+      "$type": "string"
+    },
+    "system-toggle-ov2": {
+      "$value": "{primitive.motion-toggle-ov2}",
+      "$type": "string"
+    },
+    "system-toggle-track": {
+      "$value": "{primitive.motion-toggle-track}",
+      "$type": "string"
+    },
+    "system-toggle-ease": {
+      "$value": "{primitive.motion-toggle-ease}",
+      "$type": "string"
+    }
+  },
+  "component": {
+    "tt-shadow-elevated-md": {
+      "$value": "{semantic.system-tt-shadow-elevated-md}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-radius-xxs": {
+      "$value": "{semantic.system-tt-radius-xxs}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-radius-xs": {
+      "$value": "{semantic.system-tt-radius-xs}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-radius-sm": {
+      "$value": "{semantic.system-tt-radius-sm}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-radius-md": {
+      "$value": "{semantic.system-tt-radius-md}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-radius-lg": {
+      "$value": "{semantic.system-tt-radius-lg}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-radius-xl": {
+      "$value": "{semantic.system-tt-radius-xl}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-duration-short": {
+      "$value": "{semantic.system-tt-transition-duration-short}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-duration-default": {
+      "$value": "{semantic.system-tt-transition-duration-default}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-duration-long": {
+      "$value": "{semantic.system-tt-transition-duration-long}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-easing-default": {
+      "$value": "{semantic.system-tt-transition-easing-default}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-easing-cubic": {
+      "$value": "{semantic.system-tt-transition-easing-cubic}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-easing-quart": {
+      "$value": "{semantic.system-tt-transition-easing-quart}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-easing-circ": {
+      "$value": "{semantic.system-tt-transition-easing-circ}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-transition-easing-back": {
+      "$value": "{semantic.system-tt-transition-easing-back}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-scrollbar-color": {
+      "$value": "{semantic.system-tt-scrollbar-color}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-cursor-color": {
+      "$value": "{semantic.system-tt-cursor-color}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-selection-color": {
+      "$value": "{semantic.system-tt-selection-color}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-card-bg-color": {
+      "$value": "{semantic.system-tt-card-bg-color}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tt-card-border-color": {
+      "$value": "{semantic.system-tt-card-border-color}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-radius": {
+      "$value": "{semantic.system-button-radius}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "text-swap-dur": {
+      "$value": "{semantic.system-text-swap-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "text-swap-translate-y": {
+      "$value": "{semantic.system-text-swap-translate-y}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "text-swap-blur": {
+      "$value": "{semantic.system-text-swap-blur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "text-swap-ease": {
+      "$value": "{semantic.system-text-swap-ease}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-open": {
+      "$value": "{semantic.system-stack-open}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-hold": {
+      "$value": "{semantic.system-stack-hold}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-close": {
+      "$value": "{semantic.system-stack-close}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-rise": {
+      "$value": "{semantic.system-stack-rise}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-blur": {
+      "$value": "{semantic.system-stack-blur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-scale": {
+      "$value": "{semantic.system-stack-scale}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-peek": {
+      "$value": "{semantic.system-stack-peek}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-depth-scale": {
+      "$value": "{semantic.system-stack-depth-scale}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-depth-fade": {
+      "$value": "{semantic.system-stack-depth-fade}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-depth1-blur": {
+      "$value": "{semantic.system-stack-depth1-blur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "stack-ease": {
+      "$value": "{semantic.system-stack-ease}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dropdown-open-dur": {
+      "$value": "{semantic.system-dropdown-open-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dropdown-close-dur": {
+      "$value": "{semantic.system-dropdown-close-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dropdown-pre-scale": {
+      "$value": "{semantic.system-dropdown-pre-scale}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dropdown-closing-scale": {
+      "$value": "{semantic.system-dropdown-closing-scale}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dropdown-ease": {
+      "$value": "{semantic.system-dropdown-ease}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "modal-open-dur": {
+      "$value": "{semantic.system-modal-open-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "modal-close-dur": {
+      "$value": "{semantic.system-modal-close-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "modal-scale": {
+      "$value": "{semantic.system-modal-scale}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "modal-scale-close": {
+      "$value": "{semantic.system-modal-scale-close}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "modal-ease": {
+      "$value": "{semantic.system-modal-ease}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "panel-open-dur": {
+      "$value": "{semantic.system-panel-open-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "panel-close-dur": {
+      "$value": "{semantic.system-panel-close-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "panel-translate-y": {
+      "$value": "{semantic.system-panel-translate-y}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "panel-blur": {
+      "$value": "{semantic.system-panel-blur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "panel-ease": {
+      "$value": "{semantic.system-panel-ease}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tabs-dur": {
+      "$value": "{semantic.system-tabs-dur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tabs-ease": {
+      "$value": "{semantic.system-tabs-ease}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tabs-text-muted": {
+      "$value": "{semantic.system-tabs-text-muted}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tabs-text-active": {
+      "$value": "{semantic.system-tabs-text-active}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tabs-bar-bg": {
+      "$value": "{semantic.system-tabs-bar-bg}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tabs-pill-bg": {
+      "$value": "{semantic.system-tabs-pill-bg}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "modal-backdrop": {
+      "$value": "{semantic.system-modal-backdrop}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "confirmation-radius": {
+      "$value": "{semantic.system-confirmation-radius}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "confirmation-backdrop-blur": {
+      "$value": "{semantic.system-confirmation-backdrop-blur}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-bg": {
+      "$value": "{semantic.accent}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-text": {
+      "$value": "{semantic.accent-text}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-bg-hover": {
+      "$value": "{semantic.color-primary-hover}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-hover-opacity": {
+      "$value": "{semantic.system-button-hover-opacity}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-bg-active": {
+      "$value": "{semantic.control-bg-active}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-padding-x": {
+      "$value": "{semantic.spacing-control-x}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-padding-y": {
+      "$value": "{semantic.spacing-control-y}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-font-size": {
+      "$value": "{semantic.text-size-ui}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-opacity-disabled": {
+      "$value": "{semantic.control-opacity-disabled}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-focus-ring": {
+      "$value": "{semantic.focus-ring-color}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-secondary-bg": {
+      "$value": "{semantic.surface}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-secondary-text": {
+      "$value": "{semantic.ink}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-secondary-border": {
+      "$value": "{semantic.line}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-secondary-bg-hover": {
+      "$value": "{semantic.hover}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-destructive-bg": {
+      "$value": "{semantic.destructive-bg}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-destructive-text": {
+      "$value": "{semantic.destructive-text}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-destructive-bg-hover": {
+      "$value": "{semantic.destructive-hover-bg}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "button-destructive-bg-active": {
+      "$value": "{semantic.destructive-bg-active}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-bg": {
+      "$value": "{semantic.surface}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-text": {
+      "$value": "{semantic.ink}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-border": {
+      "$value": "{semantic.line}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-radius": {
+      "$value": "{semantic.radius-12}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-placeholder": {
+      "$value": "{semantic.muted}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-focus-ring": {
+      "$value": "{semantic.focus-field-shadow}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-focus-border": {
+      "$value": "{semantic.focus-field-border}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-error-border": {
+      "$value": "{semantic.color-error}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-disabled-bg": {
+      "$value": "{semantic.sidebar}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "input-disabled-text": {
+      "$value": "{semantic.muted}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "card-bg": {
+      "$value": "{semantic.surface}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "card-border": {
+      "$value": "{semantic.line}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "card-radius": {
+      "$value": "{semantic.radius-24}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "card-shadow": {
+      "$value": "{semantic.shadow-card}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "card-shadow-hover": {
+      "$value": "{semantic.shadow-card-hover}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-bg": {
+      "$value": "{semantic.surface}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-text": {
+      "$value": "{semantic.ink}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-border": {
+      "$value": "{semantic.line}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-radius": {
+      "$value": "{semantic.radius-24}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-item-radius": {
+      "$value": "{semantic.radius-16}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-item-font-size": {
+      "$value": "{semantic.font-size-13-5}",
+      "$type": "string",
+      "$description": "Shared text size for context menu and dropdown actions."
+    },
+    "menu-padding": {
+      "$value": "{semantic.space-8}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "menu-shadow": {
+      "$value": "{semantic.shadow-menu}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dialog-bg": {
+      "$value": "{semantic.paper}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dialog-text": {
+      "$value": "{semantic.ink}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dialog-border": {
+      "$value": "{semantic.line}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dialog-shadow": {
+      "$value": "{semantic.shadow-dialog}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dialog-radius": {
+      "$value": "{semantic.radius-16}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "dialog-padding": {
+      "$value": "{semantic.space-20}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "toast-bg": {
+      "$value": "{semantic.accent}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "toast-text": {
+      "$value": "{semantic.accent-text}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "toast-radius": {
+      "$value": "{semantic.radius-full}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "toast-shadow": {
+      "$value": "{semantic.shadow-menu}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tooltip-radius": {
+      "$value": "{semantic.radius-12}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tooltip-shortcut-radius": {
+      "$value": "{semantic.radius-8}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "tooltip-shadow": {
+      "$value": "{semantic.shadow-tooltip}",
+      "$type": "string",
+      "$description": "Component contract."
+    },
+    "palette-swatch-neutral-bg": {
+      "$value": "{semantic.palette-neutral-preview}",
+      "$type": "string",
+      "$description": "Palette picker preview."
+    },
+    "palette-swatch-blue-bg": {
+      "$value": "{semantic.palette-blue-preview}",
+      "$type": "string",
+      "$description": "Palette picker preview."
+    },
+    "palette-swatch-aurora-bg": {
+      "$value": "{semantic.palette-aurora-preview}",
+      "$type": "string",
+      "$description": "Palette picker preview."
+    },
+    "palette-swatch-mint-bg": {
+      "$value": "{semantic.palette-mint-preview}",
+      "$type": "string",
+      "$description": "Palette picker preview."
+    },
+    "palette-swatch-rose-bg": {
+      "$value": "{semantic.palette-rose-preview}",
+      "$type": "string",
+      "$description": "Palette picker preview."
+    },
+    "palette-swatch-peach-bg": {
+      "$value": "{semantic.palette-peach-preview}",
+      "$type": "string",
+      "$description": "Palette picker preview."
+    },
+    "button-primary-bg-active": {
+      "$value": "{semantic.color-primary-active}",
+      "$type": "color",
+      "$description": "Primary button pressed state."
+    },
+    "toast-action-bg": {
+      "$value": "{semantic.color-accent-control-bg}",
+      "$type": "color"
+    },
+    "toast-action-bg-hover": {
+      "$value": "{semantic.color-accent-control-bg-hover}",
+      "$type": "color"
+    },
+    "toast-action-text": {
+      "$value": "{semantic.accent-text}",
+      "$type": "color"
+    },
+    "button-destructive-outline-text": {
+      "$value": "{semantic.destructive-foreground}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "button-destructive-outline-border": {
+      "$value": "{semantic.destructive-border}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "button-destructive-outline-bg-hover": {
+      "$value": "{semantic.destructive-subtle-hover}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "button-destructive-outline-bg-active": {
+      "$value": "{semantic.destructive-subtle-active}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "menu-destructive-text": {
+      "$value": "{semantic.destructive-foreground}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "menu-destructive-bg-hover": {
+      "$value": "{semantic.destructive-subtle-hover}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "menu-destructive-bg-active": {
+      "$value": "{semantic.destructive-subtle-active}",
+      "$type": "string",
+      "$description": "Shared destructive variant contract."
+    },
+    "page-slide-dur": {
+      "$value": "{semantic.system-page-slide-dur}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-fade-dur": {
+      "$value": "{semantic.system-page-fade-dur}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-slide-distance": {
+      "$value": "{semantic.system-page-slide-distance}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-blur": {
+      "$value": "{semantic.system-page-blur}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-stagger": {
+      "$value": "{semantic.system-page-stagger}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-exit-enabled": {
+      "$value": "{semantic.system-page-exit-enabled}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-slide-ease": {
+      "$value": "{semantic.system-page-slide-ease}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "page-fade-ease": {
+      "$value": "{semantic.system-page-fade-ease}",
+      "$type": "string",
+      "$description": "Page side-by-side transition contract."
+    },
+    "toggle-dur": {
+      "$value": "{semantic.system-toggle-dur}",
+      "$type": "string"
+    },
+    "toggle-travel": {
+      "$value": "{semantic.system-toggle-travel}",
+      "$type": "string"
+    },
+    "toggle-ov1": {
+      "$value": "{semantic.system-toggle-ov1}",
+      "$type": "string"
+    },
+    "toggle-ov2": {
+      "$value": "{semantic.system-toggle-ov2}",
+      "$type": "string"
+    },
+    "toggle-track": {
+      "$value": "{semantic.system-toggle-track}",
+      "$type": "string"
+    },
+    "toggle-ease": {
+      "$value": "{semantic.system-toggle-ease}",
+      "$type": "string"
+    }
+  },
+  "themes": {
+    ":root[data-theme=\"dark\"]": {
+      "paper": {
+        "$value": "{primitive.color-hex-212121}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "sidebar": {
+        "$value": "{primitive.color-hex-171717}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "surface": {
+        "$value": "{primitive.color-hex-2f2f2f}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "ink": {
+        "$value": "{primitive.color-hex-ececec}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "secondary": {
+        "$value": "{primitive.color-hex-b4b4b4}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "muted": {
+        "$value": "{primitive.color-hex-a0a0a0}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "line": {
+        "$value": "{primitive.color-hex-383838}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "hover": {
+        "$value": "{primitive.color-hex-303030}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "accent": {
+        "$value": "{primitive.color-hex-f4f4f4}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "accent-text": {
+        "$value": "{primitive.color-hex-111}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "modal-backdrop": {
+        "$value": "{primitive.color-fd9af3c8}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "color-warning": {
+        "$value": "{semantic.color-clementine-300}",
+        "$type": "color",
+        "$description": "clementine 300 for dark surfaces, selected from the supplied APCA contrast matrix."
+      },
+      "color-info": {
+        "$value": "{primitive.color-hex-a2d3ff}",
+        "$type": "color"
+      },
+      "color-success": {
+        "$value": "{semantic.color-lima-300}",
+        "$type": "color",
+        "$description": "lima 300 for dark surfaces, selected from the supplied APCA contrast matrix."
+      },
+      "color-error": {
+        "$value": "{semantic.color-shiraz-300}",
+        "$type": "color",
+        "$description": "shiraz 300 for dark surfaces, selected from the supplied APCA contrast matrix."
+      },
+      "color-success-contrast": {
+        "$value": "{semantic.color-lima-950}",
+        "$type": "color",
+        "$description": "Lima 950 check on Lima 300 fill: supplied APCA matrix Lc 78."
+      }
+    },
+    ":root[data-theme=\"dark\"], .dark": {
+      "tt-bg-color": {
+        "$value": "{semantic.black}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-border-color": {
+        "$value": "{semantic.tt-gray-dark-a-200}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-border-color-tint": {
+        "$value": "{semantic.tt-gray-dark-a-100}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-sidebar-bg-color": {
+        "$value": "{semantic.tt-gray-dark-100}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-scrollbar-color": {
+        "$value": "{semantic.tt-gray-dark-a-200}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-cursor-color": {
+        "$value": "{semantic.tt-brand-color-400}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-selection-color": {
+        "$value": "{primitive.color-e77c8cca}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-card-bg-color": {
+        "$value": "{semantic.tt-gray-dark-50}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-card-border-color": {
+        "$value": "{semantic.tt-gray-dark-a-50}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-shadow-elevated-md": {
+        "$value": "{primitive.legacy-tt-shadow-elevated-md-c90886c7}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-gray": {
+        "$value": "{primitive.color-9189a8d2}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-brown": {
+        "$value": "{primitive.color-57178741}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-orange": {
+        "$value": "{primitive.color-990bc6fe}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-yellow": {
+        "$value": "{primitive.color-c7d7a605}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-green": {
+        "$value": "{primitive.color-0124a8f6}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-blue": {
+        "$value": "{primitive.color-d71ecadd}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-purple": {
+        "$value": "{primitive.color-962ae768}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-pink": {
+        "$value": "{primitive.color-b3f7a5db}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-red": {
+        "$value": "{primitive.color-bd68a07b}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-gray-contrast": {
+        "$value": "{primitive.color-a3d4f401}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-brown-contrast": {
+        "$value": "{primitive.color-3ef5ad25}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-orange-contrast": {
+        "$value": "{primitive.color-94e5000f}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-yellow-contrast": {
+        "$value": "{primitive.color-4b77efcf}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-green-contrast": {
+        "$value": "{primitive.color-b7470a49}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-blue-contrast": {
+        "$value": "{primitive.color-7f4574b5}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-purple-contrast": {
+        "$value": "{primitive.color-bee656a2}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-pink-contrast": {
+        "$value": "{primitive.color-1cef10c9}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-text-red-contrast": {
+        "$value": "{primitive.color-2a6ba6dc}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-yellow": {
+        "$value": "{primitive.color-hex-6b6524}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-green": {
+        "$value": "{primitive.color-hex-509568}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-blue": {
+        "$value": "{primitive.color-hex-6e92aa}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-purple": {
+        "$value": "{primitive.color-hex-583e74}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-red": {
+        "$value": "{primitive.color-hex-743e42}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-gray": {
+        "$value": "{primitive.color-1698bbfb}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-brown": {
+        "$value": "{primitive.color-ed27f126}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-orange": {
+        "$value": "{primitive.color-78da0602}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-pink": {
+        "$value": "{primitive.color-077a5e99}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-yellow-contrast": {
+        "$value": "{primitive.color-hex-58531e}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-green-contrast": {
+        "$value": "{primitive.color-hex-47855d}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-blue-contrast": {
+        "$value": "{primitive.color-hex-5e86a1}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-purple-contrast": {
+        "$value": "{primitive.color-hex-4c3564}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-red-contrast": {
+        "$value": "{primitive.color-hex-643539}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-gray-contrast": {
+        "$value": "{primitive.color-2783ea99}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-brown-contrast": {
+        "$value": "{primitive.color-e1fbb32e}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-orange-contrast": {
+        "$value": "{primitive.color-ddc49d7c}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      },
+      "tt-color-highlight-pink-contrast": {
+        "$value": "{primitive.color-a4cb02f3}",
+        "$type": "string",
+        "$description": "Existing dark theme value."
+      }
+    },
+    ":root[data-palette=neutral]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-fcfcfc}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-f9f9f9}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-f9f9f9}",
+        "$type": "string"
+      },
+      "palette-angle": {
+        "$value": "{primitive.legacy-palette-angle-3d32cbaf}",
+        "$type": "string"
+      },
+      "sidebar-palette-strength": {
+        "$value": "{primitive.legacy-sidebar-palette-strength-32e48995}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette=neutral]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-171717}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-222}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-303030}",
+        "$type": "string"
+      },
+      "sidebar-palette-strength": {
+        "$value": "{primitive.legacy-sidebar-palette-strength-32e48995}",
+        "$type": "string"
+      }
+    },
+    ":root[data-palette=blue]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-ecf3f8}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-c5eafe}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-a2d3ff}",
+        "$type": "string"
+      },
+      "accent": {
+        "$value": "{primitive.color-blue-accent}",
+        "$type": "string"
+      }
+    },
+    ":root[data-palette=aurora]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-eaddff}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-f4dcdf}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-ffdbc5}",
+        "$type": "string"
+      },
+      "palette-angle": {
+        "$value": "{primitive.legacy-palette-angle-3d32cbaf}",
+        "$type": "string"
+      },
+      "accent": {
+        "$value": "{primitive.color-purple-accent}",
+        "$type": "string"
+      }
+    },
+    ":root[data-palette=mint]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-ecf4f1}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-c4f1e0}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-90e3c6}",
+        "$type": "string"
+      },
+      "accent": {
+        "$value": "{primitive.color-green-accent}",
+        "$type": "string"
+      }
+    },
+    ":root[data-palette=rose]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-fcf2f3}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-ffd9df}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-ffb6bf}",
+        "$type": "string"
+      },
+      "accent": {
+        "$value": "{primitive.color-rose-accent}",
+        "$type": "string"
+      }
+    },
+    ":root[data-palette=peach]": {
+      "palette-start": {
+        "$value": "{primitive.color-hex-f8f0ec}",
+        "$type": "string"
+      },
+      "palette-middle": {
+        "$value": "{primitive.color-hex-ffdbc5}",
+        "$type": "string"
+      },
+      "palette-end": {
+        "$value": "{primitive.color-hex-febd99}",
+        "$type": "string"
+      },
+      "accent": {
+        "$value": "{primitive.color-peach-accent}",
+        "$type": "string"
+      }
+    },
+    ":root[data-palette]:not([data-palette=neutral])": {
+      "accent-text": {
+        "$value": "{primitive.color-hex-fff}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette]:not([data-palette=neutral])": {
+      "accent-text": {
+        "$value": "{primitive.color-hex-111}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette=blue]": {
+      "accent": {
+        "$value": "{primitive.color-hex-a2d3ff}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette=aurora]": {
+      "accent": {
+        "$value": "{primitive.color-hex-d8bfff}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette=mint]": {
+      "accent": {
+        "$value": "{primitive.color-hex-90e3c6}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette=rose]": {
+      "accent": {
+        "$value": "{primitive.color-hex-ffb6bf}",
+        "$type": "string"
+      }
+    },
+    ":root[data-theme=dark][data-palette=peach]": {
+      "accent": {
+        "$value": "{primitive.color-hex-febd99}",
+        "$type": "string"
+      }
+    },
+    ":root:not([data-theme=dark])[data-palette]:not([data-palette=neutral])": {
+      "color-accent-control-bg": {
+        "$value": "color-mix(in srgb, {semantic.accent-text} 6%, {semantic.accent})",
+        "$type": "color"
+      },
+      "color-accent-control-bg-hover": {
+        "$value": "color-mix(in srgb, {semantic.accent-text} 8%, {semantic.accent})",
+        "$type": "color"
+      }
+    },
+    ":root[data-palette=custom]:not([data-palette=neutral]), :root[data-theme=dark][data-palette=custom]:not([data-palette=neutral])": {
+      "accent": {
+        "$value": "var(--custom-accent, {primitive.color-hex-0d0d0d})",
+        "$type": "string"
+      },
+      "accent-text": {
+        "$value": "var(--custom-accent-text, {primitive.color-hex-fff})",
+        "$type": "string"
+      }
+    }
+  }
+}

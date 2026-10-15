@@ -1,0 +1,96 @@
+.rich-note-shell { position:relative; }
+.note-outline-slot {
+  position:fixed;
+  top:50%;
+  left:calc(var(--sidebar-width) + 12px);
+  width:44px;
+  pointer-events:none;
+  transform:translateY(-50%);
+  transition:left var(--resize-dur) var(--resize-ease);
+  z-index:30;
+}
+.note-outline {
+  --outline-item-height:14px;
+  --outline-gap:4px;
+  display:flex;
+  flex-direction:column;
+  gap:var(--outline-gap);
+  width:44px;
+  padding:var(--space-4) 0;
+  pointer-events:auto;
+}
+.note-outline[data-density="compact"] {
+  --outline-item-height:10px;
+  --outline-gap:3px;
+}
+.note-outline[data-density="dense"] {
+  --outline-item-height:8px;
+  --outline-gap:1px;
+}
+.note-outline-item {
+  position:relative;
+  display:flex;
+  align-items:center;
+  width:44px;
+  height:var(--outline-item-height);
+  padding:0;
+  overflow:visible;
+}
+.note-outline-mark {
+  display:block;
+  width:var(--outline-width);
+  height:2px;
+  border-radius:var(--radius-2);
+  background:var(--muted);
+  opacity:.38;
+  transform-origin:left center;
+  transition:
+    width var(--tt-in-dur) var(--dropdown-ease),
+    opacity var(--tt-in-dur) var(--dropdown-ease),
+    background-color var(--tt-in-dur) var(--dropdown-ease);
+}
+.note-outline-item:hover .note-outline-mark,
+.note-outline-item:focus-visible .note-outline-mark,
+.note-outline-item.is-active .note-outline-mark {
+  background:var(--ink);
+  opacity:1;
+}
+.note-outline-item:focus-visible {
+  outline-offset:var(--space-1);
+}
+.note-outline-tooltip.t-tt {
+  inset:50% auto auto calc(100% + 8px);
+  max-width:240px;
+  overflow:hidden;
+  padding:var(--space-8) var(--space-12);
+  border-radius:var(--radius-12);
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--ink);
+  font-size:var(--font-size-13);
+  font-weight:var(--font-weight-500);
+  line-height:var(--line-height-1-35);
+  text-overflow:ellipsis;
+  transform:translate(0, -50%) scale(var(--tt-scale));
+  transform-origin:left center;
+  white-space:nowrap;
+  z-index:30;
+}
+.note-outline-item:hover .note-outline-tooltip,
+.note-outline-item:focus-visible .note-outline-tooltip {
+  opacity:1;
+  transform:translate(0, -50%) scale(1);
+  transition-duration:var(--tt-in-dur);
+  transition-timing-function:var(--tt-in-ease);
+  transition-delay:var(--tt-delay);
+}
+.live-note :is(h1, h2, h3, h4, h5, h6) { scroll-margin-top:92px; }
+
+@media (max-width:1180px) {
+  .note-outline-slot { display:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .note-outline-slot,
+  .note-outline-mark,
+  .note-outline-tooltip { transition:none !important; }
+}

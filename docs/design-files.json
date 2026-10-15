@@ -1,0 +1,68 @@
+{
+  "method": "Styles compared by declared property/value multisets in before/after snapshots. Component/source changes listed explicitly. Generated dist and temporary previews are excluded.",
+  "created": [
+    "assets/design-tokens.json",
+    "src/design-tokens.css",
+    "src/component-states.css",
+    "scripts/audit-design-system.mjs",
+    "scripts/generate-design-tokens.mjs",
+    "scripts/report-design-migration.mjs",
+    "scripts/vendor/validate-tokens.cjs",
+    "scripts/vendor/NOTICE.md",
+    "scripts/vendor/LICENSE",
+    "docs/design-system.md",
+    "docs/design-inventory.md",
+    "docs/design-inventory.json",
+    "docs/design-inventory-after.md",
+    "docs/design-inventory-after.json",
+    "docs/design-audit-summary.json",
+    "docs/token-validation-before.txt",
+    "docs/token-validation-after.txt",
+    "docs/design-contrast.json",
+    "docs/design-state-observations.json",
+    "docs/design-files.json"
+  ],
+  "modified": [
+    "package.json",
+    "src/App.tsx",
+    "src/buttons.css",
+    "src/cloud-storage.css",
+    "src/components/tiptap-ui-primitive/badge/badge-group.scss",
+    "src/components/tiptap-ui-primitive/badge/badge.scss",
+    "src/components/tiptap-ui-primitive/button/button.scss",
+    "src/components/tiptap-ui-primitive/card/card.scss",
+    "src/components/tiptap-ui-primitive/dropdown-menu/dropdown-menu.scss",
+    "src/components/tiptap-ui-primitive/tooltip/tooltip.scss",
+    "src/create-menu.css",
+    "src/delete-note-dialog.css",
+    "src/favorite-button.css",
+    "src/feedback.css",
+    "src/folders.css",
+    "src/input-focus.css",
+    "src/main.tsx",
+    "src/motion.css",
+    "src/note-actions.css",
+    "src/note-find.css",
+    "src/note-outline.css",
+    "src/sidebar.css",
+    "src/styles.css",
+    "src/styles/_variables.scss",
+    "src/themes.css",
+    "src/themes.ts",
+    "src/user-profile.css"
+  ],
+  "validation": {
+    "tokenGraph": "passed",
+    "build": "passed",
+    "existingTests": {
+      "passed": 50,
+      "failed": 0
+    },
+    "regexScanner": {
+      "before": 857,
+      "after": 301,
+      "status": "potential findings remain; exit code 1 is expected and not suppressed"
+    },
+    "visual": "six palettes in light/dark plus real Library page"
+  }
+}

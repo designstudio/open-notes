@@ -1,0 +1,52 @@
+/* Shared states, restricted to the app's standalone controls. */
+.app-shell .primary-button:hover:not(:disabled) { background:var(--button-bg-hover);opacity:1; }
+.app-shell .primary-button:active:not(:disabled) { background:var(--button-primary-bg-active);opacity:1; }
+.app-shell .secondary-button:active:not(:disabled),
+.app-shell .icon-button:active:not(:disabled) { background:var(--button-bg-active); }
+/* Neutral interaction backgrounds stay consistent across accent colors. */
+.app-shell .icon-button:is([data-state=open],[aria-pressed=true]):not(:disabled),
+.sidebar :is(.nav-item,.recent-note).active,
+.sidebar-rail .active,
+.collection-row:has(.nav-item.active),
+.view-switch .selected,
+.library-tabs .t-tabs-pill,
+.app-shell .preferences-nav-item[aria-current=page],
+.app-shell :is(.collection-page-more,.folder-more)[data-state=open],
+.note-find-icon[aria-pressed=true] { background:var(--control-bg-selected); }
+.collection-row:has(.nav-item:active) { background:var(--button-bg-active); }
+.app-shell :is(.new-note,.nav-item,.recent-note,.profile,.collection-page-more,.folder-more,.note-find-icon):active:not(:disabled) { background:var(--button-bg-active); }
+.app-shell .tiptap-button:is([data-style=ghost],[data-style=tertiary],[data-style=subtle]) {
+  --tt-button-hover-bg-color:var(--hover);
+  --tt-button-active-bg-color:var(--control-bg-selected);
+  --tt-button-active-bg-color-emphasized:var(--control-bg-selected);
+  --tt-button-active-bg-color-subdued:var(--control-bg-selected);
+  --tt-button-active-hover-bg-color:var(--control-bg-active);
+  --tt-button-active-hover-bg-color-emphasized:var(--control-bg-active);
+  --tt-button-active-hover-bg-color-subdued:var(--control-bg-active);
+  --tt-button-active-icon-color:var(--accent);
+  --tt-button-active-icon-color-emphasized:var(--accent);
+  --tt-button-active-icon-color-subdued:var(--accent);
+}
+.tiptap-dropdown-menu-content .tiptap-button[data-active-state=on],
+.selection-tools .tiptap-button[data-active-state=on],
+.selection-menu button[aria-pressed=true] { background:var(--control-bg-selected) !important; }
+.app-shell .selection-menu button[aria-pressed=true],
+.app-shell .selection-menu button[aria-pressed=true] svg,
+.app-shell .selection-tools .tiptap-button[data-active-state=on],
+.app-shell .selection-tools .tiptap-button[data-active-state=on] svg,
+.tiptap-dropdown-menu-content .tiptap-button[data-active-state=on],
+.tiptap-dropdown-menu-content .tiptap-button[data-active-state=on] .tiptap-button-icon {
+  color:var(--accent) !important;
+}
+.app-shell :is(.primary-button,.secondary-button,.destructive-button):disabled { opacity:var(--button-opacity-disabled);cursor:default; }
+.app-shell .tiptap-button:focus-visible {
+  outline:var(--focus-ring-width) solid currentColor;
+  outline-offset:var(--focus-ring-offset);
+}
+.app-shell :is(input,textarea,select)[aria-invalid="true"] { border-color:var(--input-error-border); }
+.app-shell :is(input,textarea)::placeholder { color:var(--input-placeholder);opacity:1; }
+.app-shell :is(input,textarea,select):disabled {
+  background:var(--input-disabled-bg);
+  color:var(--input-disabled-text);
+  cursor:default;
+}

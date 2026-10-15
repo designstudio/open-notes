@@ -1,0 +1,146 @@
+[
+  {
+    "palette": "neutral",
+    "theme": "light",
+    "info": "#24669a",
+    "placeholder": "rgb(102, 102, 102)",
+    "primaryHover": "color-mix(in srgb, rgb(13, 13, 13) 92%, #0d0d0d)",
+    "restore": {
+      "bg": "color(srgb 0.202824 0.202824 0.202824)",
+      "fg": "rgb(255, 255, 255)"
+    },
+    "warning": "hsla(52, 100%, 24%, 1)"
+  },
+  {
+    "palette": "neutral",
+    "theme": "dark",
+    "info": "#a2d3ff",
+    "placeholder": "rgb(160, 160, 160)",
+    "primaryHover": "color-mix(in srgb, rgb(244, 244, 244) 92%, #ececec)",
+    "restore": {
+      "bg": "color(srgb 0.814431 0.814431 0.814431)",
+      "fg": "rgb(17, 17, 17)"
+    },
+    "warning": "hsla(50, 100%, 68%, 1)"
+  },
+  {
+    "palette": "blue",
+    "theme": "light",
+    "info": "#24669a",
+    "placeholder": "color(srgb 0.275686 0.353333 0.41451)",
+    "primaryHover": "color-mix(in srgb, rgb(36, 102, 154) 92%, #0d0d0d)",
+    "restore": {
+      "bg": "color(srgb 0.192706 0.436 0.627686)",
+      "fg": "rgb(255, 255, 255)"
+    },
+    "warning": "hsla(52, 100%, 24%, 1)"
+  },
+  {
+    "palette": "blue",
+    "theme": "dark",
+    "info": "#a2d3ff",
+    "placeholder": "color(srgb 0.660392 0.698824 0.733333)",
+    "primaryHover": "color-mix(in srgb, rgb(162, 211, 255) 92%, #ececec)",
+    "restore": {
+      "bg": "color(srgb 0.544314 0.705725 0.850667)",
+      "fg": "rgb(17, 17, 17)"
+    },
+    "warning": "hsla(50, 100%, 68%, 1)"
+  },
+  {
+    "palette": "aurora",
+    "theme": "light",
+    "info": "#24669a",
+    "placeholder": "color(srgb 0.368627 0.33098 0.428627)",
+    "primaryHover": "color-mix(in srgb, rgb(115, 83, 166) 92%, #0d0d0d)",
+    "restore": {
+      "bg": "color(srgb 0.483922 0.365961 0.671922)",
+      "fg": "rgb(255, 255, 255)"
+    },
+    "warning": "hsla(52, 100%, 24%, 1)"
+  },
+  {
+    "palette": "aurora",
+    "theme": "dark",
+    "info": "#a2d3ff",
+    "placeholder": "color(srgb 0.702745 0.683137 0.733333)",
+    "primaryHover": "color-mix(in srgb, rgb(216, 191, 255) 92%, #ececec)",
+    "restore": {
+      "bg": "color(srgb 0.722196 0.639843 0.850667)",
+      "fg": "rgb(17, 17, 17)"
+    },
+    "warning": "hsla(50, 100%, 68%, 1)"
+  },
+  {
+    "palette": "mint",
+    "theme": "light",
+    "info": "#24669a",
+    "placeholder": "color(srgb 0.276863 0.369804 0.340392)",
+    "primaryHover": "color-mix(in srgb, rgb(37, 116, 91) 92%, #0d0d0d)",
+    "restore": {
+      "bg": "color(srgb 0.196392 0.487608 0.395451)",
+      "fg": "rgb(255, 255, 255)"
+    },
+    "warning": "hsla(52, 100%, 24%, 1)"
+  },
+  {
+    "palette": "mint",
+    "theme": "dark",
+    "info": "#a2d3ff",
+    "placeholder": "color(srgb 0.646275 0.711373 0.688627)",
+    "primaryHover": "color-mix(in srgb, rgb(144, 227, 198) 92%, #ececec)",
+    "restore": {
+      "bg": "color(srgb 0.48502 0.758431 0.662902)",
+      "fg": "rgb(17, 17, 17)"
+    },
+    "warning": "hsla(50, 100%, 68%, 1)"
+  },
+  {
+    "palette": "rose",
+    "theme": "light",
+    "info": "#24669a",
+    "placeholder": "color(srgb 0.426275 0.316863 0.346275)",
+    "primaryHover": "color-mix(in srgb, rgb(164, 71, 96) 92%, #0d0d0d)",
+    "restore": {
+      "bg": "color(srgb 0.664549 0.321726 0.413882)",
+      "fg": "rgb(255, 255, 255)"
+    },
+    "warning": "hsla(52, 100%, 24%, 1)"
+  },
+  {
+    "palette": "rose",
+    "theme": "dark",
+    "info": "#a2d3ff",
+    "placeholder": "color(srgb 0.733333 0.676078 0.683137)",
+    "primaryHover": "color-mix(in srgb, rgb(255, 182, 191) 92%, #ececec)",
+    "restore": {
+      "bg": "color(srgb 0.850667 0.610196 0.639843)",
+      "fg": "rgb(17, 17, 17)"
+    },
+    "warning": "hsla(50, 100%, 68%, 1)"
+  },
+  {
+    "palette": "peach",
+    "theme": "light",
+    "info": "#24669a",
+    "placeholder": "color(srgb 0.413333 0.33451 0.29098)",
+    "primaryHover": "color-mix(in srgb, rgb(153, 86, 49) 92%, #0d0d0d)",
+    "restore": {
+      "bg": "color(srgb 0.624 0.37702 0.240627)",
+      "fg": "rgb(255, 255, 255)"
+    },
+    "warning": "hsla(52, 100%, 24%, 1)"
+  },
+  {
+    "palette": "peach",
+    "theme": "dark",
+    "info": "#a2d3ff",
+    "placeholder": "color(srgb 0.732549 0.681569 0.653333)",
+    "primaryHover": "color-mix(in srgb, rgb(254, 189, 153) 92%, #ececec)",
+    "restore": {
+      "bg": "color(srgb 0.847373 0.633255 0.514667)",
+      "fg": "rgb(17, 17, 17)"
+    },
+    "warning": "hsla(50, 100%, 68%, 1)"
+  }
+]
