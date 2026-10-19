@@ -55,6 +55,7 @@ export function useGoogleDriveSync(data: AppData, setData: Dispatch<SetStateActi
   const dataRef = useRef(data);
   const localUpdatedAt = useRef(readNumber(LOCAL_UPDATED_KEY) || 0);
   const observedData = useRef<string | null>(null);
+  const observedWorkspace = useRef(data);
   if (observedData.current === null) observedData.current = dataFingerprint(data);
   const ready = useRef(false);
   const baseRemote = useRef<string | null>(null);
@@ -254,7 +255,11 @@ export function useGoogleDriveSync(data: AppData, setData: Dispatch<SetStateActi
   }, [clientId]);
 
   useEffect(() => {
+    // The initial fingerprint was captured above. StrictMode also replays this
+    // effect; neither pass needs to serialize the entire workspace again.
+    if (observedWorkspace.current === data) return;
     const fingerprint = dataFingerprint(data);
+    observedWorkspace.current = data;
     if (fingerprint === observedData.current) return;
     observedData.current = fingerprint;
     const changedAt = Date.now();

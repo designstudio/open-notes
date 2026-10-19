@@ -13,6 +13,7 @@ import type { IconButton as Button } from '../../src/IconButton';
 export function AppSidebar(_props: ComponentProps<typeof Sidebar>) { return null; }
 export function NotesLibrary(_props: ComponentProps<typeof Library>) { return null; }
 export function NoteEditor(_props: ComponentProps<typeof Editor>) { return null; }
+export const preloadRichNote = async () => {};
 export function NoteToolbar(_props: ComponentProps<typeof Toolbar>) { return null; }
 export function AppDialogs(_props: ComponentProps<typeof Dialogs>) { return null; }
 export function ToastStack(_props: ComponentProps<typeof Toasts>) { return null; }

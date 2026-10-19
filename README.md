@@ -178,6 +178,22 @@ Os testes usam armazenamento e API Google simulados, sem acessar suas notas ou u
 
 Cenários, execução e limites estão documentados em [Testes do Open Notes](docs/testing.md).
 
+O teste adicional de inicialização usa a interface real em produção e desenvolvimento, com perfis descartáveis:
+
+```sh
+npx playwright install chromium
+node tests/startup-browser.mjs
+```
+
+A [revisão da inicialização](docs/startup-performance.md) registra as mudanças no carregamento, as medições antes/depois e seus limites. O editor é preparado enquanto a biblioteca está ociosa; se houver espera ao abrir uma nota, um indicador sem texto aparece na área interna após 180 ms. O conteúdo aparece inteiro quando estiver pronto.
+
+Os [benchmarks com 1.000, 5.000 e 10.000 notas](docs/benchmarks.md) medem o IndexedDB nativo, a interface em produção e a preparação local da sincronização, usando dados sintéticos e um navegador isolado.
+
+```sh
+npx playwright install chromium
+npm run benchmark
+```
+
 ## Estado do projeto
 
 O Open Notes está em evolução. A escrita, a organização e o salvamento local já contam com testes, assim como os fluxos de sincronização e conflito. Alguns limites atuais:
@@ -196,5 +212,7 @@ O histórico das melhorias fica no [Changelog](CHANGELOG.md).
 | [Arquitetura](docs/architecture.md) | Componentes, hooks e responsabilidades. |
 | [Persistência local](docs/local-storage.md) | IndexedDB, migração, gravações e recuperação. |
 | [Testes](docs/testing.md) | Cobertura, execução e isolamento dos testes. |
+| [Benchmarks](docs/benchmarks.md) | Metodologia, execução e resultados com grandes volumes de notas. |
+| [Inicialização](docs/startup-performance.md) | Carregamento do editor, indicador de espera e comparação antes/depois. |
 | [Design system](docs/design-system.md) | Tokens, componentes e padrões visuais. |
 | [Changelog](CHANGELOG.md) | Histórico de alterações do projeto. |

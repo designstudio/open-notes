@@ -46,3 +46,30 @@ Esses testes detectaram e corrigiram um caso em que o intervalo de uma nova edi�
 O IndexedDB usa `fake-indexeddb`, sem arquivos do usuário. A rede usa `fetch` simulado; requisições para destinos inesperados são rejeitadas. O relógio e as respostas HTTP podem ser controlados para reproduzir as corridas sem esperar pela rede ou por intervalos reais. Cada teste descarta sua base e restaura os globais substituídos.
 
 São testes de integração, complementados pelos testes existentes de unidades e armazenamento; não substituem testes E2E em um navegador nem testes contra o serviço Google real. Os limites de concorrência entre dispositivos descritos no README continuam valendo.
+
+## Benchmarks em navegador
+
+`npm run benchmark` executa os cenários de 1.000, 5.000 e 10.000 notas em Chromium headless com IndexedDB nativo e build de produção. Inclui operações de armazenamento, preparação de sincronização e ações na interface real. Cada cenário verifica a integridade dos resultados, mas não aplica limites de tempo de aprovação. Execução, isolamento e limites estão em [Benchmarks](benchmarks.md).
+
+## Inicialização e editor no navegador
+
+```sh
+npx playwright install chromium
+node tests/startup-browser.mjs
+```
+
+Esse teste complementa a suíte de 109 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
+
+- Abre a biblioteca e confirma que as preferências não foram solicitadas antecipadamente.
+- Retém o download do editor para verificar o indicador sem texto e o título oculto até a nota estar pronta.
+- Confirma a ausência da mensagem “Abrindo seu espaço”.
+- Libera o editor, verifica o conteúdo original e edita título e corpo.
+- Confirma o corpo salvo no IndexedDB e a preservação do título e do texto após recarregar.
+- Abre e fecha as preferências, com foco dentro do diálogo.
+- Navega para uma nota já preparada e confirma que editar o título mantém a mesma instância do editor no DOM.
+- Cria uma nova nota e verifica o foco automático no título após a montagem.
+- Falha se houver exceções JavaScript na página.
+
+Com `node tests/startup-browser.mjs --screenshots`, também gera `artifacts/note-loading-desktop.png` e `artifacts/note-loading-mobile.png` durante a espera. O cenário mobile verifica o indicador estático com movimento reduzido. As capturas ficam fora do Git; o build e os perfis são descartados ao terminar. O teste não mede latência do serviço Google nem substitui uma auditoria completa de acessibilidade.
+
+A comparação de desempenho e os limites de interpretação estão em [Inicialização](startup-performance.md).

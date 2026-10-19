@@ -1,10 +1,10 @@
+import { lazy, Suspense } from 'react';
 import { SearchDialogContent } from './SearchDialogContent';
 import { type AppData, type Notebook, type Folder as FolderType } from '../data';
 import { Plus, X } from '../icons';
 import { AnimatedDialog } from '../AnimatedDialog';
 import { IconButton } from '../IconButton';
 import { CollectionNoteDefaults } from '../CollectionNoteDefaults';
-import { Preferences } from '../Preferences';
 import { readProfile } from '../profile';
 import type { GoogleDriveSync } from '../cloud/use-google-drive-sync';
 import type { AppDialogsState } from './use-app-dialogs';
@@ -12,6 +12,8 @@ import type { Appearance } from './use-appearance';
 import type { Navigation, SetAppData } from './types';
 import type { Workspace } from './workspace-selectors';
 import type { Notify } from './use-toasts';
+
+const Preferences = lazy(() => import('../Preferences').then(module => ({ default: module.Preferences })));
 
 type AppDialogsProps = {
   data: AppData;
@@ -198,7 +200,7 @@ export function AppDialogs({ data, setData, view, dialogs, appearance, navigatio
       </form>
     )}
     {modal === 'search' && <SearchDialogContent data={data} dialogs={dialogs} workspace={workspace} openNote={openNote} />}
-    {modal === 'settings' && <Preferences profile={profile} onProfileUpdate={patch => setData(current => ({ ...current, profile: { ...readProfile(current.profile), ...patch } }))} theme={theme} onToggleTheme={() => setTheme(t => t === 'light' ? 'dark' : 'light')} palette={palette} onPaletteChange={setPalette} customAccent={customAccent} onCustomAccentChange={color => { setCustomAccent(color); setPalette('custom'); }} onDismiss={() => setModal(null)} sync={driveSync} />}
+    {modal === 'settings' && <Suspense fallback={<div role="status" aria-labelledby="dialog-title"><h2 id="dialog-title">Preferências</h2><p>Abrindo preferências…</p><IconButton aria-label="Fechar" onClick={() => setModal(null)}><X size={19} /></IconButton></div>}><Preferences profile={profile} onProfileUpdate={patch => setData(current => ({ ...current, profile: { ...readProfile(current.profile), ...patch } }))} theme={theme} onToggleTheme={() => setTheme(t => t === 'light' ? 'dark' : 'light')} palette={palette} onPaletteChange={setPalette} customAccent={customAccent} onCustomAccentChange={color => { setCustomAccent(color); setPalette('custom'); }} onDismiss={() => setModal(null)} sync={driveSync} /></Suspense>}
     </AnimatedDialog>
   );
 }

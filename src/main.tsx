@@ -11,7 +11,7 @@ window.history.scrollRestoration = 'manual';
 
 const root = createRoot(document.getElementById('root')!);
 async function start() {
-  root.render(<main className="empty-state" role="status"><p>Abrindo seu espaço…</p></main>);
+  root.render(null);
   try {
     const data = await loadLocalData();
     root.render(<React.StrictMode><App initialData={data} /></React.StrictMode>);

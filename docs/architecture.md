@@ -27,6 +27,18 @@ Os módulos extraídos ficam em `src/app/`:
 
 O editor de texto continua em `src/RichNote.tsx`, a API de armazenamento em `src/local-data.ts` e a integração com o Google Drive em `src/cloud/`. A implementação da [persistência por nota](local-storage.md) fica em `src/storage/`.
 
+## Inicialização e montagem assíncrona
+
+`main.tsx` lê o IndexedDB antes de montar o App, sem mensagem de abertura. Se a leitura falhar, mantém a tela de erro com nova tentativa; os dados existentes são preservados.
+
+`NoteEditor.tsx` carrega `RichNote.tsx` por import dinâmico. Na biblioteca, o App prepara esse módulo em `requestIdleCallback`, com fallback por temporizador quando a API não está disponível. Uma nota com o módulo já preparado monta diretamente; as demais usam Suspense. A escolha do componente fica estável por nota para preservar cursor e histórico de edição.
+
+O Tiptap é criado após o commit do React. `RichNote` avisa quando estiver montado, e só então o `NoteEditor` exibe capa, título, corpo e rodapé juntos. Durante a espera, o conteúdo fica oculto e inativo; `note-loading.css` posiciona o indicador centralizado, com atraso visual de 180 ms e alternativa estática para movimento reduzido. Notas novas recebem foco no título depois de prontas.
+
+`AppDialogs.tsx` carrega as preferências ao abrir esse diálogo, e o componente recupera o foco após substituir seu estado de espera. A [revisão da inicialização](startup-performance.md) detalha os ganhos medidos e os limites da estratégia.
+
+## Sessão e recuperação
+
 Em desenvolvimento, `main.tsx` fornece a cópia lida ao abrir a aba. A sessão usa `import.meta.hot.data` para manter as edições mais recentes quando o Vite remonta o aplicativo após mudanças nos hooks. Isso impede que a cópia inicial antiga seja reaplicada e salva por cima das edições. Em produção, cada montagem tem sua própria sessão.
 
 `public/recuperar-notas.html` lê as notas atuais e cópias de recuperação do mesmo endereço e navegador. A página permite exportar os registros, sem iniciar o aplicativo, salvar notas ou sincronizar com o Drive.

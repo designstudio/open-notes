@@ -9,6 +9,7 @@ import Placeholder from '@tiptap/extension-placeholder';
 import TextAlign from '@tiptap/extension-text-align';
 import Highlight from '@tiptap/extension-highlight';
 import type { JSONContent } from '@tiptap/core';
+import { useLayoutEffect } from 'react';
 import { Indent } from './Indent';
 import { SelectionMenu } from './SelectionMenu';
 import { NoteOutline } from './NoteOutline';
@@ -16,10 +17,13 @@ import { FindReplace } from './FindReplace';
 import { NoteFind } from './NoteFind';
 import './note-outline.css';
 
-export function RichNote({ content, noteTitle, document: savedDocument, onChange, findOpen, onFindOpenChange, showOutline = true }: { content: string; noteTitle: string; document?: JSONContent; onChange: (markdown: string, document: JSONContent) => void; findOpen: boolean; onFindOpenChange: (open: boolean) => void; showOutline?: boolean }) {
+export function RichNote({ content, noteTitle, document: savedDocument, onChange, findOpen, onFindOpenChange, onReady, showOutline = true }: { content: string; noteTitle: string; document?: JSONContent; onChange: (markdown: string, document: JSONContent) => void; findOpen: boolean; onFindOpenChange: (open: boolean) => void; onReady?: () => void; showOutline?: boolean }) {
   // The parent keys this editor by note ID. Do not reset content on each save:
   // preserving the editor instance keeps the cursor, selection and undo history.
   const editor = useEditor({
+    // Create after commit: a lazy-loaded subtree may wait in Suspense long
+    // enough for Tiptap to dispose an instance created during render.
+    immediatelyRender: false,
     extensions: [
       FindReplace,
       TextAlign.configure({ types: ['heading', 'paragraph'] }), Highlight.configure({ multicolor: true }), Indent,
@@ -40,6 +44,10 @@ export function RichNote({ content, noteTitle, document: savedDocument, onChange
     },
     onUpdate: ({ editor }) => onChange(editor.getMarkdown(), editor.getJSON()),
   });
+
+  useLayoutEffect(() => {
+    if (editor) onReady?.();
+  }, [editor, onReady]);
 
   return <div className="rich-note-shell">
     {editor && <>

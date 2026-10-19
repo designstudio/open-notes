@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "complete": true,
+  "generatedAt": "2026-10-19T02:01:17.022Z",
+  "source": {
+    "commit": "d256fd9b3ef7eb0513872d9b50b98955a233ff01",
+    "codeSha256": "e57ca6cd984317040845d4f71ff3d28c1b32bce1a6ebf3c50922688cefb51201",
+    "dirty": true
+  },
+  "environment": {
+    "os": "win32",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 7 5700X 8-Core Processor             ",
+    "logicalCPUs": 16,
+    "ramGiB": 31.9,
+    "node": "v24.14.0",
+    "browser": "156.0.8078.4",
+    "headless": true
+  },
+  "configuration": {
+    "sizes": [
+      1000
+    ],
+    "repetitions": 3,
+    "warmupRounds": 1,
+    "ui": true,
+    "noteBodyCharacters": 1024,
+    "richDocument": true,
+    "collectionCount": 1,
+    "folderCount": 10,
+    "externalNetwork": "blocked",
+    "uiTiming": "Browser wall time including Playwright dispatch, readiness polling and two animation frames; not INP.",
+    "storageTiming": "performance.now through native IndexedDB transaction completion; write counters instrumented."
+  },
+  "results": [
+    {
+      "count": 1000,
+      "bytes": 2427013,
+      "samples": {
+        "initialSave": [
+          29.100000001490116,
+          33.099999994039536,
+          32.19999999552965
+        ],
+        "load": [
+          29,
+          28.30000000447035,
+          27.399999998509884
+        ],
+        "unchangedSave": [
+          4,
+          4,
+          4
+        ],
+        "editOne": [
+          0.8999999985098839,
+          0.9000000059604645,
+          0.8999999985098839
+        ],
+        "createOne": [
+          0.8999999985098839,
+          1,
+          0.8999999985098839
+        ],
+        "deleteOne": [
+          0.8999999985098839,
+          0.7000000029802322,
+          0.6000000014901161
+        ],
+        "selectWorkspace": [
+          0.3999999985098839,
+          0.3999999985098839,
+          0.30000000447034836
+        ],
+        "fingerprint": [
+          12.800000004470348,
+          11.600000001490116,
+          11.799999997019768
+        ],
+        "compareSame": [
+          15.799999997019768,
+          17.200000002980232,
+          18.799999997019768
+        ],
+        "compareConflict": [
+          22.399999998509884,
+          25.19999999552965,
+          24.399999998509884
+        ],
+        "serializeUpload": [
+          1.6000000014901161,
+          2,
+          1.6000000014901161
+        ],
+        "backupTwoCopies": [
+          29.700000002980232,
+          22.700000002980232,
+          21.899999998509884
+        ]
+      },
+      "writes": {
+        "initialSave": [
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "load": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "unchangedSave": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "editOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "createOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "deleteOne": [
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          }
+        ],
+        "selectWorkspace": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "fingerprint": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareSame": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareConflict": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "serializeUpload": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "backupTwoCopies": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ]
+      },
+      "checks": "passed",
+      "summary": {
+        "initialSave": {
+          "n": 3,
+          "min": 29.100000001490116,
+          "median": 32.19999999552965,
+          "p95": 33.099999994039536,
+          "max": 33.099999994039536
+        },
+        "load": {
+          "n": 3,
+          "min": 27.399999998509884,
+          "median": 28.30000000447035,
+          "p95": 29,
+          "max": 29
+        },
+        "unchangedSave": {
+          "n": 3,
+          "min": 4,
+          "median": 4,
+          "p95": 4,
+          "max": 4
+        },
+        "editOne": {
+          "n": 3,
+          "min": 0.8999999985098839,
+          "median": 0.8999999985098839,
+          "p95": 0.9000000059604645,
+          "max": 0.9000000059604645
+        },
+        "createOne": {
+          "n": 3,
+          "min": 0.8999999985098839,
+          "median": 0.8999999985098839,
+          "p95": 1,
+          "max": 1
+        },
+        "deleteOne": {
+          "n": 3,
+          "min": 0.6000000014901161,
+          "median": 0.7000000029802322,
+          "p95": 0.8999999985098839,
+          "max": 0.8999999985098839
+        },
+        "selectWorkspace": {
+          "n": 3,
+          "min": 0.30000000447034836,
+          "median": 0.3999999985098839,
+          "p95": 0.3999999985098839,
+          "max": 0.3999999985098839
+        },
+        "fingerprint": {
+          "n": 3,
+          "min": 11.600000001490116,
+          "median": 11.799999997019768,
+          "p95": 12.800000004470348,
+          "max": 12.800000004470348
+        },
+        "compareSame": {
+          "n": 3,
+          "min": 15.799999997019768,
+          "median": 17.200000002980232,
+          "p95": 18.799999997019768,
+          "max": 18.799999997019768
+        },
+        "compareConflict": {
+          "n": 3,
+          "min": 22.399999998509884,
+          "median": 24.399999998509884,
+          "p95": 25.19999999552965,
+          "max": 25.19999999552965
+        },
+        "serializeUpload": {
+          "n": 3,
+          "min": 1.6000000014901161,
+          "median": 1.6000000014901161,
+          "p95": 2,
+          "max": 2
+        },
+        "backupTwoCopies": {
+          "n": 3,
+          "min": 21.899999998509884,
+          "median": 22.700000002980232,
+          "p95": 29.700000002980232,
+          "max": 29.700000002980232
+        }
+      },
+      "ui": {
+        "samples": {
+          "libraryStartup": [
+            253.10000000149012,
+            249.70000000298023,
+            251.79999999701977
+          ],
+          "renderAllNotes": [
+            854.8000000044703,
+            873.6000000014901,
+            887.8000000044703
+          ],
+          "searchRare": [
+            126.69999999552965,
+            126.10000000149012,
+            113.5
+          ],
+          "clearSearch": [
+            535,
+            551.2999999970198,
+            532.7999999970198
+          ],
+          "openEditor": [
+            214.79999999701977,
+            197.29999999701977,
+            180.29999999701977
+          ],
+          "editTitleToPersistence": [
+            80.20000000298023,
+            65.80000000447035,
+            65.20000000298023
+          ]
+        },
+        "domNodes": [
+          14915,
+          14915,
+          14915
+        ],
+        "summary": {
+          "libraryStartup": {
+            "n": 3,
+            "min": 249.70000000298023,
+            "median": 251.79999999701977,
+            "p95": 253.10000000149012,
+            "max": 253.10000000149012
+          },
+          "renderAllNotes": {
+            "n": 3,
+            "min": 854.8000000044703,
+            "median": 873.6000000014901,
+            "p95": 887.8000000044703,
+            "max": 887.8000000044703
+          },
+          "searchRare": {
+            "n": 3,
+            "min": 113.5,
+            "median": 126.10000000149012,
+            "p95": 126.69999999552965,
+            "max": 126.69999999552965
+          },
+          "clearSearch": {
+            "n": 3,
+            "min": 532.7999999970198,
+            "median": 535,
+            "p95": 551.2999999970198,
+            "max": 551.2999999970198
+          },
+          "openEditor": {
+            "n": 3,
+            "min": 180.29999999701977,
+            "median": 197.29999999701977,
+            "p95": 214.79999999701977,
+            "max": 214.79999999701977
+          },
+          "editTitleToPersistence": {
+            "n": 3,
+            "min": 65.20000000298023,
+            "median": 65.80000000447035,
+            "p95": 80.20000000298023,
+            "max": 80.20000000298023
+          }
+        }
+      }
+    }
+  ]
+}

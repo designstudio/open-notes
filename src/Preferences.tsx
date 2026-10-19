@@ -29,7 +29,12 @@ export function Preferences({ theme, onToggleTheme, palette, onPaletteChange, cu
   const [details, setDetails] = useState(false);
   const pages = useRef<HTMLDivElement>(null);
   const backButton = useRef<HTMLButtonElement>(null);
+  const heading = useRef<HTMLHeadingElement>(null);
   const previousDetails = useRef(details);
+  useLayoutEffect(() => {
+    // Loading can replace the focused fallback button inside an open dialog.
+    heading.current?.focus({ preventScroll: true });
+  }, []);
   function updateScroll(page: HTMLElement) {
     setScrolled(page.scrollTop > 1);
     setHasBelow(page.scrollHeight - page.clientHeight - page.scrollTop > 1);
@@ -54,7 +59,6 @@ export function Preferences({ theme, onToggleTheme, palette, onPaletteChange, cu
     Array.from(page.children).forEach(child => observer.observe(child));
     return () => observer.disconnect();
   }, [details, generalVisit]);
-  const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (generalVisit > 0) heading.current?.focus();
   }, [generalVisit]);

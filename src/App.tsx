@@ -8,7 +8,7 @@ import { useGoogleDriveSync } from './cloud/use-google-drive-sync';
 import { useNoteDrag } from './hooks/use-note-drag';
 import { AppSidebar } from './app/AppSidebar';
 import { NotesLibrary } from './app/NotesLibrary';
-import { NoteEditor } from './app/NoteEditor';
+import { NoteEditor, preloadRichNote } from './app/NoteEditor';
 import { NoteToolbar } from './app/NoteToolbar';
 import { AppDialogs } from './app/AppDialogs';
 import { useNavigation } from './app/use-navigation';
@@ -49,6 +49,19 @@ export default function App({ initialData }: { initialData: AppData }) {
   const [findOpen, setFindOpen] = useState(false);
   useEffect(() => { setFindOpen(false); }, [selected]);
   const note = data.notes.find(n => n.id === selected);
+  const hasNote = Boolean(note);
+  useEffect(() => {
+    if (hasNote) return;
+    // Let the library paint first, then prepare the editor during idle time
+    // so opening the first note usually finds its code already available.
+    const preload = () => { void preloadRichNote().catch(() => {}); };
+    if ('requestIdleCallback' in window) {
+      const idle = window.requestIdleCallback(preload);
+      return () => window.cancelIdleCallback(idle);
+    }
+    const timer = setTimeout(preload, 1000);
+    return () => clearTimeout(timer);
+  }, [hasNote]);
   const saveStatus = noteSaveStatus(note, savedData.notes.find(n => n.id === selected), saveFailed);
   function update(id: string, patch: Partial<Note>) { setData(d => ({ ...d, notes: d.notes.map(n => n.id === id ? { ...n, ...patch, updated: Date.now() } : n) })); }
   function moveNoteToTrash(id: string) {

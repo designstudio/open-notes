@@ -1,0 +1,51 @@
+.note-editor-stage {
+  position: relative;
+  min-height: calc(100dvh - 64px);
+}
+
+.note-editor-stage[data-ready="false"] > .note-editor-content {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.note-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--secondary);
+  animation: note-loading-appear 180ms step-end both;
+}
+
+.note-loading-icon {
+  width: var(--space-24);
+  height: var(--space-24);
+  border: var(--space-2) solid var(--line);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: note-loading-spin 900ms linear infinite;
+}
+
+@keyframes note-loading-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes note-loading-spin {
+  to { transform: rotate(1turn); }
+}
+
+@media (max-width: 700px) {
+  .note-editor-stage { min-height: calc(100dvh - 76px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .note-loading-icon { animation: none; }
+}
+
+@media print {
+  .note-editor-stage { min-height: 0; }
+  .note-loading { display: none; }
+}
