@@ -80,22 +80,10 @@ textarea.editor-title:focus-visible,.editor-tags input:focus-visible{outline:non
 
 /* Official Tiptap menus inherit the app palette, including dark mode. */
 .tiptap-dropdown-menu-content{
-  --surface:var(--primitive-color-hex-171717);
-  --paper:var(--primitive-color-hex-212121);
-  --ink:var(--primitive-color-hex-ececec);
-  --secondary:var(--primitive-color-hex-b4b4b4);
-  --muted:var(--primitive-color-hex-a0a0a0);
-  --line:var(--primitive-color-hex-383838);
-  --hover:var(--primitive-color-hex-383838);
-  --control-bg-selected:var(--hover);
-  --control-bg-active:var(--hover);
-  --danger:var(--color-shiraz-300);
-  --accent:var(--ink);
-  color-scheme:dark;
-  background:var(--surface);
+  background:var(--menu-bg);
   color:var(--ink);
   border:1px solid var(--line);
-  box-shadow:var(--shadow-existing-a27c72f3);
+  box-shadow:var(--menu-shadow);
   border-radius:var(--radius-24);
   padding:var(--space-8);
   display:grid;
@@ -129,18 +117,10 @@ textarea.editor-title:focus-visible,.editor-tags input:focus-visible{outline:non
   color:var(--ink) !important;
 }
 
-/* The formatting bubble keeps a dark palette in both app themes. */
+/* The formatting bubble follows the app theme. */
 .selection-menu {
-  --surface:var(--primitive-color-hex-171717);
-  --paper:var(--primitive-color-hex-212121);
-  --ink:var(--primitive-color-hex-ececec);
-  --secondary:var(--primitive-color-hex-b4b4b4);
-  --muted:var(--primitive-color-hex-a0a0a0);
-  --line:var(--primitive-color-hex-383838);
-  --hover:var(--primitive-color-hex-383838);
-  --danger:var(--color-shiraz-300);
-  --accent:var(--ink);
-  color-scheme:dark;
+  background:var(--menu-bg);
+  color:var(--menu-text);
   border:none !important;
   box-shadow:var(--menu-shadow);
 }
@@ -175,7 +155,8 @@ textarea.editor-title:focus-visible,.editor-tags input:focus-visible{outline:non
 .selection-tools .tiptap-button[data-active-state=on] .tiptap-button-dropdown-small{
   color:var(--ink) !important;
 }
-.selection-menu .tiptap-button svg { color:inherit; }
+.selection-menu .tiptap-button svg,
+.tiptap-dropdown-menu-content .tiptap-button svg { color:inherit; }
 
 .collection-row{position:relative;border-radius:var(--radius-9);transition:background .14s}
 .collection-row .nav-item{padding-right:var(--space-38px);background:transparent !important}

@@ -96,7 +96,7 @@ export function SelectionMenu({ editor }: { editor: Editor }) {
   return (
     <BubbleMenu editor={editor} updateDelay={80} options={options} shouldShow={shouldShow}>
       <div
-        className="selection-menu dark"
+        className="selection-menu"
         onMouseDown={e => { if ((e.target as HTMLElement).closest('button')) e.preventDefault(); }}
         onKeyDown={e => {
           if (e.key === 'Escape') {
