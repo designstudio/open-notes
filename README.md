@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/favicon.svg" alt="Logo do Open Notes" width="96" height="96">
+</p>
+
 <h1 align="center">Open Notes</h1>
 
 <p align="center">
