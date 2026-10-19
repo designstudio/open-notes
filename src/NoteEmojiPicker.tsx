@@ -1,4 +1,4 @@
-import { Component, useCallback, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Component, useCallback, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { defaultEmojiDataResolver, EmojiPicker, type EmojiDataResolver, type SkinTone } from 'frimousse';
 import { Search, SmileCircle, Leaf, Coffee, Compass, Star, Sun, Hash, ForbiddenCircle } from './icons';
 import { ClockCircleIcon } from '@solar-icons/react/linear/clock-circle';
@@ -45,6 +45,22 @@ function PickerContent({ value, onChoose, onRemove }: { value?: string; onChoose
   const [activeCategory, setActiveCategory] = useState('');
   const [search, setSearch] = useState('');
   const viewportRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [scrollEdges, setScrollEdges] = useState({ above: false, below: false });
+  const refreshScrollEdges = useCallback(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const above = el.scrollTop > 1;
+    const below = el.scrollHeight - el.clientHeight - el.scrollTop > 1;
+    setScrollEdges(previous => previous.above === above && previous.below === below ? previous : { above, below });
+  }, []);
+  useLayoutEffect(() => {
+    refreshScrollEdges();
+    const observer = new ResizeObserver(refreshScrollEdges);
+    if (viewportRef.current) observer.observe(viewportRef.current);
+    if (contentRef.current) observer.observe(contentRef.current);
+    return () => observer.disconnect();
+  }, [refreshScrollEdges]);
   const headers = useRef(new Map<string, HTMLDivElement>());
   const resolveData: EmojiDataResolver = useCallback(async (locale, options) => {
     const data = await defaultEmojiDataResolver(locale, { ...options, emojibaseUrl: `${location.origin}/emoji` });
@@ -97,11 +113,13 @@ function PickerContent({ value, onChoose, onRemove }: { value?: string; onChoose
         return <button type="button" key={category.index} aria-label={category.label} title={category.label} aria-pressed={activeCategory === category.label} onClick={() => jumpToCategory(category.label)}><Icon size={17} aria-hidden="true" /></button>;
       })}
     </nav>
-    <EmojiPicker.Viewport ref={viewportRef} className="emoji-picker-viewport" aria-label="Emojis disponíveis" onScroll={updateCategory}>
+    <div className="emoji-picker-scroll-frame" data-has-scroll={scrollEdges.below} data-has-scroll-above={scrollEdges.above}>
+    <EmojiPicker.Viewport ref={viewportRef} className="emoji-picker-viewport" aria-label="Emojis disponíveis" onScroll={() => { refreshScrollEdges(); updateCategory(); }}>
       <EmojiPicker.Loading className="emoji-picker-message" role="status">Carregando emojis…</EmojiPicker.Loading>
       <EmojiPicker.Empty className="emoji-picker-message" role="status">Nenhum emoji encontrado.</EmojiPicker.Empty>
-      <EmojiPicker.List components={components} />
+      <div ref={contentRef}><EmojiPicker.List components={components} /></div>
     </EmojiPicker.Viewport>
+    </div>
     <div className="emoji-picker-footer">
       <EmojiPicker.ActiveEmoji>{({ emoji }) => <div className="emoji-picker-preview">
         <span className="emoji-picker-preview-glyph"><NoteEmoji value={emoji?.emoji ?? value ?? '😊'} size={32} opticalOffset={false} /></span>

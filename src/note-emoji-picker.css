@@ -9,6 +9,11 @@
 .emoji-picker-categories[hidden] { display:none; }
 .emoji-picker-categories button { display:grid; place-items:center; flex:0 1 28px; min-width:0; aspect-ratio:1; padding:0; color:var(--secondary); border-radius:50%; }
 .emoji-picker-categories button:hover,.emoji-picker-categories button[aria-pressed=true] { color:var(--ink); background:var(--menu-bg); }
+.emoji-picker-scroll-frame { display:flex; flex-direction:column; position:relative; flex:1; min-height:0; overflow:hidden; }
+.emoji-picker-scroll-frame::before,.emoji-picker-scroll-frame::after { content:""; position:absolute; left:0; right:0; height:35px; pointer-events:none; z-index:1; opacity:0; }
+.emoji-picker-scroll-frame::before { top:0; background:linear-gradient(to bottom,var(--menu-bg) 0%,transparent 100%); }
+.emoji-picker-scroll-frame::after { bottom:0; background:linear-gradient(to top,var(--menu-bg) 0%,transparent 100%); }
+.emoji-picker-scroll-frame[data-has-scroll-above=true]::before,.emoji-picker-scroll-frame[data-has-scroll=true]::after { opacity:1; }
 .emoji-picker-viewport { flex:1; min-height:0; position:relative; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--line) transparent; }
 .emoji-picker-heading { display:flex; align-items:center; height:32px; padding:0 var(--space-6); color:var(--secondary); background:var(--menu-bg); font-size:var(--font-size-12); }
 .emoji-picker-row { padding-inline:var(--space-2); scroll-margin-block:var(--space-4); }
