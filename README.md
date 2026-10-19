@@ -1,6 +1,7 @@
 <h1 align="center">Open Notes</h1>
 
 <p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licença-MIT-0D9488" alt="Licença MIT"></a>
   <a href="#como-é-construído"><img src="https://img.shields.io/badge/escrito_em-TypeScript-3178C6" alt="Escrito em TypeScript"></a>
   <a href="#como-é-construído"><img src="https://img.shields.io/badge/interface-React-087EA4" alt="Interface em React"></a>
   <a href="#como-começar"><img src="https://img.shields.io/badge/roda_no-navegador-0D9488" alt="Roda no navegador"></a>
@@ -28,9 +29,15 @@
 
 ---
 
-Open Notes é um app de notas para reunir pensamentos, desenvolver textos e organizar o que você quer guardar. Um lugar para o rascunho de um capítulo, as anotações de uma reunião ou aquela ideia que merece uma segunda visita.
+Open Notes é um app de notas de código aberto, sob a [licença MIT](LICENSE), para reunir pensamentos, desenvolver textos e organizar o que você quer guardar. Um lugar para o rascunho de um capítulo, as anotações de uma reunião ou aquela ideia que merece uma segunda visita.
 
 A escrita acontece em um editor com formatação, as notas são salvas automaticamente no navegador e a organização fica por conta de coleções, pastas e favoritos. A sincronização com o Google Drive é opcional.
+
+Para quem procura uma alternativa a **Notion, Obsidian ou Superhuman Docs** para escrita pessoal, o Open Notes oferece um espaço focado em notas e documentos, com armazenamento local e interface em português.
+
+**English overview:** Open Notes is an open-source, local-first note-taking app and Markdown editor with rich-text editing, collections, folders and optional Google Drive sync. A simpler alternative to Notion, Obsidian and Superhuman Docs for personal writing, licensed under MIT.
+
+É um projeto independente, sem vínculo com essas marcas. Está em evolução: colaboração em tempo real, backlinks e importação direta desses aplicativos ainda não estão disponíveis.
 
 ## Destaques
 
@@ -216,6 +223,10 @@ O Open Notes está em evolução. A escrita, a organização e o salvamento loca
 O histórico das melhorias fica no [Changelog](CHANGELOG.md).
 
 ## Documentação
+
+Para relatar um problema ou sugerir uma melhoria, [abra uma issue](https://github.com/designstudio/open-notes/issues). Inclua passos para reproduzir e a versão do navegador, sem publicar notas pessoais, backups ou credenciais.
+
+O código do Open Notes é distribuído sob a [licença MIT](LICENSE). Bibliotecas, ícones e outros componentes de terceiros mantêm suas próprias licenças e avisos.
 
 | Documento | O que você encontra |
 | --- | --- |

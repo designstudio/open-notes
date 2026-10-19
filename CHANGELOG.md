@@ -1,5 +1,19 @@
 # Histórico de alterações
 
+## 2026-10-19
+
+### Apresentação e descoberta do projeto
+
+- Apresentação no README como alternativa para escrita pessoal a Notion, Obsidian e Superhuman Docs, com resumo em inglês, recursos existentes e limites atuais.
+- Descrição e 16 topics publicados no GitHub para busca por aplicativos de notas, Markdown e alternativas a esses editores, sem promessa de posição no ranking.
+- Licença MIT adicionada por escolha do mantenedor, com identificação no README, `package.json` e lockfile, permitindo apresentar o projeto como open source.
+- Link para relatar problemas e sugestões, com orientação para preservar dados pessoais.
+
+### Aparência
+
+- Toast com superfície neutra: branco no modo claro e escuro no modo escuro, independente da paleta de destaque.
+- Ação Restaurar com fundo e texto neutros, preservando contraste, animação e comportamento.
+
 ## 2026-10-18
 
 ### Versionamento e futuras migrações

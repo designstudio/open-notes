@@ -5600,12 +5600,12 @@
       "$description": "Component contract."
     },
     "toast-bg": {
-      "$value": "{semantic.accent}",
+      "$value": "{semantic.surface}",
       "$type": "string",
-      "$description": "Component contract."
+      "$description": "Neutral toast surface, independent of the selected accent palette."
     },
     "toast-text": {
-      "$value": "{semantic.accent-text}",
+      "$value": "{semantic.ink}",
       "$type": "string",
       "$description": "Component contract."
     },
@@ -5670,15 +5670,15 @@
       "$description": "Primary button pressed state."
     },
     "toast-action-bg": {
-      "$value": "{semantic.color-accent-control-bg}",
+      "$value": "{semantic.control-bg-selected}",
       "$type": "color"
     },
     "toast-action-bg-hover": {
-      "$value": "{semantic.color-accent-control-bg-hover}",
+      "$value": "{semantic.control-bg-active}",
       "$type": "color"
     },
     "toast-action-text": {
-      "$value": "{semantic.accent-text}",
+      "$value": "{semantic.ink}",
       "$type": "color"
     },
     "button-destructive-outline-text": {

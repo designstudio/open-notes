@@ -73,7 +73,7 @@ O `muted` anterior, `#777` sobre branco, tinha aproximadamente 4,48:1. O `#666` 
 | Rosa | 5,76:1 | 11,42:1 |
 | Pêssego | 5,63:1 | 11,65:1 |
 
-Os previews de paleta têm tokens próprios para que não mudem junto com a seleção. O hover do botão principal usa uma mistura opaca de accent e ink, mantendo o texto legível. No toast, a cápsula de Restaurar usa misturas de 6% / 8% nas paletas coloridas claras; os 16% / 24% anteriores continuam nos demais escopos. Isso evita clarear demais o fundo abaixo do texto branco.
+Os previews de paleta têm tokens próprios para que não mudem junto com a seleção. O hover do botão principal usa uma mistura opaca de accent e ink, mantendo o texto legível. O toast usa a superfície neutra `surface` e o texto `ink`: branco com texto escuro no modo claro, superfície escura com texto claro no modo escuro, sem acompanhar a paleta de destaque. A cápsula de Restaurar usa `control-bg-selected`, `control-bg-active` no hover e texto `ink`.
 
 Status provisionados: `color-success` reutiliza o verde de texto do editor; `color-warning` usa amarelo escuro existente no light e amarelo claro no dark; `color-info` reutiliza azul existente em cada tema; `color-error` aponta para `danger`. Cores editoriais/highlights continuam independentes. Não usar cores de highlight como status sem medir seu contraste no contexto.
 

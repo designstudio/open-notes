@@ -1140,8 +1140,8 @@
   --dialog-shadow: var(--shadow-dialog);
   --dialog-radius: var(--radius-16);
   --dialog-padding: var(--space-20);
-  --toast-bg: var(--accent);
-  --toast-text: var(--accent-text);
+  --toast-bg: var(--surface);
+  --toast-text: var(--ink);
   --toast-radius: var(--radius-full);
   --toast-shadow: var(--shadow-menu);
   --tooltip-radius: var(--radius-12);
@@ -1154,9 +1154,9 @@
   --palette-swatch-rose-bg: var(--palette-rose-preview);
   --palette-swatch-peach-bg: var(--palette-peach-preview);
   --button-primary-bg-active: var(--color-primary-active);
-  --toast-action-bg: var(--color-accent-control-bg);
-  --toast-action-bg-hover: var(--color-accent-control-bg-hover);
-  --toast-action-text: var(--accent-text);
+  --toast-action-bg: var(--control-bg-selected);
+  --toast-action-bg-hover: var(--control-bg-active);
+  --toast-action-text: var(--ink);
   --button-destructive-outline-text: var(--destructive-foreground);
   --button-destructive-outline-border: var(--destructive-border);
   --button-destructive-outline-bg-hover: var(--destructive-subtle-hover);
