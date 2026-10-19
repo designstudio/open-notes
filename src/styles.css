@@ -80,16 +80,17 @@ textarea.editor-title:focus-visible,.editor-tags input:focus-visible{outline:non
 
 /* Official Tiptap menus inherit the app palette, including dark mode. */
 .tiptap-dropdown-menu-content{
-  --surface:var(--primitive-color-a685aa00);
-  --paper:var(--primitive-color-fef85bb3);
-  --ink:var(--primitive-color-f62328de);
-  --secondary:var(--primitive-color-4a720451);
-  --muted:var(--primitive-color-58070751);
-  --line:var(--primitive-color-79bef13b);
-  --hover:var(--primitive-color-79bef13b);
+  --surface:var(--primitive-color-hex-171717);
+  --paper:var(--primitive-color-hex-212121);
+  --ink:var(--primitive-color-hex-ececec);
+  --secondary:var(--primitive-color-hex-b4b4b4);
+  --muted:var(--primitive-color-hex-a0a0a0);
+  --line:var(--primitive-color-hex-383838);
+  --hover:var(--primitive-color-hex-383838);
   --control-bg-selected:var(--hover);
   --control-bg-active:var(--hover);
   --danger:var(--color-shiraz-300);
+  --accent:var(--ink);
   color-scheme:dark;
   background:var(--surface);
   color:var(--ink);
@@ -130,14 +131,15 @@ textarea.editor-title:focus-visible,.editor-tags input:focus-visible{outline:non
 
 /* The formatting bubble keeps a dark palette in both app themes. */
 .selection-menu {
-  --surface:var(--primitive-color-a685aa00);
-  --paper:var(--primitive-color-fef85bb3);
-  --ink:var(--primitive-color-f62328de);
-  --secondary:var(--primitive-color-4a720451);
-  --muted:var(--primitive-color-58070751);
-  --line:var(--primitive-color-79bef13b);
-  --hover:var(--primitive-color-79bef13b);
+  --surface:var(--primitive-color-hex-171717);
+  --paper:var(--primitive-color-hex-212121);
+  --ink:var(--primitive-color-hex-ececec);
+  --secondary:var(--primitive-color-hex-b4b4b4);
+  --muted:var(--primitive-color-hex-a0a0a0);
+  --line:var(--primitive-color-hex-383838);
+  --hover:var(--primitive-color-hex-383838);
   --danger:var(--color-shiraz-300);
+  --accent:var(--ink);
   color-scheme:dark;
   border:none !important;
   box-shadow:var(--menu-shadow);

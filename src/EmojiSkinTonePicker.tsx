@@ -10,6 +10,12 @@ const options: { value: SkinTone; label: string; color: string }[] = [
   { value: 'dark', label: 'Escuro', color: '#7c533e' },
 ];
 
+function ToneSwatch({ color }: { color: string }) {
+  return <svg className="emoji-picker-swatch" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+    <circle cx="10" cy="10" r="8.5" fill={color} stroke="currentColor" strokeOpacity="0.12" strokeWidth="0.5" />
+  </svg>;
+}
+
 export function EmojiSkinTonePicker({ value, onChange }: { value: SkinTone; onChange: (tone: SkinTone) => void }) {
   const [open, setOpen] = useState(false);
   const id = useId();
@@ -33,18 +39,20 @@ export function EmojiSkinTonePicker({ value, onChange }: { value: SkinTone; onCh
     if (open && event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); close(); }
   }}>
     <button ref={trigger} className="emoji-picker-tone" type="button" aria-label={`Tom de pele: ${options[selected].label}`} title="Alterar tom de pele" aria-expanded={open} aria-controls={open ? id : undefined} onClick={() => setOpen(!open)}>
-      <span className="emoji-picker-swatch" style={{ backgroundColor: options[selected].color }} />
+      <ToneSwatch color={options[selected].color} />
     </button>
-    {open && <div id={id} className="emoji-picker-tone-palette" role="radiogroup" aria-label="Tom de pele" onKeyDown={event => {
+    <div id={id} className="emoji-picker-tone-palette t-resize" data-open={open} inert={!open} aria-hidden={!open} role="radiogroup" aria-label="Tom de pele" onKeyDown={event => {
       const step = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : ['ArrowLeft', 'ArrowUp'].includes(event.key) ? -1 : 0;
       if (!step && event.key !== 'Home' && event.key !== 'End') return;
       event.preventDefault(); event.stopPropagation();
       const index = event.key === 'Home' ? 0 : event.key === 'End' ? options.length - 1 : (selected + step + options.length) % options.length;
       onChange(options[index].value); buttons.current[index]?.focus();
     }}>
-      {options.map((option, index) => <button key={option.value} ref={el => { buttons.current[index] = el; }} type="button" role="radio" aria-checked={value === option.value} aria-label={option.label} title={option.label} tabIndex={value === option.value ? 0 : -1} onClick={() => { onChange(option.value); close(); }}>
-        <span className="emoji-picker-swatch" style={{ backgroundColor: option.color }} />
-      </button>)}
-    </div>}
+      <div className="emoji-picker-tone-options">
+        {options.map((option, index) => <button key={option.value} ref={el => { buttons.current[index] = el; }} type="button" role="radio" aria-checked={value === option.value} aria-label={option.label} title={option.label} tabIndex={open && value === option.value ? 0 : -1} onClick={() => { onChange(option.value); close(); }}>
+          <ToneSwatch color={option.color} />
+        </button>)}
+      </div>
+    </div>
   </div>;
 }
