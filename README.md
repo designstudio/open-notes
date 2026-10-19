@@ -153,8 +153,11 @@ O build verifica os tipos com TypeScript e gera os arquivos em `dist/`. O comand
 | IndexedDB | Persistência local por nota e cópias de recuperação. |
 | Google Drive API | Sincronização opcional da cópia do espaço. |
 | CSS, Sass e tokens de design | Aparência, temas e padrões visuais. |
+| [Solar Icons](https://github.com/saoudi-h/solar-icons) | Ícones da interface pelo pacote `@solar-icons/react`. |
+| [Transitions.dev](https://transitions.dev/) | Biblioteca de padrões de movimento adaptados ao CSS e aos componentes do app. |
+| Motion (`framer-motion`) | Animações React de componentes, como o menu de criação e o seletor de largura da nota. |
 
-O `App.tsx` conecta componentes e hooks com responsabilidades separadas. O editor, a biblioteca, a barra lateral, os diálogos, a navegação e o armazenamento têm seus próprios módulos. Os ícones vêm de Solar Icons e dos controles Tiptap.
+O `App.tsx` conecta componentes e hooks com responsabilidades separadas. O editor, a biblioteca, a barra lateral, os diálogos, a navegação e o armazenamento têm seus próprios módulos. Os ícones vêm de Solar Icons e dos controles Tiptap, centralizados em `src/icons.ts`. Os padrões do Transitions.dev estão adaptados em `src/motion.css` e nos componentes de interface, com tokens compartilhados e suporte a movimento reduzido.
 
 A estrutura está descrita em [Arquitetura](docs/architecture.md), e os padrões visuais em [Design system](docs/design-system.md).
 
@@ -168,7 +171,7 @@ As decisões de produto e design são guiadas por quem está construindo e usand
 
 ## Qualidade e testes
 
-A suíte reúne **109 testes** de armazenamento, migração, edição, recuperação, sincronização e resolução de conflitos.
+A suíte reúne **157 testes** de armazenamento, migração, edição, recuperação, sincronização e resolução de conflitos.
 
 ```sh
 npm test
@@ -177,6 +180,13 @@ npm test
 Os testes usam armazenamento e API Google simulados, sem acessar suas notas ou uma conta Google real. Os testes de integração exercitam o App e seus hooks, com substitutos para os componentes de apresentação. Eles não substituem testes E2E em um navegador.
 
 Cenários, execução e limites estão documentados em [Testes do Open Notes](docs/testing.md).
+
+A [estratégia de migrações](docs/migrations.md) mantém o banco de produção na versão 2 e testa atualizações sequenciais para versões futuras simuladas, incluindo rollback e preservação de 5.000 notas. Para verificar os sete cenários adicionais com IndexedDB nativo:
+
+```sh
+npx playwright install chromium
+npm run test:migrations:browser
+```
 
 O teste adicional de inicialização usa a interface real em produção e desenvolvimento, com perfis descartáveis:
 
@@ -211,6 +221,7 @@ O histórico das melhorias fica no [Changelog](CHANGELOG.md).
 | --- | --- |
 | [Arquitetura](docs/architecture.md) | Componentes, hooks e responsabilidades. |
 | [Persistência local](docs/local-storage.md) | IndexedDB, migração, gravações e recuperação. |
+| [Versionamento e migrações](docs/migrations.md) | Etapas incrementais, compatibilidade, integridade, rollback e simulações futuras. |
 | [Testes](docs/testing.md) | Cobertura, execução e isolamento dos testes. |
 | [Benchmarks](docs/benchmarks.md) | Metodologia, execução e resultados com grandes volumes de notas. |
 | [Inicialização](docs/startup-performance.md) | Carregamento do editor, indicador de espera e comparação antes/depois. |

@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node tests/run.mjs",
+    "test:migrations:browser": "node tests/migrations-browser.mjs",
     "benchmark": "tsc --noEmit --project benchmarks/tsconfig.json && node benchmarks/run.mjs",
     "tokens:generate": "node scripts/generate-design-tokens.mjs",
     "tokens:check": "node scripts/generate-design-tokens.mjs --check",

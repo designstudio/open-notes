@@ -27,6 +27,10 @@ Os módulos extraídos ficam em `src/app/`:
 
 O editor de texto continua em `src/RichNote.tsx`, a API de armazenamento em `src/local-data.ts` e a integração com o Google Drive em `src/cloud/`. A implementação da [persistência por nota](local-storage.md) fica em `src/storage/`.
 
+A iconografia é centralizada em `src/icons.ts`, com imports individuais de `@solar-icons/react` e SVGs locais dos controles Tiptap. Os padrões de animação do Transitions.dev são adaptados em `src/motion.css` e nos componentes; `framer-motion` atende às animações React do menu de criação e do seletor de largura. Origem, convenções e acessibilidade estão documentadas no [design system](design-system.md).
+
+O versionamento do IndexedDB usa um runner transacional e um registro de etapas em `storage/migration-runner.ts` e `storage/migrations.ts`, com validação em `storage/integrity.ts`. Todas as etapas de um upgrade são atômicas e a versão de produção continua em 2. O [guia de migrações](migrations.md) descreve o contrato, a compatibilidade e as simulações das versões 3 e 4.
+
 ## Inicialização e montagem assíncrona
 
 `main.tsx` lê o IndexedDB antes de montar o App, sem mensagem de abertura. Se a leitura falhar, mantém a tela de erro com nova tentativa; os dados existentes são preservados.

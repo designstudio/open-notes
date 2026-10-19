@@ -2,6 +2,17 @@
 
 ## 2026-10-18
 
+### Versionamento e futuras migrações
+
+- Registro de migrações incrementais com validação da sequência, da origem e de cada destino na mesma transação de upgrade.
+- Reversão de toda a cadeia em falhas de conversão, validação, requests, callbacks ou interrupção por aborto; nova tentativa a partir da versão original.
+- Validação de stores, IDs, metadados, ordem, campos essenciais e referências entre notas, pastas e coleções, recusando dados inválidos sem reparo silencioso.
+- Rejeição de bancos mais recentes sem downgrade, com orientação para atualizar o app; tratamento de bloqueio por outra aba sem executar um upgrade abandonado depois.
+- Banco de produção mantido na versão 2. Versões 3 e 4 simuladas apenas em fixtures, incluindo conservação de 5.000 notas, documentos, perfil e backups.
+- 48 testes novos, totalizando 157, mais sete cenários no IndexedDB nativo e verificação da mensagem de incompatibilidade em produção e desenvolvimento.
+- Guia de contrato, publicação, atomicidade, compatibilidade e limites das migrações em `docs/migrations.md`.
+- Documentação atualizada da iconografia Solar Icons, dos padrões de animação do Transitions.dev e do uso de `framer-motion`, corrigindo a referência antiga a Reicon no guia de design.
+
 ### Inicialização e carregamento das notas
 
 - Carregamento separado do editor Tiptap e das preferências, reduzindo o JavaScript necessário para abrir a biblioteca.

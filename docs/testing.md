@@ -8,6 +8,17 @@ npm test
 
 O runner `tests/run.mjs` compila os arquivos TypeScript para uma pasta temporária e executa o test runner do Node. A pasta é removida ao final, inclusive quando há falhas. Os testes não acessam o perfil do navegador nem uma conta Google real.
 
+## Versionamento e migrações
+
+`tests/migrations.test.ts` acrescenta 48 cenários à suíte, totalizando 157 testes. As fixtures isoladas simulam versões 3 e 4 sem alterar a versão 2 do banco de produção. Há cobertura de caminhos sequenciais, 5.000 notas, integridade de IDs/metadados/referências, preservação de documentos e backups, banco mais recente, esquema incompleto, bloqueio por outra aba, rollback de toda a cadeia, interrupções e nova tentativa.
+
+```sh
+npx playwright install chromium
+npm run test:migrations:browser
+```
+
+Os sete cenários adicionais de `tests/migrations-browser.mjs` verificam as garantias centrais no IndexedDB nativo do Chromium, com porta, perfil e dados temporários. Detalhes, contrato para novas etapas e limites da simulação de interrupções estão em [Versionamento e migrações](migrations.md).
+
 ## Criação, edição, exclusão e recuperação
 
 `tests/app-flows.test.tsx` monta o `App` real em StrictMode com os hooks, a navegação, o salvamento automático e o armazenamento granular. Verifica:
@@ -58,7 +69,7 @@ npx playwright install chromium
 node tests/startup-browser.mjs
 ```
 
-Esse teste complementa a suíte de 109 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
+Esse teste complementa a suíte de 157 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
 
 - Abre a biblioteca e confirma que as preferências não foram solicitadas antecipadamente.
 - Retém o download do editor para verificar o indicador sem texto e o título oculto até a nota estar pronta.
@@ -69,6 +80,7 @@ Esse teste complementa a suíte de 109 testes com Chromium real, nas versões de
 - Navega para uma nota já preparada e confirma que editar o título mantém a mesma instância do editor no DOM.
 - Cria uma nova nota e verifica o foco automático no título após a montagem.
 - Falha se houver exceções JavaScript na página.
+- Em outro perfil descartável, abre uma base futura isolada e verifica a orientação de atualizar o app, sem alterar notas ou o registro de controle dessa base.
 
 Com `node tests/startup-browser.mjs --screenshots`, também gera `artifacts/note-loading-desktop.png` e `artifacts/note-loading-mobile.png` durante a espera. O cenário mobile verifica o indicador estático com movimento reduzido. As capturas ficam fora do Git; o build e os perfis são descartados ao terminar. O teste não mede latência do serviço Google nem substitui uma auditoria completa de acessibilidade.
 

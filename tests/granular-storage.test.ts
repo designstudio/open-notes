@@ -10,7 +10,7 @@ beforeEach(() => {
 });
 
 const space = (): AppData => ({
-  notes: initialNotes.slice(0, 3).map(note => structuredClone(note)),
+  notes: initialNotes.slice(0, 3).map(note => ({ ...structuredClone(note), collection: 'pessoal', folder: 'folder' })),
   collections: [{ id: 'pessoal', name: 'Pessoal', color: 'blue' }],
   folders: [{ id: 'folder', collectionId: 'pessoal', name: 'Pasta' }],
   profile: { name: 'Alex', photo: 'data:image/jpeg;base64,YQ==' },

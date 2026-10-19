@@ -8,7 +8,7 @@ O banco `open-notes`, versão 2, usa três object stores:
 | `metadata` | Registros separados para `collections`, `folders`, `profile`, `noteOrder` e a identificação `schema`. |
 | `workspace` | Cópia original `current` da versão 1 e cópias de recuperação do Google Drive. |
 
-`src/local-data.ts` mantém os mesmos exports para os consumidores. A implementação fica em `src/storage/`: `database.ts` abre e migra o banco; `schema.ts` define o formato; `snapshots.ts` captura os dados; `local-data.ts` lê e grava as diferenças.
+`src/local-data.ts` mantém os mesmos exports para os consumidores. A implementação fica em `src/storage/`: `database.ts` abre o banco; `migration-runner.ts` e `migrations.ts` executam as etapas sequenciais; `integrity.ts` valida os upgrades; `schema.ts` define o formato; `snapshots.ts` captura os dados; `local-data.ts` lê e grava as diferenças.
 
 ## Salvamento
 
@@ -22,7 +22,11 @@ Ao carregar, as notas são reconstruídas na ordem persistida. Um espaço explic
 
 ## Migração e recuperação
 
+A estratégia completa, o contrato de cada etapa e os testes de versões futuras estão em [Versionamento e migrações](migrations.md). A versão de produção continua em 2; as versões 3 e 4 existem apenas em fixtures de teste. Bancos mais recentes são recusados sem downgrade, e a interface orienta a atualizar o app.
+
 Ao abrir um banco da versão 1, as notas de `workspace/current` e os metadados são copiados na transação de atualização de versão. Se qualquer etapa falhar, toda a atualização é revertida. O registro original e as cópias de recuperação permanecem intactos após o sucesso; esse registro original passa a ser apenas uma cópia anterior à migração e deixa de ser atualizado.
+
+Os upgrades validam a origem e leem de volta cada destino antes do commit, verificando IDs, ordenação, campos essenciais e referências a coleções e pastas. Dados incompletos ou referências inválidas interrompem a conversão com a origem preservada. A validação completa de migração não é executada novamente a cada abertura de um banco que já esteja na versão atual.
 
 Se existir somente `localStorage/open-notes-v1`, a leitura importa esse conteúdo para os registros individuais antes de abrir o editor. A origem no localStorage também é preservada.
 

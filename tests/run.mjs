@@ -6,6 +6,7 @@ import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
 const unitEntries = [
+  'migrations.test.ts',
   'granular-storage.test.ts', 'app-modules.test.tsx', 'drive-sync.test.tsx',
   'find-replace.test.ts', 'local-data.test.ts', 'toasts.test.tsx',
   'sidebar-resize.test.tsx', 'sidebar-state.test.ts', 'collection-order.test.ts', 'themes.test.ts',

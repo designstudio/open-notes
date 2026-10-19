@@ -111,6 +111,34 @@ try {
       assert.deepEqual(errors, [], `${mode}: no browser exceptions`);
       console.log(`${mode}: startup, deferred editor, persistence, reload and preferences passed`);
     } finally { releaseEditor?.(); await context.close(); }
+    const compatibilityContext = await browser.newContext();
+    try {
+      const page = await compatibilityContext.newPage();
+      await compatibilityContext.route('**/*', route => new URL(route.request().url()).origin === new URL(origin).origin ? route.continue() : route.abort());
+      await page.goto(`${origin}library`);
+      await page.locator('.collection-card').first().waitFor();
+      await page.evaluate(() => new Promise((resolve, reject) => {
+        const request = indexedDB.open('open-notes', 3);
+        request.onupgradeneeded = () => request.result.createObjectStore('future-test').put({ preserved: true }, 'marker');
+        request.onsuccess = () => { request.result.close(); resolve(); };
+        request.onerror = () => reject(request.error);
+      }));
+      await page.reload();
+      await page.getByRole('heading', { name: 'Atualize o Open Notes', exact: true }).waitFor();
+      const preserved = await page.evaluate(() => new Promise((resolve, reject) => {
+        const request = indexedDB.open('open-notes', 3);
+        request.onsuccess = () => {
+          const database = request.result;
+          const transaction = database.transaction(['future-test', 'notes']);
+          const marker = transaction.objectStore('future-test').get('marker');
+          const count = transaction.objectStore('notes').count();
+          transaction.oncomplete = () => { database.close(); resolve(marker.result?.preserved && count.result > 0); };
+        };
+        request.onerror = () => reject(request.error);
+      }));
+      assert.ok(preserved, 'the older app preserves the newer database');
+      console.log(`${mode}: newer database shows update guidance and remains intact`);
+    } finally { await compatibilityContext.close(); }
     if (mode === 'development') await server.close();
     else await new Promise(resolve => server.httpServer.close(resolve));
     server = null;

@@ -4,7 +4,7 @@
 
 Auditoria e migração em 7 de outubro de 2026, seguindo a skill `design-system` do repositório `nextlevelbuilder/ui-ux-pro-max-skill`. A skill está instalada em `.codex/skills/design-system`.
 
-Stack: React 19, TypeScript, Vite, CSS global e SCSS nos primitives do Tiptap. Não há Tailwind, CSS Modules ou styled-components. Menus usam Radix; tooltips usam Floating UI; dialogs usam `<dialog>` nativo com a animação compartilhada. Ícones vêm de Reicon e do editor.
+Stack atual: React 19, TypeScript, Vite, CSS global e SCSS nos primitives do Tiptap. Não há Tailwind, CSS Modules ou styled-components. Menus usam Radix; tooltips usam Floating UI; dialogs usam `<dialog>` nativo com a animação compartilhada. A iconografia usa Solar Icons e os controles Tiptap. O movimento usa padrões do Transitions.dev adaptados ao projeto, CSS local e `framer-motion` nos componentes React que precisam dele. As seções abaixo documentam essas integrações; os inventários de auditoria preservam seus snapshots históricos.
 
 Esta é uma extração do produto existente, sem trocar a marca, as seis paletas, a densidade ou o desenho das animações. As correções visuais intencionais são contraste de texto neutro pequeno, placeholders, hover opaco dos botões, legibilidade de Restaurar nas paletas claras, foco do editor e estados de campo. Cores de conteúdo escrito pelo usuário não foram reescritas.
 
@@ -128,7 +128,32 @@ Abaixo de 400px, ações das confirmações ficam em coluna com largura total e 
 
 Estados de loading permanecem nos componentes que já têm trabalho assíncrono (`aria-busy`, spinner e mensagens). Não foi inventado um loading para operações locais síncronas. A aparência `aria-invalid` está definida, mas a validação de cada formulário precisa aplicar o atributo quando houver erro; o CSS não inventa regras de validação.
 
-## Motion
+## Iconografia — Solar Icons
+
+A interface usa [Solar Icons para React](https://github.com/saoudi-h/solar-icons), instalado como `@solar-icons/react`. O ponto de entrada do projeto é `src/icons.ts`: ele importa arquivos individuais e os reexporta com nomes usados pelos componentes, evitando carregar o catálogo inteiro.
+
+Outline é o estilo padrão. Há exceções explícitas em Linear para ações e documentos específicos e em Bold para estados preenchidos e menus de reticências. Os controles de formatação preservam os SVGs locais do Tiptap em `src/components/tiptap-icons/`, também reexportados por `src/icons.ts`.
+
+Para adicionar um ícone, escolha o equivalente Solar, importe seu arquivo individual em `src/icons.ts` e reutilize o alias nos componentes. Preserve a família e o peso do contexto, deixe a cor acompanhar os tokens do controle e mantenha o nome acessível no botão ou link; ícones apenas decorativos devem ficar ocultos para tecnologias assistivas. Não substitua ícones existentes por caracteres Unicode ou por outra biblioteca sem revisar a consistência do conjunto.
+
+## Motion — Transitions.dev e Motion
+
+A [biblioteca do Transitions.dev](https://transitions.dev/) fornece padrões de transição usados como base e adaptados ao Open Notes. As implementações compartilhadas ficam em `src/motion.css`; o comportamento fica nos componentes React e nos estilos específicos de cada componente. Os tokens de duração, easing, distância, escala e blur são mantidos em `assets/design-tokens.json` e gerados em `src/design-tokens.css`.
+
+| Padrão adaptado | Implementação no app |
+| --- | --- |
+| Menu dropdown | `.t-dropdown` e integração com a presença e o posicionamento dos menus. |
+| Modal open/close | `.t-modal` e `src/AnimatedDialog.tsx`, preservando o `<dialog>` nativo. |
+| Tabs sliding | `.t-tabs` e `.t-tabs-pill`, usados no seletor de visualização. |
+| Tooltip open/close | `.t-tt` e integração com Floating UI nos controles do editor. |
+| Icon swap | `.t-icon-swap`, incluindo a alternância entre sol e lua. |
+| Accordion | `.t-acc` na árvore de coleções da barra lateral. |
+| Page side-by-side | `.t-page-slide` entre preferências e detalhes do Drive. |
+| Text states swap e Banner stacking | `src/Feedback.tsx` e `src/feedback.css`, para troca de texto e notificações. |
+
+O pacote `framer-motion` é a dependência React de animação presente em `package.json`. Ele é usado diretamente no menu de criação (`CreateMenu.tsx`) e no indicador de largura da nota (`NoteWidthTabs.tsx`); seu hook `useReducedMotion` também orienta outros controles. Os padrões do Transitions.dev são incorporados e mantidos como código local, sem depender de carregar o site durante o uso do app.
+
+Ao estender o movimento, reutilize primeiro os padrões e tokens existentes, preserve a diferença de tempo entre entrada e saída e forneça comportamento adequado a `prefers-reduced-motion` ou `useReducedMotion`. O indicador de carregamento da nota tem CSS próprio em `src/app/note-loading.css`: aparece apenas após 180 ms de espera e permanece estático com movimento reduzido.
 
 A alternância claro/escuro aplica as cores em um único commit antes do paint. A classe temporária `theme-changing` suspende as transições das superfícies durante esse commit e é removida após o reflow. Trocas de ícone/texto continuam animadas; hover e transições de paleta voltam a funcionar normalmente após a aplicação do tema.
 
