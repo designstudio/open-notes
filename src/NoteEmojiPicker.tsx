@@ -4,6 +4,8 @@ import { Search, SmileCircle, Leaf, Coffee, Compass, Star, Sun, Hash, ForbiddenC
 import { ClockCircleIcon } from '@solar-icons/react/linear/clock-circle';
 import { UsersGroupRoundedIcon } from '@solar-icons/react/linear/users-group-rounded';
 import { FlagIcon } from '@solar-icons/react/linear/flag';
+import { NoteEmoji } from './NoteEmoji';
+import { EmojiSkinTonePicker } from './EmojiSkinTonePicker';
 import './note-emoji-picker.css';
 
 const RECENTS_KEY = 'open-notes:recent-emojis';
@@ -63,7 +65,7 @@ function PickerContent({ value, onChoose, onRemove }: { value?: string; onChoose
       else headers.current.delete(category.label);
     }}>{category.label}</div>,
     Row: ({ children, ...props }: import('frimousse').EmojiPickerListRowProps) => <div {...props} className="emoji-picker-row">{children}</div>,
-    Emoji: ({ emoji, ...props }: import('frimousse').EmojiPickerListEmojiProps) => <button {...props} type="button" className="emoji-picker-option" aria-pressed={emoji.emoji === value}>{emoji.emoji}</button>,
+    Emoji: ({ emoji, ...props }: import('frimousse').EmojiPickerListEmojiProps) => <button {...props} type="button" className="emoji-picker-option" aria-pressed={emoji.emoji === value}><NoteEmoji value={emoji.emoji} size={28} opticalOffset={false} /></button>,
   }), [value]);
   function updateCategory() {
     const viewport = viewportRef.current;
@@ -81,7 +83,7 @@ function PickerContent({ value, onChoose, onRemove }: { value?: string; onChoose
     viewportRef.current.scrollTop = top;
     setActiveCategory(label);
   }
-  return <EmojiPicker.Root className="emoji-picker" locale="pt" columns={8} resolveEmojiData={resolveData} skinTone={skinTone} onEmojiSelect={({ emoji }) => {
+  return <EmojiPicker.Root className="emoji-picker" locale="pt" columns={8} sticky={false} resolveEmojiData={resolveData} skinTone={skinTone} onEmojiSelect={({ emoji }) => {
     save(RECENTS_KEY, JSON.stringify([emoji, ...recents.filter(item => item !== emoji)].slice(0, 24)));
     onChoose(emoji);
   }}>
@@ -102,13 +104,10 @@ function PickerContent({ value, onChoose, onRemove }: { value?: string; onChoose
     </EmojiPicker.Viewport>
     <div className="emoji-picker-footer">
       <EmojiPicker.ActiveEmoji>{({ emoji }) => <div className="emoji-picker-preview">
-        <span className="emoji-picker-preview-glyph" aria-hidden="true">{emoji?.emoji ?? value ?? '😊'}</span>
+        <span className="emoji-picker-preview-glyph"><NoteEmoji value={emoji?.emoji ?? value ?? '😊'} size={32} opticalOffset={false} /></span>
         <span>{emoji?.label ?? 'Escolha um emoji'}</span>
       </div>}</EmojiPicker.ActiveEmoji>
-      <EmojiPicker.SkinTone emoji="✋">{({ skinToneVariations, skinTone: current }) => <button className="emoji-picker-tone" type="button" aria-label="Alterar tom de pele" title="Alterar tom de pele" onClick={() => {
-        const next = tones[(tones.indexOf(current) + 1) % tones.length];
-        setSkinTone(next); save(TONE_KEY, next);
-      }}>{skinToneVariations.find(item => item.skinTone === current)?.emoji ?? '✋'}</button>}</EmojiPicker.SkinTone>
+      <EmojiSkinTonePicker value={skinTone} onChange={tone => { setSkinTone(tone); save(TONE_KEY, tone); }} />
       <button type="button" className="emoji-picker-remove" aria-label="Remover ícone" title="Remover ícone" onClick={onRemove}><ForbiddenCircle size={17} aria-hidden="true" /></button>
     </div>
   </EmojiPicker.Root>;
