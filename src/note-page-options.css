@@ -54,20 +54,7 @@
 .note-width-tabs .t-tab { flex:1 1 0; min-width:0; height:32px; padding:4px 8px; font-size:var(--font-size-13); color:var(--secondary); background:transparent; }
 .note-width-tabs .t-tab[aria-selected=true] { color:var(--ink); }
 .note-width-pill { position:absolute; left:3px; top:3px; width:calc((100% - 6px) / 3); height:32px; background:var(--menu-bg); border-radius:var(--button-radius); pointer-events:none; z-index:0; }
-.note-icon-picker { width:300px; padding:var(--space-12); }
 .note-picker-input { width:100%; border:1px solid var(--input-border); background:var(--input-bg); color:var(--ink); padding:var(--space-9) var(--space-10); border-radius:var(--radius-8); font-size:var(--font-size-13); }
-.note-icon-scroll-frame { position:relative; overflow:hidden; }
-.note-icon-scroll-frame[data-has-scroll-above=true]::before { content:""; position:absolute; top:0; left:0; right:0; height:35px; background:linear-gradient(to bottom,var(--menu-bg) 0%,transparent 100%); pointer-events:none; z-index:1; }
-.note-icon-scroll-frame[data-has-scroll=true]::after { content:""; position:absolute; bottom:0; left:0; right:0; height:35px; background:linear-gradient(to top,var(--menu-bg) 0%,transparent 100%); pointer-events:none; z-index:1; }
-.note-icon-scroll { max-height:144px; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--line) transparent; }
-.note-icon-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:var(--space-4); padding:var(--space-4) 0 var(--space-8); }
-.note-emoji-option { display:grid; place-items:center; min-width:0; padding:0; width:32px; height:32px; justify-self:center; font-size:22px; border-radius:50%; }
-.note-emoji-option:hover,.note-emoji-option[aria-pressed=true] { background:var(--hover); }
-.note-icon-remove-option { color:var(--secondary); }
-.note-custom-icon { display:flex; gap:var(--space-6); }
-.note-custom-icon .secondary-button { padding:var(--space-6) var(--space-10); font-size:var(--font-size-13); }
-.note-picker-remove { display:block; width:100%; text-align:left; padding:var(--space-10) var(--space-6); color:var(--secondary); font-size:var(--font-size-13); }
-.note-picker-remove:hover { background:var(--hover); }
 .note-picker-help { color:var(--muted); font-size:var(--font-size-13); padding:var(--space-8); }
 .note-picker-error { color:var(--danger); font-size:var(--font-size-13); margin-top:var(--space-8); }
 .note-cover-block { position:relative; height:clamp(200px,25vw,350px); margin-inline:calc(-1 * var(--page-inline-padding)); }
@@ -98,6 +85,6 @@
 .note-cover-upload input { position:absolute; inset:0; opacity:0; width:100%; cursor:pointer; }
 .note-cover-upload:focus-within { outline:2px solid var(--focus-ring-color); outline-offset:4px; }
 @media (hover:none) { .note-heading .note-page-options-trigger,.note-cover-controls { opacity:1; pointer-events:auto; } }
-@media (max-width:700px) { .note-icon-grid { grid-template-columns:repeat(6,minmax(0,1fr)); } .note-cover-controls { right:var(--space-12); } .editor[data-has-cover=true] .editor-paper { margin-top:var(--space-64); } .editor:is([data-page-width=narrow],[data-page-width=wide],[data-page-width=full]) .editor-paper { width:calc(100% - 44px); margin-left:44px; } .app-shell .note-title-row .note-page-icon { --note-icon-size:36px; left:-44px; font-size:26px; } .note-page-icon .note-emoji-glyph { width:28px; height:28px; } }
+@media (max-width:700px) { .note-cover-controls { right:var(--space-12); } .editor[data-has-cover=true] .editor-paper { margin-top:var(--space-64); } .editor:is([data-page-width=narrow],[data-page-width=wide],[data-page-width=full]) .editor-paper { width:calc(100% - 44px); margin-left:44px; } .app-shell .note-title-row .note-page-icon { --note-icon-size:36px; left:-44px; font-size:26px; } .note-page-icon .note-emoji-glyph { width:28px; height:28px; } }
 @media (prefers-reduced-motion:reduce) { .editor .editor-paper { transition:none; } .note-page-options-trigger,.note-cover-controls,.note-width-tabs .t-tab,.note-width-tabs .t-tabs-pill,.note-field-switch .t-toggle { transition:none!important; } .t-toggle-thumb { animation:none!important; } }
 @media print { .note-page-options-trigger,.note-cover-controls { display:none!important; } .note-page-icon { background:none!important; } }
