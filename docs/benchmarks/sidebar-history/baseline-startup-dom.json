@@ -1,0 +1,1861 @@
+{
+  "schemaVersion": 1,
+  "complete": true,
+  "generatedAt": "2026-10-20T02:42:13.503Z",
+  "source": {
+    "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+    "codeSha256": "729fc729632419c0befc4a5a9699982b9b8d5997946a3ad4952af046eb62eaa6",
+    "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+    "dirty": true
+  },
+  "environment": {
+    "os": "win32",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 7 5700X 8-Core Processor             ",
+    "logicalCPUs": 16,
+    "ramGiB": 31.9,
+    "node": "v24.14.0",
+    "browser": "156.0.8078.4",
+    "headless": true
+  },
+  "configuration": {
+    "sizes": [
+      1000,
+      5000,
+      10000
+    ],
+    "repetitions": 5,
+    "warmupRounds": 1,
+    "ui": true,
+    "noteBodyCharacters": 1024,
+    "richDocument": true,
+    "collectionCount": 1,
+    "folderCount": 10,
+    "externalNetwork": "blocked",
+    "uiTiming": "Browser wall time including Playwright dispatch, readiness polling and two animation frames; not INP.",
+    "storageTiming": "performance.now through native IndexedDB transaction completion; write counters instrumented."
+  },
+  "results": [
+    {
+      "count": 1000,
+      "bytes": 2427013,
+      "samples": {
+        "initialSave": [
+          34,
+          31.900000005960464,
+          32.69999999552965,
+          33.20000000298023,
+          36.899999998509884
+        ],
+        "load": [
+          38.399999998509884,
+          30.799999997019768,
+          32.100000001490116,
+          33.69999999552965,
+          33.100000001490116
+        ],
+        "unchangedSave": [
+          4.100000001490116,
+          4.300000004470348,
+          4.399999998509884,
+          4.4000000059604645,
+          0.7999999970197678
+        ],
+        "editOne": [
+          1.1000000014901161,
+          1.0999999940395355,
+          1,
+          0.7999999970197678,
+          0.9000000059604645
+        ],
+        "createOne": [
+          1,
+          1,
+          1,
+          1,
+          0.9000000059604645
+        ],
+        "deleteOne": [
+          1,
+          1.1000000014901161,
+          0.7999999970197678,
+          0.9000000059604645,
+          0.6999999955296516
+        ],
+        "selectWorkspace": [
+          0.7999999970197678,
+          0.30000000447034836,
+          0.19999999552965164,
+          0.30000000447034836,
+          0.5
+        ],
+        "fingerprint": [
+          13,
+          12.799999997019768,
+          12.800000004470348,
+          9.100000001490116,
+          9.800000004470348
+        ],
+        "compareSame": [
+          19.30000000447035,
+          21.600000001490116,
+          18.5,
+          21.80000000447035,
+          24.100000001490116
+        ],
+        "compareConflict": [
+          26.299999997019768,
+          27.399999998509884,
+          35,
+          25.19999999552965,
+          29.399999998509884
+        ],
+        "serializeUpload": [
+          2.399999998509884,
+          2.2999999970197678,
+          1.7999999970197678,
+          1.1000000014901161,
+          1.4000000059604645
+        ],
+        "backupTwoCopies": [
+          29.69999999552965,
+          21.69999999552965,
+          22.600000001490116,
+          19.600000001490116,
+          23.600000001490116
+        ]
+      },
+      "writes": {
+        "initialSave": [
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1000,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "load": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "unchangedSave": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "editOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "createOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "deleteOne": [
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          }
+        ],
+        "selectWorkspace": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "fingerprint": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareSame": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareConflict": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "serializeUpload": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "backupTwoCopies": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ]
+      },
+      "checks": "passed",
+      "summary": {
+        "initialSave": {
+          "n": 5,
+          "min": 31.900000005960464,
+          "median": 33.20000000298023,
+          "p95": 36.899999998509884,
+          "max": 36.899999998509884
+        },
+        "load": {
+          "n": 5,
+          "min": 30.799999997019768,
+          "median": 33.100000001490116,
+          "p95": 38.399999998509884,
+          "max": 38.399999998509884
+        },
+        "unchangedSave": {
+          "n": 5,
+          "min": 0.7999999970197678,
+          "median": 4.300000004470348,
+          "p95": 4.4000000059604645,
+          "max": 4.4000000059604645
+        },
+        "editOne": {
+          "n": 5,
+          "min": 0.7999999970197678,
+          "median": 1,
+          "p95": 1.1000000014901161,
+          "max": 1.1000000014901161
+        },
+        "createOne": {
+          "n": 5,
+          "min": 0.9000000059604645,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "deleteOne": {
+          "n": 5,
+          "min": 0.6999999955296516,
+          "median": 0.9000000059604645,
+          "p95": 1.1000000014901161,
+          "max": 1.1000000014901161
+        },
+        "selectWorkspace": {
+          "n": 5,
+          "min": 0.19999999552965164,
+          "median": 0.30000000447034836,
+          "p95": 0.7999999970197678,
+          "max": 0.7999999970197678
+        },
+        "fingerprint": {
+          "n": 5,
+          "min": 9.100000001490116,
+          "median": 12.799999997019768,
+          "p95": 13,
+          "max": 13
+        },
+        "compareSame": {
+          "n": 5,
+          "min": 18.5,
+          "median": 21.600000001490116,
+          "p95": 24.100000001490116,
+          "max": 24.100000001490116
+        },
+        "compareConflict": {
+          "n": 5,
+          "min": 25.19999999552965,
+          "median": 27.399999998509884,
+          "p95": 35,
+          "max": 35
+        },
+        "serializeUpload": {
+          "n": 5,
+          "min": 1.1000000014901161,
+          "median": 1.7999999970197678,
+          "p95": 2.399999998509884,
+          "max": 2.399999998509884
+        },
+        "backupTwoCopies": {
+          "n": 5,
+          "min": 19.600000001490116,
+          "median": 22.600000001490116,
+          "p95": 29.69999999552965,
+          "max": 29.69999999552965
+        }
+      },
+      "ui": {
+        "samples": {
+          "libraryStartup": [
+            265.1000000014901,
+            236.79999999701977,
+            246.39999999850988,
+            244.10000000149012,
+            241.60000000149012
+          ],
+          "renderAllNotes": [
+            851.1999999955297,
+            804.7000000029802,
+            770.4000000059605,
+            776.4000000059605,
+            802.5
+          ],
+          "searchRare": [
+            128,
+            128.70000000298023,
+            120.5,
+            127.30000000447035,
+            129.60000000149012
+          ],
+          "clearSearch": [
+            534.3999999985099,
+            517.5,
+            516.7000000029802,
+            535.5,
+            567.3999999985099
+          ],
+          "openEditor": [
+            197.70000000298023,
+            178.80000000447035,
+            180.29999999701977,
+            212.79999999701977,
+            229.19999999552965
+          ],
+          "editTitleToPersistence": [
+            65.5,
+            66.10000000149012,
+            67.39999999850988,
+            65.89999999850988,
+            65.5
+          ]
+        },
+        "domNodes": [
+          14916,
+          14916,
+          14916,
+          14916,
+          14916
+        ],
+        "startupDomNodes": [
+          2245,
+          2245,
+          2245,
+          2245,
+          2245
+        ],
+        "summary": {
+          "libraryStartup": {
+            "n": 5,
+            "min": 236.79999999701977,
+            "median": 244.10000000149012,
+            "p95": 265.1000000014901,
+            "max": 265.1000000014901
+          },
+          "renderAllNotes": {
+            "n": 5,
+            "min": 770.4000000059605,
+            "median": 802.5,
+            "p95": 851.1999999955297,
+            "max": 851.1999999955297
+          },
+          "searchRare": {
+            "n": 5,
+            "min": 120.5,
+            "median": 128,
+            "p95": 129.60000000149012,
+            "max": 129.60000000149012
+          },
+          "clearSearch": {
+            "n": 5,
+            "min": 516.7000000029802,
+            "median": 534.3999999985099,
+            "p95": 567.3999999985099,
+            "max": 567.3999999985099
+          },
+          "openEditor": {
+            "n": 5,
+            "min": 178.80000000447035,
+            "median": 197.70000000298023,
+            "p95": 229.19999999552965,
+            "max": 229.19999999552965
+          },
+          "editTitleToPersistence": {
+            "n": 5,
+            "min": 65.5,
+            "median": 65.89999999850988,
+            "p95": 67.39999999850988,
+            "max": 67.39999999850988
+          }
+        }
+      }
+    },
+    {
+      "count": 5000,
+      "bytes": 12136613,
+      "samples": {
+        "initialSave": [
+          239.29999999701977,
+          227.90000000596046,
+          271.69999999552965,
+          235.29999999701977,
+          271.6000000014901
+        ],
+        "load": [
+          158.20000000298023,
+          144.79999999701977,
+          156.20000000298023,
+          167.30000000447035,
+          155.29999999701977
+        ],
+        "unchangedSave": [
+          23.200000002980232,
+          2.3000000044703484,
+          2.600000001490116,
+          2.2999999970197678,
+          2.4000000059604645
+        ],
+        "editOne": [
+          17.399999998509884,
+          1.8999999985098839,
+          2.4000000059604645,
+          2,
+          2.1999999955296516
+        ],
+        "createOne": [
+          3,
+          2.899999998509884,
+          3.100000001490116,
+          2.7999999970197678,
+          3.100000001490116
+        ],
+        "deleteOne": [
+          2.3000000044703484,
+          2.600000001490116,
+          3.399999998509884,
+          2.5,
+          2.7999999970197678
+        ],
+        "selectWorkspace": [
+          1.8999999985098839,
+          2.100000001490116,
+          2,
+          1.8000000044703484,
+          1.9000000059604645
+        ],
+        "fingerprint": [
+          43.899999998509884,
+          63.600000001490116,
+          56.5,
+          57.899999998509884,
+          54.399999998509884
+        ],
+        "compareSame": [
+          94.69999999552965,
+          116.60000000149012,
+          112,
+          128.69999999552965,
+          112.5
+        ],
+        "compareConflict": [
+          125,
+          151.39999999850988,
+          154.79999999701977,
+          162.80000000447035,
+          147.39999999850988
+        ],
+        "serializeUpload": [
+          11.899999998509884,
+          13.700000002980232,
+          13.899999998509884,
+          13.5,
+          13.400000005960464
+        ],
+        "backupTwoCopies": [
+          104.70000000298023,
+          124,
+          133.30000000447035,
+          114.59999999403954,
+          118.79999999701977
+        ]
+      },
+      "writes": {
+        "initialSave": [
+          {
+            "puts": 5000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 5000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 5000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 5000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 5000,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "load": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "unchangedSave": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "editOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "createOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "deleteOne": [
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          }
+        ],
+        "selectWorkspace": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "fingerprint": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareSame": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareConflict": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "serializeUpload": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "backupTwoCopies": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ]
+      },
+      "checks": "passed",
+      "summary": {
+        "initialSave": {
+          "n": 5,
+          "min": 227.90000000596046,
+          "median": 239.29999999701977,
+          "p95": 271.69999999552965,
+          "max": 271.69999999552965
+        },
+        "load": {
+          "n": 5,
+          "min": 144.79999999701977,
+          "median": 156.20000000298023,
+          "p95": 167.30000000447035,
+          "max": 167.30000000447035
+        },
+        "unchangedSave": {
+          "n": 5,
+          "min": 2.2999999970197678,
+          "median": 2.4000000059604645,
+          "p95": 23.200000002980232,
+          "max": 23.200000002980232
+        },
+        "editOne": {
+          "n": 5,
+          "min": 1.8999999985098839,
+          "median": 2.1999999955296516,
+          "p95": 17.399999998509884,
+          "max": 17.399999998509884
+        },
+        "createOne": {
+          "n": 5,
+          "min": 2.7999999970197678,
+          "median": 3,
+          "p95": 3.100000001490116,
+          "max": 3.100000001490116
+        },
+        "deleteOne": {
+          "n": 5,
+          "min": 2.3000000044703484,
+          "median": 2.600000001490116,
+          "p95": 3.399999998509884,
+          "max": 3.399999998509884
+        },
+        "selectWorkspace": {
+          "n": 5,
+          "min": 1.8000000044703484,
+          "median": 1.9000000059604645,
+          "p95": 2.100000001490116,
+          "max": 2.100000001490116
+        },
+        "fingerprint": {
+          "n": 5,
+          "min": 43.899999998509884,
+          "median": 56.5,
+          "p95": 63.600000001490116,
+          "max": 63.600000001490116
+        },
+        "compareSame": {
+          "n": 5,
+          "min": 94.69999999552965,
+          "median": 112.5,
+          "p95": 128.69999999552965,
+          "max": 128.69999999552965
+        },
+        "compareConflict": {
+          "n": 5,
+          "min": 125,
+          "median": 151.39999999850988,
+          "p95": 162.80000000447035,
+          "max": 162.80000000447035
+        },
+        "serializeUpload": {
+          "n": 5,
+          "min": 11.899999998509884,
+          "median": 13.5,
+          "p95": 13.899999998509884,
+          "max": 13.899999998509884
+        },
+        "backupTwoCopies": {
+          "n": 5,
+          "min": 104.70000000298023,
+          "median": 118.79999999701977,
+          "p95": 133.30000000447035,
+          "max": 133.30000000447035
+        }
+      },
+      "ui": {
+        "samples": {
+          "libraryStartup": [
+            618,
+            615.7000000029802,
+            631.2999999970198,
+            632.6000000014901,
+            659
+          ],
+          "renderAllNotes": [
+            3041.7000000029802,
+            2904.39999999851,
+            2917,
+            3081.89999999851,
+            2967.60000000149
+          ],
+          "searchRare": [
+            573,
+            618.6999999955297,
+            611.1000000014901,
+            608.1999999955297,
+            594.6000000014901
+          ],
+          "clearSearch": [
+            2911.9000000059605,
+            2859.39999999851,
+            3131.10000000149,
+            3110.9000000059605,
+            2953.5
+          ],
+          "openEditor": [
+            753.3999999985099,
+            771.5,
+            821.8000000044703,
+            844.2999999970198,
+            815.5
+          ],
+          "editTitleToPersistence": [
+            148.79999999701977,
+            149.70000000298023,
+            182.70000000298023,
+            164.79999999701977,
+            149.39999999850988
+          ]
+        },
+        "domNodes": [
+          71716,
+          71716,
+          71716,
+          71716,
+          71716
+        ],
+        "startupDomNodes": [
+          10242,
+          10245,
+          10245,
+          10245,
+          10245
+        ],
+        "summary": {
+          "libraryStartup": {
+            "n": 5,
+            "min": 615.7000000029802,
+            "median": 631.2999999970198,
+            "p95": 659,
+            "max": 659
+          },
+          "renderAllNotes": {
+            "n": 5,
+            "min": 2904.39999999851,
+            "median": 2967.60000000149,
+            "p95": 3081.89999999851,
+            "max": 3081.89999999851
+          },
+          "searchRare": {
+            "n": 5,
+            "min": 573,
+            "median": 608.1999999955297,
+            "p95": 618.6999999955297,
+            "max": 618.6999999955297
+          },
+          "clearSearch": {
+            "n": 5,
+            "min": 2859.39999999851,
+            "median": 2953.5,
+            "p95": 3131.10000000149,
+            "max": 3131.10000000149
+          },
+          "openEditor": {
+            "n": 5,
+            "min": 753.3999999985099,
+            "median": 815.5,
+            "p95": 844.2999999970198,
+            "max": 844.2999999970198
+          },
+          "editTitleToPersistence": {
+            "n": 5,
+            "min": 148.79999999701977,
+            "median": 149.70000000298023,
+            "p95": 182.70000000298023,
+            "max": 182.70000000298023
+          }
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "bytes": 24273613,
+      "samples": {
+        "initialSave": [
+          458.6000000014901,
+          493.3999999985099,
+          498.8999999985099,
+          502.80000000447035,
+          505.8999999985099
+        ],
+        "load": [
+          301,
+          322.6000000014901,
+          331.70000000298023,
+          330.79999999701977,
+          321.30000000447035
+        ],
+        "unchangedSave": [
+          3.100000001490116,
+          5.600000001490116,
+          4.5,
+          4.700000002980232,
+          4.5
+        ],
+        "editOne": [
+          3.2000000029802322,
+          5.100000001490116,
+          4.5,
+          4.300000004470348,
+          4.699999995529652
+        ],
+        "createOne": [
+          4.799999997019768,
+          6.600000001490116,
+          7,
+          6,
+          6.4000000059604645
+        ],
+        "deleteOne": [
+          5.100000001490116,
+          6.899999998509884,
+          6.199999995529652,
+          5.100000001490116,
+          4.5
+        ],
+        "selectWorkspace": [
+          4.5,
+          5.4000000059604645,
+          4.399999998509884,
+          4.600000001490116,
+          5.199999995529652
+        ],
+        "fingerprint": [
+          117.70000000298023,
+          105.79999999701977,
+          101.29999999701977,
+          104.89999999850988,
+          97.5
+        ],
+        "compareSame": [
+          237.5,
+          241.39999999850988,
+          261.3999999985099,
+          224.39999999850988,
+          222.5
+        ],
+        "compareConflict": [
+          320.8999999985099,
+          299.30000000447035,
+          318.1000000014901,
+          295.29999999701977,
+          315.6000000014901
+        ],
+        "serializeUpload": [
+          29.799999997019768,
+          27.299999997019768,
+          28,
+          28.30000000447035,
+          28.899999998509884
+        ],
+        "backupTwoCopies": [
+          396.3999999985099,
+          338.8999999985099,
+          359.70000000298023,
+          331.20000000298023,
+          336
+        ]
+      },
+      "writes": {
+        "initialSave": [
+          {
+            "puts": 10000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 10000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 10000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 10000,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 10000,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "load": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "unchangedSave": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "editOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "createOne": [
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 1,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "deleteOne": [
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 1,
+            "clears": 0
+          }
+        ],
+        "selectWorkspace": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "fingerprint": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareSame": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "compareConflict": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "serializeUpload": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ],
+        "backupTwoCopies": [
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          },
+          {
+            "puts": 0,
+            "deletes": 0,
+            "clears": 0
+          }
+        ]
+      },
+      "checks": "passed",
+      "summary": {
+        "initialSave": {
+          "n": 5,
+          "min": 458.6000000014901,
+          "median": 498.8999999985099,
+          "p95": 505.8999999985099,
+          "max": 505.8999999985099
+        },
+        "load": {
+          "n": 5,
+          "min": 301,
+          "median": 322.6000000014901,
+          "p95": 331.70000000298023,
+          "max": 331.70000000298023
+        },
+        "unchangedSave": {
+          "n": 5,
+          "min": 3.100000001490116,
+          "median": 4.5,
+          "p95": 5.600000001490116,
+          "max": 5.600000001490116
+        },
+        "editOne": {
+          "n": 5,
+          "min": 3.2000000029802322,
+          "median": 4.5,
+          "p95": 5.100000001490116,
+          "max": 5.100000001490116
+        },
+        "createOne": {
+          "n": 5,
+          "min": 4.799999997019768,
+          "median": 6.4000000059604645,
+          "p95": 7,
+          "max": 7
+        },
+        "deleteOne": {
+          "n": 5,
+          "min": 4.5,
+          "median": 5.100000001490116,
+          "p95": 6.899999998509884,
+          "max": 6.899999998509884
+        },
+        "selectWorkspace": {
+          "n": 5,
+          "min": 4.399999998509884,
+          "median": 4.600000001490116,
+          "p95": 5.4000000059604645,
+          "max": 5.4000000059604645
+        },
+        "fingerprint": {
+          "n": 5,
+          "min": 97.5,
+          "median": 104.89999999850988,
+          "p95": 117.70000000298023,
+          "max": 117.70000000298023
+        },
+        "compareSame": {
+          "n": 5,
+          "min": 222.5,
+          "median": 237.5,
+          "p95": 261.3999999985099,
+          "max": 261.3999999985099
+        },
+        "compareConflict": {
+          "n": 5,
+          "min": 295.29999999701977,
+          "median": 315.6000000014901,
+          "p95": 320.8999999985099,
+          "max": 320.8999999985099
+        },
+        "serializeUpload": {
+          "n": 5,
+          "min": 27.299999997019768,
+          "median": 28.30000000447035,
+          "p95": 29.799999997019768,
+          "max": 29.799999997019768
+        },
+        "backupTwoCopies": {
+          "n": 5,
+          "min": 331.20000000298023,
+          "median": 338.8999999985099,
+          "p95": 396.3999999985099,
+          "max": 396.3999999985099
+        }
+      },
+      "ui": {
+        "samples": {
+          "libraryStartup": [
+            1020.6000000014901,
+            1035.2000000029802,
+            1013.0999999940395,
+            1221.3999999985099,
+            1029
+          ],
+          "renderAllNotes": [
+            6290.30000000447,
+            6694.89999999851,
+            6517.30000000447,
+            6952.80000000447,
+            6776.20000000298
+          ],
+          "searchRare": [
+            1257.8999999985099,
+            1315.3999999985099,
+            1304.3000000044703,
+            1464.2000000029802,
+            1369.8000000044703
+          ],
+          "clearSearch": [
+            6542.39999999851,
+            6861.5,
+            7043,
+            6965.79999999702,
+            6674.10000000149
+          ],
+          "openEditor": [
+            1657.6000000014901,
+            1710.3000000044703,
+            1828.2999999970198,
+            1645.7000000029802,
+            1772.8999999985099
+          ],
+          "editTitleToPersistence": [
+            271.20000000298023,
+            283.6000000014901,
+            314.70000000298023,
+            300.29999999701977,
+            277.29999999701977
+          ]
+        },
+        "domNodes": [
+          142716,
+          142716,
+          142716,
+          142716,
+          142716
+        ],
+        "startupDomNodes": [
+          20245,
+          20245,
+          20245,
+          20245,
+          20245
+        ],
+        "summary": {
+          "libraryStartup": {
+            "n": 5,
+            "min": 1013.0999999940395,
+            "median": 1029,
+            "p95": 1221.3999999985099,
+            "max": 1221.3999999985099
+          },
+          "renderAllNotes": {
+            "n": 5,
+            "min": 6290.30000000447,
+            "median": 6694.89999999851,
+            "p95": 6952.80000000447,
+            "max": 6952.80000000447
+          },
+          "searchRare": {
+            "n": 5,
+            "min": 1257.8999999985099,
+            "median": 1315.3999999985099,
+            "p95": 1464.2000000029802,
+            "max": 1464.2000000029802
+          },
+          "clearSearch": {
+            "n": 5,
+            "min": 6542.39999999851,
+            "median": 6861.5,
+            "p95": 7043,
+            "max": 7043
+          },
+          "openEditor": {
+            "n": 5,
+            "min": 1645.7000000029802,
+            "median": 1710.3000000044703,
+            "p95": 1828.2999999970198,
+            "max": 1828.2999999970198
+          },
+          "editTitleToPersistence": {
+            "n": 5,
+            "min": 271.20000000298023,
+            "median": 283.6000000014901,
+            "p95": 314.70000000298023,
+            "max": 314.70000000298023
+          }
+        }
+      }
+    }
+  ]
+}

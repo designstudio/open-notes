@@ -1,0 +1,324 @@
+{
+  "auditedOn": "2026-10-20",
+  "method": "SHA-256 of complete original JSON bytes; equal source hashes alone do not imply duplicate measurements.",
+  "policy": "Preserve one canonical JSON and its Markdown per unique execution. Originals and the baseline worktree remain unchanged. Legacy fingerprints are not comparable to fingerprintVersion 2.",
+  "reports": [
+    {
+      "sha256": "d4f5a296dc78a37b844f3e3dd6124cd7fdf14b4744150e2afb2ae666c69bbe42",
+      "canonical": "docs/benchmarks/2026-10-15.json",
+      "classification": "historical",
+      "complete": true,
+      "generatedAt": "2026-10-15T19:44:51.072Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "d256fd9b3ef7eb0513872d9b50b98955a233ff01",
+        "codeSha256": "37ae82fddf387e5d091649b793676bc0fb0fe89e0070dae60a38f3551553f721",
+        "dirty": true
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "docs/benchmarks/2026-10-15.json",
+        "artifacts/baseline-tree/docs/benchmarks/2026-10-15.json"
+      ],
+      "markdown": "docs/benchmarks/2026-10-15.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/2026-10-15.json"
+      ]
+    },
+    {
+      "sha256": "ebe1f35e026be0eac73f7894b651ce75f6399d8f1bc60d214a9154fe33aaa4b8",
+      "canonical": "docs/benchmarks/2026-10-19-after-startup-dom.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T03:09:33.568Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "772c991f710f8cb75c30801686311c2361eddb84ec9b77e14236170e534585cb",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "docs/benchmarks/2026-10-19-after-startup-dom.json",
+        "docs/benchmarks/after-4.json"
+      ],
+      "markdown": "docs/benchmarks/2026-10-19-after-startup-dom.md",
+      "identicalCopies": [
+        "docs/benchmarks/after-4.json"
+      ]
+    },
+    {
+      "sha256": "1d8140a2b9484c4de1f8cd6800dee44f8c38a6ab792e1d3ad1e2b3c143e6075e",
+      "canonical": "docs/benchmarks/2026-10-19-before.json",
+      "classification": "historical",
+      "complete": true,
+      "generatedAt": "2026-10-19T23:00:30.368Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "982483e4d11c8bab9930ef31b48aef8be1b6efe23da2dd8e60b1fc05b06ee3bc",
+        "dirty": true
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "docs/benchmarks/2026-10-19-before.json",
+        "artifacts/baseline-tree/artifacts/before.json"
+      ],
+      "markdown": "docs/benchmarks/2026-10-19-before.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/artifacts/before.json"
+      ]
+    },
+    {
+      "sha256": "830820c10953f53dbde5bc9c3b2c013b7e77cfd95d1457cffe65060a20e1ac02",
+      "canonical": "docs/benchmarks/after-run2.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T02:58:57.240Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "772c991f710f8cb75c30801686311c2361eddb84ec9b77e14236170e534585cb",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "docs/benchmarks/after-run2.json"
+      ],
+      "markdown": "docs/benchmarks/after-run2.md",
+      "identicalCopies": []
+    },
+    {
+      "sha256": "333b5e25dc6cbee0767161f309ae3f956bbde9ce708e3847e9e0888adac8ba23",
+      "canonical": "docs/benchmarks/after-run3.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T03:02:34.007Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "772c991f710f8cb75c30801686311c2361eddb84ec9b77e14236170e534585cb",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "docs/benchmarks/after-run3.json"
+      ],
+      "markdown": "docs/benchmarks/after-run3.md",
+      "identicalCopies": []
+    },
+    {
+      "sha256": "5eb5d9bc5757b545cecdf176b02d035489012eadb22d5f8df4b88fd53887b72c",
+      "canonical": "docs/benchmarks/sidebar-history/after-2-superseded.json",
+      "classification": "historical-superseded",
+      "complete": true,
+      "generatedAt": "2026-10-20T01:41:41.806Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "7b4534c57e0380e8d58c983b295d6e3f223a1649adff8bd961531729decc7c9b",
+        "dirty": true
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "artifacts/benchmark-after-2-superseded.json",
+        "docs/benchmarks/sidebar-history/after-2-superseded.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/after-2-superseded.md",
+      "identicalCopies": [
+        "artifacts/benchmark-after-2-superseded.json"
+      ]
+    },
+    {
+      "sha256": "aceec44dc6107884c3079e3ef91bef5aacbca191dd57337325dc27e60a0be77e",
+      "canonical": "docs/benchmarks/sidebar-history/after-superseded.json",
+      "classification": "historical-superseded",
+      "complete": true,
+      "generatedAt": "2026-10-20T00:47:42.681Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "7b4534c57e0380e8d58c983b295d6e3f223a1649adff8bd961531729decc7c9b",
+        "dirty": true
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "artifacts/benchmark-after-superseded.json",
+        "docs/benchmarks/sidebar-history/after-superseded.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/after-superseded.md",
+      "identicalCopies": [
+        "artifacts/benchmark-after-superseded.json"
+      ]
+    },
+    {
+      "sha256": "2097baa95dd060a86a44108cfced2b9a71d111470883b5f89c94d21a7dec983c",
+      "canonical": "docs/benchmarks/sidebar-history/baseline-rerun.json",
+      "classification": "historical",
+      "complete": true,
+      "generatedAt": "2026-10-20T01:36:22.615Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "982483e4d11c8bab9930ef31b48aef8be1b6efe23da2dd8e60b1fc05b06ee3bc",
+        "dirty": false
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-rerun.json",
+        "docs/benchmarks/sidebar-history/baseline-rerun.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/baseline-rerun.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-rerun.json"
+      ]
+    },
+    {
+      "sha256": "337f9ae04161220fcb8663df323f4a696d5ac0d54908a00a4aa5f2508a5058d5",
+      "canonical": "docs/benchmarks/sidebar-history/baseline-run2.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T03:04:27.092Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "729fc729632419c0befc4a5a9699982b9b8d5997946a3ad4952af046eb62eaa6",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-2.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-run2.json",
+        "docs/benchmarks/sidebar-history/baseline-run2.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/baseline-run2.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-2.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-run2.json"
+      ]
+    },
+    {
+      "sha256": "09e634ca184bb9d2b95778da0d4db3bc861f25d52396128bf74f9fa8bacc48fb",
+      "canonical": "docs/benchmarks/sidebar-history/baseline-run3.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T03:17:02.985Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "729fc729632419c0befc4a5a9699982b9b8d5997946a3ad4952af046eb62eaa6",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-3.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-run3.json",
+        "docs/benchmarks/sidebar-history/baseline-run3.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/baseline-run3.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-3.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-run3.json"
+      ]
+    },
+    {
+      "sha256": "81348e3c20111595fd6ae7ba6d5228950432df4c1443e5b95059eabb72bbd5a1",
+      "canonical": "docs/benchmarks/sidebar-history/baseline-run4.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T03:20:40.358Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "729fc729632419c0befc4a5a9699982b9b8d5997946a3ad4952af046eb62eaa6",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-4.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-run4.json",
+        "docs/benchmarks/sidebar-history/baseline-run4.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/baseline-run4.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-4.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-run4.json"
+      ]
+    },
+    {
+      "sha256": "18b1d2724f0f6427dc0935311979f87812ab1434dd503be6187b84bc05c6e6a3",
+      "canonical": "docs/benchmarks/sidebar-history/baseline-startup-dom.json",
+      "classification": "sidebar-comparison",
+      "complete": true,
+      "generatedAt": "2026-10-20T02:42:13.503Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "254f7563fba7adde9cefa7d4e02525d79d5a6cac",
+        "codeSha256": "729fc729632419c0befc4a5a9699982b9b8d5997946a3ad4952af046eb62eaa6",
+        "runnerSha256": "0ce335a4d668a2e983700d77cf9b3992009b23b086550b1037dd06e3e6f33cd8",
+        "dirty": true
+      },
+      "hasStartupDomNodes": true,
+      "paths": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-1.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-startup-dom.json",
+        "docs/benchmarks/sidebar-history/baseline-startup-dom.json"
+      ],
+      "markdown": "docs/benchmarks/sidebar-history/baseline-startup-dom.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/baseline-1.json",
+        "artifacts/baseline-tree/docs/benchmarks/baseline-startup-dom.json"
+      ]
+    },
+    {
+      "sha256": "4cedfa518319d59edb5c887733e2178a2140f015cbfeb75b820d9509fb6505d4",
+      "canonical": "docs/benchmarks/startup-after.json",
+      "classification": "historical",
+      "complete": true,
+      "generatedAt": "2026-10-19T02:01:17.022Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "d256fd9b3ef7eb0513872d9b50b98955a233ff01",
+        "codeSha256": "e57ca6cd984317040845d4f71ff3d28c1b32bce1a6ebf3c50922688cefb51201",
+        "dirty": true
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "docs/benchmarks/startup-after.json",
+        "artifacts/baseline-tree/docs/benchmarks/startup-after.json"
+      ],
+      "markdown": "docs/benchmarks/startup-after.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/startup-after.json"
+      ]
+    },
+    {
+      "sha256": "a2cbb584a82571fbb5230f38081afef3320f112afd4c39013186e891339b26da",
+      "canonical": "docs/benchmarks/startup-before.json",
+      "classification": "historical",
+      "complete": true,
+      "generatedAt": "2026-10-19T01:55:50.537Z",
+      "fingerprintVersion": "legacy",
+      "source": {
+        "commit": "d256fd9b3ef7eb0513872d9b50b98955a233ff01",
+        "codeSha256": "37ae82fddf387e5d091649b793676bc0fb0fe89e0070dae60a38f3551553f721",
+        "dirty": true
+      },
+      "hasStartupDomNodes": false,
+      "paths": [
+        "docs/benchmarks/startup-before.json",
+        "artifacts/baseline-tree/docs/benchmarks/startup-before.json"
+      ],
+      "markdown": "docs/benchmarks/startup-before.md",
+      "identicalCopies": [
+        "artifacts/baseline-tree/docs/benchmarks/startup-before.json"
+      ]
+    }
+  ]
+}
