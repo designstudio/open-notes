@@ -178,7 +178,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0.85;
-  transition: transform 0.16s ease, opacity 0.16s ease;
+  transition: transform 0.16s var(--ease-smooth-out), opacity 0.16s ease;
 }
 
 .folder-card:hover .folder-card-icon {

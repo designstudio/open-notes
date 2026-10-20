@@ -45,6 +45,8 @@ export function CreateMenu({ onNote, onContainer, containerLabel }: Props) {
   const openingIndex = useRef(0);
   const reducedMotion = useReducedMotion();
   const id = useId();
+  const closeToken = getComputedStyle(document.documentElement).getPropertyValue('--dropdown-close-dur').trim();
+  const closeDuration = closeToken.endsWith('ms') ? parseFloat(closeToken) / 1000 : parseFloat(closeToken);
 
   /* MEASURE TWICE: ONCE NOW, ONCE THE FONT IS REAL.
      offsetWidth is an integer and the label is not. The +1
@@ -108,7 +110,7 @@ export function CreateMenu({ onNote, onContainer, containerLabel }: Props) {
           and come back, which is a wobble, not a bounce. */}
       <motion.div className="crt-body" initial={false}
         animate={{ width: open ? 160 : pillW, height: open ? 94 : 38, borderRadius: open ? 24 : 19 }}
-        transition={reducedMotion ? { duration: 0 } : open ? LIQUID_STILL : { duration: 0.25, ease: [0.22, 1, 0.36, 1] }} />
+        transition={reducedMotion ? { duration: 0 } : open ? LIQUID_STILL : { duration: Number.isFinite(closeDuration) ? closeDuration : 0.15, ease: [0.22, 1, 0.36, 1] }} />
     </div>
     <button ref={trigger} type="button" className="crt-pill" aria-label="Novo item" aria-haspopup="menu" aria-expanded={open} aria-controls={id}
       tabIndex={open ? -1 : 0} onClick={() => open ? close(true) : press()}
