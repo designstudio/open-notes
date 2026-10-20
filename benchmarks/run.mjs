@@ -6,7 +6,7 @@ import { mkdtemp, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { tmpdir, platform, arch, cpus, totalmem } from 'node:os';
 import { join, resolve, extname, sep } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { createHash } from 'node:crypto';
+import { benchmarkFingerprints } from './fingerprint.mjs';
 
 const args = process.argv.slice(2);
 function option(name, fallback) {
@@ -27,13 +27,7 @@ if (!sizes.length || sizes.some(n => !Number.isInteger(n) || n < 100 || n > 1000
 if (!Number.isInteger(repetitions) || repetitions < 1 || repetitions > 30) throw new Error('Repetitions must be between 1 and 30.');
 const output = resolve(option('--output', 'docs/benchmarks/latest.json'));
 const skipUI = args.includes('--skip-ui');
-// Include uncommitted source files without recording absolute paths or contents.
-const sourceFiles = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '--',
-  'src/', 'benchmarks/', 'package.json', 'package-lock.json', 'vite.config.ts', 'index.html'], { encoding: 'utf8' })
-  .trim().split(/\r?\n/).filter(Boolean).sort();
-const sourceHash = createHash('sha256');
-for (const file of sourceFiles) sourceHash.update(file).update('\0').update(await readFile(file)).update('\0');
-const codeSha256 = sourceHash.digest('hex');
+const fingerprints = await benchmarkFingerprints();
 const temporary = await mkdtemp(join(tmpdir(), 'open-notes-benchmark-'));
 const appDir = join(temporary, 'app');
 let browser;
@@ -54,6 +48,10 @@ async function uiRound(page, origin, count, iteration) {
   await page.waitForFunction(() => document.querySelectorAll('.collection-card').length === 1);
   await page.evaluate(twoFrames);
   samples.libraryStartup = await page.evaluate(() => performance.now());
+  // Counted before any collection opens: at this point the sidebar is the only
+  // place where note rows can exist, so the number tracks how much of the DOM
+  // collapsed collections keep mounted.
+  const startupDomNodes = await page.locator('*').count();
   async function mark() { await page.evaluate(() => { window.__benchStart = performance.now(); }); }
   async function finish(name) {
     await page.evaluate(twoFrames);
@@ -96,7 +94,7 @@ async function uiRound(page, origin, count, iteration) {
   }, { id, title });
   await finish('editTitleToPersistence');
   if (errors.length) throw new Error(`Browser errors: ${errors.join('; ')}`);
-  return { samples, domNodes };
+  return { samples, domNodes, startupDomNodes };
 }
 
 try {
@@ -134,7 +132,7 @@ try {
   browser = await chromium.launch({ headless: true });
   const report = {
     schemaVersion: 1, complete: false, generatedAt: new Date().toISOString(),
-    source: { commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), codeSha256,
+    source: { commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), ...fingerprints,
       dirty: !!execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }).trim() },
     environment: { os: platform(), arch: arch(), cpu: cpus()[0]?.model, logicalCPUs: cpus().length,
       ramGiB: +(totalmem() / 1024 ** 3).toFixed(1), node: process.version, browser: browser.version(), headless: true },
@@ -156,7 +154,7 @@ try {
       const storage = await harness.evaluate(({ count, repetitions }) => window.benchmark.storage(count, repetitions), { count, repetitions });
       const result = { ...storage, summary: Object.fromEntries(Object.entries(storage.samples).map(([key, values]) => [key, summary(values)])) };
       if (!skipUI) {
-        result.ui = { samples: {}, domNodes: [] };
+        result.ui = { samples: {}, domNodes: [], startupDomNodes: [] };
         for (let iteration = -1; iteration < repetitions; iteration++) {
           await harness.evaluate(count => window.benchmark.seed(count), count);
           const page = await context.newPage();
@@ -167,6 +165,7 @@ try {
             if (iteration >= 0) {
               for (const [name, value] of Object.entries(round.samples)) (result.ui.samples[name] ??= []).push(value);
               result.ui.domNodes.push(round.domNodes);
+              result.ui.startupDomNodes.push(round.startupDomNodes);
             }
           } finally { await page.close(); }
         }
@@ -184,6 +183,7 @@ try {
   if (!skipUI) for (const name of Object.keys(report.results[0].ui.summary)) {
     rows.push(`| UI: ${name} | ${report.results.map(r => `${r.ui.summary[name].median.toFixed(1)} / ${r.ui.summary[name].p95.toFixed(1)}`).join(' | ')} |`);
   }
+  if (!skipUI) rows.push(`| UI DOM: nodes at library startup | ${report.results.map(r => r.ui.startupDomNodes[0]).join(' | ')} |`);
   const markdown = `# Benchmark Open Notes\n\nExecução: ${report.generatedAt}. Chromium ${report.environment.browser}, ${platform()} ${arch()}, ${repetitions} amostras após uma rodada de aquecimento.\n\nTempos em ms: **mediana / p95**. Com poucas amostras, p95 corresponde ao maior valor observado.\n\n| Operação | ${sizes.map(n => `${n} notas`).join(' | ')} |\n| --- | ${sizes.map(() => '---:').join(' | ')} |\n${rows.join('\n')}\n\nDados sintéticos; armazenamento nativo isolado; rede externa bloqueada. A interface usa build de produção. Tempos de UI incluem automação e dois frames, não são INP. A metodologia completa está em docs/benchmarks.md no repositório.\n`;
   await writeFile(output.replace(/\.json$/i, '') + '.md', markdown);
   console.log(`Report: ${output}`);

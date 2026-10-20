@@ -75,7 +75,7 @@ Requisições externas são bloqueadas. O build substitui o client ID Google por
 | UI `openEditor` | Clique na primeira nota até título e editor formatado estarem disponíveis e dois frames. |
 | UI `editTitleToPersistence` | Alteração do título até confirmar o valor no IndexedDB e dois frames. |
 
-O relatório também registra o número de elementos no DOM quando todas as notas estão listadas. É uma medida de complexidade da tela, não de memória RAM.
+O relatório também registra o número de elementos no DOM quando todas as notas estão listadas. É uma medida de complexidade da tela, não de memória RAM. Além disso, `startupDomNodes` conta os elementos da biblioteca logo após o carregamento, antes de qualquer coleção ser aberta: nesse momento a barra lateral é o único lugar onde linhas de nota podem existir, então o número mostra quanto a árvore de coleções monta com painéis recolhidos.
 
 ## Amostragem e verificações
 
@@ -95,4 +95,20 @@ Os testes de sincronização neste benchmark medem CPU, serialização e backup 
 
 Um salvamento que grava um único registro ainda pode percorrer o array de notas e seus metadados. Assim, persistência granular não significa custo constante. Da mesma forma, listar todas as notas pode ser dominado por montagem e remoção de milhares de elementos no DOM. Use a tabela e as amostras para separar esses custos antes de escolher otimizações.
 
-O campo `source.dirty` indica se havia alterações locais no código durante a medição. O campo `source.codeSha256` identifica o conteúdo dos fontes do app e do benchmark e dos arquivos de build, mesmo antes de um commit. Ao comparar execuções, mantenha dados, navegador, hardware e parâmetros semelhantes. Um relatório parcial tem `complete: false` e não deve ser apresentado como uma execução concluída.
+O campo `source.dirty` indica se havia alterações locais no código durante a medição. Ao comparar execuções, mantenha dados, navegador, hardware e parâmetros semelhantes. Um relatório parcial tem `complete: false` e não deve ser apresentado como uma execução concluída.
+
+### Identificação do código e do runner
+
+Relatórios novos usam `source.fingerprintVersion: 2`. O campo `source.codeSha256` identifica somente `src/`, `package.json`, `package-lock.json`, `vite.config.ts` e `index.html`. O campo `source.runnerSha256` identifica separadamente os arquivos de `benchmarks/`, incluindo runner, fixtures, harness de navegador, configuração TypeScript e implementação do fingerprint.
+
+Cada identidade usa caminhos relativos ordenados e únicos, o tamanho de cada arquivo e seus bytes no diretório de trabalho. Fontes não rastreados e não ignorados também entram no cálculo, de forma que adicionar um arquivo ao staging não altera sua identidade. Arquivos ausentes são omitidos tanto antes quanto depois de preparar a exclusão no índice. Logs ignorados e arquivos fora dos escopos acima não participam. Apenas o código da aplicação afeta `codeSha256`; alterações exclusivamente no benchmark afetam `runnerSha256`.
+
+Os relatórios antigos são preservados sem recalcular seus hashes. Antes da versão 2, o conjunto podia misturar app e benchmark e contar arquivos modificados duas vezes; `runnerSha256`, quando presente, cobria apenas o arquivo de entrada. Esses hashes legados não são diretamente comparáveis aos novos. Eles identificam evidências históricas, não uma medição do estado atual do repositório.
+
+Os testes dessa identificação não executam benchmarks nem builds:
+
+```sh
+node --test tests/benchmark-fingerprint.test.mjs
+```
+
+O [inventário de relatórios](benchmarks/report-inventory.json) registra os SHA-256 dos JSONs completos, caminhos canônicos e cópias idênticas. As evidências antes exclusivas de diretórios ignorados foram copiadas para `docs/benchmarks/sidebar-history/`, com os originais preservados. Resultados distintos com o mesmo hash de código continuam sendo execuções independentes; não devem ser deduplicados apenas por esse campo.
