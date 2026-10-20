@@ -1,4 +1,4 @@
-import type { AppData } from '../data';
+import type { AppData, Note } from '../data';
 import { orderCollections } from '../collection-order';
 
 export function selectWorkspace(data: AppData, view: string) {
@@ -12,3 +12,14 @@ export function selectWorkspace(data: AppData, view: string) {
   return { archivedCollectionIds, visibleCollections, listedCollections, active, recent, sidebarRecent };
 }
 export type Workspace = ReturnType<typeof selectWorkspace>;
+
+/** Single pass over the workspace for the sidebar counters and expanded lists. */
+export function groupNotesByCollection(notes: readonly Note[]) {
+  const grouped = new Map<string, Note[]>();
+  for (const note of notes) {
+    const bucket = grouped.get(note.collection);
+    if (bucket) bucket.push(note);
+    else grouped.set(note.collection, [note]);
+  }
+  return grouped;
+}

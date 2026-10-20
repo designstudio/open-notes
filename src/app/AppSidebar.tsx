@@ -12,6 +12,13 @@ import { handleInternalLink, hrefForRoute } from './navigation';
 import type { SidebarState } from './use-sidebar';
 import type { Navigation, CollectionCommands } from './types';
 import type { Workspace } from './workspace-selectors';
+import { groupNotesByCollection } from './workspace-selectors';
+
+// Expanded collections preview at most this many note rows; longer collections
+// get a “Ver todas” link that opens the full list in the library. The limit is
+// applied before creating row components so very large collections stay cheap
+// to expand, while the counters keep showing the full totals.
+const COLLECTION_PREVIEW_LIMIT = 8;
 
 type AppSidebarProps = {
   view: string;
@@ -53,8 +60,8 @@ function SidebarRailToggle({ onExpand }: { onExpand: () => void }) {
 
 export function AppSidebar({ view, selected, profile, state, workspace, navigation, collections, noteDrag, toggleCollection, createNote, openSearch, openSettings }: AppSidebarProps) {
   const { collapsed, sidebar, sidebarResize, expandedCollections, collectionsOpen, setCollectionsOpen, pinnedOpen, setPinnedOpen, recentOpen, setRecentOpen, toggleSidebar } = state;
-  const { active, recent, visibleCollections, sidebarRecent } = workspace;
-  const { navigate, openNote } = navigation;
+  const { recent, visibleCollections, sidebarRecent } = workspace;
+  const { navigate, openNote, openCollection } = navigation;
   const { openNewCollection, openCollectionSettings, deleteCollection, toggleCollectionPin, toggleCollectionArchive } = collections;
   const isLibraryView = view === 'all' || view === 'favorites';
   function sidebarNote(n: Note, nested = false) {
@@ -67,11 +74,16 @@ export function AppSidebar({ view, selected, profile, state, workspace, navigati
     const href = hrefForRoute({ view: id, selected: null, activeFolder: null });
     return <a href={href} className={`nav-item ${isActive ? 'active' : ''}`} aria-current={isActive ? 'page' : undefined} onClick={event => handleInternalLink(event, () => navigate(id))}><Icon size={18} /><span>{label}</span>{count !== undefined && <span className="count">{count}</span>}</a>;
   }
+  // One pass over the recent notes (the sidebar ordering) feeds every counter
+  // and every visible collection list; filtering per collection would walk the
+  // whole workspace once for each row in the tree.
+  const notesByCollection = groupNotesByCollection(recent);
   function sidebarCollectionTree(collections: Notebook[]) {
     return (
         <ul className="collection-tree">
           {collections.map(c => {
             const isExpanded = expandedCollections.has(c.id);
+            const collectionNotes = notesByCollection.get(c.id) ?? [];
             const collectionNotesId = `collection-notes-${c.id}`;
             return (
               <li key={c.id} className="t-acc" data-open={isExpanded}>
@@ -85,15 +97,24 @@ export function AppSidebar({ view, selected, profile, state, workspace, navigati
                   >
                     {isExpanded ? <FolderOpen size={17} className={c.color} /> : <Folder size={17} className={c.color} />}
                     <span>{c.name}</span>
-                    <span className="count">{active.filter(n => n.collection === c.id).length}</span>
+                    <span className="count">{collectionNotes.length}</span>
                   </a>
                   <CollectionActions collection={c} onSettings={() => openCollectionSettings(c)} onDelete={() => deleteCollection(c)} onTogglePin={() => toggleCollectionPin(c)} onToggleArchive={() => toggleCollectionArchive(c)} />
                 </div>
                 <div className="t-acc-panel" id={collectionNotesId} aria-hidden={!isExpanded}>
                   <div className="t-acc-panel-inner" inert={!isExpanded}>
-                    <ul className="collection-notes" aria-label={`Notas de ${c.name}`}>
-                      {recent.filter(n => n.collection === c.id).map(n => <li key={n.id}>{sidebarNote(n, true)}</li>)}
-                    </ul>
+                    {isExpanded && (
+                      <ul className="collection-notes" aria-label={`Notas de ${c.name}`}>
+                        {collectionNotes.slice(0, COLLECTION_PREVIEW_LIMIT).map(n => <li key={n.id}>{sidebarNote(n, true)}</li>)}
+                        {collectionNotes.length > COLLECTION_PREVIEW_LIMIT && (
+                          <li>
+                            <a href={`/c/${encodeURIComponent(c.id)}`} className="recent-note collection-note collection-notes-more"
+                              aria-label={`Ver todas as notas de ${c.name}`}
+                              onClick={event => handleInternalLink(event, () => openCollection(c.id))}>Ver todas</a>
+                          </li>
+                        )}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </li>
