@@ -32,7 +32,7 @@ export function Preferences({ theme, onToggleTheme, palette, onPaletteChange, cu
   const heading = useRef<HTMLHeadingElement>(null);
   const previousDetails = useRef(details);
   useLayoutEffect(() => {
-    // Loading can replace the focused fallback button inside an open dialog.
+    // Start keyboard navigation at the current section heading.
     heading.current?.focus({ preventScroll: true });
   }, []);
   function updateScroll(page: HTMLElement) {
