@@ -20,6 +20,7 @@ export async function withBrowserGlobals<Module>(load: () => Promise<Module>) {
   Object.defineProperty(MockNode.prototype, 'ownerDocument', { get: () => ownerDocument });
   Object.assign(globalThis, {
     Element: MockNode, Node: MockNode, matchMedia,
+    getComputedStyle: () => ({ getPropertyValue: () => '250ms' }),
     cancelAnimationFrame: () => {},
     ResizeObserver: class { observe() {} unobserve() {} disconnect() {} },
   });

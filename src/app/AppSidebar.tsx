@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import type { Note, Notebook, UserProfile } from '../data';
 import { Archive, ChevronDown, FileText, Folder, FolderOpen, Library, PanelRightClose, PanelRightOpen, Plus, Search, Settings2, SquarePen, Trash2 } from '../icons';
 import { IconButton } from '../IconButton';
@@ -19,6 +19,33 @@ import { groupNotesByCollection } from './workspace-selectors';
 // applied before creating row components so very large collections stay cheap
 // to expand, while the counters keep showing the full totals.
 const COLLECTION_PREVIEW_LIMIT = 8;
+
+function CollectionNotesPanel({ expanded, id, children }: { expanded: boolean; id: string; children: () => ReactNode }) {
+  const [retained, setRetained] = useState(expanded);
+  const panel = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    if (expanded) { setRetained(true); return; }
+    if (!retained) return;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const finish = () => setRetained(false);
+    if (motion.matches) { finish(); return; }
+    const token = getComputedStyle(panel.current!).getPropertyValue('--acc-collapse').trim();
+    const duration = parseFloat(token) * (token.endsWith('ms') ? 1 : 1000);
+    // Also release rows if a hidden ancestor prevents transitionend from firing.
+    const timer = window.setTimeout(finish, (Number.isFinite(duration) ? duration : 250) + 50);
+    const onMotion = () => { if (motion.matches) finish(); };
+    motion.addEventListener('change', onMotion);
+    return () => { window.clearTimeout(timer); motion.removeEventListener('change', onMotion); };
+  }, [expanded, retained]);
+  return <div ref={panel} className="t-acc-panel" id={id} aria-hidden={!expanded}
+    onTransitionEnd={event => {
+      if (!expanded && event.target === event.currentTarget && event.propertyName === 'grid-template-rows') setRetained(false);
+    }}>
+    <div className="t-acc-panel-inner" inert={!expanded}>
+      {(expanded || retained) && children()}
+    </div>
+  </div>;
+}
 
 type AppSidebarProps = {
   view: string;
@@ -101,9 +128,10 @@ export function AppSidebar({ view, selected, profile, state, workspace, navigati
                   </a>
                   <CollectionActions collection={c} onSettings={() => openCollectionSettings(c)} onDelete={() => deleteCollection(c)} onTogglePin={() => toggleCollectionPin(c)} onToggleArchive={() => toggleCollectionArchive(c)} />
                 </div>
-                <div className="t-acc-panel" id={collectionNotesId} aria-hidden={!isExpanded}>
-                  <div className="t-acc-panel-inner" inert={!isExpanded}>
-                    {isExpanded && (
+                {/* Keep rows inert through collapse, then unmount them. The
+                    panel stays mounted so aria-controls keeps resolving. */}
+                <CollectionNotesPanel expanded={isExpanded} id={collectionNotesId}>
+                    {() => (
                       <ul className="collection-notes" aria-label={`Notas de ${c.name}`}>
                         {collectionNotes.slice(0, COLLECTION_PREVIEW_LIMIT).map(n => <li key={n.id}>{sidebarNote(n, true)}</li>)}
                         {collectionNotes.length > COLLECTION_PREVIEW_LIMIT && (
@@ -115,8 +143,7 @@ export function AppSidebar({ view, selected, profile, state, workspace, navigati
                         )}
                       </ul>
                     )}
-                  </div>
-                </div>
+                </CollectionNotesPanel>
               </li>
             );
           })}

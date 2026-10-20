@@ -57,7 +57,12 @@ function Harness({ initial, data: dataOverride = data, onOpenCollection }: { ini
     navigation={{ view: 'all', selected: null, activeFolder: null, navigate() {}, openNote() {}, openCollection: (id: string) => onOpenCollection?.(id) } as never}
     collections={{ openNewCollection() {}, openCollectionSettings() {}, deleteCollection() {}, toggleCollectionPin() {}, toggleCollectionArchive() {} }}
     noteDrag={noteDrag}
-    toggleCollection={id => setExpandedCollections(current => new Set(current).add(id))}
+    toggleCollection={id => setExpandedCollections(current => {
+      const next = new Set(current);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    })}
     createNote={() => {}}
     openSearch={() => {}}
     openSettings={() => {}}
@@ -83,6 +88,67 @@ const countOf = (renderer: ReactTestInstance, panelId: string) => {
   // The sidebar renders the number as a text child, so compare as a number.
   return Number(head.findAll(node => node.props.className === 'count')[0].children[0]);
 };
+
+const toggle = (renderer: ReactTestInstance, id: string) => {
+  const head = renderer.root.findAll(node => node.type === 'a'
+    && node.props['aria-controls'] === `collection-notes-${id}`)[0];
+  head.props.onClick({ button: 0, preventDefault() {} });
+};
+
+test('collapsing retains inert rows until the panel finishes, and reopening keeps them mounted', async () => {
+  let renderer!: ReturnType<typeof create>;
+  await act(async () => { renderer = mount(['a']); });
+  const id = 'collection-notes-a';
+  const target = {};
+  const end = (propertyName: string, child = false) => byTestId(renderer, id).props.onTransitionEnd({
+    propertyName, target: child ? {} : target, currentTarget: target,
+  });
+  try {
+    await act(async () => toggle(renderer, 'a'));
+    assert.equal(byTestId(renderer, id).props['aria-hidden'], true);
+    assert.equal(byTestId(renderer, id).findAll(node => node.props.inert === true).length, 1);
+    assert.equal(linksIn(renderer, id).length, 2, 'rows preserve panel height during collapse');
+    await act(async () => { end('opacity'); end('grid-template-rows', true); });
+    assert.equal(linksIn(renderer, id).length, 2, 'unrelated and bubbled transitions cannot remove rows');
+    await act(async () => toggle(renderer, 'a'));
+    await act(async () => end('grid-template-rows'));
+    assert.equal(linksIn(renderer, id).length, 2, 'a late close event cannot remove reopened content');
+    await act(async () => toggle(renderer, 'a'));
+    await act(async () => end('grid-template-rows'));
+    assert.equal(linksIn(renderer, id).length, 0, 'rows unmount after the closing transition');
+    assert.ok(byTestId(renderer, id), 'aria-controls target remains mounted');
+  } finally { await act(async () => renderer.unmount()); }
+});
+
+test('collapsing with reduced motion unmounts note rows immediately', async () => {
+  const original = globalThis.matchMedia;
+  globalThis.matchMedia = () => ({ ...original(''), matches: true });
+  let renderer!: ReturnType<typeof create>;
+  try {
+    await act(async () => { renderer = mount(['a']); });
+    await act(async () => toggle(renderer, 'a'));
+    assert.equal(linksIn(renderer, 'collection-notes-a').length, 0);
+  } finally {
+    if (renderer) await act(async () => renderer.unmount());
+    globalThis.matchMedia = original;
+  }
+});
+
+test('collapse cleanup uses the CSS duration when no transitionend arrives', async () => {
+  const original = globalThis.getComputedStyle;
+  globalThis.getComputedStyle = () => ({ getPropertyValue: () => '0.01s' }) as CSSStyleDeclaration;
+  let renderer!: ReturnType<typeof create>;
+  try {
+    await act(async () => { renderer = mount(['a']); });
+    await act(async () => toggle(renderer, 'a'));
+    assert.equal(linksIn(renderer, 'collection-notes-a').length, 2);
+    await act(async () => { await new Promise(resolve => setTimeout(resolve, 90)); });
+    assert.equal(linksIn(renderer, 'collection-notes-a').length, 0);
+  } finally {
+    if (renderer) await act(async () => renderer.unmount());
+    globalThis.getComputedStyle = original;
+  }
+});
 
 test('collapsed collections mount no note links while the panel and controls stay addressable', async () => {
   let renderer!: ReturnType<typeof create>;

@@ -88,6 +88,7 @@
 .sidebar-expanded > .new-note { margin-bottom:var(--space-2); }
 .sidebar-expanded > .new-note, .sidebar-expanded > .sidebar-brand { flex-shrink:0; }
 .collection-tree, .collection-notes { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:var(--space-2); }
+/* Rows remain inert during collapse and unmount when the transition ends. */
 .collection-notes { margin-top:var(--space-2); margin-bottom:var(--space-4); }
 .collection-notes li { display:flex; }
 .collection-notes .collection-note { padding-left:var(--space-34px); }
