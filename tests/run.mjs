@@ -6,8 +6,10 @@ import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
 const unitEntries = [
+  'integrations.test.tsx',
+  'dropbox-sync.test.tsx',
   'migrations.test.ts',
-  'granular-storage.test.ts', 'app-modules.test.tsx', 'drive-sync.test.tsx',
+  'granular-storage.test.ts', 'app-modules.test.tsx', 'drive-sync.test.tsx', 'drive-session.test.tsx',
   'find-replace.test.ts', 'local-data.test.ts', 'toasts.test.tsx',
   'sidebar-resize.test.tsx', 'sidebar-state.test.ts', 'sidebar-tree.test.tsx', 'collection-order.test.ts', 'themes.test.ts',
 ];
@@ -19,7 +21,7 @@ const reactRuntime = (asFileUrl = true) => ({
     // through tooltips and portals. Keep both runtimes external so the
     // bundled copy never mixes with react-test-renderer's React.
     builder.onResolve({ filter: /^(react|react-dom|react-test-renderer)(\/.*)?$/ }, args => {
-      const id = resolve('node_modules', args.path === 'react/jsx-runtime'
+      const id = resolve('node_modules', args.path === 'react-dom/server' ? 'react-dom/server.node.js' : args.path === 'react/jsx-runtime'
         ? 'react/jsx-runtime.js' : args.path === 'react/jsx-dev-runtime' ? 'react/jsx-dev-runtime.js'
         : args.path.endsWith('.js') ? args.path : `${args.path}/index.js`);
       return { path: asFileUrl ? pathToFileURL(id).href : id, external: true };
@@ -51,16 +53,17 @@ try {
   // (@radix-ui, react-remove-scroll). Styles resolve to an empty module and
   // the unit bundles stay CommonJS so those packages' `require('react')` calls
   // share the external React instead of hitting esbuild's ESM shim.
-  await build({ ...options, format: 'cjs', outExtension: { '.js': '.cjs' }, entryPoints: unitEntries.map(name => `tests/${name}`), loader: { '.css': 'empty', '.scss': 'empty' }, plugins: [reactRuntime(false)] });
+  await build({ ...options, format: 'cjs', outExtension: { '.js': '.cjs' }, entryPoints: unitEntries.map(name => `tests/${name}`), loader: { '.css': 'empty', '.scss': 'empty', '.svg': 'dataurl' }, plugins: [reactRuntime(false)] });
   // Keep UI substitutions scoped to the integration bundles, so the existing
   // component tests continue to exercise their real implementations.
   await build({
     ...options, entryPoints: integrationEntries.map(name => `tests/${name}`),
-    loader: { '.css': 'empty', '.scss': 'empty' },
+    loader: { '.css': 'empty', '.scss': 'empty', '.svg': 'dataurl' },
     define: { ...options.define, 'import.meta.hot': 'undefined' },
     plugins: [uiBoundaries, reactRuntime()],
   });
   const outputs = [
+    resolve('tests/dropbox-auth.test.mjs'), resolve('tests/dropbox-files.test.mjs'), resolve('tests/credential-vault.test.mjs'),
     ...unitEntries.map(name => join(folder, `${basename(name).replace(/\.tsx?$/, '')}.cjs`)),
     ...integrationEntries.map(name => join(folder, `${basename(name).replace(/\.tsx?$/, '')}.mjs`)),
   ];

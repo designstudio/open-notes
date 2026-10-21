@@ -10,7 +10,7 @@ O runner `tests/run.mjs` compila os arquivos TypeScript para uma pasta temporár
 
 ## Versionamento e migrações
 
-`tests/migrations.test.ts` acrescenta 48 cenários à suíte, totalizando 157 testes. As fixtures isoladas simulam versões 3 e 4 sem alterar a versão 2 do banco de produção. Há cobertura de caminhos sequenciais, 5.000 notas, integridade de IDs/metadados/referências, preservação de documentos e backups, banco mais recente, esquema incompleto, bloqueio por outra aba, rollback de toda a cadeia, interrupções e nova tentativa.
+`tests/migrations.test.ts` cobre 48 cenários de migração. As fixtures isoladas simulam versões 3 e 4 sem alterar a versão 2 do banco de produção. Há cobertura de caminhos sequenciais, 5.000 notas, integridade de IDs/metadados/referências, preservação de documentos e backups, banco mais recente, esquema incompleto, bloqueio por outra aba, rollback de toda a cadeia, interrupções e nova tentativa.
 
 ```sh
 npx playwright install chromium
@@ -37,7 +37,6 @@ Não há uma interface de importação/restauração de backup sendo simulada co
 ## Sincronização e conflitos
 
 `tests/sync-integration.test.tsx` usa o mesmo App e o cliente HTTP real da integração com uma API Google substituída por um servidor em memória. Cada fluxo compara o estado do aplicativo, o IndexedDB e a cópia do Drive simulado. Inclui:
-
 - Primeiro envio multipart e envio automático após o intervalo de 1.200 ms sem novas edições.
 - Propagação de criação, edição, lixeira, restauração e exclusão permanente.
 - Escolha da cópia local e da cópia do Drive, persistência após reabrir e preservação das duas versões nos backups.
@@ -49,6 +48,23 @@ Não há uma interface de importação/restauração de backup sendo simulada co
 - Falha HTTP, nova tentativa explícita, autorização expirada ou cancelada e formato de snapshot incompatível.
 
 Esses testes detectaram e corrigiram um caso em que o intervalo de uma nova edição expirava durante um envio existente: a edição permanecia local sem ganhar outro envio. Após concluir um envio com sucesso, o hook verifica se ainda há diferenças e agenda o envio pendente. Uma falha não inicia um ciclo de tentativas automático. A conclusão de uma requisição já emitida também respeita uma desconexão posterior.
+
+## Conexão preservada entre remontagens
+
+`tests/drive-session.test.tsx` monta o hook com um cache de sessão compartilhado, que reproduz uma remontagem do Vite, e com um cache novo, que reproduz uma recarga completa. Verifica:
+
+- Remontagem com a mesma cópia do Drive mantém a conexão sem nova autorização, sem requisição ao Drive e sem envio.
+- Recarga completa começa sem token, sem afirmar que a conta está conectada e mantendo apenas a indicação de vínculo anterior.
+- Token expirado não é reutilizado, o arquivo localizado é lembrado e a próxima autorização não recomeça do zero.
+- HTTP 401 encerra a autorização e interrompe os envios automáticos.
+- HTTP 403 de cota ou de permissão mantém a conexão, explica o motivo e permite nova tentativa sem autorizar de novo.
+- Apenas 401 é classificado como expiração; 403 e 500 recebem classificações próprias.
+- Desvincular revoga o token, limpa a sessão e não envia nada depois, inclusive após remontar.
+- Remontagem com alterações locais não envia nem resolve o conflito sozinha: a comparação vem antes de qualquer gravação.
+- Reconectar a uma cópia alterada em outro lugar pausa para uma escolha, sem enviar.
+- Reaproveitamento sem interação indisponível cai para a autorização visível, sem prometer sucesso silencioso.
+
+A sessão é substituída por um objeto controlado pelo teste, e a rede continua sendo um `fetch` simulado. Nenhum arquivo real do Google Drive é acessado ou modificado.
 
 ## Limites e isolamento
 
@@ -69,7 +85,7 @@ npx playwright install chromium
 node tests/startup-browser.mjs
 ```
 
-Esse teste complementa a suíte de 157 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
+Esse teste complementa a suíte de 258 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
 
 - Abre a biblioteca e confirma que as preferências não foram solicitadas antecipadamente.
 - Retém o download do editor para verificar o indicador sem texto e o título oculto até a nota estar pronta.
@@ -85,3 +101,30 @@ Esse teste complementa a suíte de 157 testes com Chromium real, nas versões de
 Com `node tests/startup-browser.mjs --screenshots`, também gera `artifacts/note-loading-desktop.png` e `artifacts/note-loading-mobile.png` durante a espera. O cenário mobile verifica o indicador estático com movimento reduzido. As capturas ficam fora do Git; o build e os perfis são descartados ao terminar. O teste não mede latência do serviço Google nem substitui uma auditoria completa de acessibilidade.
 
 A comparação de desempenho e os limites de interpretação estão em [Inicialização](startup-performance.md).
+
+## Sincronização Dropbox
+
+`npm test` também executa `dropbox-sync.test.tsx`, `dropbox-files.test.mjs` e
+`dropbox-auth.test.mjs`: snapshots completos, revisão condicional, conflito,
+backups, restauração, offline, mudança de provedor, falhas de permissão/cofre,
+limites e proteções de origem/sessão/CSRF. Os testes do Drive permanecem ativos.
+
+Após `npm run build`, `npm run test:dropbox:browser -- --screenshots` usa navegador
+e IndexedDB reais em perfil descartável, com cofre, OAuth e Dropbox simulados.
+Valida vínculo, ativação explícita, envio automático de nota editada fora das
+Preferências somente no intervalo escolhido, seleção persistente de periodicidade,
+sincronização manual, última/próxima sincronização, reinício, renovação e revogação.
+Também verifica o menu de periodicidade por teclado e ponteiro, o retorno de foco
+ao fechar com Esc, o layout em desktop/mobile e a exportação das cópias de segurança.
+Os relógios são simulados, sem aguardar horas reais. Nenhuma
+conta real é acessada. As capturas ficam no diretório temporário do sistema.
+
+## Rolagem da sidebar
+
+Após `npm run build`, execute `npm run test:sidebar:browser`. O teste usa 108 notas
+sintéticas em um perfil descartável, sem acessar contas reais. No Chromium,
+verifica cinco tamanhos de tela, desktop e mobile, mantendo apenas a lista de
+notas e coleções rolável, com cabeçalho e perfil fixos e suporte a rolagem por
+teclado. Detecta a barra duplicada que o overflow propagado criava no contêiner
+externo. Também executa no Firefox quando esse navegador já está instalado no
+Playwright. `-- --screenshots` salva capturas no diretório temporário do sistema.

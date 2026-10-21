@@ -6,8 +6,18 @@ const DRIVE_FILE_NAME = 'open-notes.json';
 const DRIVE_API = 'https://www.googleapis.com/drive/v3';
 const DRIVE_UPLOAD_API = 'https://www.googleapis.com/upload/drive/v3';
 
-type TokenResponse = { access_token?: string; error?: string; error_description?: string };
-type TokenClient = { requestAccessToken: (options?: { prompt?: string }) => void };
+type TokenResponse = {
+  access_token?: string;
+  expires_in?: string | number;
+  error?: string;
+  error_description?: string;
+};
+// Google Identity Services documents the fields below, but its TypeScript
+// surface is not published in this project's types.
+type TokenClient = {
+  requestAccessToken: (options?: { prompt?: string }) => void;
+};
+type AuthorizationFailure = { type?: 'popup_failed_to_open' | 'popup_closed' | 'unknown' };
 
 declare global {
   interface Window {
@@ -18,7 +28,7 @@ declare global {
             client_id: string;
             scope: string;
             callback: (response: TokenResponse) => void;
-            error_callback?: (error: { type?: string }) => void;
+            error_callback?: (error: AuthorizationFailure) => void;
           }) => TokenClient;
           revoke: (token: string, callback?: () => void) => void;
         };
@@ -26,6 +36,39 @@ declare global {
     };
   }
 }
+
+export type DriveAuthorization = {
+  token: string;
+  /** `Date.now()` value at which the token stops being usable. */
+  expiresAt: number;
+  /** True when Google answered without showing account or consent screens. */
+  silent: boolean;
+};
+
+export type AuthorizationMode = {
+  /** `''` reuses an existing permission; the other values require interaction. */
+  prompt: '' | 'select_account' | 'consent';
+};
+
+/**
+ * Failures of the authorization request itself (closed popup, blocked popup,
+ * denied access). They are not HTTP responses from the Drive API.
+ */
+export class DriveAuthorizationError extends Error {
+  constructor(message: string, readonly instruction: 'denied' | 'popup_closed' | 'popup_failed_to_open' | 'unavailable') {
+    super(message);
+  }
+}
+
+const MAX_TOKEN_LIFETIME_MS = 3600_000;
+const DENIAL_REASONS = new Set([
+  'insufficientFilePermissions', 'insufficientPermissions', 'forbidden',
+  'appNotAuthorizedToFile', 'domainPolicy', 'sharingRateLimitExceeded',
+]);
+const QUOTA_REASONS = new Set([
+  'quotaExceeded', 'storageQuotaExceeded', 'userRateLimitExceeded', 'rateLimitExceeded',
+  'dailyLimitExceeded', 'backendError',
+]);
 
 export type DriveSnapshot = {
   schemaVersion: 1;
@@ -39,8 +82,14 @@ export type DriveFile = {
   version?: string;
 };
 
+/**
+ * `expired` means the API answered 401: the token is no longer valid.
+ * `denied` and `quota` are 403 responses that must not discard the token.
+ */
+export type DriveErrorKind = 'expired' | 'denied' | 'quota' | 'request';
+
 export class DriveRequestError extends Error {
-  constructor(message: string, readonly status: number) {
+  constructor(message: string, readonly status: number, readonly kind?: DriveErrorKind) {
     super(message);
   }
 }
@@ -70,24 +119,79 @@ export function loadGoogleIdentity() {
   return identityPromise;
 }
 
-export async function requestDriveAccess(clientId: string) {
+function tokenLifetime(response: TokenResponse) {
+  const reported = Number(response.expires_in);
+  const lifetime = Number.isFinite(reported) && reported > 0 ? reported * 1000 : MAX_TOKEN_LIFETIME_MS;
+  return Math.min(lifetime, MAX_TOKEN_LIFETIME_MS);
+}
+
+function authorizationError(error: AuthorizationFailure) {
+  if (error.type === 'popup_failed_to_open') return new DriveAuthorizationError(
+    'O navegador bloqueou a janela de autorização do Google. Permita janelas pop-up para este site e tente novamente.',
+    'popup_failed_to_open');
+  if (error.type === 'popup_closed') return new DriveAuthorizationError(
+    'A janela de autorização do Google foi fechada. Tente novamente quando quiser vincular a conta.',
+    'popup_closed');
+  return new DriveAuthorizationError('A conexão com o Google foi cancelada.', 'denied');
+}
+
+/**
+ * Requests an access token. `prompt: ''` only succeeds when Google can reuse a
+ * permission already granted to this client for the account in this browser;
+ * it never replaces the account chooser. Identity Services then answers with
+ * `interaction_required` or `access_denied`, and the caller asks for a visible
+ * authorization instead. No path forces a silent authorization.
+ */
+export async function requestDriveAccess(clientId: string, mode: AuthorizationMode): Promise<DriveAuthorization> {
   await loadGoogleIdentity();
-  return new Promise<string>((resolve, reject) => {
+  return new Promise<DriveAuthorization>((resolve, reject) => {
+    let settled = false;
+    const finish = (result: DriveAuthorization | DriveAuthorizationError) => {
+      if (settled) return;
+      settled = true;
+      if (result instanceof DriveAuthorizationError) reject(result);
+      else resolve(result);
+    };
     const client = window.google!.accounts.oauth2.initTokenClient({
       client_id: clientId,
       scope: DRIVE_SCOPE,
       callback: response => {
-        if (response.access_token) resolve(response.access_token);
-        else reject(new Error(response.error_description || response.error || 'A conexão com o Google foi cancelada.'));
+        if (response.access_token) {
+          finish({
+            token: response.access_token,
+            expiresAt: Date.now() + tokenLifetime(response),
+            silent: mode.prompt === '',
+          });
+        } else finish(new DriveAuthorizationError(
+          response.error_description || response.error || 'A conexão com o Google foi cancelada.', 'denied'));
       },
-      error_callback: () => reject(new Error('A conexão com o Google foi cancelada.')),
+      error_callback: error => finish(authorizationError(error)),
     });
-    client.requestAccessToken({ prompt: 'select_account' });
+    try {
+      client.requestAccessToken({ prompt: mode.prompt });
+    } catch (reason) {
+      finish(new DriveAuthorizationError(reason instanceof Error
+        ? reason.message
+        : 'Não foi possível abrir a autorização do Google.', 'unavailable'));
+    }
   });
 }
 
 export function revokeDriveAccess(accessToken: string) {
   window.google?.accounts.oauth2.revoke(accessToken);
+}
+
+type DriveErrorPayload = { error?: { message?: string; errors?: { reason?: string }[] } };
+
+function errorKind(status: number, reasons: string[]): DriveErrorKind {
+  if (status === 401) return 'expired';
+  if (status === 403) {
+    if (reasons.some(reason => QUOTA_REASONS.has(reason))) return 'quota';
+    // 403 without a known reason cannot prove the token expired either.
+    return 'denied';
+  }
+  if (status === 429) return 'quota';
+  return 'request';
 }
 
 async function driveFetch<T>(url: string, accessToken: string, init?: RequestInit): Promise<T> {
@@ -100,11 +204,16 @@ async function driveFetch<T>(url: string, accessToken: string, init?: RequestIni
   });
   if (!response.ok) {
     let message = 'O Google Drive não conseguiu concluir a sincronização.';
+    let reasons: string[] = [];
     try {
-      const payload = await response.json() as { error?: { message?: string } };
+      const payload = await response.json() as DriveErrorPayload;
       if (payload.error?.message) message = payload.error.message;
+      reasons = (payload.error?.errors || []).flatMap(item => item.reason ? [item.reason] : []);
     } catch { /* Keep the friendly fallback. */ }
-    throw new DriveRequestError(message, response.status);
+    if (response.status === 403 && reasons.some(reason => DENIAL_REASONS.has(reason))) {
+      message = `O Google negou o acesso a esta operação: ${message}`;
+    }
+    throw new DriveRequestError(message, response.status, errorKind(response.status, reasons));
   }
   return response.json() as Promise<T>;
 }

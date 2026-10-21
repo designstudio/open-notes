@@ -104,7 +104,9 @@ As mudanças relacionadas são confirmadas na mesma transação. A migração do
 
 ### Google Drive, quando você quiser
 
-Vincule sua conta em **Preferências → Geral → Google Drive** para sincronizar uma cópia das notas e do perfil. A integração precisa de um ID OAuth configurado no ambiente; as instruções estão abaixo.
+Vincule sua conta em **Preferências → Integrações → Google Drive** para sincronizar uma cópia das notas e do perfil. A integração precisa de um ID OAuth configurado no ambiente; as instruções estão abaixo.
+
+A conexão fica em memória e continua ativa enquanto você edita o código em desenvolvimento, quando o Vite remonta o aplicativo. Recarregar a página pede uma nova vinculação, porque nenhum token é gravado no navegador. Quando o Google exige interação, a autorização aparece na tela; o app não tenta autenticar sem a sua participação.
 
 Quando as cópias local e do Drive são diferentes, o app pausa a sincronização para você escolher:
 
@@ -113,9 +115,25 @@ Quando as cópias local e do Drive são diferentes, o app pausa a sincronizaçã
 
 As duas versões são preservadas em um backup local antes da substituição. Se outro dispositivo alterar a cópia antes de um novo envio, o app pede uma nova revisão. Edições feitas durante um envio bem-sucedido são enviadas em seguida quando ainda há diferenças pendentes.
 
+### Sincronização com Dropbox
+
+Em **Preferências → Integrações**, selecione **Vincular** na linha do Dropbox e
+informe sua própria Dropbox App Key
+para autorizar a conta. No Windows, a autorização persiste pelo Gerenciador de
+Credenciais, sem tokens no navegador ou backend central. Em seguida, use
+**Ativar sincronização** para comparar as cópias e pausar o sincronizador do
+Google Drive. O Dropbox mostra a última sincronização e permite sincronizar
+manualmente, com backups locais e escolha explícita em caso de conflito.
+A opção **Sincronização automática** permite escolher 1 hora, 3 horas, 6 horas,
+12 horas ou 24 horas, com padrão de 1 hora, para enviar e receber alterações. O salvamento local continua
+imediato. Se o horário vencer com o aplicativo fechado, sincroniza ao reabrir.
+Vínculos antigos exigem habilitar `files.content.read` e `files.content.write`
+na App Console, desvincular e autorizar novamente. Consulte a
+[configuração e as limitações](docs/dropbox-integration.md).
+
 ### Cópias de recuperação
 
-Os backups da integração podem ser baixados em JSON. A página `/recuperar-notas.html`, no mesmo endereço em que você usa o app, também permite consultar e exportar as notas atuais e as cópias anteriores. Ela apenas lê os dados, sem restaurar notas ou iniciar uma sincronização.
+Os backups da integração podem ser baixados em JSON. Nas opções do Dropbox, use **Exportar** no card **Cópias de segurança**. A página `/recuperar-notas.html`, no mesmo endereço em que você usa o app, também permite consultar e exportar as notas atuais e as cópias anteriores. Ela apenas lê os dados, sem restaurar notas ou iniciar uma sincronização.
 
 Exporte as notas importantes e baixe as cópias de recuperação antes de limpar os dados do navegador. Veja os detalhes em [Persistência local](docs/local-storage.md).
 
@@ -141,7 +159,7 @@ Crie um arquivo `.env.local` na raiz, usando `.env.example` como referência, e 
 VITE_GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
 ```
 
-Reinicie o servidor após configurar a variável. Depois, abra **Preferências → Geral → Google Drive** para vincular sua conta.
+Reinicie o servidor após configurar a variável. Depois, abra **Preferências → Integrações → Google Drive** para vincular sua conta.
 
 </details>
 
@@ -182,7 +200,7 @@ As decisões de produto e design são guiadas por quem está construindo e usand
 
 ## Qualidade e testes
 
-A suíte reúne **157 testes** de armazenamento, migração, edição, recuperação, sincronização e resolução de conflitos.
+A suíte reúne **258 testes** de armazenamento, migração, edição, recuperação, autenticação, sincronização e resolução de conflitos.
 
 ```sh
 npm test
@@ -220,6 +238,7 @@ npm run benchmark
 O Open Notes está em evolução. A escrita, a organização e o salvamento local já contam com testes, assim como os fluxos de sincronização e conflito. Alguns limites atuais:
 
 - Conflitos com o Drive exigem uma escolha entre as cópias; não há mesclagem automática.
+- A conexão com o Drive não sobrevive a uma recarga completa da página: o token fica apenas em memória, por segurança.
 - A verificação de mudanças no Drive não é uma transação atômica entre dispositivos.
 - Abas diferentes não têm sincronização automática de estado nem resolução de edições simultâneas da mesma nota.
 - A exportação Markdown não preserva todos os estilos visuais do editor. O PDF usa a impressão do navegador.

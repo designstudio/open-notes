@@ -1,5 +1,29 @@
 # Histórico de alterações
 
+## 2026-10-21
+
+### Sincronização opcional com Dropbox
+
+- Snapshot completo na App Folder pessoal, com ativação explícita e apenas um provedor ativo por vez.
+- Sincronização automática configurável em 1h, 3h, 6h, 12h ou 24h (padrão 1h), com última/próxima execução e sincronização manual. O salvamento local permanece imediato.
+- Atualizações condicionadas à revisão do Dropbox, backups no IndexedDB e escolha explícita em conflitos.
+- Tokens continuam no cofre do Windows e no processo Node local; nenhum backend central ou dependência nova.
+- Vínculos anteriores precisam de nova autorização com permissões de conteúdo. Snapshot limitado inicialmente a 20 MiB.
+- Preferências com menu Integrações, APP Key pessoal oculta, URL copiável e menu de periodicidade com os padrões do aplicativo.
+- Card próprio para exportar cópias de segurança em JSON; ícones de estado e exportação padronizados.
+
+## 2026-10-20
+
+### Conexão com o Google Drive preservada em atualizações
+
+- Sessão do Drive mantida apenas em memória com `import.meta.hot.data`: remontagens do Vite durante o desenvolvimento não pedem autorização de novo, não leem o Drive e não enviam nada.
+- Token reutilizado somente enquanto válido e descartado por uma recarga completa. Nenhum token é gravado em `localStorage`, `sessionStorage` ou IndexedDB.
+- Autorização reaproveita permissões já concedidas com `prompt: ''` e recorre à autorização visível quando o Google exige interação, sem prometer autenticação silenciosa.
+- Apenas HTTP 401 é tratado como token expirado. HTTP 403 de permissão ou cota mantém a conexão, explica o motivo e permite nova tentativa.
+- Revogação do acesso restrita à ação explícita de desvincular, e conta apresentada como conectada somente após uma autorização confirmada.
+- Remontagem com alterações locais compara as cópias antes de qualquer gravação, sem upload nem resolução automática de conflito.
+- 12 testes novos, totalizando 176, cobrindo remontagem, recarga, expiração, 401, 403, desvinculação e reconexão.
+
 ## 2026-10-19
 
 ### Apresentação e descoberta do projeto

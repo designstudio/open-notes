@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { type AppData, type Note, type Notebook } from './data';
 import { readProfile } from './profile';
 import { noteSaveStatus } from './save-feedback';
 import { newNoteFieldDefaults } from './note-field-state';
 import { ToastStack } from './Feedback';
 import { useGoogleDriveSync } from './cloud/use-google-drive-sync';
+import { useDropboxAuth } from './cloud/use-dropbox-auth';
+import { useDropboxSync } from './cloud/use-dropbox-sync';
+import { activeSyncProvider, selectSyncProvider, subscribeSyncProvider } from './cloud/sync-coordinator';
 import { useNoteDrag } from './hooks/use-note-drag';
 import { AppSidebar } from './app/AppSidebar';
 import { NotesLibrary } from './app/NotesLibrary';
@@ -34,9 +37,22 @@ import './component-states.css';
 
 export default function App({ initialData }: { initialData: AppData }) {
   const [data, setData] = useWorkspaceData(initialData);
-  const driveSync = useGoogleDriveSync(data, setData);
+  const drive = useGoogleDriveSync(data, setData);
+  const dropbox = useDropboxAuth();
+  const dropboxSync = useDropboxSync(data, setData, dropbox);
+  const provider = useSyncExternalStore(subscribeSyncProvider, activeSyncProvider, () => 'google-drive');
   const profile = readProfile(data.profile);
   const { toasts, setToast, dismissToast } = useToasts();
+  const driveSync = { ...drive, paused: provider !== 'google-drive',
+    connect: async () => {
+      try { await selectSyncProvider('google-drive'); await drive.connect(); }
+      catch { setToast('Não foi possível ativar o Google Drive. Verifique o armazenamento do navegador.', 'error'); }
+    },
+    syncNow: async () => {
+      try { await selectSyncProvider('google-drive'); await drive.syncNow(); }
+      catch { setToast('Não foi possível ativar o Google Drive. Verifique o armazenamento do navegador.', 'error'); }
+    },
+  };
   const { savedData, saveFailed } = useLocalPersistence(data, initialData, setToast);
   const appearance = useAppearance();
   const listPreferences = useNotesListPreferences();
@@ -219,6 +235,8 @@ export default function App({ initialData }: { initialData: AppData }) {
         navigation={navigation}
         workspace={workspace}
         driveSync={driveSync}
+        dropbox={dropbox}
+        dropboxSync={dropboxSync}
         setToast={setToast}
       />
     </div>

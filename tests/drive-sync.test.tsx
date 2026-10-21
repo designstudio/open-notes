@@ -9,6 +9,7 @@ import { isDriveSnapshot } from '../src/cloud/google-drive';
 import { readProfile, profileInitials, prepareProfilePhoto } from '../src/profile';
 import { IDBFactory } from 'fake-indexeddb';
 import { recoveryCopies } from '../src/cloud/recovery-storage';
+import { selectSyncProvider } from '../src/cloud/sync-coordinator';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 const examples = (): AppData => structuredClone({ notes: initialNotes, collections: initialCollections, folders: initialFolders });
@@ -284,3 +285,13 @@ test('photo upload rejects unsupported formats and oversized files before decodi
   await assert.rejects(prepareProfilePhoto(new File(['bad'], 'photo.svg', { type: 'image/svg+xml' })), /JPG, PNG ou WebP/);
   await assert.rejects(prepareProfilePhoto(new File([new Uint8Array(10 * 1024 * 1024 + 1)], 'photo.png', { type: 'image/png' })), /10 MB/);
 });
+
+test('Drive pauses automatic writes while Dropbox is selected, then compares copies before resuming', async () => {
+  const same = personal('Same'); const app = await setup(same, cloneSpace(same)); await app.connect();
+  Object.defineProperty(navigator, 'locks', { configurable: true, value: { request: (_name: string, task: () => Promise<unknown>) => task() } });
+  await act(async () => selectSyncProvider('dropbox'));
+  await app.edit(personal('Edited on another provider')); await app.flush(); assert.equal(app.writes(), 0);
+  await act(async () => selectSyncProvider('google-drive'));
+  await act(async () => app.sync().syncNow()); assert.equal(app.sync().status, 'conflict'); assert.equal(app.writes(), 0);
+});
+function cloneSpace(data: AppData) { return structuredClone(data); }

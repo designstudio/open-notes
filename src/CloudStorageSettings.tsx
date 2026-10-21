@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useState, type ReactNode } from 'react';
 import type { GoogleDriveSync } from './cloud/use-google-drive-sync';
 import { AlertTriangle, Check, FolderCloud, Refresh, ShieldTick } from './icons';
 import googleDriveIcon from './assets/google-drive.svg';
@@ -11,6 +11,7 @@ function ConnectedStatusIcon() {
 }
 
 function statusCopy(sync: GoogleDriveSync) {
+  if (sync.paused) return 'Sincronização pausada. O Dropbox é o provedor ativo.';
   if (sync.status === 'connecting') return 'Aguardando autorização do Google…';
   if (sync.status === 'syncing') return sync.lastSyncedAt
     ? `Sincronizado às ${new Date(sync.lastSyncedAt).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`
@@ -26,9 +27,9 @@ function statusCopy(sync: GoogleDriveSync) {
   return 'Vincule sua conta para sincronizar suas notas.';
 }
 
-export function CloudStorageSettings({ sync, details = false, active = true, onNavigate }: { sync: GoogleDriveSync; details?: boolean; active?: boolean; onNavigate: (details: boolean) => void }) {
+export function CloudStorageSettings({ sync, details = false, active = true, showHeading = true, children, onNavigate }: { sync: GoogleDriveSync; details?: boolean; active?: boolean; showHeading?: boolean; children?: ReactNode; onNavigate: (details: boolean) => void }) {
   const headingId = useId();
-  const busy = sync.status === 'connecting' || sync.status === 'syncing';
+  const busy = !sync.paused && (sync.status === 'connecting' || sync.status === 'syncing');
   const connectLabel = sync.status === 'connecting' ? 'Vinculando…' : sync.wasConnected ? 'Vincular novamente' : 'Vincular';
   const [copies, setCopies] = useState<RecoveryCopy[]>([]);
   const [recoveryError, setRecoveryError] = useState('');
@@ -49,7 +50,7 @@ export function CloudStorageSettings({ sync, details = false, active = true, onN
   }
 
   return (
-    <section className={`cloud-settings${details ? ' cloud-details' : ''}`} aria-labelledby={headingId}>
+    <section className={`cloud-settings${details || !showHeading ? ' cloud-details' : ''}`} aria-labelledby={details || showHeading ? headingId : undefined} aria-label={!details && !showHeading ? 'Provedores de integração' : undefined}>
       {details ? <>
         <div className="cloud-detail-heading">
           <img src={googleDriveIcon} alt="" width="28" height="28" />
@@ -62,7 +63,7 @@ export function CloudStorageSettings({ sync, details = false, active = true, onN
           <li><strong>Entre dispositivos</strong> — vincule a mesma conta para carregar a cópia mais recente.</li>
           <li><strong>Acesso offline</strong> — continue escrevendo com salvamento neste navegador.</li>
         </ul>
-        {sync.conflict && <div className="cloud-conflict" role="region" aria-labelledby="drive-conflict-title">
+        {sync.conflict && !sync.paused && <div className="cloud-conflict" role="region" aria-labelledby="drive-conflict-title">
           <h4 id="drive-conflict-title">Há dados diferentes neste navegador e no Drive</h4>
           <p>Navegador: {sync.conflict.localNotes} notas. Drive: {sync.conflict.remoteNotes} notas. Nada será enviado até você escolher. Uma cópia das duas versões será preservada neste navegador antes da substituição.</p>
           <div className="cloud-conflict-actions">
@@ -79,10 +80,10 @@ export function CloudStorageSettings({ sync, details = false, active = true, onN
           </div>
           <div className="cloud-detail-card">
             <span className="cloud-card-icon" aria-hidden="true"><FolderCloud size={19} /></span>
-            <div className="cloud-card-copy"><h4>Sincronização do seu espaço</h4><p role="status" aria-live="polite" aria-atomic="true"><TextSwap text={statusCopy(sync)} /></p><span className="cloud-badge">Automática após vincular</span></div>
-            {sync.connected && <button className="secondary-button cloud-sync-button" disabled={busy || !!sync.conflict} onClick={() => void sync.syncNow()}>
+            <div className="cloud-card-copy"><h4>Sincronização do seu espaço</h4><p role="status" aria-live="polite" aria-atomic="true"><TextSwap text={statusCopy(sync)} /></p><span className="cloud-badge">{sync.paused ? 'Provedor pausado' : 'Automática após vincular'}</span></div>
+            {sync.connected && <button className="secondary-button cloud-sync-button" disabled={busy || (!sync.paused && !!sync.conflict)} onClick={() => void sync.syncNow()}>
               {sync.status === 'syncing' && <Refresh size={15} className="cloud-sync-spinner" aria-hidden="true" />}
-              <TextSwap text={sync.status === 'syncing' ? 'Sincronizando…' : 'Sincronizar agora'} />
+              <TextSwap text={sync.paused ? 'Ativar sincronização' : sync.status === 'syncing' ? 'Sincronizando…' : 'Sincronizar agora'} />
             </button>}
           </div>
           <div className="cloud-detail-card">
@@ -95,8 +96,8 @@ export function CloudStorageSettings({ sync, details = false, active = true, onN
         {copies.length > 0 && <button className="text-button" onClick={downloadRecovery}>Baixar cópias de segurança</button>}
         {recoveryError && <p className="cloud-error" role="alert">{recoveryError}</p>}
       </> : <>
-        <div className="cloud-list-heading"><h3 id={headingId}>Integrações</h3><span>1 disponível</span></div>
-        <button className="cloud-connectors" onClick={() => onNavigate(true)}>
+        {showHeading && <div className="cloud-list-heading"><h3 id={headingId}>Integrações</h3><span>Sincronização opcional</span></div>}
+        <button className="cloud-connectors" data-provider="google-drive" onClick={() => onNavigate(true)}>
           <span className="cloud-provider-link"><span className="cloud-provider-icon"><img src={googleDriveIcon} alt="" /></span>Google Drive</span>
           <span className="cloud-connection-label">
             {sync.conflict && <AlertTriangle className="cloud-warning-icon" size={19} aria-hidden="true" />}
@@ -104,6 +105,7 @@ export function CloudStorageSettings({ sync, details = false, active = true, onN
             <TextSwap text={sync.conflict ? 'Revisar cópias' : sync.connected ? 'Vinculado' : connectLabel} />
           </span>
         </button>
+        {children}
       </>}
     </section>
   );

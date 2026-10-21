@@ -2,7 +2,8 @@ import type { AppData } from '../data';
 import { openLocalDatabase } from '../local-data';
 
 export type RecoveryCopy = { key: string; savedAt: number; local: AppData; remote?: AppData };
-const isRecoveryKey = (key: string) => key.startsWith('open-notes-drive-recovery-') || key === 'open-notes-drive-last-upload-recovery';
+const isRecoveryKey = (key: string) => key.startsWith('open-notes-drive-recovery-') || key === 'open-notes-drive-last-upload-recovery'
+  || key.startsWith('open-notes-dropbox-recovery-') || key === 'open-notes-dropbox-last-upload-recovery';
 
 export async function saveRecoveryCopy(local: AppData, remote?: AppData, key = `open-notes-drive-recovery-${crypto.randomUUID()}`) {
   try {

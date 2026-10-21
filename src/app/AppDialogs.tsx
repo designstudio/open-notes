@@ -7,6 +7,8 @@ import { IconButton } from '../IconButton';
 import { CollectionNoteDefaults } from '../CollectionNoteDefaults';
 import { readProfile } from '../profile';
 import type { GoogleDriveSync } from '../cloud/use-google-drive-sync';
+import type { useDropboxAuth } from '../cloud/use-dropbox-auth';
+import type { DropboxSync } from '../cloud/use-dropbox-sync';
 import type { AppDialogsState } from './use-app-dialogs';
 import type { Appearance } from './use-appearance';
 import type { Navigation, SetAppData } from './types';
@@ -22,10 +24,12 @@ type AppDialogsProps = {
   navigation: Navigation;
   workspace: Workspace;
   driveSync: GoogleDriveSync;
+  dropbox: ReturnType<typeof useDropboxAuth>;
+  dropboxSync: DropboxSync;
   setToast: Notify;
 };
 
-export function AppDialogs({ data, setData, view, dialogs, appearance, navigation, workspace, driveSync, setToast }: AppDialogsProps) {
+export function AppDialogs({ data, setData, view, dialogs, appearance, navigation, workspace, driveSync, dropbox, dropboxSync, setToast }: AppDialogsProps) {
   const { modal, setModal, collectionName, setCollectionName, collectionDescription, setCollectionDescription, collectionNoteDefaults, setCollectionNoteDefaults, editingCollection, setEditingCollection, targetCollectionForFolder, setTargetCollectionForFolder, editingFolder, setEditingFolder, folderName, setFolderName } = dialogs;
   const { theme, setTheme, palette, setPalette, customAccent, setCustomAccent } = appearance;
   const { openNote, openCollection } = navigation;
@@ -198,7 +202,7 @@ export function AppDialogs({ data, setData, view, dialogs, appearance, navigatio
       </form>
     )}
     {modal === 'search' && <SearchDialogContent data={data} dialogs={dialogs} workspace={workspace} openNote={openNote} />}
-    {modal === 'settings' && <Preferences profile={profile} onProfileUpdate={patch => setData(current => ({ ...current, profile: { ...readProfile(current.profile), ...patch } }))} theme={theme} onToggleTheme={() => setTheme(t => t === 'light' ? 'dark' : 'light')} palette={palette} onPaletteChange={setPalette} customAccent={customAccent} onCustomAccentChange={color => { setCustomAccent(color); setPalette('custom'); }} onDismiss={() => setModal(null)} sync={driveSync} />}
+    {modal === 'settings' && <Preferences profile={profile} onProfileUpdate={patch => setData(current => ({ ...current, profile: { ...readProfile(current.profile), ...patch } }))} theme={theme} onToggleTheme={() => setTheme(t => t === 'light' ? 'dark' : 'light')} palette={palette} onPaletteChange={setPalette} customAccent={customAccent} onCustomAccentChange={color => { setCustomAccent(color); setPalette('custom'); }} onDismiss={() => setModal(null)} sync={driveSync} dropbox={dropbox} dropboxSync={dropboxSync} notify={setToast} />}
     </AnimatedDialog>
   );
 }

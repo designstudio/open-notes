@@ -1,5 +1,6 @@
 /* Keep the focus ring on the complete field, including search controls. */
 .app-shell dialog form > input,
+.dropbox-key-field input,
 .app-shell .collection-settings-form > textarea,
 .note-picker-input,
 .app-shell .selection-link input {
@@ -9,12 +10,14 @@
   border-radius:var(--input-radius);
 }
 .app-shell dialog form > input::placeholder,
+.dropbox-key-field input::placeholder,
 .app-shell .collection-settings-form > textarea::placeholder,
 .note-picker-input::placeholder,
 .app-shell .selection-link input::placeholder {
   color:var(--muted);
 }
 .app-shell dialog form > input:focus,
+.dropbox-key-field input:focus,
 .app-shell .collection-settings-form > textarea:focus,
 .note-picker-input:focus,
 .app-shell .selection-link input:focus,
