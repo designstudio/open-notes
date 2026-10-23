@@ -58,23 +58,23 @@ export function DropboxSyncSettings({ sync: providedSync, authorized, active = t
       <p>A escolha inclui notas, coleções, pastas e perfil. Nenhuma versão será substituída sem sua escolha.</p>
     </div>}
     <div className="cloud-detail-card">
-      <span className="cloud-card-icon" aria-hidden="true"><StatusIcon size={19} /></span>
+      <span className="cloud-card-icon" aria-hidden="true"><StatusIcon size={20} /></span>
       <div className="cloud-card-copy">
         <div className="dropbox-sync-summary">
           <div><h4>Sincronização do seu espaço</h4>
             {noticeIsError ? <p className="cloud-error" role="alert">{status}</p> : <p role="status" aria-live="polite"><TextSwap text={status} /></p>}
-            {needsPermissions && <p>Na <a className="cloud-badge dropbox-console-link" href="https://www.dropbox.com/developers/apps?utm_source=opennotes" target="_blank" rel="noopener noreferrer">App Console<ArrowUpRight size={12} aria-hidden="true" /></a>, confira{' '}
+            {needsPermissions && <p>Na <a className="cloud-badge dropbox-console-link" href="https://www.dropbox.com/developers/apps?utm_source=opennotes" target="_blank" rel="noopener noreferrer">App Console<ArrowUpRight size={20} aria-hidden="true" /></a>, confira{' '}
               <code className="cloud-badge">files.content.read</code> e <code className="cloud-badge">files.content.write</code>.{' '}
               Se já estão habilitadas, use Verificar permissões. Se a verificação não confirmar o acesso, desvincule e conecte novamente para atualizar a autorização deste vínculo.</p>}
             {sync.error && !notice && <p className="cloud-error" role="alert">{sync.error}</p>}
             <p>{last}</p>
-            {sync.nextSyncAt && sync.enabled && authorized && !notice && !sync.conflict && <p>Próxima sincronização prevista: {new Date(sync.nextSyncAt).toLocaleString('pt-BR')}.</p>}
+            {sync.nextSyncAt && sync.enabled && authorized && !notice && !sync.conflict && <p>{sync.status === 'error' || sync.status === 'offline' ? 'Próxima tentativa prevista' : 'Próxima sincronização prevista'}: {new Date(sync.nextSyncAt).toLocaleString('pt-BR')}.</p>}
           </div>
           {needsPermissions && onVerifyPermissions ? <button className="secondary-button cloud-sync-button" disabled={verifying} onClick={() => {
             setVerifying(true);
             void onVerifyPermissions().finally(() => { setPermissionsChecked(true); setVerifying(false); });
           }}><TextSwap text={verifying ? 'Verificando…' : 'Verificar permissões'} /></button> : <button className="secondary-button cloud-sync-button" disabled={!providedSync || !authorized || busy || !!sync.conflict} onClick={() => void (sync.enabled ? sync.syncNow() : sync.activate())}>
-            {busy && <Refresh size={15} className="cloud-sync-spinner" aria-hidden="true" />}
+            {busy && <Refresh size={20} className="cloud-sync-spinner" aria-hidden="true" />}
             <TextSwap text={busy ? 'Sincronizando…' : sync.enabled ? 'Sincronizar agora' : 'Ativar sincronização'} />
           </button>}
         </div>
@@ -87,7 +87,7 @@ export function DropboxSyncSettings({ sync: providedSync, authorized, active = t
             <DropdownMenu.Trigger asChild>
               <button ref={scheduleTrigger} type="button" className="secondary-button dropbox-sync-interval"
                 disabled={!providedSync || busy} aria-labelledby={`${scheduleId} ${scheduleValueId}`} aria-describedby={scheduleHintId}>
-                <span id={scheduleValueId}>{intervalLabel(sync.intervalHours)}</span><ChevronDown size={14} aria-hidden="true" />
+                <span id={scheduleValueId}>{intervalLabel(sync.intervalHours)}</span><ChevronDown size={20} aria-hidden="true" />
               </button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Portal container={menuContainer}>
@@ -98,7 +98,7 @@ export function DropboxSyncSettings({ sync: providedSync, authorized, active = t
                   if (isSyncIntervalHours(hours)) sync.setIntervalHours(hours);
                 }}>
                   {syncIntervalOptions.map(hours => <DropdownMenu.RadioItem key={hours} value={String(hours)} className="note-action">
-                    <span>{intervalLabel(hours)}</span><DropdownMenu.ItemIndicator><Check size={15} aria-hidden="true" /></DropdownMenu.ItemIndicator>
+                    <span>{intervalLabel(hours)}</span><DropdownMenu.ItemIndicator><Check size={20} aria-hidden="true" /></DropdownMenu.ItemIndicator>
                   </DropdownMenu.RadioItem>)}
                 </DropdownMenu.RadioGroup>
               </DropdownMenu.Content>
@@ -108,7 +108,7 @@ export function DropboxSyncSettings({ sync: providedSync, authorized, active = t
       </div>
     </div>
     {copies.length > 0 && <div className="cloud-detail-card">
-      <span className="cloud-card-icon" aria-hidden="true"><Download size={19} /></span>
+      <span className="cloud-card-icon" aria-hidden="true"><Download size={20} /></span>
       <div className="cloud-card-copy"><h4>Cópias de segurança</h4><p>Exporte as cópias de segurança salvas neste navegador em um arquivo JSON.</p></div>
       <button type="button" className="secondary-button" onClick={() => {
         const url = URL.createObjectURL(new Blob([JSON.stringify({ copies }, null, 2)], { type: 'application/json' }));

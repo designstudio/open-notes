@@ -1,3 +1,26 @@
+/* Neutral controls reuse the system border, surface and low elevation. */
+.app-shell :is(.secondary-button,.cloud-connection-label,.collection-page-more) {
+  min-height:36px;
+  border:1px solid var(--button-secondary-border);
+  background:var(--button-secondary-bg);
+  color:var(--button-secondary-text);
+  box-shadow:var(--shadow-card);
+}
+.app-shell :is(.secondary-button,.cloud-connection-label) {
+  padding-block:var(--space-7);
+  line-height:20px;
+}
+.app-shell :is(.secondary-button,.cloud-connection-label,.collection-page-more):hover:not(:disabled),
+.app-shell .collection-page-more[data-state=open] {
+  background:var(--button-secondary-bg-hover);
+}
+.app-shell .cloud-connectors:focus-visible .cloud-connection-label {
+  background:var(--button-secondary-bg-hover);
+}
+.app-shell .cloud-connectors:active .cloud-connection-label {
+  background:var(--button-bg-active);
+}
+
 /* Shared states, restricted to the app's standalone controls. */
 .app-shell .primary-button:hover:not(:disabled) { background:var(--button-bg-hover);opacity:1; }
 .app-shell .primary-button:active:not(:disabled) { background:var(--button-primary-bg-active);opacity:1; }

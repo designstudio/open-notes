@@ -76,14 +76,14 @@ export function AccentColorPicker({ theme, palette, customAccent, onPaletteChang
           <form className="accent-hex-form" onSubmit={event => { event.preventDefault(); if (apply(draft)) setOpen(false); }}>
             <label htmlFor="accent-hex">HEX</label>
             <input id="accent-hex" value={draft} maxLength={7} spellCheck={false} autoComplete="off" aria-invalid={invalid} aria-describedby={invalid ? 'accent-hex-error' : undefined} onChange={event => { setDraft(event.target.value); setInvalid(false); }} onBlur={() => { if (draft !== color) apply(draft); }} />
-            <button type="submit" aria-label="Aplicar cor HEX"><Check size={17} /></button>
+            <button type="submit" aria-label="Aplicar cor HEX"><Check size={20} /></button>
           </form>
           {invalid && <p id="accent-hex-error" role="alert">Use um HEX válido, como #3A472E.</p>}
           <span className="accent-presets-label">Cores padrão</span>
           <div className="accent-presets" role="group" aria-label="Cores padrão">
             {palettes.map(option => <button key={option.id} type="button" aria-label={option.name} title={option.name} aria-pressed={palette === option.id} onClick={() => onPaletteChange(option.id)}>
               <span className="accent-preset-color" style={{ background: option.gradient }} aria-hidden="true" />
-              {palette === option.id && <Check size={15} />}
+              {palette === option.id && <Check size={20} />}
             </button>)}
           </div>
           </div>

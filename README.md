@@ -200,7 +200,7 @@ As decisões de produto e design são guiadas por quem está construindo e usand
 
 ## Qualidade e testes
 
-A suíte reúne **258 testes** de armazenamento, migração, edição, recuperação, autenticação, sincronização e resolução de conflitos.
+A suíte reúne **267 testes** de armazenamento, migração, edição, recuperação, autenticação, sincronização e resolução de conflitos.
 
 ```sh
 npm test

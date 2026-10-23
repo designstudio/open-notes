@@ -91,6 +91,7 @@ try {
     await page.getByRole('button', { name: 'Preferências', exact: true }).click();
     const menu = page.getByRole('navigation', { name: 'Seções das preferências' });
     assert.deepEqual(await menu.getByRole('button').allTextContents(), ['Geral', 'Integrações']);
+    assert.equal(await menu.getByRole('button', { name: 'Integrações', exact: true }).locator('.solar-plug-circle-linear').count(), 1);
     assert.equal(await page.locator('[data-provider="dropbox"]').isVisible(), false, 'integrations are not part of General');
     if (!profileInputStyle) {
       await page.getByRole('button', { name: 'Editar nome', exact: true }).click();
@@ -111,6 +112,13 @@ try {
     assert.equal(await page.locator('.t-page-slide').getAttribute('data-page'), '2');
     await page.getByRole('heading', { name: 'Integração com o Dropbox', exact: true }).waitFor();
     await page.locator('.dropbox-connect-row > button').waitFor();
+    const mismatchedIcons = await page.locator('dialog.settings-dialog svg.solar').evaluateAll(icons => icons
+      .filter(icon => {
+        const size = icon.closest('.dropbox-key-actions') ? '17px' : '20px';
+        return getComputedStyle(icon).width !== size || getComputedStyle(icon).height !== size;
+      })
+      .map(icon => icon.getAttribute('class')));
+    assert.deepEqual(mismatchedIcons, [], 'preferences icons use 20 × 20 pixels, with 17 × 17 controls inside the App Key field');
   };
   await preferences();
   await context.grantPermissions(['clipboard-read', 'clipboard-write'], { origin });
@@ -229,11 +237,25 @@ try {
   const nextBefore = await page.getByText(/Próxima sincronização prevista:/).textContent();
   clock += 5 * 60_000;
   await page.clock.fastForward(5 * 60_000);
+  // Fill only this disposable profile's Web Storage. IndexedDB must remain the
+  // durable schedule/baseline store even when a tiny localStorage write fails.
+  const quotaReached = await page.evaluate(() => {
+    let low = 0, high = 6 * 1024 * 1024;
+    while (low < high) {
+      const middle = Math.ceil((low + high) / 2);
+      try { localStorage.setItem('synthetic-quota-fixture', 'q'.repeat(middle)); low = middle; }
+      catch { high = middle - 1; }
+    }
+    try { localStorage.setItem('synthetic-attempt-write', String(Date.now())); return false; }
+    catch (error) { return error.name === 'QuotaExceededError'; }
+  });
+  assert.equal(quotaReached, true, 'the disposable browser really rejects localStorage writes');
   const downloadsBefore = downloads;
   await page.getByRole('button', { name: 'Sincronizar agora', exact: true }).click();
   await page.getByRole('status').filter({ hasText: 'Seu espaço está sincronizado com o Dropbox.' }).waitFor();
   assert.equal(downloads, downloadsBefore + 1, 'manual sync anticipates the selected interval');
   assert.notEqual(await page.getByText(/Próxima sincronização prevista:/).textContent(), nextBefore, 'manual success restarts the schedule');
+  await page.evaluate(() => localStorage.removeItem('synthetic-quota-fixture'));
   const backupCard = page.locator('.cloud-detail-card').filter({ has: page.getByRole('heading', { name: 'Cópias de segurança', exact: true }) });
   const backupDownload = page.waitForEvent('download');
   await backupCard.getByRole('button', { name: 'Exportar', exact: true }).click();

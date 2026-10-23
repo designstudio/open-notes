@@ -12,14 +12,15 @@ import { DropboxSyncSettings } from './DropboxSyncSettings';
 type DropboxAuth = ReturnType<typeof useDropboxAuth>;
 
 export function DropboxIntegrationRow({ auth, sync, onNavigate }: { auth: DropboxAuth; sync?: DropboxSync; onNavigate: () => void }) {
-  const needsAttention = auth.state.status === 'error' || auth.revocationPending || !!sync?.error || !!sync?.conflict;
+  const needsAttention = auth.state.status === 'error' || auth.revocationPending || sync?.status === 'error' || !!sync?.error || !!sync?.conflict
+    || (auth.state.status === 'connected' && !auth.syncReady);
   const label = sync?.conflict ? 'Revisar cópias' : needsAttention ? 'Revisar conexão' : sync?.status === 'syncing' ? 'Sincronizando…' : auth.state.status === 'connecting' ? 'Vinculando…'
     : auth.state.status === 'disconnecting' ? 'Desvinculando…' : auth.linked ? 'Vinculado' : 'Vincular';
   return <button className="cloud-connectors" data-provider="dropbox" onClick={onNavigate}>
     <span className="cloud-provider-link"><span className="cloud-provider-icon"><img src={dropboxIcon} alt="" /></span>Dropbox</span>
     <span className="cloud-connection-label">
-      {needsAttention && <AlertTriangle className="cloud-warning-icon" size={19} aria-hidden="true" />}
-      {auth.state.status === 'connected' && <span className="cloud-state-icon is-connected" aria-hidden="true"><Check size={13} /></span>}
+      {needsAttention && <AlertTriangle className="cloud-warning-icon" size={20} aria-hidden="true" />}
+      {!needsAttention && auth.state.status === 'connected' && <span className="cloud-state-icon is-connected" aria-hidden="true"><Check size={20} /></span>}
       <TextSwap text={label} />
     </span>
   </button>;
@@ -52,7 +53,7 @@ export function DropboxIntegration({ auth, sync, notify, active = true }: { auth
     : state.status === 'connecting' ? 'Cancelar autorização' : 'Desvincular';
   return <section className="cloud-settings cloud-details dropbox-integration" aria-labelledby={headingId}>
     <div className="cloud-detail-heading">
-      <img src={dropboxIcon} alt="" width="28" height="28" />
+      <img src={dropboxIcon} alt="" width="20" height="20" />
       <h3 id={headingId}>Integração com o Dropbox</h3>
     </div>
     <p id={descriptionId}>Vincule sua conta do Dropbox usando a App Key do seu próprio aplicativo.</p>
@@ -63,7 +64,7 @@ export function DropboxIntegration({ auth, sync, notify, active = true }: { auth
     </ul>
     <div className="cloud-detail-cards">
       {!auth.checking && !unavailable && <div className="cloud-detail-card">
-        <span className="cloud-card-icon" aria-hidden="true"><Key size={19} /></span>
+        <span className="cloud-card-icon" aria-hidden="true"><Key size={20} /></span>
         <div className="cloud-card-copy">
           <form id={formId} className="dropbox-auth-form" onSubmit={event => {
             event.preventDefault();
@@ -74,7 +75,7 @@ export function DropboxIntegration({ auth, sync, notify, active = true }: { auth
           }}>
             <div className="dropbox-key-copy">
               <h4>APP Key</h4>
-              <a className="dropbox-create-key" href="https://www.dropbox.com/developers/apps?utm_source=opennotes" target="_blank" rel="noopener noreferrer">Criar uma App Key no Dropbox<ArrowUpRight size={14} aria-hidden="true" /></a>
+              <a className="dropbox-create-key" href="https://www.dropbox.com/developers/apps?utm_source=opennotes" target="_blank" rel="noopener noreferrer">Criar uma App Key no Dropbox<ArrowUpRight size={20} aria-hidden="true" /></a>
             </div>
             <label className="sr-only" htmlFor={keyId}>Sua Dropbox App Key</label>
             <div className="dropbox-key-editor">
@@ -84,8 +85,8 @@ export function DropboxIntegration({ auth, sync, notify, active = true }: { auth
                 autoComplete="off" autoCapitalize="none" spellCheck={false} maxLength={100}
                 disabled={busy || auth.linked} required pattern="[a-zA-Z0-9]{5,100}" aria-describedby={descriptionId} />
               <div className="dropbox-key-actions">
-                <button type="button" className="icon-button" aria-label={showKey ? 'Ocultar App Key' : 'Mostrar App Key'} aria-pressed={showKey} aria-controls={keyId} title={showKey ? 'Ocultar chave' : 'Mostrar chave'} onClick={() => setShowKey(value => !value)}>{showKey ? <EyeClosed size={16} /> : <Eye size={16} />}</button>
-                <button type="button" className="icon-button" aria-label="Copiar App Key" title="Copiar chave" disabled={!auth.appKey.trim()} onClick={() => void copyText(auth.appKey.trim(), 'Chave')}><Copy size={16} /></button>
+                <button type="button" className="icon-button" aria-label={showKey ? 'Ocultar App Key' : 'Mostrar App Key'} aria-pressed={showKey} aria-controls={keyId} title={showKey ? 'Ocultar chave' : 'Mostrar chave'} onClick={() => setShowKey(value => !value)}>{showKey ? <EyeClosed size={17} /> : <Eye size={17} />}</button>
+                <button type="button" className="icon-button" aria-label="Copiar App Key" title="Copiar chave" disabled={!auth.appKey.trim()} onClick={() => void copyText(auth.appKey.trim(), 'Chave')}><Copy size={17} /></button>
               </div>
             </div>
             </div>
@@ -106,7 +107,7 @@ export function DropboxIntegration({ auth, sync, notify, active = true }: { auth
           try { await auth.verifyPermissions(); } finally { setVerifyingPermissions(false); }
         }} active={active} />
       <div className="cloud-detail-card">
-        <span className="cloud-card-icon" aria-hidden="true"><ShieldTick size={19} /></span>
+        <span className="cloud-card-icon" aria-hidden="true"><ShieldTick size={20} /></span>
         <div className="cloud-card-copy"><h4>Uma cópia privada no Dropbox</h4><p>O Open Notes só tem acesso à pasta criada especialmente para o aplicativo no seu Dropbox. Seus outros arquivos permanecem privados e não podem ser acessados.</p></div>
       </div>
     </div>

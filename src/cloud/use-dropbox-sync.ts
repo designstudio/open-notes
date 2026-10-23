@@ -6,6 +6,7 @@ import { connectionDecision, dataFingerprint, isExampleSpace } from './sync-poli
 import { saveRecoveryCopy } from './recovery-storage';
 import { activeSyncProvider, selectSyncProvider, subscribeSyncProvider, withSyncLock } from './sync-coordinator';
 import { hoursToMs, isSyncIntervalHours, nextScheduledSync, readSyncInterval, syncAttemptKey, syncIntervalKey, type SyncIntervalHours } from './dropbox-sync-schedule';
+import { readSyncMetadata, syncMetadataChannel, writeSyncMetadata } from './dropbox-sync-metadata';
 
 type Remote = { revision: string; snapshot: DriveSnapshot };
 type Base = { revision: string; hash: string; at: number };
@@ -20,11 +21,9 @@ export type DropboxSync = {
 };
 const digest = async (text: string) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)))].map(byte => byte.toString(16).padStart(2, '0')).join('');
 function baseKey(connection: string) { return `open-notes-dropbox-base-${connection}`; }
-function readBase(connection: string): Base | null {
-  try {
-    const base = JSON.parse(localStorage.getItem(baseKey(connection)) || 'null');
-    return base && typeof base.revision === 'string' && /^[a-f0-9]{64}$/.test(base.hash) && Number.isFinite(base.at) ? base : null;
-  } catch { return null; }
+async function readBase(connection: string): Promise<Base | null> {
+  const base = await readSyncMetadata<Base>(baseKey(connection));
+  return base && typeof base.revision === 'string' && /^[a-f0-9]{64}$/.test(base.hash) && Number.isFinite(base.at) ? base : null;
 }
 function validRemote(value: unknown): value is Remote {
   const remote = value as Remote;
@@ -52,18 +51,20 @@ export function useDropboxSync(data: AppData, setData: Dispatch<SetStateAction<A
   const latest = useRef({ data, auth }); latest.current = { data, auth };
   // Keep each tab's own baseline. Reading the shared preference on every run
   // would misclassify another tab's successful upload as our own old revision.
-  const baseline = useRef({ connection: auth.connectionId, value: readBase(auth.connectionId) });
-  if (baseline.current.connection !== auth.connectionId) baseline.current = { connection: auth.connectionId, value: readBase(auth.connectionId) };
+  const baseline = useRef({ connection: auth.connectionId, value: null as Base | null, loaded: false });
+  if (baseline.current.connection !== auth.connectionId) baseline.current = { connection: auth.connectionId, value: null, loaded: false };
   const mounted = useRef(false), epoch = useRef(0), pending = useRef<Remote | null>(null);
   const collided = useRef(false);
-  const confirmedFingerprint = useRef<string | null>(null);
+  const confirmedWorkspace = useRef<AppData | null>(null);
   const previousConnection = useRef(auth.connectionId);
   const forceActivation = useRef(false), retryNotBefore = useRef(0);
+  const runGeneration = useRef(0);
   const flight = useRef<Promise<void> | null>(null), timer = useRef(0);
   const run = useCallback(async (choice?: 'local' | 'remote', automatic = false) => {
     if (flight.current) return flight.current;
     const initial = latest.current.auth;
     if (activeSyncProvider() !== 'dropbox' || initial.state.status !== 'connected' || !initial.syncReady || !initial.connectionId) return;
+    runGeneration.current++;
     if (!navigator.locks) { setStatus('error'); setError('Este navegador não oferece a coordenação entre abas necessária para sincronizar com Dropbox.'); return; }
     if (pending.current && !choice) return;
     const version = epoch.current, connection = initial.connectionId;
@@ -73,13 +74,17 @@ export function useDropboxSync(data: AppData, setData: Dispatch<SetStateAction<A
     const operation = withSyncLock('dropbox', async () => {
       if (!live()) return;
       // Recheck under the cross-tab lock: another tab may have just synced.
-      const due = Math.max(retryNotBefore.current, nextScheduledSync(connection, readBase(connection)?.at));
+      const savedBase = await readBase(connection);
+      if (!live()) return;
+      if (!baseline.current.loaded) baseline.current = { connection, value: savedBase, loaded: true };
+      const due = Math.max(retryNotBefore.current, await nextScheduledSync(connection, savedBase?.at));
+      if (!live()) return;
       if (automatic && due > Date.now()) return;
       if (automatic && !navigator.onLine) { setStatus('offline'); return; }
       const startedAt = Date.now();
       retryNotBefore.current = startedAt + hoursToMs(readSyncInterval());
-      try { localStorage.setItem(syncAttemptKey(connection), String(startedAt)); }
-      catch { throw new Error('Não foi possível salvar o agendamento da sincronização. Suas notas continuam neste navegador.'); }
+      await writeSyncMetadata(syncAttemptKey(connection), startedAt);
+      if (!live()) return;
       setStatus('syncing'); setError(null);
       const value: unknown = await initial.request('download');
       if (!live()) return;
@@ -142,12 +147,14 @@ export function useDropboxSync(data: AppData, setData: Dispatch<SetStateAction<A
       if (!live()) return;
       const at = Date.now();
       // Only revisions, hashes and timestamps persist here, never notes or credentials.
-      localStorage.setItem(baseKey(connection), JSON.stringify({ revision, hash, at }));
+      await writeSyncMetadata(baseKey(connection), { revision, hash, at });
+      if (!live()) return;
       baseline.current.value = { revision, hash, at };
       retryNotBefore.current = 0;
       pending.current = null; setConflict(null); setLastSyncedAt(at);
-      confirmedFingerprint.current = dataFingerprint(synced);
-      setStatus(dataFingerprint(latest.current.data) === confirmedFingerprint.current ? 'synced' : 'scheduled');
+      const unchanged = dataFingerprint(latest.current.data) === dataFingerprint(synced);
+      confirmedWorkspace.current = unchanged ? latest.current.data : synced;
+      setStatus(unchanged ? 'synced' : 'scheduled');
     }).catch((reason: unknown) => {
       if (!live()) return;
       const kind = (reason as { kind?: string })?.kind;
@@ -181,34 +188,64 @@ export function useDropboxSync(data: AppData, setData: Dispatch<SetStateAction<A
     epoch.current++; pending.current = null; setConflict(null);
     if (previousConnection.current !== auth.connectionId) {
       previousConnection.current = auth.connectionId;
-      retryNotBefore.current = 0; collided.current = false; confirmedFingerprint.current = null;
+      retryNotBefore.current = 0; collided.current = false; confirmedWorkspace.current = null;
     }
-    const base = auth.connectionId ? readBase(auth.connectionId) : null;
-    setLastSyncedAt(base?.at ?? null);
-    if (enabled && auth.state.status === 'connected' && auth.syncReady) {
-      const force = forceActivation.current; forceActivation.current = false;
-      setStatus('scheduled');
-      if (force || nextScheduledSync(auth.connectionId, base?.at) <= Date.now()) void run(undefined, !force);
-    } else setStatus('paused');
+    let cancelled = false;
+    const version = epoch.current;
+    const generation = runGeneration.current;
+    const force = forceActivation.current; forceActivation.current = false;
+    void (async () => {
+      try {
+        const base = auth.connectionId ? await readBase(auth.connectionId) : null;
+        if (cancelled || version !== epoch.current || generation !== runGeneration.current) return;
+        if (!baseline.current.loaded) baseline.current = { connection: auth.connectionId, value: base, loaded: true };
+        setLastSyncedAt(base?.at ?? null);
+        if (enabled && auth.state.status === 'connected' && auth.syncReady) {
+          setStatus('scheduled');
+          const due = await nextScheduledSync(auth.connectionId, base?.at);
+          if (!cancelled && version === epoch.current && generation === runGeneration.current && (force || due <= Date.now())) void run(undefined, !force);
+        } else setStatus(current => current === 'error' ? current : 'paused');
+      } catch (reason) {
+        if (!cancelled && version === epoch.current && generation === runGeneration.current) {
+          setStatus('error'); setNextSyncAt(null);
+          setError(reason instanceof Error ? reason.message : 'Não foi possível ler o controle da sincronização.');
+        }
+      }
+    })();
+    return () => { cancelled = true; };
   }, [enabled, auth.state.status, auth.syncReady, auth.connectionId, run]);
   useEffect(() => {
-    // Editing remains local until the chosen interval or an explicit sync.
-    if (enabled && dataFingerprint(data) !== confirmedFingerprint.current) setStatus(current => current === 'synced' ? 'scheduled' : current);
+    // App state is immutable: an edit only needs to mark the workspace dirty.
+    // Compare full content inside run(), never serialize every note per key.
+    if (enabled && data !== confirmedWorkspace.current) setStatus(current => current === 'synced' ? 'scheduled' : current);
   }, [data, enabled]);
   useEffect(() => {
     if (!enabled || auth.state.status !== 'connected' || !auth.syncReady || auth.revocationPending || conflict || !navigator.locks) {
       setNextSyncAt(null); return;
     }
     const connection = auth.connectionId;
+    let resumeVersion = 0, disposed = false;
     const resume = () => {
+      const version = ++resumeVersion;
       window.clearTimeout(timer.current);
       if (pending.current) { setNextSyncAt(null); return; }
-      const due = Math.max(retryNotBefore.current, nextScheduledSync(connection, readBase(connection)?.at));
-      setNextSyncAt(due);
-      if (!navigator.onLine) return;
-      const delay = Math.max(0, due - Date.now());
-      if (delay > 0) setStatus(current => current === 'offline' ? 'scheduled' : current);
-      timer.current = window.setTimeout(() => { void run(undefined, true); }, delay);
+      void (async () => {
+        try {
+          const base = await readBase(connection);
+          const due = Math.max(retryNotBefore.current, await nextScheduledSync(connection, base?.at));
+          if (disposed || version !== resumeVersion) return;
+          setNextSyncAt(due);
+          if (!navigator.onLine) return;
+          const delay = Math.max(0, due - Date.now());
+          if (delay > 0) setStatus(current => current === 'offline' ? 'scheduled' : current);
+          timer.current = window.setTimeout(() => { void run(undefined, true); }, delay);
+        } catch (reason) {
+          if (!disposed && version === resumeVersion) {
+            setNextSyncAt(null); setStatus('error');
+            setError(reason instanceof Error ? reason.message : 'Não foi possível ler o controle da sincronização.');
+          }
+        }
+      })();
     };
     const storage = (event: StorageEvent) => {
       if (event.key === syncIntervalKey || event.key === null) {
@@ -219,11 +256,16 @@ export function useDropboxSync(data: AppData, setData: Dispatch<SetStateAction<A
     };
     const visible = () => { if (document.visibilityState === 'visible') resume(); };
     const offline = () => { window.clearTimeout(timer.current); setStatus('offline'); };
+    const channel = typeof window.BroadcastChannel === 'function' ? new window.BroadcastChannel(syncMetadataChannel) : null;
+    if (channel) channel.onmessage = event => {
+      if (event.data === syncAttemptKey(connection) || event.data === baseKey(connection)) resume();
+    };
     resume();
     window.addEventListener('online', resume); window.addEventListener('focus', resume);
     window.addEventListener('offline', offline); window.addEventListener('storage', storage);
     document.addEventListener?.('visibilitychange', visible);
     return () => {
+      disposed = true; channel?.close();
       window.clearTimeout(timer.current);
       window.removeEventListener('online', resume); window.removeEventListener('focus', resume);
       window.removeEventListener('offline', offline); window.removeEventListener('storage', storage);

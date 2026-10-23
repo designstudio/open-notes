@@ -6,7 +6,7 @@ import type { DropboxSync } from './cloud/use-dropbox-sync';
 import type { GoogleDriveSync } from './cloud/use-google-drive-sync';
 import { IconButton } from './IconButton';
 import { TextSwap } from './Feedback';
-import { ArrowLeft, FolderCloud, Moon, Settings2, ShieldTick, Sun, X } from './icons';
+import { ArrowLeft, Moon, PlugCircle, Settings2, ShieldTick, Sun, X } from './icons';
 import type { Palette } from './themes';
 import { AccentColorPicker } from './AccentColorPicker';
 import type { UserProfile } from './data';
@@ -78,22 +78,22 @@ export function Preferences({ theme, onToggleTheme, palette, onPaletteChange, cu
     <aside className="preferences-sidebar">
       <h2 id="dialog-title">Preferências</h2>
       <nav aria-label="Seções das preferências">
-        <button className="preferences-nav-item" aria-current={section === 'general' ? 'page' : undefined} onClick={() => navigateSection('general')}><Settings2 size={17} />Geral</button>
-        <button className="preferences-nav-item" aria-current={section === 'integrations' ? 'page' : undefined} onClick={() => navigateSection('integrations')}><FolderCloud size={17} />Integrações</button>
+        <button className="preferences-nav-item" aria-current={section === 'general' ? 'page' : undefined} onClick={() => navigateSection('general')}><Settings2 size={20} />Geral</button>
+        <button className="preferences-nav-item" aria-current={section === 'integrations' ? 'page' : undefined} onClick={() => navigateSection('integrations')}><PlugCircle size={20} />Integrações</button>
       </nav>
     </aside>
     <div className="preferences-panel" data-has-scroll-above={scrolled} data-has-scroll={hasBelow}>
       <header className="preferences-content-header">
         {details
-          ? <button ref={backButton} className="cloud-back" onClick={() => setDetails(false)}><ArrowLeft size={15} />Integrações</button>
+          ? <button ref={backButton} className="cloud-back" onClick={() => setDetails(false)}><ArrowLeft size={20} />Integrações</button>
           : <h3 className="preferences-section-title" ref={heading} tabIndex={-1}>{section === 'general' ? 'Geral' : 'Integrações'}</h3>}
-        <IconButton className="icon-button preferences-close" aria-label="Fechar" onClick={onDismiss}><X size={19} /></IconButton>
+        <IconButton className="icon-button preferences-close" aria-label="Fechar" onClick={onDismiss}><X size={20} /></IconButton>
       </header>
       <div ref={pages} className="settings-content t-page-slide" id="preferences-settings" data-section={section} data-page={details ? '2' : '1'}>
       <div className="t-page" data-page-id="1" inert={details} aria-hidden={details} onScroll={event => { if (!details) updateScroll(event.currentTarget); }}>
         <div hidden={section !== 'general'}>
         <ProfileSettings profile={profile} onUpdate={onProfileUpdate} />
-        <div className="setting-row"><span>Aparência</span><button className="secondary-button preferences-theme-toggle" onClick={onToggleTheme}><span className="t-icon-swap" data-state={theme === 'light' ? 'a' : 'b'} aria-hidden="true"><Sun className="t-icon" data-icon="a" size={16} /><Moon className="t-icon" data-icon="b" size={16} /></span><TextSwap text={theme === 'light' ? 'Claro' : 'Escuro'} /></button></div>
+        <div className="setting-row"><span>Aparência</span><button className="secondary-button preferences-theme-toggle" onClick={onToggleTheme}><span className="t-icon-swap" data-state={theme === 'light' ? 'a' : 'b'} aria-hidden="true"><Sun className="t-icon" data-icon="a" size={20} /><Moon className="t-icon" data-icon="b" size={20} /></span><TextSwap text={theme === 'light' ? 'Claro' : 'Escuro'} /></button></div>
         <AccentColorPicker theme={theme} palette={palette} onPaletteChange={onPaletteChange} customAccent={customAccent} onCustomAccentChange={onCustomAccentChange} />
         <div className="privacy-note"><ShieldTick size={20} aria-hidden="true" /><div><strong>Privacidade em primeiro lugar</strong><p>O Open Notes salva suas informações localmente neste navegador. Ao conectar o Google Drive, uma cópia privada dos seus dados também é sincronizada na nuvem.</p></div></div>
         </div>

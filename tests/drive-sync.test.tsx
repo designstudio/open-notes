@@ -96,6 +96,40 @@ test('StrictMode initialization does not timestamp examples as edits', async () 
   const app = await setup(examples(), personal('Drive'));
   assert.equal(app.storage.has('open-notes-local-updated-at'), false);
 });
+
+for (const provider of ['google-drive', 'dropbox'] as const) test(`Drive avoids reading unrelated notes while disconnected with ${provider} selected`, async () => {
+  const local = personal('Local');
+  let contentReads = 0;
+  const unrelated = { ...local.notes[0], id: 'unrelated' };
+  Object.defineProperty(unrelated, 'body', { enumerable: true, get() { contentReads++; return 'Unchanged text'; } });
+  local.notes.push(unrelated);
+  const app = await setup(local, null);
+  app.storage.set('open-notes-sync-provider', provider);
+  contentReads = 0;
+  await app.edit({ ...local, notes: [{ ...local.notes[0], title: 'Typing' }, unrelated] });
+  assert.equal(contentReads, 0, 'an inactive provider must not scan every document per key');
+  assert.ok(app.storage.has('open-notes-local-updated-at'));
+  assert.equal(app.writes(), 0);
+});
+test('connected Drive defers full comparisons until sync instead of scanning notes on each key', async () => {
+  const local = personal('Local');
+  let contentReads = 0;
+  const unrelated = { ...local.notes[0], id: 'unrelated' };
+  Object.defineProperty(unrelated, 'body', { enumerable: true, get() { contentReads++; return 'Unchanged text'; } });
+  local.notes.push(unrelated);
+  const app = await setup(local, structuredClone(local));
+  await app.connect();
+  contentReads = 0;
+  for (const title of ['T', 'Ty', 'Typing']) {
+    await app.edit({ ...local, notes: [{ ...local.notes[0], title }, unrelated] });
+  }
+  assert.equal(contentReads, 0, 'even the active provider must not scan other notes per key');
+  assert.equal(app.writes(), 0);
+  await app.flush();
+  assert.ok(contentReads > 0, 'the sync operation compares the complete workspace');
+  assert.equal(app.remote()?.notes[0].title, 'Typing');
+});
+
 test('new browser imports Drive and never uploads examples, even with a contaminated timestamp', async () => {
   const cloud = personal('Drive');
   const app = await setup(examples(), cloud, false, false, Date.now() + 999999);

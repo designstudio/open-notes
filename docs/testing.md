@@ -85,7 +85,7 @@ npx playwright install chromium
 node tests/startup-browser.mjs
 ```
 
-Esse teste complementa a suíte de 258 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
+Esse teste complementa a suíte de 267 testes com Chromium real, nas versões de produção e desenvolvimento. Gera um build temporário e usa servidores locais e perfis descartáveis, sem acessar as notas do navegador do usuário. Requisições externas são bloqueadas e o client ID Google fica desativado.
 
 - Abre a biblioteca e confirma que as preferências não foram solicitadas antecipadamente.
 - Retém o download do editor para verificar o indicador sem texto e o título oculto até a nota estar pronta.
@@ -116,6 +116,10 @@ Preferências somente no intervalo escolhido, seleção persistente de periodici
 sincronização manual, última/próxima sincronização, reinício, renovação e revogação.
 Também verifica o menu de periodicidade por teclado e ponteiro, o retorno de foco
 ao fechar com Esc, o layout em desktop/mobile e a exportação das cópias de segurança.
+O perfil descartável tem o localStorage preenchido até gerar `QuotaExceededError`;
+a sincronização manual deve concluir usando o controle persistido no IndexedDB.
+Os testes do hook também cobrem restauração com essa cota esgotada, leitura dos
+metadados antigos, banco indisponível e aborto da transação antes do download.
 Os relógios são simulados, sem aguardar horas reais. Nenhuma
 conta real é acessada. As capturas ficam no diretório temporário do sistema.
 

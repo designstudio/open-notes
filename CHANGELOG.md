@@ -1,5 +1,25 @@
 # Histórico de alterações
 
+## 2026-10-23
+
+### Digitação e consistência dos controles
+
+- A escrita marca alterações pendentes sem comparar o conteúdo de todas as notas a cada tecla. Dropbox compara durante a sincronização; Drive compara após a pausa de digitação que inicia sua sincronização automática.
+- Provedores pausados ou desconectados deixam de percorrer todos os documentos durante a edição. O salvamento local continua imediato.
+- Botões secundários, seletores e opções das coleções compartilham borda, fundo e sombra existentes do design system, mantendo o raio padrão.
+- Ícones das preferências e integrações padronizados em 20px e indicação de atenção para conexões Dropbox sem permissões completas.
+- 267 testes, incluindo verificações de que digitar não lê notas não editadas. O cenário `node tests/typing-browser.mjs` mede a digitação com 500 notas sintéticas e verifica persistência após navegar e recarregar.
+
+## 2026-10-22
+
+### Agendamento do Dropbox com localStorage cheio
+
+- Horários, revisão e hash da sincronização passam a usar o IndexedDB existente, com leitura compatível dos metadados antigos e sem alterar notas ou credenciais.
+- A cota esgotada do localStorage deixa de bloquear a sincronização; falhas na leitura do controle ou no registro da tentativa interrompem a operação antes da rede.
+- Abas recebem notificações de atualização do controle via BroadcastChannel e continuam coordenadas por Web Locks.
+- Após erros, a interface distingue a próxima tentativa de uma sincronização concluída.
+- 262 testes e cenário de navegador com localStorage cheio, sem operações em contas reais.
+
 ## 2026-10-21
 
 ### Sincronização opcional com Dropbox

@@ -44,6 +44,11 @@ aguarda o intervalo antes de tentar automaticamente de novo. **Sincronizar agora
 antecipa envio e recebimento, e o sucesso reinicia a contagem. A interface mostra
 o último horário concluído e a próxima execução prevista. A periodicidade e os
 horários persistem no navegador, sem incluir credenciais ou conteúdo de notas.
+O horário da tentativa, a revisão, o hash e a data da última sincronização ficam
+no store `workspace` existente do IndexedDB. A leitura mantém compatibilidade com
+metadados antigos do localStorage, sem apagar ou regravar os dados anteriores.
+Isso evita que a cota específica do localStorage interrompa a sincronização.
+O provedor escolhido e a preferência de intervalo continuam no localStorage.
 
 Reabrir, voltar à janela ou recuperar a internet só inicia uma execução se o
 horário já venceu. Se o aplicativo ficou fechado por vários intervalos, faz uma
@@ -51,6 +56,11 @@ horário já venceu. Se o aplicativo ficou fechado por vários intervalos, faz u
 o controle do horário para evitar execuções duplicadas. Conflitos pausam o
 agendamento até a escolha da pessoa usuária. Edições feitas durante um envio
 ficam locais até o próximo horário ou a próxima sincronização manual.
+BroadcastChannel notifica as outras abas sobre metadados atualizados; Web Locks
+continua serializando as operações e relendo o horário persistido antes da rede.
+Se uma tentativa falhar, o próximo horário é identificado como **Próxima tentativa
+prevista**. Falhas ao ler o controle ou registrar a tentativa no IndexedDB
+interrompem a operação antes do download, sem descartar notas ou credenciais.
 
 ## Configurar uma App Key pessoal
 

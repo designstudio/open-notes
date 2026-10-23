@@ -7,7 +7,7 @@ import { TextSwap } from './Feedback';
 import './cloud-storage.css';
 
 function ConnectedStatusIcon() {
-  return <span className="cloud-state-icon is-connected" aria-hidden="true"><Check size={13} /></span>;
+  return <span className="cloud-state-icon is-connected" aria-hidden="true"><Check size={20} /></span>;
 }
 
 function statusCopy(sync: GoogleDriveSync) {
@@ -53,7 +53,7 @@ export function CloudStorageSettings({ sync, details = false, active = true, sho
     <section className={`cloud-settings${details || !showHeading ? ' cloud-details' : ''}`} aria-labelledby={details || showHeading ? headingId : undefined} aria-label={!details && !showHeading ? 'Provedores de integração' : undefined}>
       {details ? <>
         <div className="cloud-detail-heading">
-          <img src={googleDriveIcon} alt="" width="28" height="28" />
+          <img src={googleDriveIcon} alt="" width="20" height="20" />
           <h3 id={headingId}>Integração com o Google Drive</h3>
         </div>
         <p>Conecte sua conta do Google para manter uma cópia privada do seu espaço de notas no Drive.</p>
@@ -79,15 +79,15 @@ export function CloudStorageSettings({ sync, details = false, active = true, sho
             <button className="secondary-button" disabled={busy || sync.status === 'unavailable'} onClick={() => sync.connected ? sync.disconnect() : void sync.connect()}><TextSwap text={sync.connected ? 'Desvincular' : connectLabel} /></button>
           </div>
           <div className="cloud-detail-card">
-            <span className="cloud-card-icon" aria-hidden="true"><FolderCloud size={19} /></span>
+            <span className="cloud-card-icon" aria-hidden="true"><FolderCloud size={20} /></span>
             <div className="cloud-card-copy"><h4>Sincronização do seu espaço</h4><p role="status" aria-live="polite" aria-atomic="true"><TextSwap text={statusCopy(sync)} /></p><span className="cloud-badge">{sync.paused ? 'Provedor pausado' : 'Automática após vincular'}</span></div>
             {sync.connected && <button className="secondary-button cloud-sync-button" disabled={busy || (!sync.paused && !!sync.conflict)} onClick={() => void sync.syncNow()}>
-              {sync.status === 'syncing' && <Refresh size={15} className="cloud-sync-spinner" aria-hidden="true" />}
+              {sync.status === 'syncing' && <Refresh size={20} className="cloud-sync-spinner" aria-hidden="true" />}
               <TextSwap text={sync.paused ? 'Ativar sincronização' : sync.status === 'syncing' ? 'Sincronizando…' : 'Sincronizar agora'} />
             </button>}
           </div>
           <div className="cloud-detail-card">
-            <span className="cloud-card-icon" aria-hidden="true"><ShieldTick size={19} /></span>
+            <span className="cloud-card-icon" aria-hidden="true"><ShieldTick size={20} /></span>
             <div className="cloud-card-copy"><h4>Uma cópia privada no Drive</h4><p>O Open Notes só tem acesso aos dados criados pelo próprio aplicativo. Seus outros arquivos do Google Drive permanecem privados e não podem ser acessados.</p></div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export function CloudStorageSettings({ sync, details = false, active = true, sho
         <button className="cloud-connectors" data-provider="google-drive" onClick={() => onNavigate(true)}>
           <span className="cloud-provider-link"><span className="cloud-provider-icon"><img src={googleDriveIcon} alt="" /></span>Google Drive</span>
           <span className="cloud-connection-label">
-            {sync.conflict && <AlertTriangle className="cloud-warning-icon" size={19} aria-hidden="true" />}
+            {sync.conflict && <AlertTriangle className="cloud-warning-icon" size={20} aria-hidden="true" />}
             {sync.connected && !sync.conflict && <ConnectedStatusIcon />}
             <TextSwap text={sync.conflict ? 'Revisar cópias' : sync.connected ? 'Vinculado' : connectLabel} />
           </span>

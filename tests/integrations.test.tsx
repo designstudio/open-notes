@@ -75,6 +75,28 @@ test('selecting Dropbox navigates to details without invoking OAuth or revocatio
   } finally { await act(async () => renderer!.unmount()); }
 });
 
+test('Dropbox row replaces the connected check with a single warning when attention is needed', () => {
+  const connected = dropbox({ state: { status: 'connected' }, linked: true, syncReady: true });
+  const sync: DropboxSync = { status: 'synced', enabled: true, lastSyncedAt: 1792600000000, error: null,
+    intervalHours: 1, nextSyncAt: null, setIntervalHours() {}, conflict: null,
+    async syncNow() {}, async activate() {}, async resolveConflict() {} };
+  const healthy = renderToStaticMarkup(<DropboxIntegrationRow auth={connected} sync={sync} onNavigate={() => {}} />);
+  assert.match(healthy, /cloud-state-icon is-connected/); assert.doesNotMatch(healthy, /cloud-warning-icon/);
+  for (const [auth, state] of [
+    [connected, { ...sync, status: 'error', error: 'Falha de armazenamento' }],
+    [connected, { ...sync, status: 'error' }],
+    [connected, { ...sync, status: 'conflict', conflict: { localNotes: 1, remoteNotes: 2 } }],
+    [{ ...connected, state: { status: 'error', message: 'Autorização inválida' } }, sync],
+    [{ ...connected, revocationPending: true }, sync],
+    [{ ...connected, syncReady: false }, sync],
+  ] as [ReturnType<typeof useDropboxAuth>, DropboxSync][]) {
+    const warning = renderToStaticMarkup(<DropboxIntegrationRow auth={auth} sync={state} onNavigate={() => {}} />);
+    assert.equal((warning.match(/cloud-warning-icon/g) || []).length, 1);
+    assert.doesNotMatch(warning, /cloud-state-icon is-connected/);
+    assert.match(warning, /Revisar conexão|Revisar cópias/);
+  }
+});
+
 test('Dropbox details accept a personal App Key and keep authorization guarded by readiness and validation', async () => {
   browserMocks();
   const originalFetch = globalThis.fetch;
@@ -208,6 +230,8 @@ test('Dropbox sync icon uses linear cloud check for success and linear cloud cro
   assert.match(scheduledError, /solar-cloud-cross-linear/); assert.doesNotMatch(scheduledError, /solar-cloud-check-linear/);
   const error = renderToStaticMarkup(<DropboxSyncSettings sync={{ ...sync, status: 'error', error: 'Falha de rede' }} authorized />);
   assert.match(error, /solar-cloud-cross-linear/); assert.doesNotMatch(error, /solar-cloud-check-linear/);
+  const retry = renderToStaticMarkup(<DropboxSyncSettings sync={{ ...sync, status: 'error', error: 'Falha de armazenamento', nextSyncAt: 1792603600000 }} authorized />);
+  assert.match(retry, /Próxima tentativa prevista:/); assert.doesNotMatch(retry, /Próxima sincronização prevista:/);
   const permission = renderToStaticMarkup(<DropboxSyncSettings sync={sync} authorized={false} needsPermissions />);
   assert.match(permission, /solar-cloud-cross-linear/); assert.doesNotMatch(permission, /solar-cloud-check-linear/);
   const authError = renderToStaticMarkup(<DropboxSyncSettings sync={sync} authorized={false} notice="Autorização expirada" noticeIsError />);

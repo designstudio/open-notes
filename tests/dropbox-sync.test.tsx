@@ -9,6 +9,7 @@ import { recoveryCopies } from '../src/cloud/recovery-storage';
 import { activeSyncProvider, selectSyncProvider, withSyncLock } from '../src/cloud/sync-coordinator';
 import { appEnvironment } from './helpers/app-environment';
 import { hoursToMs, readSyncInterval, syncAttemptKey, syncIntervalKey } from '../src/cloud/dropbox-sync-schedule';
+import { readSyncMetadata, writeSyncMetadata } from '../src/cloud/dropbox-sync-metadata';
 
 const personal = (title: string): AppData => ({ notes: [{ ...initialNotes[0], id: 'personal', title }], collections: [], folders: [], profile: { name: 'Nome', photo: '' } });
 const empty = (): AppData => ({ notes: [], collections: [], folders: [] });
@@ -46,24 +47,31 @@ async function setup(t: TestContext, local: AppData, cloud: AppData | null = nul
   await mount();
   t.after(async () => { await act(async () => renderer.unmount()); env.restore(); });
   const settle = async () => {
-    for (let turn = 0; turn < 10; turn++) {
+    let stable = 0;
+    for (let turn = 0; turn < 30; turn++) {
       const pending = lock;
-      await act(async () => { await pending; });
-      if (pending === lock) return;
+      // IndexedDB transactions complete on later tasks, beyond React's microtasks.
+      await act(async () => { await readSyncMetadata('test-metadata-barrier').catch(() => null); await pending; });
+      stable = pending === lock ? stable + 1 : 0;
+      if (stable >= 4) return;
     }
     throw new Error('Unexpected repeated synchronization');
   };
-  const syncNow = async () => { await act(async () => { await sync!.syncNow(); }); };
+  const syncNow = async () => { await act(async () => { await sync!.syncNow(); }); await settle(); };
   return { env, auth, writes, reads, settle, data: () => data, sync: () => sync!, remote: () => clone(remote),
     async activate() { await act(async () => sync!.activate()); await syncNow(); }, syncNow,
-    async edit(next: AppData) { await act(async () => edit(next)); },
+    async edit(next: AppData) {
+      // Commit the UI event even when the mocked network callback runs inside
+      // an outer async act waiting for an IndexedDB-backed sync operation.
+      act(() => (renderer as typeof renderer & { unstable_flushSync: (task: () => void) => void }).unstable_flushSync(() => edit(next)));
+    },
     async choose(choice: 'local' | 'remote') { await act(async () => sync!.resolveConflict(choice)); },
     changeRemote(next: AppData | null) { remote = next ? { revision: String(++revision), snapshot: { schemaVersion: 1, updatedAt: 100, data: clone(next) } } : null; },
     fail(value: string | null) { fail = value; },
     beforeRead(value: () => Promise<void>) { beforeRead = value; }, beforeUpload(value: () => void | Promise<void>) { beforeUpload = value; },
     async reload(force = true) { local = clone(data); await act(async () => renderer.unmount()); await mount(); if (force) await syncNow(); await settle(); },
     async reopenAfter(ms: number) { local = clone(data); await act(async () => renderer.unmount()); await env.advance(ms); await mount(); await settle(); },
-    async advance(ms: number) { await env.advance(ms); await settle(); },
+    async advance(ms: number) { await settle(); await env.advance(ms); await settle(); await env.advance(0); await settle(); },
     async schedule(hours: Parameters<DropboxSync['setIntervalHours']>[0]) { await act(async () => sync!.setIntervalHours(hours)); await settle(); },
     async fire(type: string, event?: unknown) { await act(async () => env.listeners.get(type)?.forEach(listener => (listener as any)(event))); await settle(); },
     async rerender() { await act(async () => renderer.update(<Harness />)); },
@@ -77,6 +85,25 @@ test('Dropbox authorization alone never uploads; activation writes a full snapsh
   assert.equal(activeSyncProvider(), 'dropbox'); assert.equal(app.sync().status, 'synced');
   assert.deepEqual(app.remote()?.snapshot.data, app.data()); assert.ok(app.sync().lastSyncedAt);
   assert.equal((await recoveryCopies()).filter(copy => copy.key.startsWith('open-notes-dropbox-recovery-')).length, 1);
+});
+
+test('Dropbox marks typing as pending without reading unrelated note contents', async t => {
+  const local = personal('Local');
+  let contentReads = 0;
+  const unrelated = { ...local.notes[0], id: 'unrelated' };
+  Object.defineProperty(unrelated, 'body', { enumerable: true, get() { contentReads++; return 'Unchanged text'; } });
+  local.notes.push(unrelated);
+  const app = await setup(t, local);
+  await app.activate();
+  contentReads = 0;
+  for (const title of ['L', 'Lo', 'Loc']) {
+    await app.edit({ ...local, notes: [{ ...local.notes[0], title }, unrelated] });
+  }
+  assert.equal(contentReads, 0, 'typing must not serialize the whole workspace');
+  assert.equal(app.sync().status, 'scheduled');
+  assert.equal(app.writes.length, 1, 'typing waits for the scheduled or manual sync');
+  await app.syncNow();
+  assert.equal(app.remote()?.snapshot.data.notes[0].title, 'Loc');
 });
 test('Dropbox replaces untouched examples only after backing them up and never uploads them', async t => {
   const examples = clone({ notes: initialNotes, collections: initialCollections, folders: initialFolders });
@@ -181,13 +208,13 @@ test('Dropbox does not adopt a different tab baseline and overwrite that tab’s
   const newRemote = personal('Other tab'); app.changeRemote(newRemote);
   const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode((await import('../src/cloud/sync-policy')).dataFingerprint(newRemote)));
   const hash = [...new Uint8Array(bytes)].map(byte => byte.toString(16).padStart(2, '0')).join('');
-  localStorage.setItem('open-notes-dropbox-base-testConnection', JSON.stringify({ revision: app.remote()!.revision, hash, at: Date.now() }));
+  await writeSyncMetadata('open-notes-dropbox-base-testConnection', { revision: app.remote()!.revision, hash, at: Date.now() });
   await app.syncNow();
   assert.equal(app.writes.length, 1); assert.deepEqual(app.data(), newRemote);
 });
 test('Dropbox preserves edits made during the download instead of replacing the edited workspace', async t => {
   const app = await setup(t, empty(), personal('Remote'));
-  app.beforeRead(async () => { await app.edit(personal('New local note')); });
+  app.beforeRead(async () => { await app.edit(personal('New local note')); assert.equal(app.data().notes[0]?.title, 'New local note', 'edit committed before the download resumes'); });
   await app.activate();
   assert.equal(app.sync().status, 'conflict'); assert.equal(app.writes.length, 0); assert.equal(app.data().notes[0].title, 'New local note');
 });
@@ -297,7 +324,7 @@ test('Dropbox observes interval and attempt updates from another tab without ado
   localStorage.setItem(syncIntervalKey, '3'); await app.fire('storage', { key: syncIntervalKey });
   assert.equal(app.sync().intervalHours, 3); assert.equal(app.sync().nextSyncAt, app.sync().lastSyncedAt! + hoursToMs(3));
   await app.advance(hoursToMs(1));
-  localStorage.setItem(syncAttemptKey('testConnection'), String(Date.now()));
+  await writeSyncMetadata(syncAttemptKey('testConnection'), Date.now());
   await app.fire('storage', { key: syncAttemptKey('testConnection') });
   assert.equal(app.sync().nextSyncAt, Date.now() + hoursToMs(3));
 });
@@ -324,7 +351,7 @@ test('an automatic Dropbox sync queued behind another tab rechecks the shared du
   const gate = new Promise<void>(done => { release = done; });
   const otherTab = withSyncLock('dropbox', async () => {
     await gate;
-    localStorage.setItem(syncAttemptKey('testConnection'), String(Date.now()));
+    await writeSyncMetadata(syncAttemptKey('testConnection'), Date.now());
   });
   await app.env.advance(hoursToMs(1));
   release(); await otherTab; await app.settle();
@@ -333,8 +360,87 @@ test('an automatic Dropbox sync queued behind another tab rechecks the shared du
 
 test('Dropbox ignores corrupt scheduling dates instead of overflowing or repeatedly running timers', async t => {
   const app = await setup(t, personal('Original')); await app.activate();
-  localStorage.setItem(syncAttemptKey('testConnection'), '1e300');
+  await writeSyncMetadata(syncAttemptKey('testConnection'), '1e300');
   await app.fire('storage', { key: syncAttemptKey('testConnection') });
   assert.equal(app.sync().nextSyncAt, app.sync().lastSyncedAt! + hoursToMs(1));
   await app.advance(1000); assert.equal(app.writes.length, 1);
+});
+
+test('Dropbox syncs and restores its schedule when localStorage writes exceed quota', async t => {
+  const app = await setup(t, personal('Original')); await app.activate();
+  const storage = localStorage;
+  Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: {
+    getItem: storage.getItem.bind(storage), removeItem: storage.removeItem.bind(storage),
+    setItem() { throw new DOMException('Synthetic full localStorage', 'QuotaExceededError'); },
+  } });
+  try {
+    await app.edit(personal('Edited with full localStorage')); await app.advance(hoursToMs(1));
+    assert.equal(app.sync().status, 'synced'); assert.equal(app.sync().error, null);
+    assert.equal(app.remote()!.snapshot.data.notes[0].title, 'Edited with full localStorage');
+    const last = app.sync().lastSyncedAt, due = app.sync().nextSyncAt;
+    assert.equal(due, last! + hoursToMs(1));
+    const base = await readSyncMetadata<{ at: number }>('open-notes-dropbox-base-testConnection');
+    assert.equal(base!.at, last);
+    assert.equal(await readSyncMetadata(syncAttemptKey('testConnection')), last);
+    const reads = app.reads.length;
+    await app.reload(false);
+    assert.equal(app.sync().lastSyncedAt, last); assert.equal(app.sync().nextSyncAt, due);
+    assert.equal(app.reads.length, reads, 'reopening does not sync before the persisted due time');
+    app.changeRemote(personal('Other device')); await app.advance(hoursToMs(1));
+    assert.equal(app.data().notes[0].title, 'Other device'); assert.equal(app.sync().error, null);
+    assert.ok((await recoveryCopies()).length > 0, 'backups remain available');
+  } finally { Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: storage }); }
+});
+
+test('Dropbox reads legacy metadata without rewriting or removing legacy browser data', async t => {
+  const app = await setup(t, personal('Legacy workspace'));
+  localStorage.setItem(syncAttemptKey('testConnection'), String(Date.now()));
+  const legacyBase = JSON.stringify({ revision: 'legacy', hash: 'a'.repeat(64), at: Date.now() });
+  localStorage.setItem('open-notes-dropbox-base-testConnection', legacyBase);
+  assert.equal(await readSyncMetadata(syncAttemptKey('testConnection')), Date.now());
+  await writeSyncMetadata(syncAttemptKey('testConnection'), Date.now() + 100);
+  assert.equal(await readSyncMetadata(syncAttemptKey('testConnection')), Date.now() + 100);
+  assert.equal(localStorage.getItem('open-notes-dropbox-base-testConnection'), legacyBase);
+  assert.equal(localStorage.getItem(syncAttemptKey('testConnection')), String(Date.now()));
+  assert.equal(app.writes.length, 0);
+});
+
+test('Dropbox stops before network requests when durable sync metadata cannot be read', async t => {
+  const app = await setup(t, personal('Original')); await app.activate(); await app.edit(personal('Preserved edit'));
+  const reads = app.reads.length, writes = app.writes.length, last = app.sync().lastSyncedAt;
+  const open = indexedDB.open;
+  indexedDB.open = (() => { throw new DOMException('Synthetic unavailable database', 'UnknownError'); }) as any;
+  try {
+    await app.syncNow();
+    assert.equal(app.sync().status, 'error'); assert.match(app.sync().error!, /controle da sincronização/);
+    assert.equal(app.sync().nextSyncAt, null);
+    assert.equal(app.sync().lastSyncedAt, last); assert.equal(app.data().notes[0].title, 'Preserved edit');
+    assert.equal(app.reads.length, reads); assert.equal(app.writes.length, writes);
+  } finally { indexedDB.open = open; }
+  await app.syncNow(); assert.equal(app.sync().status, 'synced'); assert.equal(app.sync().error, null);
+});
+
+test('Dropbox aborts before download if the attempt checkpoint cannot be committed to IndexedDB', async t => {
+  const app = await setup(t, personal('Original')); await app.activate(); await app.edit(personal('Preserved edit'));
+  const reads = app.reads.length, writes = app.writes.length, last = app.sync().lastSyncedAt;
+  const open = indexedDB.open;
+  indexedDB.open = ((...args: Parameters<IDBFactory['open']>) => {
+    const request = open.apply(indexedDB, args);
+    request.addEventListener('success', () => {
+      const database = request.result, transaction = database.transaction.bind(database);
+      database.transaction = ((...parameters: Parameters<IDBDatabase['transaction']>) => {
+        const result = transaction(...parameters);
+        if (parameters[0] === 'workspace' && parameters[1] === 'readwrite') queueMicrotask(() => result.abort());
+        return result;
+      }) as typeof database.transaction;
+    });
+    return request;
+  }) as typeof indexedDB.open;
+  try {
+    await app.syncNow();
+    assert.equal(app.sync().status, 'error'); assert.match(app.sync().error!, /controle da sincronização/);
+    assert.equal(app.sync().lastSyncedAt, last); assert.equal(app.data().notes[0].title, 'Preserved edit');
+    assert.equal(app.reads.length, reads); assert.equal(app.writes.length, writes);
+  } finally { indexedDB.open = open; }
+  await app.syncNow(); assert.equal(app.sync().status, 'synced');
 });

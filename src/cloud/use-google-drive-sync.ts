@@ -86,9 +86,7 @@ export function useGoogleDriveSync(
   const ready = useRef(false);
   const dataRef = useRef(data);
   const localUpdatedAt = useRef(readNumber(LOCAL_UPDATED_KEY) || 0);
-  const observedData = useRef<string | null>(null);
   const observedWorkspace = useRef(data);
-  if (observedData.current === null) observedData.current = dataFingerprint(data);
   const syncing = useRef<Promise<void> | null>(null);
   const syncTimer = useRef(0);
   dataRef.current = data;
@@ -145,8 +143,8 @@ export function useGoogleDriveSync(
       if (dataFingerprint(dataRef.current) !== original) { pauseForConflict(remote); return; }
       try { localStorage.setItem(LOCAL_UPDATED_KEY, String(remote.updatedAt)); } catch { /* Timestamp remains available in memory. */ }
       dataRef.current = remote.data;
-      observedData.current = dataFingerprint(remote.data);
-      setDriveBase(session.current, observedData.current, remote.updatedAt);
+      observedWorkspace.current = remote.data;
+      setDriveBase(session.current, dataFingerprint(remote.data), remote.updatedAt);
       rememberDriveSync(session.current, remote, false);
       localUpdatedAt.current = remote.updatedAt;
       setConflict(null);
@@ -317,7 +315,7 @@ export function useGoogleDriveSync(
           if (!isExampleSpace(dataRef.current)) return;
           if (dataRef.current.profile) empty.profile = dataRef.current.profile;
           else delete empty.profile;
-          observedData.current = dataFingerprint(empty);
+          observedWorkspace.current = empty;
           dataRef.current = empty;
           setData(empty);
         });
@@ -449,19 +447,20 @@ export function useGoogleDriveSync(
   }, [clientId]);
 
   useEffect(() => {
-    // The initial fingerprint was captured above. StrictMode also replays this
-    // effect; neither pass needs to serialize the entire workspace again.
+    // Immutable state is enough to detect an edit. Full content comparisons
+    // belong to synchronization, after the typing debounce, never to each key.
     if (observedWorkspace.current === data) return;
-    const fingerprint = dataFingerprint(data);
     observedWorkspace.current = data;
-    if (fingerprint === observedData.current) return;
-    observedData.current = fingerprint;
+    const canUpload = activeSyncProvider() === 'google-drive' && !!session.current.accessToken && ready.current;
     const changedAt = Date.now();
     localUpdatedAt.current = changedAt;
     try { localStorage.setItem(LOCAL_UPDATED_KEY, String(changedAt)); } catch { /* Existing local save reports its own error. */ }
-    if (!session.current.accessToken || !ready.current) return;
+    if (!canUpload) return;
     window.clearTimeout(syncTimer.current);
-    syncTimer.current = window.setTimeout(() => { void upload(); }, 1200);
+    syncTimer.current = window.setTimeout(() => {
+      if (activeSyncProvider() !== 'google-drive' || !session.current.accessToken || !ready.current) return;
+      if (dataFingerprint(dataRef.current) !== session.current.baseRemote) void upload();
+    }, 1200);
     return () => window.clearTimeout(syncTimer.current);
   }, [data, upload]);
 

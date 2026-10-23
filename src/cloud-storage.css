@@ -38,7 +38,7 @@ dialog.settings-dialog[open] { display:flex; flex-direction:column; }
 .cloud-connection-label { transition:background-color 150ms ease-in-out; }
 .cloud-connection-label:hover, .cloud-connectors:focus-visible .cloud-connection-label { background:var(--hover); }
 .cloud-provider-icon { display:grid; place-items:center; width:28px; height:28px; border:1px solid var(--line); border-radius:50%; background:var(--surface); }
-.cloud-provider-icon img { width:18px; height:18px; }
+.cloud-provider-icon img { width:20px; height:20px; }
 dialog .cloud-list-note { margin-top:var(--space-12); font-size:var(--font-size-13); color:var(--muted); }
 .dropbox-integration { padding-bottom:var(--space-10); }
 dialog .dropbox-integration .cloud-list-note { margin-top:0; }
@@ -92,7 +92,7 @@ dialog .dropbox-integration .cloud-list-note { margin-top:0; }
 .note-actions-menu.dropbox-sync-interval-menu { width:128px; }
 .cloud-card-copy h4 { font-size:var(--font-size-13); font-weight:var(--font-weight-500); margin:0; line-height:20px; }
 dialog .cloud-card-copy p { margin-top:var(--space-4); font-size:var(--font-size-13); line-height:var(--line-height-1-5); overflow-wrap:anywhere; }
-.cloud-state-icon { width:19px; height:19px; border:1px dashed var(--line); border-radius:50%; flex-shrink:0; margin-top:var(--space-1); display:grid; place-items:center; }
+.cloud-state-icon { width:20px; height:20px; border:1px dashed var(--line); border-radius:50%; flex-shrink:0; margin-top:var(--space-1); display:grid; place-items:center; }
 .cloud-state-icon.is-connected { background:var(--color-success); color:var(--color-success-contrast); border:0; }
 .cloud-connection-label .cloud-state-icon { margin-top:0; }
 .cloud-warning-icon { color:var(--primitive-color-hex-fff); --solar-secondary-color:var(--color-warning); --solar-secondary-opacity:1; flex-shrink:0; }

@@ -42,6 +42,7 @@ export { NotesIcon as Memo } from '@solar-icons/react/outline/notes';
 export { FileTypeIcon as FilePdf } from '@solar-icons/react/outline/file-type';
 export { FolderIcon as Folder } from '@solar-icons/react/outline/folder';
 export { FolderCloudIcon as FolderCloud } from '@solar-icons/react/linear/folder-cloud';
+export { PlugCircleIcon as PlugCircle } from '@solar-icons/react/linear/plug-circle';
 export { FolderOpenIcon as FolderOpen } from '@solar-icons/react/outline/folder-open';
 export { WidgetIcon as Grid2X2 } from '@solar-icons/react/outline/widget';
 export { HashtagIcon as Hash } from '@solar-icons/react/outline/hashtag';
